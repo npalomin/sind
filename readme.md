@@ -10,7 +10,7 @@ Southwark Industrial Audit
 | What Walworth Wants | http://www.wemadethat.co.uk/pdfs/What_Walworth_Wants_low_res.pdf |
 | Area Action Plan - OKR | [here](http://moderngov.southwark.gov.uk/documents/s72863/Appendix%20A%20Old%20Kent%20Road%20AAP%20Further%20Preferred%20Option%202017.pdf) |
 | Physical Structure and Economic Development | http://www.inclusiveurbanism.org/london-and-guangzhou.html |
-| Standard for occupational classification | [here](https://www.hesa.ac.uk/support/documentation/occupational/soc2010https://www.hesa.ac.uk/support/documentation/occupational/soc2010) |
+| Standard for occupational classification | [here](https://onsdigital.github.io/dp-classification-tools/standard-occupational-classification/ONS_SOC_hierarchy_view.html) |
 | Standard for industrial classification | [here](https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html) |
 | SIC code suppport | http://www.siccodesupport.co.uk/ |
 
