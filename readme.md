@@ -11,8 +11,9 @@ Southwark Industrial Audit
 | Area Action Plan - OKR | [here](http://moderngov.southwark.gov.uk/documents/s72863/Appendix%20A%20Old%20Kent%20Road%20AAP%20Further%20Preferred%20Option%202017.pdf) |
 | Physical Structure and Economic Development | http://www.inclusiveurbanism.org/london-and-guangzhou.html |
 | Standard for occupational classification | [here](https://onsdigital.github.io/dp-classification-tools/standard-occupational-classification/ONS_SOC_hierarchy_view.html) |
+| SOC code support | [here](https://onsdigital.github.io/dp-classification-tools/standard-occupational-classification/ONS_SOC_occupation_coding_tool.html) |
 | Standard for industrial classification | [here](https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html) |
-| SIC code suppport | http://www.siccodesupport.co.uk/ |
+| SIC code support | http://www.siccodesupport.co.uk/ |
 
 #### Settlement form (Lynch, 1981)
 > the spatial arrangement of persons doing things, the resulting spatial flows of persons, goods and information, and the physical features which modify space in some way significant to those actions, including enclosures, surfaces, channels, ambiences and objects. Further, the descriptions must include the cyclical and secular changes in those spatial distributions, the control of space, and the perception of it (p. 48).
