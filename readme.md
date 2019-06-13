@@ -14,6 +14,7 @@ Southwark Industrial Audit
 | SOC code support | [here](https://onsdigital.github.io/dp-classification-tools/standard-occupational-classification/ONS_SOC_occupation_coding_tool.html) |
 | Standard for industrial classification | [here](https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html) |
 | SIC code support | http://www.siccodesupport.co.uk/ |
+|GLA Industrial Land Good Practice | https://www.london.gov.uk/node/37952 |
 
 #### Settlement form (Lynch, 1981)
 > the spatial arrangement of persons doing things, the resulting spatial flows of persons, goods and information, and the physical features which modify space in some way significant to those actions, including enclosures, surfaces, channels, ambiences and objects. Further, the descriptions must include the cyclical and secular changes in those spatial distributions, the control of space, and the perception of it (p. 48).
