@@ -1,5 +1,5 @@
 ---
-title: "SIC study of Industrial definition"
+title: "Study of Industrial definition by SIC code"
 output:
   html_document:
     df_print: paged
