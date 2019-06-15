@@ -1,0 +1,192 @@
+---
+title: "SIC study of Industrial definition"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+---
+<style>
+* {
+  font-family: "Palatino"
+}
+
+h1{
+    font-size: 190%
+}
+
+h2{
+    font-size: 160%
+}
+
+h3{
+    font-size: 150%
+}
+
+h4{
+    font-size: 130%
+}
+
+h5{
+    font-size: 110%
+}
+
+h6{
+    font-size: 90%
+}
+</style>
+
+
+# Introduction
+
+For the SIA project it is necessary to come up with a precise and comprehensive definition of SIC Classification of Industrial Sectors by selecting the SIC codes that describe an 'Industrial Activity'. The latest report available on London Industrial Land Demand (CAG Consultants, 2017)[4] identified 377 business codes (out of 731, see list at the bottom of page). However, apparently there are industrial activities that were excluded from this definition (e.g. washing, maintenance, storage activities). 
+
+This analysis aims to complement the list of SIC codes developed by CAG Consultants. 
+
+# Analysis
+
+## Industrial definition by SIC code in CAG report
+
+'There are 21 sections, 88 divisions, 272 groups, 615 classes and 191 subclasses. The full structure of UK SIC (2007) is shown on pages 27 to 53. As with SIC (2003), the full number of arithmetically possible subdivisions at each level is not necessarily created, varying according to the diversity of activities'[1].
+
+This analysis looks at the 'count' of codes per 'Section' to analyse the nature of the codes selected in the CAG report and identify gaps.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+library(tidyverse)
+library(plyr)
+library(knitr)
+library(readr)
+library(readxl)
+library(htmlTable)
+# load data
+SIC07 <- read_csv('/Users/nicolaspalominos/Documents/SINDA_local/open_data/SIC07_CH_condensed_list_en.csv')
+SIC_sd <- read_csv('/Users/nicolaspalominos/Documents/SINDA_local/open_data/SIC_section_division.csv', col_names = FALSE )
+CAG <- read_excel('/Users/nicolaspalominos/Documents/SINDA_local/open_data/CAGreport_appendix1.xlsx')
+
+# Select first two digits to pair with SECTION(2), DIVISION(3), GROUP(4), CLASS(5)
+SIC07 <- mutate(SIC07, division = substr(`SIC Code`, 1, 2))
+# rename division to section
+colnames(SIC07)[colnames(SIC07)=="division"] <- "Section"
+```
+
+### Number of SIC codes per 'Section' in Condensed SIC list [2] (Companies House)
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# how many SIC codes per section?
+# Create var 'Name' (section name) -- join tables
+names(SIC_sd) <- c("Section", "Name")
+SIC07 <- left_join(SIC07, SIC_sd, by="Section")
+
+
+Ssum <- count(SIC07, vars = "Name")
+htmlTable(Ssum, align='lr', css.cell='padding:0 1em 0 1em', col.columns = c('none', '#F7F7F7'), escape.html =F)
+```
+
+### Number of SIC codes per 'Section' in CAG report
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# Select first two digits to pair with SECTION(2), DIVISION(3), GROUP(4), CLASS(5)
+CAG <- mutate(CAG, Section = substr(sic, 1, 2))
+
+names(SIC_sd) <- c("Section", "Name")
+CAG <- left_join(CAG, SIC_sd, by="Section")
+
+CAGsum <- count(CAG, vars = "Name")
+CAGsum1 <- left_join(CAGsum, Ssum, by="Name")
+CAGsum1$pct <- round(100*(CAGsum1$freq.x / CAGsum1$freq.y))
+names(CAGsum1) <- c("Name", "CAG report", "Condensed SIC list", "pct")
+
+htmlTable(CAGsum1, align='lr', css.cell='padding:0 1em 0 1em', col.columns = c('none', '#F7F7F7'), escape.html =F)
+
+```
+
+This summary table shows the 'Sections' that have 100% of their codes included in the CAG report: 'Construction', 'Electricity, Gas, Steam and Air Conditioning Supply', 'Manufacturing' and 'Water Supply; Sewerage, Waste Management and Remediation Activities'. Additionally, the table gives and idea of the 'Sections' where there might be 'Industrial Activities' codes that were excluded from the analysis in the CAG report. For example, 'Transportation and Storage' and 'Wholesale and Retail Trade; Repair of Motor Vehicles and Motorcycles'.
+
+## Industrial activities to complement the CAG report
+
+Some industrial activities were identified that are not included in the 377 codes listed in Appendix 1 of the 'London Industrial Land Demand' report (CAG report). For example, washing, maintenance, storage activities. These activities where searched on the Companies House 'Nature of business' website[3] and chequed against the CAG report list (377 codes).
+
+### Not included (keywords searched)
+
+'washing'  
+96010	Washing and (dry-)cleaning of textile and fur products  
+
+'vehicles'  
+45111	Sale of new cars and light motor vehicles  
+45112	Sale of used cars and light motor vehicles  
+45190	Sale of other motor vehicles  
+77110	Renting and leasing of cars and light motor vehicles  
+77120	Renting and leasing of trucks and other heavy vehicles  
+
+'cleaning'  
+81210	General cleaning of buildings  
+81221	Window cleaning services  
+81222	Specialised cleaning services  
+81223	Furnace and chimney cleaning services  
+81229	Other building and industrial cleaning activities  
+81299	Other cleaning services  
+
+'archive'  
+91012	Archives activities  
+
+```{r eval=FALSE, include=FALSE}
+# list of 377 codes in CAG 
+cag377 <- CAG$sic
+# to search for code in CAG
+any(cag377==53202)
+```
+
+### Included in the CAG report
+
+82920	Packaging activities  
+10612	Manufacture of breakfast cereals and cereals-based food  
+10860	Manufacture of homogenized food preparations and dietetic food  
+10890	Manufacture of other food products n.e.c.  
+53100	Postal activities under universal service obligation  
+53201	Licensed carriers  
+53202	Unlicensed carriers  
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# Which 'Transport' and 'Wholesale' are excluded from the 377 list?
+# df with all 'Transport' and 'Wholesale'
+who_tra07 <- filter(SIC07, Name == "Wholesale and Retail Trade; Repair of Motor Vehicles and Motorcycles" | Name == "Transportation and Storage")
+colnames(who_tra07)[colnames(who_tra07)=="SIC Code"] <- "sic"
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+wNA <- left_join(who_tra07, CAG, by="sic")
+wNA <- wNA[,c(1,2,3,5)]
+wNA <- wNA[is.na(wNA$activtiy),]
+wNA <- wNA[,c(1,2)]
+```
+
+### 'Transport' and 'Wholesale' codes excluded from the CAG report (n= 77)
+
+Some of these codes can be added to the industrial definition (note that some of these appear in the keyword search in section 2.2.1)
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+htmlTable(wNA, align='l', css.cell='padding:0 1em 0 1em', col.columns = c('none', '#F7F7F7'), escape.html =F)
+```
+
+### SIC Classification of Industrial Sectors (Appendix 1)(n = 377)
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+colnames(SIC07)[colnames(SIC07)=="SIC Code"] <- "sic"
+CAG1 <- left_join(CAG, SIC07, by="sic")
+CAG1 <- CAG1[,c(2,4,5)]
+names(CAG1) <- c("SIC", "Section", "Description")
+
+htmlTable(CAG1, align='l', css.cell='padding:0 1em 0 1em', col.columns = c('none', '#F7F7F7'), escape.html =F)
+```
+
+# References
+
+[1] http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/standard-industrial-classification/sic2007---explanatory-notes.pdf  
+
+[2] https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/527619/SIC07_CH_condensed_list_en.csv/preview  
+
+[3] http://resources.companieshouse.gov.uk/sic/  
+
+[4] https://www.london.gov.uk/sites/default/files/ilds_final_report_june_2017.pdf  
+  
+
