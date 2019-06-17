@@ -23,3 +23,11 @@ Southwark Industrial Audit
 
 #### Creative clustering 
 > While most of this discourse has been focused at the geographic scale of inter-city competition, demographics and policy, it has long been clear that creative industries do not locate randomly within cities and are sensitive to ‘characteristics of place’ at the neighbourhood scale. While the importance of quality of place to creative clustering is repeatedly acknowledged, the associated micro-spatialities and morphologies remain under-researched [(Wood & Dovey, 2014)](https://www.tandfonline.com/doi/full/10.1080/13574809.2014.972346).
+
+
+to_tidy_urls  
+
+https://data.london.gov.uk/dataset/town-centre-locations  
+https://data.gov.uk/dataset/ddbb5512-b5fd-46e2-8683-c87ac8da7441/district-town-centres  
+https://data.gov.uk/dataset/ed07b21f-0a33-49e2-9578-83ccbc6a20db/english-town-centres-2004  
+https://data.cdrc.ac.uk/dataset/cdrc-2017-retail-centre-boundaries  
