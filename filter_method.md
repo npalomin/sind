@@ -8,9 +8,11 @@ The 'Industrial Functional Unit' for the SIA study is:
 
 __The premises where a uniform industrial activity takes place, disregarding the type of tenure or physical structure of the space that accommodates the activity.__
 
+(based on [Basic Land and Property Unit](https://www.geoplace.co.uk/documents/10181/131542/LLPG%20Data%20Entry%20Conventions))
+
 ### Data sources
 
-There exist a variety of available open and propietary data sources relevant for the SIA study. 
+There exist a variety of available open and proprietary data sources relevant for the SIA study. 
 In order to come up with a systematic methodology of data selection two criteria were defined: precision and accuracy.
 
 To identify where do industrial activities take place two key data set sets were analysed:
@@ -18,7 +20,7 @@ To identify where do industrial activities take place two key data set sets were
 |Name|Description|URL|
 |-|-|-|
 |INSPIRE Index Polygons|Cadastral parcels. Registered extent of freehold properties in England and Wales|[https://www.gov.uk/government/publications/southwark-inspire-index-polygon-data](here)|
-|GLA_Ind_Land_Baseline_2015_Designations|Industrial polygons by designation|Propietary GLA (Alex Marsh)|
+|GLA_Ind_Land_Baseline_2015_Designations|Industrial polygons by designation|Proprietary GLA (Alex Marsh)|
 
 Both datasets have spatial resolution at parcel level (1:1000). However, the __cadastral parcels__ have a more detailed subdivision which is
 more appropiate for the survey of __Industrial Functional Units__
