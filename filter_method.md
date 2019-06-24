@@ -52,6 +52,17 @@ Next step the polygons of the building layer (OS Mastermap) that overlay with th
 - Delete polygons <= 15m2 (563 features)
 - Delete 'elongated' polygons (37 features). New n = 2358
 
+### Draft interactive maps
 
+#### Filter 1
+As described above
+
+https://npalomin.github.io/sind/filter_1.html
+
+
+#### Filter 2
+Features with class = NAL & URSID = NULL filtered (n = +1000)
+
+https://npalomin.github.io/sind/filter_2.html
 
 
