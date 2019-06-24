@@ -21,7 +21,7 @@ Both datasets were intergrated and combined to get a merge of parcel polygons wi
 Not all the cadastral parcels overlayed with the industrial polygons so the following geoproecesses were applied:
 
 - Intersect parcels with industrial polygons (Parcels which 'point on surface' are within industrial polygons)
-- Add industrial polygons that are _outside_ the parecel polygons definition.
+- Add those industrial polygons that are _outside_ the parcel polygons definition.
 
 ### Data generalization
 
