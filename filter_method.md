@@ -55,7 +55,7 @@ Next step the polygons of the building layer (OS Mastermap) that overlay with th
 ### Draft interactive maps
 
 #### Filter 1
-As described above
+As described above (n = 2358)
 
 https://npalomin.github.io/sind/filter_1.html
 
