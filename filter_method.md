@@ -44,11 +44,11 @@ The innacurate polygons have a similar LU_CODE_20 attribute of '9' and '25'. The
 
 #### Geometric generalization
 ##### Parcels
-Delete parcels with area < 10m2 (72 features)
+- Delete parcels with area < 10m2 (72 features)
 
 ##### Buildings
-Delete polygons <= 15m2 (563 features) . 
-Delete 'elongated' polygons (37 features) . 
+- Delete polygons <= 15m2 (563 features) . 
+- Delete 'elongated' polygons (37 features) . 
 
 
 
