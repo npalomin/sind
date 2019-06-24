@@ -39,11 +39,16 @@ As a result of the previous operation we get 1922 features. However, a visual in
 specially in the polygons classified as NAL. This innacuracies correspond to: unclear industrial activity according to street level observation 
 (Google Street View) and parcel boundaries shape that describe a building rather than a parcel or 'site' boundary.
 
-#### Semanthic generalization
+#### Semantic generalization
 The innacurate polygons have a similar LU_CODE_20 attribute of '9' and '25'. Therefore those two classes were filtered from the NALs layer (566 and 74 features respectively)
 
 #### Geometric generalization
-Delete parcels with area > 10m2 (72 features)
+##### Parcels
+Delete parcels with area < 10m2 (72 features)
+
+##### Buildings
+Delete polygons <= 15m2 (563 features) . 
+Delete 'elongated' polygons (37 features) . 
 
 
 
