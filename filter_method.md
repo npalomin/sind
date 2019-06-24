@@ -35,9 +35,13 @@ Not all the cadastral parcels overlayed with the industrial polygons so the foll
 
 As a result of the previous operation we get 1922 features. However, a visual inspection of some features shows some innacuracies
 specially in the polygons classified as NAL. This innacuracies correspond to: doubtful industrial activity according to street level observation 
-(Google Street View) and parcel boundaries that describe a building rather than a parcel or 'site' boundary.
+(Google Street View) and parcel boundaries shape that describe a building rather than a parcel or 'site' boundary.
 
+#### Semanthic generalization
 The innacurate polygons have a similar LU_CODE_20 attribute of '9' and '25'. Therefore those two classes were filtered from the NALs layer (566 and 74 features respectively)
+
+#### Geometric generalization
+Delete parcels with area > 10m2 (72 features)
 
 
 
