@@ -1,5 +1,13 @@
 ## Spatial data preprocessing
 
+### Spatial unit of study
+
+To conduct the spatial study that captures the intensity, diversity and character of industrial activities in Southwark is necessary to establish a definition of the spatial unit of study. Conceptually, the physical study of 'Industrial Activities' encompass two core ideas: the nature of the industrial activity or function and the premises where that activity takes place. The spatial unit of study has been conceptualized as a 'Functional Unit', which is an industrial economic activity that doesn't necessarilly fits spatially across an entire buliding or parcel (the most common spatial units of urban surveys). In many cases, more than one 'Industrial Activity' takes place within a building or parcel.
+
+The 'Industrial Functional Unit' for the SIA study is:
+
+__The premises where a uniform industrial activity takes place, disregarding the type of tenure or physical structure of the space that accommodates the activity.__
+
 ### Data sources
 
 There exist a variety of available open and propietary data sources relevant for the SIA study. 
