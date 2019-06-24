@@ -3,7 +3,7 @@
 ### Data sources
 
 There exist a variety of available open and propietary data sources relevant for the SIA study. 
-In order to come up with a systematic methodology two criteria were defined: precision and accuracy.
+In order to come up with a systematic methodology of data selection two criteria were defined: precision and accuracy.
 
 To identify where do industrial activities take place two key data set sets were analysed:
 
