@@ -35,7 +35,7 @@ Not all the cadastral parcels overlayed with the industrial polygons so the foll
 
 ### Data generalization
 
-As a result of the previous operation we get 1922 features. However, a visual inspection of some features shows some innacuracies
+As a result of the previous operation we get 1922 features from the parcel layer. However, a visual inspection of some features shows some innacuracies
 specially in the polygons classified as NAL. This innacuracies correspond to: unclear industrial activity according to street level observation 
 (Google Street View) and parcel boundaries shape that describe a building rather than a parcel or 'site' boundary.
 
@@ -46,9 +46,11 @@ The innacurate polygons have a similar LU_CODE_20 attribute of '9' and '25'. The
 ##### Parcels
 - Delete parcels with area < 10m2 (72 features)
 
+Next step the polygons of the building layer (OS Mastermap) that overlay with the parcels layers are selected n = 2958 buildings.
+
 ##### Buildings
-- Delete polygons <= 15m2 (563 features) . 
-- Delete 'elongated' polygons (37 features) . 
+- Delete polygons <= 15m2 (563 features)
+- Delete 'elongated' polygons (37 features). New n = 2358
 
 
 
