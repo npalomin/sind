@@ -1,0 +1,36 @@
+## Spatial data preprocessing
+
+### Data sources
+
+There exist a variety of available open and propietary data sources relevant for the SIA study. 
+In order to come up with a systematic methodology two criteria were defined: precision and accuracy.
+
+To identify where do industrial activities take place two key data set sets were analysed:
+
+|Name|Description|URL|
+|-|-|-|
+|INSPIRE Index Polygons|Cadastral parcels. Registered extent of freehold properties in England and Wales|[https://www.gov.uk/government/publications/southwark-inspire-index-polygon-data](here)|
+|GLA_Ind_Land_Baseline_2015_Designations|Industrial polygons by designation|Propietary GLA (Alex Marsh)|
+
+Both datasets have spatial resolution at parcel level (1:1000). However, the __cadastral parcels__ have a more detailed subdivision which is
+more appropiate for the survey of __Industrial Functional Units__
+
+### Data integration
+
+Both datasets were intergrated and combined to get a merge of parcel polygons with industrial designations.
+Not all the cadastral parcels overlayed with the industrial polygons so the following geoproecesses were applied:
+
+- Intersect parcels with industrial polygons (Parcels which 'point on surface' are within industrial polygons)
+- Add industrial polygons that are _outside_ the parecel polygons definition.
+
+### Data generalization
+
+As a result of the previous operation we get 1922 features. However, a visual inspection of some features shows some innacuracies
+specially in the polygons classified as NAL. This innacuracies correspond to: doubtful industrial activity according to street level observation 
+(Google Street View) and parcel boundaries that describe a building rather than a parcel or 'site' boundary.
+
+The innacurate polygons have a similar LU_CODE_20 attribute of '9' and '25'. Therefore those two classes were filtered from the NALs layer (566 and 74 features respectively)
+
+
+
+
