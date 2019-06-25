@@ -33,3 +33,4 @@ https://data.gov.uk/dataset/ed07b21f-0a33-49e2-9578-83ccbc6a20db/english-town-ce
 https://data.cdrc.ac.uk/dataset/cdrc-2017-retail-centre-boundaries  
 https://www.gov.uk/government/publications/southwark-inspire-index-polygon-data  
 https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/797566/geospatial-data-catalogue-hm-land-registry.csv/preview  
+https://www.london.gov.uk/sites/default/files/gla_migrate_files_destination/london-industrial-land-baseline-final-report%20Nov%202010.pdf  
