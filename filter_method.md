@@ -33,6 +33,8 @@ Not all the cadastral parcels overlayed with the industrial polygons so the foll
 - Intersect parcels with industrial polygons (Parcels which 'point on surface' are within industrial polygons)
 - Add those industrial polygons that are _outside_ the parcel polygons definition.
 
+- Geoprocessing Sequence: Difference, v.clean, minimum enclosing circle, 
+
 ### Data generalization
 
 As a result of the previous operation we get 1922 features from the parcel layer. However, a visual inspection of some features shows some innacuracies
