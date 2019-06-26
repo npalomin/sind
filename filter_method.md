@@ -42,17 +42,17 @@ specially in the polygons classified as NAL. This innacuracies correspond to: un
 (Google Street View) and parcel boundaries shape that describe a building rather than a parcel or 'site' boundary.
 
 #### Semantic generalization
-The innacurate polygons have a similar LU_CODE_20 attribute of '9' and '25'. Therefore those two classes were filtered from the NALs layer (566 and 74 features respectively)
+~~The innacurate polygons have a similar LU_CODE_20 attribute of '9' and '25'. Therefore those two classes were filtered from the NALs layer (566 and 74 features respectively)~~
 
 #### Geometric generalization
 ##### Parcels
-- Delete parcels with area < 10m2 (72 features)
+- Delete parcels with area < 10m2 (172 features)
 
 Next step the polygons of the building layer (OS Mastermap) that overlay with the parcels layers are selected n = 2958 buildings.
 
 ##### Buildings
-- Delete polygons <= 15m2 (563 features)
-- Delete 'elongated' polygons (37 features). New n = 2358
+- ~~Delete polygons <= 15m2 (563 features)~~
+- ~~Delete 'elongated' polygons (37 features). New n = 2358~~
 
 ### Draft interactive maps
 
