@@ -1,9 +1,10 @@
 Southwark Industrial Audit
 ================
 
-### Mini-reports
+### Reports, maps, documents, outputs
 |Description|URL|
 |-|-|
+|Training spatial data|https://github.com/npalomin/sind/blob/master/training.md#sia-field-survey-training|
 |Filter 2 map|https://npalomin.github.io/sind/filter_2.html|
 |Filter 1 map|https://npalomin.github.io/sind/filter_1.html|
 |Spatial data preprocessing|[here](https://github.com/npalomin/sind/blob/master/filter_method.md#spatial-data-preprocessing)|
