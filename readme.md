@@ -4,13 +4,16 @@ Southwark Industrial Audit
 ### Mini-reports
 |Description|URL|
 |-|-|
-|Where to g - 17 jun map|https://npalomin.github.io/sind/sal.html |
+|Filter 2 map|https://npalomin.github.io/sind/filter_2.html|
+|Filter 1 map|https://npalomin.github.io/sind/filter_1.html|
+|Spatial data preprocessing|[here](https://github.com/npalomin/sind/blob/master/filter_method.md#spatial-data-preprocessing)|
+|GLA_Ind_Land quality analysis|[here](https://docs.google.com/presentation/d/1DnjWaGwhXkcFtgKHli-MIJciEcRRGw-tJAOWjBPmhWg/edit?usp=sharing)|
 |Study area layers|[here](https://docs.google.com/presentation/d/14-j5rHuWuZWiHPHQZ-ugH3pdClwpxdMFFUdfvMfjxu4/edit?usp=sharing)|
 |Study of Industrial definition by SIC code|https://npalomin.github.io/sind/SIC_industrial/SIC_industrial.html|
-|GLA_Ind_Land quality analysis|[here](https://docs.google.com/presentation/d/1DnjWaGwhXkcFtgKHli-MIJciEcRRGw-tJAOWjBPmhWg/edit?usp=sharing)|
-|Spatial data preprocessing|[here](https://github.com/npalomin/sind/blob/master/filter_method.md#spatial-data-preprocessing)|
-|Filter 1 map|https://npalomin.github.io/sind/filter_1.html|
-|Filter 2 map|https://npalomin.github.io/sind/filter_2.html|
+|Where to go - 17 jun map|https://npalomin.github.io/sind/sal.html |
+
+
+
 
 
 ### Links
