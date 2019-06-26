@@ -47,6 +47,7 @@ specially in the polygons classified as NAL. This innacuracies correspond to: un
 #### Geometric generalization
 ##### Parcels
 - Delete parcels with area < 10m2 (172 features)
+/Volumes/ucfnnap/SINDA/GIS_analysis/PARCELS_land_registry_ind_land.shp
 
 Next step the polygons of the building layer (OS Mastermap) that overlay with the parcels layers are selected n = 2958 buildings.
 
