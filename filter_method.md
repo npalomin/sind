@@ -55,6 +55,15 @@ Next step the polygons of the building layer (OS Mastermap) that overlay with th
 - Delete polygons <= 15m2 (526 features)
 - Delete 'elongated' polygons (31 features). New n = 2128
 
+Buldings number by Type of Industrial Designated Land
+
+|Type | n|
+|-|-|
+|SIL|616|
+|LSIS|146|
+|NAL|1366|
+
+
 ### Draft interactive maps
 
 #### Filter 1
