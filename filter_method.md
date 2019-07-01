@@ -64,7 +64,7 @@ Buildings number by Type of Industrial Designated Land
 |NAL|1366|762 - 2128|
 
 
-### Draft interactive maps
+### Draft interactive maps (Mon 6/24/2019 11:14PM) __NOT UPDATED__
 
 #### Filter 1
 As described above (n = 2358)
