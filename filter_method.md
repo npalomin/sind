@@ -52,8 +52,8 @@ specially in the polygons classified as NAL. This innacuracies correspond to: un
 Next step the polygons of the building layer (OS Mastermap) that overlay with the parcels layers are selected n = 2958 buildings.
 
 ##### Buildings
-- ~~Delete polygons <= 15m2 (563 features)~~
-- ~~Delete 'elongated' polygons (37 features). New n = 2358~~
+- Delete polygons <= 15m2 (526 features)
+- Delete 'elongated' polygons (31 features). New n = 2128
 
 ### Draft interactive maps
 
