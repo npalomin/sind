@@ -57,11 +57,11 @@ Next step the polygons of the building layer (OS Mastermap) that overlay with th
 
 Buildings number by Type of Industrial Designated Land
 
-|Type | n|
-|-|-|
-|SIL|616|
-|LSIS|146|
-|NAL|1366|
+|Type | n|FUC range|
+|-|-|-|
+|SIL|616|1 - 616|
+|LSIS|146|617 - 762|
+|NAL|1366|762 - 2128|
 
 
 ### Draft interactive maps
