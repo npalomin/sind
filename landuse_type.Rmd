@@ -1,0 +1,97 @@
+---
+title: "Study of Land Use and Type of selected buildings"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+---
+<style>
+* {
+  font-family: "Palatino"
+}
+
+h1{
+    font-size: 190%
+}
+
+h2{
+    font-size: 160%
+}
+
+h3{
+    font-size: 150%
+}
+
+h4{
+    font-size: 130%
+}
+
+h5{
+    font-size: 110%
+}
+
+h6{
+    font-size: 90%
+}
+</style>
+
+
+# Introduction
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#install.packages("summarytools")
+library(summarytools)
+library(tidyverse)
+library(htmlTable)
+```
+
+This report analyses the 'Land Use' and 'Industrial Type' of the units (building polygons, n = 2128) selected for the SIA survey after data pre-processing (geometric generalisation)
+
+```{r}
+df <- geojsonio::geojson_read("BUILDINGS_ed.geojson", what = "sp")
+```
+
+```{r include=FALSE}
+dff <- as.data.frame(df)
+str(dff)
+```
+
+```{r}
+ST1 <- dff %>% 
+  group_by(TYPE_2015, landUSE) %>%
+  summarise(Frequency = n(), "Area(sqm)" = round(sum(b_area),0)) %>%
+  arrange(desc(Frequency), .by_group = TRUE)
+colnames(ST1) <- c("Ind. Designation", "Land Use", "Count", "Area(sqm)")
+```
+
+```{r}
+htmlTable(ST1, caption="SIA building polygons summary", col.columns = c("none", "#F7F7F7"), css.cell="padding-left:1em; padding-right:1em;", align = "lrrr", rnames=F)
+```
+
+```{r}
+breaks_sdm <- c(0,15,20,50,100,500,1000,5000,10000,50000,200000)
+
+NAL_S <- dff %>%
+  filter(TYPE_2015 == "NAL") %>%
+  select(b_area, LU_Co_2015, landUSE)
+
+nalsDF <- as.data.frame(table(cut(NAL_S$b_area, breaks_sdm)))
+
+htmlTable(nalsDF, caption="NALs count by sqm range", col.columns = c("none", "#F7F7F7"), css.cell="padding-left:1em; padding-right:1em;", align = "lrrr", rnames=F, tfoot="0,15,20,50,100,500,1000,5000,10000,50000,200000")
+```
+
+
+```{r}
+breaks_sdm1 <- c(0,15,20,50,100,500,1000)
+
+uti <- NAL_S %>%
+  filter(landUSE == "Utilities")
+
+utDF <- as.data.frame(table(cut(uti$b_area, breaks_sdm1)))
+  
+```
+
+
