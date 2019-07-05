@@ -91,7 +91,9 @@ uti <- NAL_S %>%
   filter(landUSE == "Utilities")
 
 utDF <- as.data.frame(table(cut(uti$b_area, breaks_sdm1)))
-  
 ```
 
+```{r}
+htmlTable(utDF, caption="Utilities count by sqm range", col.columns = c("none", "#F7F7F7"), css.cell="padding-left:1em; padding-right:1em;", align = "lrrr", rnames=F, tfoot="0,15,20,50,100,500,1000")
+```
 

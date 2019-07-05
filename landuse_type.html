@@ -2186,6 +2186,87 @@ Freq
 </tr>
 </tfoot>
 </table>
+<pre class="r"><code>breaks_sdm1 &lt;- c(0,15,20,50,100,500,1000)
+
+uti &lt;- NAL_S %&gt;%
+  filter(landUSE == &quot;Utilities&quot;)
+
+utDF &lt;- as.data.frame(table(cut(uti$b_area, breaks_sdm1)))</code></pre>
+<pre class="r"><code>htmlTable(utDF, caption=&quot;Utilities count by sqm range&quot;, col.columns = c(&quot;none&quot;, &quot;#F7F7F7&quot;), css.cell=&quot;padding-left:1em; padding-right:1em;&quot;, align = &quot;lrrr&quot;, rnames=F, tfoot=&quot;0,15,20,50,100,500,1000&quot;)</code></pre>
+<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
+<thead>
+<tr>
+<td colspan="2" style="text-align: left;">
+Utilities count by sqm range
+</td>
+</tr>
+<tr>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Var1
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding-left:1em; padding-right:1em; text-align: left;">
+(0,15]
+</td>
+<td style="padding-left:1em; padding-right:1em; text-align: right; background-color: #f7f7f7;">
+0
+</td>
+</tr>
+<tr>
+<td style="padding-left:1em; padding-right:1em; text-align: left;">
+(15,20]
+</td>
+<td style="padding-left:1em; padding-right:1em; text-align: right; background-color: #f7f7f7;">
+115
+</td>
+</tr>
+<tr>
+<td style="padding-left:1em; padding-right:1em; text-align: left;">
+(20,50]
+</td>
+<td style="padding-left:1em; padding-right:1em; text-align: right; background-color: #f7f7f7;">
+124
+</td>
+</tr>
+<tr>
+<td style="padding-left:1em; padding-right:1em; text-align: left;">
+(50,100]
+</td>
+<td style="padding-left:1em; padding-right:1em; text-align: right; background-color: #f7f7f7;">
+31
+</td>
+</tr>
+<tr>
+<td style="padding-left:1em; padding-right:1em; text-align: left;">
+(100,500]
+</td>
+<td style="padding-left:1em; padding-right:1em; text-align: right; background-color: #f7f7f7;">
+40
+</td>
+</tr>
+<tr>
+<td style="padding-left:1em; padding-right:1em; border-bottom: 2px solid grey; text-align: left;">
+(500,1e+03]
+</td>
+<td style="padding-left:1em; padding-right:1em; border-bottom: 2px solid grey; text-align: right; background-color: #f7f7f7;">
+7
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td colspan="2">
+0,15,20,50,100,500,1000
+</td>
+</tr>
+</tfoot>
+</table>
 </div>
 
 
