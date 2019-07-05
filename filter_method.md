@@ -35,7 +35,7 @@ Not all the cadastral parcels overlayed with the industrial polygons so the foll
 
 ### Data generalization
 
-As a result of the previous operation we get 1922 features from the parcel layer. However, a visual inspection of some features shows some innacuracies specially in the polygons classified as NAL. This innacuracies correspond to: unclear industrial activity according to street level observation (Google Street View) and parcel boundaries shape with too much detail that describe a building rather than a parcel or 'site' boundary.
+As a result of the previous operation we get 1922 features from the parcel layer. However, a visual inspection of some features shows some innacuracies specially in the polygons classified as NAL. This innacuracies correspond to: unclear industrial activity according to street level observation (Google Street View) and parcel boundaries shape with too much detail that describe a building rather than a parcel or 'site' boundary (e.g.: docks).
 
 Similarly, the analysis of the bulidng layer has polygons that are too small or have 'elongated' shapes were it is unlikely that an industrial activity might take place.
 
