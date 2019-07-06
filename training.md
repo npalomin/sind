@@ -19,6 +19,8 @@ The basemap to conduct the survey is composed originally of two polygon layers: 
 
 ![basemap](https://npalomin.github.io/sind/timg/bmap.png)
 
+<img src="https://npalomin.github.io/sind/timg/bmap.pnge" width="100">
+
 ## Functional Unit Profile
 To conduct the SIA survey we will use a Gographic Information System (GIS) database approach. Essentially, this means that each of the "Functional Units" polygons (spatial data) has a set of associated attributes (e.g. the answers to the survey's questions) structured as a table. In the table each row corresponds to one polygon (with unique identifier) and each column corresponds to an attribute of the polygon. 
 
