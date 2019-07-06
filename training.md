@@ -24,7 +24,7 @@ To conduct the SIA survey we will use a Gographic Information System (GIS) datab
 
 <img src="https://npalomin.github.io/sind/timg/pol_tab.png" width="700">
 
-The "Functional Unit" profile is the set of spatial data(polygons) and tabular information collected, and in some cases updated or created, by the surveyor. The "Exterior" units polygons data is also part of the "Funcional Unit" profile, although they have no associated set of questions. It is expected that the "Exterior" units spatial data is verified or upadated during the survey to make it consistent with the corresponding "Functional Unit".
+The "Functional Unit" profile is the set of tabular information collected and the spatial data(polygons), which in some cases is updated or created by the surveyor. The "Exterior" units polygons data is also part of the "Funcional Unit" profile, although they have no associated set of questions. It is expected that the "Exterior" units spatial data is also verified or upadated during the survey to make it consistent with the corresponding "Functional Unit".
 
 <img src="https://npalomin.github.io/sind/timg/exter.png" width="700">
 
@@ -33,16 +33,18 @@ The survey questions are classified according to the method used to obtain the a
 
 Each surveyor will be assigned one or more basemap sheets that correspond to a cell of a grid that covers the study area of Southwark. The surveyor will be responsible of developing the __Functional Unit Profile__ for all the units surveyed that are contained on the basemap sheets assigned.
 
+<img src="https://npalomin.github.io/sind/timg/bm_sh.png" width="700">
+
 ### Survey materials
 To conduct the survey you will have a hard copy of the basemap sheets showing the "Functional Units" polygons labelled with their __Functional Unit Code__ and the "Exterior" units polygons. Additionally, you will have the questions of the survey loaded in your EpiCollect app accesible through a smartphone. 
 
-<img src="https://npalomin.github.io/sind/timg/bm_sh.png" width="700">
-
 <img src="https://npalomin.github.io/sind/timg/bm_shd.png" width="700">
 
-Also, the files for updating the spatial data are part of the survey materials. All items are organised according to the following table in the ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) shared folder.
+Also, the digital files for updating the spatial data are part of the survey materials. All items are organised according to the following table in the ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) shared folder.
 
-
+|File name|Description|
+|:-|:-|
+|Basemap sheets catalog|[Gridded map with basemap sheets numbers](https://drive.google.com/open?id=1D2G4zXIH_byx1Ua_rLQDYPSRwjX_9Jys)|
 
 ### Survey workflow
 To conduct the survey is necessary to follow the next sequence in strict order.
