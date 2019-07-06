@@ -17,16 +17,16 @@ disregarding the type of tenure or physical structure of the space that accommod
 ## Basemap
 The basemap to conduct the survey is composed originally of two polygon layers: "Building" and "Parcel" which we conceptualize as "Functional Unit" and "Exterior" respectively. Polygons are closed shapes from which certain geometric properties can be derived (e.g. area, perimenter). There are more than 1000 "Functional Units" polygons on the basemap of the survey area each of which have a unique identifier, the __Functional Unit Code(FUC)__. Similarly, "Exterior" units polygons have a unique identifier, and they can have a one-to-many realtionship with the "Functional Units" (i.e. multi-units industrial estates).
 
-<img src="https://npalomin.github.io/sind/timg/bmap.png" width="650">
+<img src="https://npalomin.github.io/sind/timg/bmap.png" width="700">
 
 ## Functional Unit Profile
 To conduct the SIA survey we will use a Gographic Information System (GIS) database approach. Essentially, this means that each of the "Functional Units" polygons (spatial data) has a set of associated attributes (e.g. the answers to the survey's questions) structured as a table. In the table each row corresponds to one polygon (with unique identifier) and each column corresponds to an attribute of the polygon. 
 
-![gis](https://npalomin.github.io/sind/timg/pol_tab.png)
+<img src="https://npalomin.github.io/sind/timg/pol_tab.png" width="700">
 
 The "Functional Unit" profile is the set of spatial data(polygons) and tabular information collected, and in some cases updated or created, by the surveyor. The "Exterior" units polygons data is also part of the "Funcional Unit" profile, although they have no associated set of questions. It is expected that the "Exterior" units spatial data is verified or upadated during the survey to make it consistent with the corresponding "Functional Unit".
 
-![exterior](https://npalomin.github.io/sind/timg/exter.png)
+<img src="https://npalomin.github.io/sind/timg/exter.png" width="700">
 
 ## Conducting the survey
 The survey questions are classified according to the method used to obtain the answer in: Observation, Interaction and Desktop. The collection of spatial data is mainly based on direct "Observation" (i.e. what you see on site) and "Desktop" (updating spatial data from your field notes). For the spatial data "Desktop" tasks you will be able to access the survey polygons in vector data digital format ("Functional Unit" and "Exterior") and you are expected to edit them using a Geographic Informaton System(GIS) software package QGIS. 
@@ -36,9 +36,9 @@ Each surveyor will be assigned one or more basemap sheets that correspond to a c
 ### Survey materials
 To conduct the survey you will have a hard copy of the basemap sheets showing the "Functional Units" polygons labelled with their __Functional Unit Code__ and the "Exterior" units polygons. Additionally, you will have the questions of the survey loaded in your EpiCollect app accesible through a smartphone. 
 
-![org](https://npalomin.github.io/sind/timg/bm_sh.png)
+<img src="https://npalomin.github.io/sind/timg/bm_sh.png" width="700">
 
-![sheet](https://npalomin.github.io/sind/timg/bm_shd.png)
+<img src="https://npalomin.github.io/sind/timg/bm_shd.png" width="700">
 
 Also, the files for updating the spatial data are part of the survey materials. All items are organised according to the following table in the ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) shared folder.
 
