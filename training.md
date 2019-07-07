@@ -113,13 +113,13 @@ Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nick
 
 9. Draw by clicking with the mouse left click and finish the polygon with the mouse right click. Add the corresponding new FUC for the polygon you created (e.g. create two new polygons '12190001' and '12190002').
 
-10. Select and delete the 'original' polygon (FUC '1219'). Click on button "Select Features by area or single click", select the corresponding polygon (would be highlighted in yellow) and then click on the "Delete Selected" button. 
+10. Select and delete the 'original' polygon (FUC '1209'). Click on button "Select Features by Value...", then in the "FUC" box write the code you want to delete (e.g. 1209) / Close (thw window), and then click on the "Delete Selected" button. 
 
 11. Stop edditing by clicking again on the yellow pencil button and save changes.
 
-12. Export the features layer with a new name. Select layer on the layer panel [mouse rigth click] / Export... / Save Feature As / File name... / (select the "FUC profiles" folder). Save as: *original layer name* + _ + *your nickname* (e.g. b_sheet_32_nicolas)
+12. Export the features layer with a new name. Select layer on the layer panel [mouse rigth click] / Export... / Save Feature As / File name... / (select the SIA_mapping / BUILDINGS (or PARCELS) folder). Save as: *original layer name* + _ + *your nickname* (e.g. b_training_nicolas or b_sheet_32_nicolas)
 
-13. Upload your files (e.g. page_32_nicolas) to the corresponding folder [here](https://drive.google.com/open?id=1eFzIlC-bD0ztfXzds9wJEkErAyvOm7E5) / 'New' button / File upload. Verify that you are uploading to the appropriate folder (BUILDINGS or PARCELS) and that the content is not duplicated. 
+13. Upload your files (e.g. b_training_nicolas or b_sheet_32_nicolas) to the corresponding folder [here](https://drive.google.com/open?id=1eFzIlC-bD0ztfXzds9wJEkErAyvOm7E5) / 'New' button / File upload. Verify that you are uploading to the appropriate folder (BUILDINGS or PARCELS) and that the content is not duplicated. 
 
 14. Reapeat from point 8 choosing the "PARCELS" layer this time (p_training)
 
