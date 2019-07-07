@@ -167,9 +167,9 @@ Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nick
 
 ---
 
-14. Reapeat from point 8 choosing the "PARCELS" layer this time (p_training)
+14. Reapeat from point 8 choosing the "PARCELS" layer this time (p_training). On the instructions replace "FUC" by "PID" (parcel id) where appropiate.
 
-15. To edit the "PARCELS" layers you'll need to create new codes for the new polygons you create. To see the parcel unique indentifier click on the "Identify Results" button and then on the polygon you want to query. A window "Identify Results" will pop-up and you will see the parcel code next to PID. Follow the FUC code creation rule to create new codes (e.g. '4560001').
+15. To edit the "PARCELS" layers you'll need to create new codes for the new polygons you create. To see the parcel unique indentifier click on the "Identify Results" button and then on the polygon you want to query. A window "Identify Results" will pop-up and you will see the parcel code next to __PID__. Follow the FUC-code-creation rule to create new codes (e.g. '4560001').
 
 
 
