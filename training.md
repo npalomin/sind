@@ -54,7 +54,7 @@ Each surveyor will be assigned one or more basemap sheets that correspond to a c
 <img src="https://npalomin.github.io/sind/timg/bm_sh.png" width="700">
 
 ### Survey materials
-To conduct the survey you will have a hard copy of the __basemap sheets__ showing the "Functional Units" polygons labelled with their __Functional Unit Code__ and the "Exterior" units polygons. Each sheet has a unique page number on the bottom right corner (question number 1.1). Additionally, you will have the questions of the survey loaded on your EpiCollect app accesible through a smartphone. 
+To conduct the survey you will have a hard copy of the __basemap sheets__ showing the "Functional Units" polygons labelled with their __Functional Unit Code__ and the "Exterior" units polygons. Each sheet has a unique page number on the bottom right corner (question number 1.1 on the EpiCollect form). Additionally, you will have the questions of the survey loaded on your EpiCollect app accesible through a smartphone. 
 
 <img src="https://npalomin.github.io/sind/timg/bm_shd.png" width="700">
 
