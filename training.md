@@ -176,4 +176,4 @@ Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nick
 
 <img src="https://npalomin.github.io/sind/timg/identify.png" width="700">
 
-
+---
