@@ -71,11 +71,11 @@ Also, the digital files for updating the spatial data are part of the survey mat
 ### Survey workflow
 To conduct the survey is necessary to follow the next sequence in strict order.
 
-1. Study the basemap sheet to identify a convenient survey route. Use online tools to get gain knowledge of the area you will be surveying (e.g.[Google Maps 3D views](https://www.google.com/maps/@51.5030104,-0.0896289,255a,35y,335.18h,37.32t/data=!3m1!1e3)
-2. While on site assess the correspondance between the "Functional Units" polygons on the basemap and the industrial activity you are observing. Hint: Look for clues that can help with your assesment (building directory, business signs, etc.)
+1. Study the basemap sheet to identify a convenient survey route. Use online tools to get gain knowledge of the area you will be surveying (e.g.[Google Maps 3D views](https://www.google.com/maps/@51.5030104,-0.0896289,255a,35y,335.18h,37.32t/data=!3m1!1e3))
+2. While on site assess the correspondance between the "Functional Units" polygons on the basemap sheet and the industrial activity you are observing. Hint: Look for clues that can help with your assesment (building directory or intercom, business signs, etc.)
 3. If there's a one-to-one clear correspondance go to step 5. If not, you will need to create new "Functional Units" (go to step 4)
 4. To create a new "Functional Unit", first outline the polygon shape of the unit or units you're observing in your basemap sheet and label these with a new __Functional Unit Code(FUC)__ according to the following rule: original FUC + a unique 4 digit number from 1 to n (including preceding zeros). For example, if your basemap shows one polygon with FUC=76, but you observe that there are 3 "Functional Units" within that polygon, the new ones will be labelled '760001', '760002', '760003'.
-5. On the EpiCollect app conduct the survey by recording the __Functional Unit Code__ of the corresponding polygon. Note: In the previous example, this corresponds to one of the 3 new created FUCs. The 'original' FUC=76 will not be included on the survey.
+5. On the EpiCollect app __conduct the survey__ by recording the __Functional Unit Code__ of the corresponding polygon. Note: In the previous example, this corresponds to one of the 3 new created FUCs. The 'original' FUC=76 will not be included on the survey. The first questions can be answered from direct observation (e.g. street name, number). 
 6. Assess the correspondance between the "Exterior" units on the basemap and the demarcations of the land you are observing (this can be fences, light divisions, paint, etc)
 7. In cases that apply, outline the divisions of the "Exterior" units on your map sheet.
 
@@ -95,7 +95,7 @@ Before starting create a folder on your computer "SIA_mapping" and download the 
 - b_training.gpkg (from the folder "BUILDINGS")
 - p_training.gpkg (from the folder "PARCELS")
 
-<img src="https://npalomin.github.io/sind/timg/1down.png" width="700">
+<img src="https://npalomin.github.io/sind/timg/1down.png" width="900">
 
 Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nickname*" and "PARCELS_*your nickname*"
 
