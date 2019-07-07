@@ -89,7 +89,9 @@ For the surveys in which you created new "Functional Unit" polygons and updated 
 
 <img src="https://npalomin.github.io/sind/timg/notes.png" width="550">
 
-Before starting create a folder on your computer "SIA_mapping" and download the following files from the ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) shared folder. 
+__Before starting:__ 
+
+i) Create a folder on your computer "SIA_mapping" and download the following files from the ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) shared folder. 
 
 - building_st.qml
 - parcel_st.qml
@@ -100,7 +102,7 @@ Before starting create a folder on your computer "SIA_mapping" and download the 
 
 <img src="https://npalomin.github.io/sind/timg/1down.png" width="900">
 
-Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nickname*" and "PARCELS_*your nickname*"
+ii) Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nickname*" and "PARCELS_*your nickname*"
 
 ---
 
