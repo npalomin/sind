@@ -162,6 +162,8 @@ Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nick
 
 <img src="https://npalomin.github.io/sind/timg/att.png" width="700">
 
+---
+
 13. Export the features layer with a new name. Select layer on the layer panel [mouse rigth click] / Export... / Save Feature As / File name... / (select the SIA_mapping / BUILDINGS (or PARCELS) folder). Save as: *original layer name* + _ + *your nickname* (e.g. b_training_nicolas or b_sheet_32_nicolas)
 
 <img src="https://npalomin.github.io/sind/timg/10export.png" width="700">
