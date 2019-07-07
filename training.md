@@ -150,9 +150,9 @@ Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nick
 
 ---
 
-10. Select and delete the 'original' polygon (FUC '1209'). Click on button "Select Features by Value...", then in the "FUC" box write the code you want to delete (e.g. 1209) / Close (thw window), and then click on the "Delete Selected" button. 
+10. Select and delete the 'original' polygon (FUC '1209'). Click on button "Select Features by Value...", then in the "FUC" box write the code you want to delete (e.g. 1209) / Close (the window), and then click on the "Delete Selected" button. 
 
-<img src="https://npalomin.github.io/sind/timg/9delete.png" width="700">
+<img src="https://npalomin.github.io/sind/timg/9delete1.png" width="700">
 
 ---
 
