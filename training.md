@@ -1,8 +1,16 @@
+---
+Title: |
+    Southwark Industrial Audit(SIA) field survey training
+authors:
+- Nicolas Palominos
+Date: Jul-2019
+---
+
 # Southwark Industrial Audit(SIA) field survey training
 
 ## Context
 This training covers the steps to conduct a field survey of industrial "Functional Units" in Southwark.
-The focus is on collecting information about the physical characteristics of the "Building" and "Parcel" where indusrial activities take place.
+The focus is on __collecting information about the physical characteristics__ of the "Building" and "Parcel" where indusrial activities take place.
 
 ## Key definitions
 > _Building_. Permanent roofed construction, usually with walls (OS Mastermap Topography Layer).
@@ -15,7 +23,7 @@ disregarding the type of tenure or physical structure of the space that accommod
 > _Exterior_. A demarcated private land that contains one or more functional units.
 
 ## Basemap
-The basemap to conduct the survey is composed originally of two polygon layers: "Building" and "Parcel" which we conceptualize as "Functional Unit" and "Exterior" respectively. Polygons are closed shapes from which certain geometric properties can be derived (e.g. area, perimenter). There are more than 1000 "Functional Units" polygons on the basemap of the survey area each of which have a unique identifier, the __Functional Unit Code(FUC)__. Similarly, "Exterior" units polygons have a unique identifier, and they can have a one-to-many realtionship with the "Functional Units" (i.e. multi-units industrial estates).
+The basemap to conduct the survey is composed originally of two polygon layers: "Building" and "Parcel" which we conceptualize as "Functional Unit" and "Exterior" respectively. Polygons are closed shapes from which certain geometric properties can be derived (e.g. area, perimenter). There are more than 1000 "Functional Units" polygons on the basemap of the survey area each of which have a unique identifier, the __Functional Unit Code(FUC)__. Similarly, "Exterior" units polygons have a unique identifier, however these are less polygons because they can have a one-to-many realtionship with the "Functional Units" (i.e. multi-units industrial estates).
 
 <img src="https://npalomin.github.io/sind/timg/bmap.png" width="700">
 
@@ -29,9 +37,9 @@ The "Functional Unit" profile is the set of tabular information collected and th
 <img src="https://npalomin.github.io/sind/timg/exter.png" width="700">
 
 ## Conducting the survey
-The survey questions are classified according to the method used to obtain the answer in: Observation, Interaction and Desktop. The collection of spatial data is mainly based on direct "Observation" (i.e. what you see on site) and "Desktop" (updating spatial data from your field notes). For the spatial data "Desktop" tasks you will be able to access the survey polygons in vector data digital format ("Functional Unit" and "Exterior") and you are expected to edit them using a Geographic Informaton System(GIS) software package QGIS. 
+The survey questions are classified according to the method used to obtain the answer in: __Verified__ (from direct observation) and __Desktop__. The collection of spatial data uses both methods: "Verified" (i.e. what you see on site) and "Desktop" (updating spatial data from your field notes). For the spatial data "Desktop" tasks you will be able to access the survey polygons in vector data digital format ("Functional Unit" and "Exterior") and you are expected to edit them using a Geographic Informaton System(GIS) software package QGIS. 
 
-Each surveyor will be assigned one or more basemap sheets that correspond to a cell of a grid that covers the study area of Southwark. The surveyor will be responsible of developing the __Functional Unit Profile__ for all the units surveyed that are contained on the basemap sheets assigned.
+Each surveyor will be assigned one or more basemap sheets that correspond to a cell of a grid that covers the study area of Southwark. The surveyor will be responsible of developing the __Functional Unit Profile__ for all the units that are contained on the basemap sheets assigned.
 
 <img src="https://npalomin.github.io/sind/timg/bm_sh.png" width="700">
 
