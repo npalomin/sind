@@ -58,7 +58,7 @@ To conduct the survey you will have a hard copy of the __basemap sheets__ showin
 
 <img src="https://npalomin.github.io/sind/timg/bm_shd.png" width="700">
 
-Also, the digital files for updating the spatial data are part of the survey materials. All items are organised according to the following table in the ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) shared folder.
+Also, the digital files for updating the spatial data are part of the survey materials. All items are organised according to the following table in the ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) shared folder (Note: to open <- link on a new tab *click on link + control key* on Windows, or *click on link + cmd key* on Mac).
 
 |File name|Description|
 |:-|:-|
@@ -91,7 +91,7 @@ For the surveys in which you created new "Functional Unit" polygons and updated 
 
 __Before starting:__ 
 
-i) Create a folder on your computer "SIA_mapping" and download the following files from the ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) shared folder. 
+i) Create a folder on your computer "SIA_mapping" and download the following files from the ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) shared folder (Note: to open <- link on a new tab *click on link + control key* on Windows, or *click on link + cmd key* on Mac).
 
 - building_st.qml
 - parcel_st.qml
