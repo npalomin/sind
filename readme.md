@@ -5,7 +5,7 @@ Southwark Industrial Audit
 |Description|URL|
 |-|-|
 |LU_CODE_20 (from GLA)| https://npalomin.github.io/sind/2015_ind_land.html|
-|Spatial Data Training|[here](https://github.com/npalomin/sind/blob/master/training.md#sia-field-survey-training)|
+|Spatial Data Training|http://tiny.cc/sia_cass|
 |Filter 2 map|https://npalomin.github.io/sind/filter_2.html|
 |Filter 1 map|https://npalomin.github.io/sind/filter_1.html|
 |Spatial data preprocessing|[here](https://github.com/npalomin/sind/blob/master/filter_method.md#spatial-data-preprocessing)|
