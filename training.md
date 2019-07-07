@@ -78,7 +78,7 @@ To conduct the survey is necessary to follow the next sequence in strict order.
 5. On the EpiCollect app __conduct the survey__ by recording the __Functional Unit Code__ of the corresponding polygon. Note: In the previous example, this corresponds to one of the 3 new created FUCs. The 'original' FUC=76 will not be included on the survey. The first questions can be answered from direct observation (e.g. street name, number). 
 6. Assess the correspondance between the "Exterior" units on the basemap and the demarcations of the land you are observing (this can be fences, light divisions, paint, etc). In cases that apply, outline the divisions of the "Exterior" units on your map sheet.
 
-<img src="https://npalomin.github.io/sind/timg/wflow.png" width="900">
+<img src="https://npalomin.github.io/sind/timg/wflow.png" width="700">
 
 ---
 
@@ -87,7 +87,7 @@ To conduct the survey is necessary to follow the next sequence in strict order.
 
 For the surveys in which you created new "Functional Unit" polygons and updated the "Exterior" unit polygons (step 4 and 6 of the __Survey workflow__) you will need to edit the spatial data digitally according to your field notes. This process will be conducted using QGIS according to the next steps.
 
-<img src="https://npalomin.github.io/sind/timg/notes.png" width="700">
+<img src="https://npalomin.github.io/sind/timg/notes.png" width="550">
 
 Before starting create a folder on your computer "SIA_mapping" and download the following files from the ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) shared folder. 
 
