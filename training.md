@@ -140,7 +140,7 @@ Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nick
 
 8. To draw new polygons on a layer, select the layer (BUILDING layer then PARCEL layer), turn on the edditing mode (click on the yellow pencil button) and select the Add Polygon Feature (second icon to the right from the yellow pencil).
 
-<img src="https://npalomin.github.io/sind/timg/7edit.png" width="700">
+<img src="https://npalomin.github.io/sind/timg/7edit1.png" width="700">
 
 ---
 
