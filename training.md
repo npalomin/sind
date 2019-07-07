@@ -78,7 +78,7 @@ To conduct the survey is necessary to follow the next sequence in strict order.
 5. On the EpiCollect app __conduct the survey__ by recording the __Functional Unit Code__ of the corresponding polygon. Note: In the previous example, this corresponds to one of the 3 new created FUCs. The 'original' FUC=76 will not be included on the survey. The first questions can be answered from direct observation (e.g. street name, number). 
 6. Assess the correspondance between the "Exterior" units on the basemap and the demarcations of the land you are observing (this can be fences, light divisions, paint, etc). In cases that apply, outline the divisions of the "Exterior" units on your map sheet.
 
-<img src="https://npalomin.github.io/sind/timg/wflow.png" width="700">
+<img src="https://npalomin.github.io/sind/timg/wflow1.png" width="700">
 
 ---
 
