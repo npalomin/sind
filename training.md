@@ -117,9 +117,13 @@ Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nick
 
 <img src="https://npalomin.github.io/sind/timg/4order.png" width="700">
 
+---
+
 4. Add style to the layers. Select layer on the layer panel [mouse rigth click] / Properties... , then at the bottom of the Symbology tab / Style / Load Style... in the next window verify that 'Symbology' and 'Labels' boxes are selected then / File... (browse for the corresponding .qml file -- building, parcel and CONTEXT) Open / Load Style / OK .
 
 <img src="https://npalomin.github.io/sind/timg/5style.png" width="600">
+  
+--- 
   
 5. Explore the map using the wheel of your mouse to pan and zoom. You will see the same information you have on your basemap sheets.
 
@@ -129,29 +133,43 @@ Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nick
 
 <img src="https://npalomin.github.io/sind/timg/6snap.png" width="700">
 
+---
+
 8. To draw new polygons on a layer, select the layer (BUILDING layer then PARCEL layer), turn on the edditing mode (click on the yellow pencil button) and select the Add Polygon Feature (second icon to the right from the yellow pencil).
 
 <img src="https://npalomin.github.io/sind/timg/7edit.png" width="700">
+
+---
 
 9. Draw by clicking with the mouse left click and finish the polygon with the mouse right click. Add the corresponding new FUC for the polygon you created (e.g. create two new polygons '12190001' and '12190002').
 
 <img src="https://npalomin.github.io/sind/timg/8draw.png" width="700">
 
+---
+
 10. Select and delete the 'original' polygon (FUC '1209'). Click on button "Select Features by Value...", then in the "FUC" box write the code you want to delete (e.g. 1209) / Close (thw window), and then click on the "Delete Selected" button. 
 
 <img src="https://npalomin.github.io/sind/timg/9delete.png" width="700">
 
-11. Stop edditing by clicking again on the yellow pencil button and save changes.
+---
+
+11. Stop editing by clicking again on the yellow pencil button and save changes.
 
 12. Export the features layer with a new name. Select layer on the layer panel [mouse rigth click] / Export... / Save Feature As / File name... / (select the SIA_mapping / BUILDINGS (or PARCELS) folder). Save as: *original layer name* + _ + *your nickname* (e.g. b_training_nicolas or b_sheet_32_nicolas)
 
 <img src="https://npalomin.github.io/sind/timg/10export.png" width="700">
 
+---
+
 13. Upload your files (e.g. b_training_nicolas or b_sheet_32_nicolas) to the corresponding folder [here](https://drive.google.com/open?id=1eFzIlC-bD0ztfXzds9wJEkErAyvOm7E5) / 'New' button / File upload. Verify that you are uploading to the appropriate folder (BUILDINGS or PARCELS) and that the content is not duplicated. 
 
 <img src="https://npalomin.github.io/sind/timg/11upload.png" width="700">
 
+---
+
 14. Reapeat from point 8 choosing the "PARCELS" layer this time (p_training)
+
+15. To edit the "PARCELS" layers you'll need to create new codes for the new polygons you create. To see the parcel unique indentifier click on the "Identify Results" button and then on the polygon you want to query. A window "Identify Results" will pop-up and you will see the parcel code next to PID. Follow the FUC code creation rule to create new codes (e.g. '4560001').
 
 
 
