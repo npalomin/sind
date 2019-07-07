@@ -61,8 +61,8 @@ Also, the digital files for updating the spatial data are part of the survey mat
 |File name|Description|
 |:-|:-|
 |Basemap sheets catalog|[Gridded map with basemap sheets numbers](https://drive.google.com/open?id=1D2G4zXIH_byx1Ua_rLQDYPSRwjX_9Jys)|
-|BUILDINGS| Folder with all Building files corresponding to the basemap sheets numbers|
-|PARCELS| Folder with all Parcel files corresponding to the basemap sheets numbers|
+|BUILDINGS| Folder with all Building files corresponding with the basemap sheets numbers|
+|PARCELS| Folder with all Parcel files corresponding with the basemap sheets numbers|
 |CONTEXT.gpkg| File containing urban context data of the study area|
 |*3* .qml files| Files for styling the map in QGIS|
 
@@ -90,18 +90,18 @@ Before starting create a folder on your computer "SIA_mapping" and download the 
 - parcel_st.qml
 - CONTEXT_st.qml
 - CONTEXT.gpkg
-- 0_training.gpkg (from the folder "BUILDINGS")
-- 1_training.gpkg (from the folder "PARCELS")
+- b_training.gpkg (from the folder "BUILDINGS")
+- p_training.gpkg (from the folder "PARCELS")
 
 Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nickname*" and "PARCELS_*your nickname*"
 
 1. Open QGIS.
 
-2. Load spatial data layers (the 3 .gpkg files). Drag and drop, or Layer / Add Layer / Add Vector Layer...
+2. Load spatial data layers (the 3 .gpkg files) in your "SIA_mapping" folder. Drag and drop, or Layer / Add Layer / Add Vector Layer...
 
-3. Organise the layer on the layers panel using drag and drop in the following order '0_training', '1_training', 'CONTEXT'. For the updating the spatial data after the surveys from the notes on your __basemap sheets__ you will find the respective file on the "BUILDINGS" and "PARCELS" folder.
+3. Organise the layer on the layers panel using drag and drop in the following order 'b_training', 'p_training', 'CONTEXT'. For the updating the spatial data after the surveys from the notes on your __basemap sheets__ you will find the respective file on the "BUILDINGS" and "PARCELS" folder.
 
-4. Add style to the layers. Select layer on the layer panel [mouse rigth click] / Properties... , then at the bottom of the Symbology tab / Style / Load Style... in the next window verify that 'Symbology' and 'Labels' boxes are selected then / File... (browse for the corresponding .qml file) Open / Load Style / OK .
+4. Add style to the layers. Select layer on the layer panel [mouse rigth click] / Properties... , then at the bottom of the Symbology tab / Style / Load Style... in the next window verify that 'Symbology' and 'Labels' boxes are selected then / File... (browse for the corresponding .qml file -- building, parcel and CONTEXT) Open / Load Style / OK .
   
 5. Explore the map using the wheel of your mouse to pan and zoom. You will see the same information you have on your basemap sheets.
 
@@ -109,7 +109,7 @@ Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nick
 
 7. Before edditing the polygons, enable snapping / Project / Snapping Options . Click on the magnet icon, change the drop down "Vertex" to "Vertex and Segment" and click on "Snapping on intersection" button. Close the window.
 
-8. To add new polygons to a layer, select the layer, turn on the edditing mode (click on the yellow pencil button) and select the Add Polygon Feature (second icon to the right from the yellow pencil).
+8. To add new polygons to a layer, select the layer (BUILDING layer then PARCEL layer), turn on the edditing mode (click on the yellow pencil button) and select the Add Polygon Feature (second icon to the right from the yellow pencil).
 
 9. Draw by clicking with the mouse left click and finish the polygon with the mouse right click. Add the corresponding new FUC for the polygon you created (e.g. create two new polygons '12190001' and '12190002').
 
@@ -117,11 +117,11 @@ Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nick
 
 11. Stop edditing by clicking again on the yellow pencil button and save changes.
 
-12. Export the features layer with a new name. Select layer on the layer panel [mouse rigth click] / Export... / Save Feature As / File name... / (select the "FUC profiles" folder). Save as: *original layer name* + _ + *your nickname* (e.g. page_32_nicolas)
+12. Export the features layer with a new name. Select layer on the layer panel [mouse rigth click] / Export... / Save Feature As / File name... / (select the "FUC profiles" folder). Save as: *original layer name* + _ + *your nickname* (e.g. b_sheet_32_nicolas)
 
 13. Upload your files (e.g. page_32_nicolas) to the corresponding folder [here](https://drive.google.com/open?id=1eFzIlC-bD0ztfXzds9wJEkErAyvOm7E5) / 'New' button / File upload. Verify that you are uploading to the appropriate folder (BUILDINGS or PARCELS) and that the content is not duplicated. 
 
-14. Reapeat from point 8 choosing the "PARCELS" layer this time (1_training)
+14. Reapeat from point 8 choosing the "PARCELS" layer this time (p_training)
 
 
 
