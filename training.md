@@ -75,14 +75,14 @@ To conduct the survey is necessary to follow the next sequence in strict order.
 4. To create a new "Functional Unit", first outline the polygon shape of the unit or units you're observing in your basemap sheet and label these with a new __Functional Unit Code(FUC)__ according to the following rule: original FUC + a unique 4 digit number from 1 to n (including preceding zeros). For example, if your basemap shows one polygon with FUC=76, but you observe that there are 3 "Functional Units" within that polygon, the new ones will be labelled '760001', '760002', '760003'.
 5. On the EpiCollect app conduct the survey by recording the __Functional Unit Code__ of the corresponding polygon. Note: In the previous example, this corresponds to one of the 3 new created FUCs. The 'original' FUC=76 will not be included on the survey.
 6. Assess the correspondance between the "Exterior" units on the basemap and the demarcations of the land you are observing (this can be fences, light divisions, paint, etc)
-7. In cases that apply, on your map outline the divisions the "Exterior" units.
+7. In cases that apply, outline the divisions of the "Exterior" units on your map sheet.
 
 ---
 
 # PART 2. Updating spatial data in the maps in QGIS
 (*working through an example*)
 
-For the surveys in which you created new "Functional Unit" polygons and updated the "Exterior" unit polygons (step 4 and 6) you will need to edit the spatial data digitally according to your field notes. This process will be conducted using QGIS according to the next steps.
+For the surveys in which you created new "Functional Unit" polygons and updated the "Exterior" unit polygons (step 4 and 6 of the __Survey workflow__) you will need to edit the spatial data digitally according to your field notes. This process will be conducted using QGIS according to the next steps.
 
 Before starting create a folder on your computer "SIA_mapping" and download the following files from the ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) shared folder. 
 
@@ -93,15 +93,25 @@ Before starting create a folder on your computer "SIA_mapping" and download the 
 - b_training.gpkg (from the folder "BUILDINGS")
 - p_training.gpkg (from the folder "PARCELS")
 
+<img src="https://npalomin.github.io/sind/timg/1down.png" width="700">
+
 Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nickname*" and "PARCELS_*your nickname*"
 
 1. Open QGIS.
 
+<img src="https://npalomin.github.io/sind/timg/2qgis.png" width="700">
+
 2. Load spatial data layers (the 3 .gpkg files) in your "SIA_mapping" folder. Drag and drop, or Layer / Add Layer / Add Vector Layer...
+
+<img src="https://npalomin.github.io/sind/timg/3add.png" width="700">
 
 3. Organise the layer on the layers panel using drag and drop in the following order 'b_training', 'p_training', 'CONTEXT'. For the updating the spatial data after the surveys from the notes on your __basemap sheets__ you will find the respective file on the "BUILDINGS" and "PARCELS" folder.
 
+<img src="https://npalomin.github.io/sind/timg/4order.png" width="700">
+
 4. Add style to the layers. Select layer on the layer panel [mouse rigth click] / Properties... , then at the bottom of the Symbology tab / Style / Load Style... in the next window verify that 'Symbology' and 'Labels' boxes are selected then / File... (browse for the corresponding .qml file -- building, parcel and CONTEXT) Open / Load Style / OK .
+
+<img src="https://npalomin.github.io/sind/timg/5style.png" width="600">
   
 5. Explore the map using the wheel of your mouse to pan and zoom. You will see the same information you have on your basemap sheets.
 
@@ -109,17 +119,29 @@ Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nick
 
 7. Before edditing the polygons, enable snapping / Project / Snapping Options . Click on the magnet icon, change the drop down "Vertex" to "Vertex and Segment" and click on "Snapping on intersection" button. Close the window.
 
-8. To add new polygons to a layer, select the layer (BUILDING layer then PARCEL layer), turn on the edditing mode (click on the yellow pencil button) and select the Add Polygon Feature (second icon to the right from the yellow pencil).
+<img src="https://npalomin.github.io/sind/timg/6snap.png" width="700">
+
+8. To draw new polygons on a layer, select the layer (BUILDING layer then PARCEL layer), turn on the edditing mode (click on the yellow pencil button) and select the Add Polygon Feature (second icon to the right from the yellow pencil).
+
+<img src="https://npalomin.github.io/sind/timg/7edit.png" width="700">
 
 9. Draw by clicking with the mouse left click and finish the polygon with the mouse right click. Add the corresponding new FUC for the polygon you created (e.g. create two new polygons '12190001' and '12190002').
 
+<img src="https://npalomin.github.io/sind/timg/8draw.png" width="700">
+
 10. Select and delete the 'original' polygon (FUC '1209'). Click on button "Select Features by Value...", then in the "FUC" box write the code you want to delete (e.g. 1209) / Close (thw window), and then click on the "Delete Selected" button. 
+
+<img src="https://npalomin.github.io/sind/timg/9delete.png" width="700">
 
 11. Stop edditing by clicking again on the yellow pencil button and save changes.
 
 12. Export the features layer with a new name. Select layer on the layer panel [mouse rigth click] / Export... / Save Feature As / File name... / (select the SIA_mapping / BUILDINGS (or PARCELS) folder). Save as: *original layer name* + _ + *your nickname* (e.g. b_training_nicolas or b_sheet_32_nicolas)
 
+<img src="https://npalomin.github.io/sind/timg/10export.png" width="700">
+
 13. Upload your files (e.g. b_training_nicolas or b_sheet_32_nicolas) to the corresponding folder [here](https://drive.google.com/open?id=1eFzIlC-bD0ztfXzds9wJEkErAyvOm7E5) / 'New' button / File upload. Verify that you are uploading to the appropriate folder (BUILDINGS or PARCELS) and that the content is not duplicated. 
+
+<img src="https://npalomin.github.io/sind/timg/11upload.png" width="700">
 
 14. Reapeat from point 8 choosing the "PARCELS" layer this time (p_training)
 
