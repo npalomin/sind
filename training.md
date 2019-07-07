@@ -18,7 +18,7 @@ Date: Jul-2019
 
 ## Context
 This training covers the steps to conduct a field survey of industrial "Functional Units" in Southwark.
-The focus is on __collecting information about the physical characteristics__ of the "Building" and "Parcel" where indusrial activities take place.
+The focus is on __collecting information about the physical characteristics__ of the "Building" and "Parcel" where industrial activities take place.
 
 ## Key definitions
 > _Building_. Permanent roofed construction, usually with walls (OS Mastermap Topography Layer).
