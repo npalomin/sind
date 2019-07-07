@@ -71,7 +71,7 @@ To conduct the survey is necessary to follow the next sequence in strict order.
 
 ---
 
-## Updating Spatial Data
+## Updating Spatial Data *working through an example*
 For the surveys in which you created new "Functional Unit" polygons and updated the "Exterior" unit polygons (step 4 and 6) you will need to edit the spatial data digitally according to your field notes. This process will be conducted using QGIS according to the next steps.
 
 Before starting create a folder on your computer "SIA_mapping" and download the following files from the ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) shared folder. 
@@ -83,7 +83,7 @@ Before starting create a folder on your computer "SIA_mapping" and download the 
 - 0_training.gpkg (from the folder "BUILDINGS")
 - 1_training.gpkg (from the folder "PARCELS")
 
-Inside your "SIA_mapping" create a two new folders: "BUILDINGS_*your nickname*" and "PARCELS_*your nickname*"
+Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nickname*" and "PARCELS_*your nickname*"
 
 1. Open QGIS.
 
