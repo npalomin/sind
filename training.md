@@ -71,7 +71,7 @@ Also, the digital files for updating the spatial data are part of the survey mat
 ### Survey workflow
 To conduct the survey is necessary to follow the next sequence in strict order.
 
-1. Study the basemap sheet to identify a convenient survey route.
+1. Study the basemap sheet to identify a convenient survey route. Use online tools to get gain knowledge of the area you will be surveying (e.g.[Google Maps 3D views](https://www.google.com/maps/@51.5030104,-0.0896289,255a,35y,335.18h,37.32t/data=!3m1!1e3)
 2. While on site assess the correspondance between the "Functional Units" polygons on the basemap and the industrial activity you are observing. Hint: Look for clues that can help with your assesment (building directory, business signs, etc.)
 3. If there's a one-to-one clear correspondance go to step 5. If not, you will need to create new "Functional Units" (go to step 4)
 4. To create a new "Functional Unit", first outline the polygon shape of the unit or units you're observing in your basemap sheet and label these with a new __Functional Unit Code(FUC)__ according to the following rule: original FUC + a unique 4 digit number from 1 to n (including preceding zeros). For example, if your basemap shows one polygon with FUC=76, but you observe that there are 3 "Functional Units" within that polygon, the new ones will be labelled '760001', '760002', '760003'.
