@@ -44,7 +44,7 @@ Each surveyor will be assigned one or more basemap sheets that correspond to a c
 <img src="https://npalomin.github.io/sind/timg/bm_sh.png" width="700">
 
 ### Survey materials
-To conduct the survey you will have a hard copy of the basemap sheets showing the "Functional Units" polygons labelled with their __Functional Unit Code__ and the "Exterior" units polygons. Additionally, you will have the questions of the survey loaded in your EpiCollect app accesible through a smartphone. 
+To conduct the survey you will have a hard copy of the __basemap sheets__ showing the "Functional Units" polygons labelled with their __Functional Unit Code__ and the "Exterior" units polygons. Each sheet has a unique page number on the bottom right corner (question number 1.1). Additionally, you will have the questions of the survey loaded on your EpiCollect app accesible through a smartphone. 
 
 <img src="https://npalomin.github.io/sind/timg/bm_shd.png" width="700">
 
@@ -53,6 +53,10 @@ Also, the digital files for updating the spatial data are part of the survey mat
 |File name|Description|
 |:-|:-|
 |Basemap sheets catalog|[Gridded map with basemap sheets numbers](https://drive.google.com/open?id=1D2G4zXIH_byx1Ua_rLQDYPSRwjX_9Jys)|
+|BUILDINGS| Folder with all Building files corresponding to the basemap sheets numbers|
+|PARCELS| Folder with all Parcel files corresponding to the basemap sheets numbers|
+|CONTEXT.gpkg| File containing urban context data of the study area|
+|*3* .qml files| Files for styling the map in QGIS|
 
 ### Survey workflow
 To conduct the survey is necessary to follow the next sequence in strict order.
@@ -79,7 +83,7 @@ Before starting create a folder on your computer "SIA_mapping" and download the 
 - 0_training.gpkg (from the folder "BUILDINGS")
 - 1_training.gpkg (from the folder "PARCELS")
 
-Inside your "SIA_mapping" create a new folder "FUC profiles_*your nickname*".
+Inside your "SIA_mapping" create a two new folders: "BUILDINGS_*your nickname*" and "PARCELS_*your nickname*"
 
 1. Open QGIS.
 
@@ -105,7 +109,9 @@ Inside your "SIA_mapping" create a new folder "FUC profiles_*your nickname*".
 
 12. Export the features layer with a new name. Select layer on the layer panel [mouse rigth click] / Export... / Save Feature As / File name... / (select the "FUC profiles" folder). Save as: *original layer name* + _ + *your nickname* (e.g. page_32_nicolas)
 
-13. Upload your "FUC profiles_*your nickname*" folder [here](https://drive.google.com/open?id=1eFzIlC-bD0ztfXzds9wJEkErAyvOm7E5) / 'New' button / Folder upload. Verify that your content is not duplicated. 
+13. Upload your "FUC profiles_*your nickname*" folder [here](https://drive.google.com/open?id=1eFzIlC-bD0ztfXzds9wJEkErAyvOm7E5) / 'New' button / Folder upload. Verify that you are uploading to the appropiate folder (BUILDINGS or PARCELS) and that the content is not duplicated. 
+
+14. Reapeat from point 8 choosing the "PARCELS" layer this time (1_training)
 
 
 
