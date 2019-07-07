@@ -106,7 +106,7 @@ i) Create a folder on your computer "SIA_mapping" and download the following fil
 
 <img src="https://npalomin.github.io/sind/timg/1down.png" width="900">
 
-ii) Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nickname*" and "PARCELS_*your nickname*"
+ii) Inside your "SIA_mapping" folder create two new folders: "BUILDINGS_*your nickname*" and "PARCELS_*your nickname*"
 
 ---
 
