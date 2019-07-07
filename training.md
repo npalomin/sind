@@ -8,6 +8,13 @@ Date: Jul-2019
 
 # Southwark Industrial Audit(SIA) field survey training
 
+[PART 1. The paper map, the spatial "functional unit" and QGIS]()
+[PART 2. Updating spatial data in the maps in QGIS](https://github.com/npalomin/sind/blob/master/training.md#updating-spatial-data-working-through-an-example)
+
+---
+
+# PART 1. The paper map, the spatial "functional unit" and QGIS
+
 ## Context
 This training covers the steps to conduct a field survey of industrial "Functional Units" in Southwark.
 The focus is on __collecting information about the physical characteristics__ of the "Building" and "Parcel" where indusrial activities take place.
@@ -71,7 +78,9 @@ To conduct the survey is necessary to follow the next sequence in strict order.
 
 ---
 
-## Updating Spatial Data *working through an example*
+# PART 2. Updating spatial data in the maps in QGIS
+*working through an example*
+
 For the surveys in which you created new "Functional Unit" polygons and updated the "Exterior" unit polygons (step 4 and 6) you will need to edit the spatial data digitally according to your field notes. This process will be conducted using QGIS according to the next steps.
 
 Before starting create a folder on your computer "SIA_mapping" and download the following files from the ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) shared folder. 
