@@ -47,6 +47,8 @@ The "Functional Unit" profile is the set of tabular information collected and th
 ## Conducting the survey
 The survey questions are classified according to the method used to obtain the answer in: __Verified__ (from direct observation) and __Desktop__. The collection of spatial data uses both methods: "Verified" (i.e. what you see on site) and "Desktop" (updating spatial data from your field notes). For the spatial data "Desktop" tasks you will be able to access the survey polygons in vector data digital format ("Functional Unit" and "Exterior") and you are expected to edit them using a Geographic Informaton System(GIS) software package QGIS. 
 
+### Survey organisation
+
 Each surveyor will be assigned one or more basemap sheets that correspond to a cell of a grid that covers the study area of Southwark. The surveyor will be responsible of developing the __Functional Unit Profile__ for all the units that are contained on the basemap sheets assigned.
 
 <img src="https://npalomin.github.io/sind/timg/bm_sh.png" width="700">
