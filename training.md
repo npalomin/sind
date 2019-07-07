@@ -99,13 +99,19 @@ Before starting create a folder on your computer "SIA_mapping" and download the 
 
 Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nickname*" and "PARCELS_*your nickname*"
 
+---
+
 1. Open QGIS.
 
 <img src="https://npalomin.github.io/sind/timg/2qgis.png" width="700">
 
+---
+
 2. Load spatial data layers (the 3 .gpkg files) in your "SIA_mapping" folder. Drag and drop, or Layer / Add Layer / Add Vector Layer...
 
 <img src="https://npalomin.github.io/sind/timg/3add.png" width="700">
+
+---
 
 3. Organise the layer on the layers panel using drag and drop in the following order 'b_training', 'p_training', 'CONTEXT'. For the updating the spatial data after the surveys from the notes on your __basemap sheets__ you will find the respective file on the "BUILDINGS" and "PARCELS" folder.
 
