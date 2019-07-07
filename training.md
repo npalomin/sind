@@ -72,12 +72,13 @@ Also, the digital files for updating the spatial data are part of the survey mat
 To conduct the survey is necessary to follow the next sequence in strict order.
 
 1. Study the basemap sheet to identify a convenient survey route. Use online tools to get gain knowledge of the area you will be surveying (e.g.[Google Maps 3D views](https://www.google.com/maps/@51.5030104,-0.0896289,255a,35y,335.18h,37.32t/data=!3m1!1e3))
-2. While on site assess the correspondance between the "Functional Units" polygons on the basemap sheet and the industrial activity you are observing. Hint: Look for clues that can help with your assesment (building directory or intercom, business signs, etc.)
+2. While on site assess the correspondence between the "Functional Units" polygons on the basemap sheet and the industrial activity you are observing. Hint: Look for clues that can help with your assesment (building directory or intercom, business signs, etc.)
 3. If there's a one-to-one clear correspondance go to step 5. If not, you will need to create new "Functional Units" (go to step 4)
 4. To create a new "Functional Unit", first outline the polygon shape of the unit or units you're observing in your basemap sheet and label these with a new __Functional Unit Code(FUC)__ according to the following rule: original FUC + a unique 4 digit number from 1 to n (including preceding zeros). For example, if your basemap shows one polygon with FUC=76, but you observe that there are 3 "Functional Units" within that polygon, the new ones will be labelled '760001', '760002', '760003'.
 5. On the EpiCollect app __conduct the survey__ by recording the __Functional Unit Code__ of the corresponding polygon. Note: In the previous example, this corresponds to one of the 3 new created FUCs. The 'original' FUC=76 will not be included on the survey. The first questions can be answered from direct observation (e.g. street name, number). 
-6. Assess the correspondance between the "Exterior" units on the basemap and the demarcations of the land you are observing (this can be fences, light divisions, paint, etc)
-7. In cases that apply, outline the divisions of the "Exterior" units on your map sheet.
+6. Assess the correspondance between the "Exterior" units on the basemap and the demarcations of the land you are observing (this can be fences, light divisions, paint, etc). In cases that apply, outline the divisions of the "Exterior" units on your map sheet.
+
+<img src="https://npalomin.github.io/sind/timg/wflow.png" width="900">
 
 ---
 
@@ -85,6 +86,8 @@ To conduct the survey is necessary to follow the next sequence in strict order.
 (*working through an example*)
 
 For the surveys in which you created new "Functional Unit" polygons and updated the "Exterior" unit polygons (step 4 and 6 of the __Survey workflow__) you will need to edit the spatial data digitally according to your field notes. This process will be conducted using QGIS according to the next steps.
+
+<img src="https://npalomin.github.io/sind/timg/notes.png" width="700">
 
 Before starting create a folder on your computer "SIA_mapping" and download the following files from the ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) shared folder. 
 
@@ -169,8 +172,8 @@ Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nick
 
 14. Reapeat from point 8 choosing the "PARCELS" layer this time (p_training). On the instructions replace "FUC" by "PID" (parcel id) where appropiate.
 
-15. To edit the "PARCELS" layers you'll need to create new codes for the new polygons you create. To see the parcel unique indentifier click on the "Identify Results" button and then on the polygon you want to query. A window "Identify Results" will pop-up and you will see the parcel code next to __PID__. Follow the FUC-code-creation rule to create new codes (e.g. '4560001').
+15. In the case you need to edit the "PARCELS" layers you will need to create new codes for the new polygons you draw. To see the parcel unique indentifier click on the "Identify Results" button and then on the polygon you want to query. A window "Identify Results" will pop-up and you will see the parcel code next to __PID__. Follow the FUC-code-creation rule to create new codes (e.g. '4560001').
 
-
+<img src="https://npalomin.github.io/sind/timg/identify.png" width="700">
 
 
