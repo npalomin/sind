@@ -119,7 +119,7 @@ Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nick
 
 12. Export the features layer with a new name. Select layer on the layer panel [mouse rigth click] / Export... / Save Feature As / File name... / (select the "FUC profiles" folder). Save as: *original layer name* + _ + *your nickname* (e.g. page_32_nicolas)
 
-13. Upload your "FUC profiles_*your nickname*" folder [here](https://drive.google.com/open?id=1eFzIlC-bD0ztfXzds9wJEkErAyvOm7E5) / 'New' button / Folder upload. Verify that you are uploading to the appropiate folder (BUILDINGS or PARCELS) and that the content is not duplicated. 
+13. Upload your files (e.g. page_32_nicolas) to the corresponding folder [here](https://drive.google.com/open?id=1eFzIlC-bD0ztfXzds9wJEkErAyvOm7E5) / 'New' button / File upload. Verify that you are uploading to the appropriate folder (BUILDINGS or PARCELS) and that the content is not duplicated. 
 
 14. Reapeat from point 8 choosing the "PARCELS" layer this time (1_training)
 
