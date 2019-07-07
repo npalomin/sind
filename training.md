@@ -144,7 +144,7 @@ Inside your "SIA_mapping" folder create a two new folders: "BUILDINGS_*your nick
 
 ---
 
-9. Draw by clicking with the mouse left click and finish the polygon with the mouse right click. Add the corresponding new FUC for the polygon you created (e.g. create two new polygons '12190001' and '12190002').
+9. Draw by clicking with the mouse left click and finish the polygon with the mouse right click. Add the corresponding new FUC for the polygon you created (e.g. create two new polygons '12190001' and '12190002' on top of polygon '1209').
 
 <img src="https://npalomin.github.io/sind/timg/8draw.png" width="700">
 
