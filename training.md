@@ -8,15 +8,14 @@ Date: Jul-2019
 
 <img src="https://npalomin.github.io/sind/timg/logos.png" width="300">
 
-# Southwark Industrial Audit (SIA) 
+### Southwark Industrial Audit (SIA) 
 # Spatial survey methodology 
 
 [__PART 1.__ The paper map, the spatial "functional unit" and QGIS](https://github.com/npalomin/sind/blob/master/training.md#part-1-the-paper-map-the-spatial-functional-unit-and-qgis)
 
 [__PART 2.__ Updating spatial data in the maps in QGIS](https://github.com/npalomin/sind/blob/master/training.md#part-2-updating-spatial-data-in-the-maps-in-qgis)
 
-[ PART 3. Frequently asked questions ]
-
+[ PART 3. Frequently asked questions ](https://github.com/npalomin/sind/blob/master/training.md#part-3-frequently-asked-questions-faq)
 
 ---
 
@@ -84,14 +83,16 @@ To conduct the survey is necessary to follow the next sequence in strict order.
 1. Study the basemap sheet to identify a convenient survey route. Use online tools to get gain knowledge of the area you will be surveying (e.g.[Google Maps 3D views](https://www.google.com/maps/@51.5030104,-0.0896289,255a,35y,335.18h,37.32t/data=!3m1!1e3))
 2. While on site assess the correspondence between the "Functional Units" polygons on the basemap sheet and the industrial activity you are observing. Hint: Look for clues that can help with your assesment (building directory or intercom, business signs, etc.)
 3. If there's a one-to-one clear correspondance go to step 5. If not, you will need to create new "Functional Units" (go to step 4)
-4. To create a new "Functional Unit", first outline the polygon shape of the unit or units you're observing in your basemap sheet and label these with a new __Functional Unit Code(FUC)__ according to the following rule: original FUC + a unique 4 digit number from 1 to n (including preceding zeros). For example, if your basemap shows one polygon with FUC=76, but you observe that there are 3 "Functional Units" within that polygon, the new ones will be labelled '760001', '760002', '760003'.
+4. To create a new "Functional Unit", first outline the polygon shape of the unit or units you're observing in your basemap sheet and label these with a new __Functional Unit Code(FUC)__ according to the following rule: original FUC + a unique __4__ digit number from 1 to n (including preceding zeros). For example, if your basemap shows one polygon with FUC=76, but you observe that there are 3 "Functional Units" within that polygon, the new ones will be labelled '76**0001**', '76**0002**', '76**0003**'.
 5. On the EpiCollect app __conduct the survey__ by recording the __Functional Unit Code__ of the corresponding polygon. Note: In the previous example, this corresponds to one of the 3 new created FUCs. The 'original' FUC=76 will not be included on the survey. The first questions can be answered from direct observation (e.g. street name, number). 
 6. Assess the correspondance between the "Exterior" units on the basemap and the demarcations of the land you are observing (this can be fences, light divisions, paint, etc). In cases that apply, outline the divisions of the "Exterior" units on your map sheet.
 
 <img src="https://npalomin.github.io/sind/timg/wflow1.png" width="700">
 
 ### Survey's non-existing units (NEU)
-To identify the industrial units included on the survey different datasets of different date and source were integrated. For this reason, there could be cases while on site that you spot industrial functions that are not identified on the basemap sheets as Functional Units/Buildings. In those cases, like the example below, it will be necessary to draw the polygon describing the extent of the premises an create a FUC with the following rule: basemap sheet number + a unique 3 digit number from 1 to n (including preceding zeros). So, for example if you observe that theres is a functional unit in the area covered in the basemap sheet used as training example, the new FUC will be '32001'.
+To identify the industrial units included on the survey different datasets of different date and source were integrated. For this reason, there could be cases while on site that you spot industrial functions that are not identified on the basemap sheets as Functional Units/Buildings. 
+
+In those cases, like the example below, it will be necessary to draw the polygon describing the extent of the premises an create a new FUC with the following rule: basemap sheet number + a unique __5__ digit number from 1 to n (including preceding zeros). So, for example if you observe that there is a functional unit in the area covered by the example below, the new FUC will be '115**00001**'.
 
 <img src="https://npalomin.github.io/sind/timg/arches.png" width="900">
 
@@ -155,7 +156,7 @@ ii) Inside your "SIA_mapping" folder create two new folders: "BUILDINGS_*your ni
 
 ---
 
-8. To draw new polygons on a layer, select the layer (BUILDING layer then PARCEL layer), turn on the edditing mode (click on the yellow pencil button) and select the Add Polygon Feature (second icon to the right from the yellow pencil).
+8. To draw new polygons on a layer, select the layer (BUILDING layer then PARCEL layer), turn on the edditing mode (click on the yellow pencil button) and select the Add Polygon Feature (second icon to the right from the yellow pencil). This same procedure should be done in case of adding [non-existing units]().
 
 <img src="https://npalomin.github.io/sind/timg/7edit1.png" width="700">
 
@@ -202,3 +203,6 @@ ii) Inside your "SIA_mapping" folder create two new folders: "BUILDINGS_*your ni
 ---
 
 # PART 3. Frequently Asked Questions (FAQ)
+
+- In case the Functional Unit I see on the basemap was demolished, should I complete the survey form?
+__Yes, register the FUC (question 1.2), complete question '2.1 Name of organisation' with *Nind* (for not industrial), then describe the case with more details in question '5.4 General Notes:'.  
