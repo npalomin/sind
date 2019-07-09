@@ -8,8 +8,12 @@ Date: Jul-2019
 
 <img src="https://npalomin.github.io/sind/timg/logos.png" width="300">
 
-### Southwark Industrial Audit (SIA) 
-# Spatial survey methodology 
+---
+
+### __Southwark Industrial Audit (SIA)__
+# __Spatial survey methodology__ 
+
+---
 
 [__PART 1.__ The paper map, the spatial "functional unit" and QGIS](https://github.com/npalomin/sind/blob/master/training.md#part-1-the-paper-map-the-spatial-functional-unit-and-qgis)
 
