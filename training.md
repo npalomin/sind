@@ -1,16 +1,22 @@
 ---
 Title: |
-    Southwark Industrial Audit(SIA) field survey training
+    Southwark Industrial Audit (SIA) spatial survey methodology
 authors:
 - Nicolas Palominos
 Date: Jul-2019
 ---
 
-# Southwark Industrial Audit(SIA) field survey training
+<img src="https://npalomin.github.io/sind/timg/logos.png" width="300">
+
+# Southwark Industrial Audit (SIA) 
+# Spatial survey methodology 
 
 [__PART 1.__ The paper map, the spatial "functional unit" and QGIS](https://github.com/npalomin/sind/blob/master/training.md#part-1-the-paper-map-the-spatial-functional-unit-and-qgis)
 
 [__PART 2.__ Updating spatial data in the maps in QGIS](https://github.com/npalomin/sind/blob/master/training.md#part-2-updating-spatial-data-in-the-maps-in-qgis)
+
+[ PART 3. Frequently asked questions ]
+
 
 ---
 
@@ -83,6 +89,11 @@ To conduct the survey is necessary to follow the next sequence in strict order.
 6. Assess the correspondance between the "Exterior" units on the basemap and the demarcations of the land you are observing (this can be fences, light divisions, paint, etc). In cases that apply, outline the divisions of the "Exterior" units on your map sheet.
 
 <img src="https://npalomin.github.io/sind/timg/wflow1.png" width="700">
+
+### Survey's non-existing units (NEU)
+To identify the industrial units included on the survey different datasets of different date and source were integrated. For this reason, there could be cases while on site that you spot industrial functions that are not identified on the basemap sheets as Functional Units/Buildings. In those cases, like the example below, it will be necessary to draw the polygon describing the extent of the premises an create a FUC with the following rule: basemap sheet number + a unique 3 digit number from 1 to n (including preceding zeros). So, for example if you observe that theres is a functional unit in the area covered in the basemap sheet used as training example, the new FUC will be '32001'.
+
+<img src="https://npalomin.github.io/sind/timg/arches.png" width="900">
 
 ---
 
@@ -189,3 +200,5 @@ ii) Inside your "SIA_mapping" folder create two new folders: "BUILDINGS_*your ni
 <img src="https://npalomin.github.io/sind/timg/identify.png" width="700">
 
 ---
+
+# PART 3. Frequently Asked Questions (FAQ)
