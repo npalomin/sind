@@ -13,6 +13,8 @@ output: pdf_document
 ### __Southwark Industrial Audit (SIA)__
 # __Spatial survey methodology__ 
 
+*digital version URL: https://tiny.cc/sia_cass*
+
 ---
 
 [__PART 1.__ The paper map, the spatial "functional unit" and QGIS](https://github.com/npalomin/sind/blob/master/training.md#part-1-the-paper-map-the-spatial-functional-unit-and-qgis)

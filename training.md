@@ -1,9 +1,9 @@
 ---
-Title: |
-    Southwark Industrial Audit (SIA) spatial survey methodology
-authors:
-- Nicolas Palominos
 Date: Jul-2019
+Title: |
+  Southwark Industrial Audit (SIA) spatial survey methodology
+authors: Nicolas Palominos
+output: pdf_document
 ---
 
 <img src="https://npalomin.github.io/sind/timg/logos.png" width="300">
