@@ -15,7 +15,7 @@ Date: Jul-2019
 
 [__PART 2.__ Updating spatial data in the maps in QGIS](https://github.com/npalomin/sind/blob/master/training.md#part-2-updating-spatial-data-in-the-maps-in-qgis)
 
-[ PART 3. Frequently asked questions ](https://github.com/npalomin/sind/blob/master/training.md#part-3-frequently-asked-questions-faq)
+[__PART 3.__ Frequently asked questions](https://github.com/npalomin/sind/blob/master/training.md#part-3-frequently-asked-questions-faq)
 
 ---
 
@@ -156,7 +156,7 @@ ii) Inside your "SIA_mapping" folder create two new folders: "BUILDINGS_*your ni
 
 ---
 
-8. To draw new polygons on a layer, select the layer (BUILDING layer then PARCEL layer), turn on the edditing mode (click on the yellow pencil button) and select the Add Polygon Feature (second icon to the right from the yellow pencil). This same procedure should be done in case of adding [non-existing units]().
+8. To draw new polygons on a layer, select the layer (BUILDING layer then PARCEL layer), turn on the edditing mode (click on the yellow pencil button) and select the Add Polygon Feature (second icon to the right from the yellow pencil). This same procedure should be done in case of adding [non-existing units (NEU)](https://github.com/npalomin/sind/blob/master/training.md#surveys-non-existing-units-neu).
 
 <img src="https://npalomin.github.io/sind/timg/7edit1.png" width="700">
 
@@ -204,5 +204,6 @@ ii) Inside your "SIA_mapping" folder create two new folders: "BUILDINGS_*your ni
 
 # PART 3. Frequently Asked Questions (FAQ)
 
-- In case the Functional Unit I see on the basemap was demolished, should I complete the survey form?
-__Yes, register the FUC (question 1.2), complete question '2.1 Name of organisation' with *Nind* (for not industrial), then describe the case with more details in question '5.4 General Notes:'.  
+> In case the Functional Unit I see on the basemap was demolished, should I complete the survey form?
+
+__Yes, register the FUC (question 1.2), complete question '2.1 Name of organisation' with *Nind* (for not industrial), then describe the case with more details in question '5.4 General Notes:'.__
