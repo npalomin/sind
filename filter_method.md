@@ -2,9 +2,9 @@
 
 ### Spatial unit of study
 
-To conduct the spatial study that captures the intensity, diversity and character of industrial activities in Southwark is necessary to establish a definition of the spatial unit of study. Conceptually, the physical study of 'Industrial Activities' encompasses two core ideas: the nature of the industrial activity or function and the premises where that activity takes place. The spatial unit of study has been conceptualized as a 'Functional Unit', which is an industrial economic activity that doesn't necessarily fits spatially across an entire building or parcel (the two most common spatial units on urban surveys). In many cases, more than one 'Industrial Activity' takes place within a building or parcel.
+To conduct the spatial study that captures the intensity, diversity and character of industrial activities in Southwark is necessary to establish a definition of the spatial unit of study. Conceptually, the physical study of 'Industrial Activities' encompasses two core ideas: the nature of the industrial activity or function and the premises where that activity takes place. The spatial unit of study has been conceptualized as a __'Functional Unit'__, which is an industrial economic activity that doesn't necessarily fits spatially across an entire building or parcel (the two most common spatial units on urban topographic surveys). In many cases, more than one 'Industrial Activity' takes place within a building or parcel.
 
-The 'Industrial Functional Unit' for the SIA study is:
+In the context of this study __'Functional Unit'__ is defined as:
 
 __The premises where a uniform industrial activity takes place, disregarding the type of tenure or physical structure of the space that accommodates the activity.__
 
@@ -17,18 +17,18 @@ In order to come up with a systematic methodology of data selection two criteria
 
 To identify where do industrial activities take place three key data set sets were analysed:
 
-|Name|Description|URL|
+|Description|SIA name|URL|
 |-|-|-|
-|INSPIRE Index Polygons|Cadastral parcels. Registered extent of freehold properties in England and Wales|[https://www.gov.uk/government/publications/southwark-inspire-index-polygon-data](here)|
-|GLA_Ind_Land_Baseline_2015_Designations|Industrial polygons by designation|Proprietary GLA (Alex Marsh)|
-|OS MasterMap Topography Layer (Digimap) |[https://www.ordnancesurvey.co.uk/business-and-government/products/topography-layer.html](here)|
+|INSPIRE Index Polygons Cadastral parcels. Registered extent of freehold properties in England and Wales|Parcels|[https://www.gov.uk/government/publications/southwark-inspire-index-polygon-data](here)|
+|GLA_Ind_Land_Baseline_2015_Designations|Industrial polygons by designation|Proprietary GLA (Alex Marsh)|Baseline|
+|OS MasterMap Topography Layer - Buildings (Digimap) |Buildings|[https://www.ordnancesurvey.co.uk/business-and-government/products/topography-layer.html](here)|
 
-These datasets have spatial resolution at parcel level (1:1000 approximately). However, the __cadastral parcels__ have a more detailed subdivision which is more appropiate for the survey of __Industrial Functional Units__. Therefore, to get a better representation of the subject of study it is necessary to integrate these datasets.
+These datasets have spatial resolution at parcel/building level (1:1000 approximately). However, the cadastral __parcels__ have a more detailed subdivision which was considered more appropiate for the survey of industrial __Functional Units__. Therefore, to get a better representation of the subject of study it is necessary to integrate these datasets.
 
 ### Data integration
 
-Both datasets were intergrated and combined to get a merge of parcel polygons with industrial designations.
-Not all the cadastral parcels overlayed with the industrial polygons so the following geoproecesses were applied:
+Both datasets were intergrated and combined to get a merge of __Parcel__ polygons with the __Baseline__ industrial designations.
+Not all the cadastral __Parcels__ overlay with the industrial polygons so the following geoproecesses were applied:
 
 - Intersect parcels with industrial polygons (Parcels which 'point on surface' are within industrial polygons)
 - Add those industrial polygons that are _outside_ the parcel polygons definition.
