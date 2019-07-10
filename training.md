@@ -81,7 +81,7 @@ Also, the digital files for updating the spatial data are part of the survey mat
 |CONTEXT.gpkg| File containing urban context data of the study area|
 |*3* .qml files| Files for styling the map in QGIS|
 
-__NOTE on spatial data license:__
+__NOTE on spatial data license (.gpkg files):__
 © Crown copyright Digimap OS. You are permitted to use this data solely to enable you to respond to, or interact with, the organisation that provided you with the data. You are not permitted to copy, sub-licence, distribute or sell any of this data to third parties in any form.
 
 ### Survey workflow
