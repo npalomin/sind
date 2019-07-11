@@ -19,7 +19,9 @@ output: pdf_document
 
 [__PART 2.__ Updating spatial data in the maps in QGIS](https://github.com/npalomin/sind/blob/master/training.md#part-2-updating-spatial-data-in-the-maps-in-qgis)
 
-[__PART 3.__ Frequently asked questions](https://github.com/npalomin/sind/blob/master/training.md#part-3-frequently-asked-questions-faq)
+[__PART 3.__ Special cases](https://github.com/npalomin/sind/blob/master/training.md#part-3-frequently-asked-questions-faq)
+
+[__PART 4.__ Frequently asked questions](https://github.com/npalomin/sind/blob/master/training.md#part-3-frequently-asked-questions-faq)
 
 ---
 
@@ -209,7 +211,28 @@ ii) Inside your "SIA_mapping" folder create two new folders: "BUILDINGS_*your ni
 
 ---
 
-# PART 3. Frequently Asked Questions (FAQ)
+# PART 3.  Special cases
+
+After the first day of field work some special cases appeared that need further clarification and the definition of new rules and mapping processes in QGIS.
+
+A. In the case there is a __Building__ polygon on the basemap sheet that you observe is no longer an industrial activity or it has ceased activities, the "Functional Unit'" should still be registered on EpiCollet according to the following:
+
+```
+Field 1.1 and 1.2 are _free text_ fields and will admit any type of text entry. In order to be able to analyse this field is essential that the exact same answer provided here is registered.
+```
+
+|CASE|Answer in question n *1.2 Description of organisations ...*|
+|-|-|
+|There is a building that looks industrial but it is __vacant__ | __vacant__ |
+|There is a building that looks industrial but it is __derelict__ | __derelict__ |
+|There is a building that looks __residential__ | __residential__ |
+
+Questions '1.1 Name of organisation', '6.0 Additional note...' and '7.3 External photo' should still be answered.
+
+
+---
+
+# PART 4. Frequently Asked Questions (FAQ)
 
 > In case the Functional Unit I see on the basemap sheet was demolished, should I complete the survey form?
 
