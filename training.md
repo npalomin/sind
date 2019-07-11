@@ -215,9 +215,10 @@ ii) Inside your "SIA_mapping" folder create two new folders: "BUILDINGS_*your ni
 
 After the first day of field work some special cases appeared that need further clarification and the definition of new rules and mapping processes in QGIS.
 
-A. In the case there is a __Building__ polygon on the basemap sheet that you observe is no longer an industrial activity or it has ceased activities, the "Functional Unit'" should still be registered on EpiCollet according to the following:
+### 3.1 Vacant, derelict, etc.
+In the case there is a __Building__ polygon on the basemap sheet that you observe is no longer an industrial activity or it has ceased activities, the "Functional Unit'" should still be registered on EpiCollet according to the following:
 
-*Field 1.1 and 1.2 are _free text_ fields and will admit any type of text entry. In order to be able to analyse this field is essential that the exact same answer provided here is registered.*
+*Field 1.1 and 1.2 are __free text__ fields and will admit any type of text entry. In order to be able to analyse this field is essential that the exact same answer provided here is registered.*
 
 |CASE|Answer in question n *1.2 Description of organisations activity*|
 |-|-|
@@ -226,7 +227,20 @@ A. In the case there is a __Building__ polygon on the basemap sheet that you obs
 |There is a building that looks __residential__ | __residential__ |
 |There is a building that was __demolished__ | __demolished__ | 
 
-Questions '1.1 Name of organisation', '6.0 Additional note...' and '7.3 External photo' should still be answered.
+Questions 'Nickname', 'Map sheet number', 'FUC', '1.1 Name of organisation', '6.0 Additional note...', '7.2 Location', '7.3 External photo' should still be answered. 
+
+### 3.2 Not industrial
+In the case there is a __Building__ polygon on the basemap sheet that you observe that has an activity that has no relation at all to industrial uses (i.e. florist), the "Functional Unit'" should still be registered on EpiCollet according to the following:
+
+|CASE|Answer in question n *1.2 Description of organisations activity*|
+|-|-|
+|There is a building that has an activity that has no realtion to industrial | __vacant__ |
+
+### 3.3
+How to define what is industrial from what is observed on site?
+Look for machines, if something is being produced or repaired.  Anything is industrial should have a FULL survey.
+
+
 
 
 ---
