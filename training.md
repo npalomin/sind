@@ -19,7 +19,7 @@ output: pdf_document
 
 [__PART 2.__ Updating spatial data in the maps in QGIS](https://github.com/npalomin/sind/blob/master/training.md#part-2-updating-spatial-data-in-the-maps-in-qgis)
 
-[__PART 3.__ Special cases](https://github.com/npalomin/sind/blob/master/training.md#part-3-frequently-asked-questions-faq)
+[__PART 3.__ Special cases](https://github.com/npalomin/sind/blob/master/training.md#part-3--special-cases)
 
 [__PART 4.__ Frequently asked questions](https://github.com/npalomin/sind/blob/master/training.md#part-3-frequently-asked-questions-faq)
 
@@ -230,23 +230,24 @@ In the case there is a __Building__ polygon on the basemap sheet that you observ
 Questions 'Nickname', 'Map sheet number', 'FUC', '1.1 Name of organisation', '6.0 Additional note...', '7.2 Location', '7.3 External photo' should still be answered. 
 
 ### 3.2 Not industrial
-In the case there is a __Building__ polygon on the basemap sheet that you observe that has an activity that has no relation at all to industrial uses (i.e. florist), the "Functional Unit'" should still be registered on EpiCollet according to the following:
+In the case there is a __Building__ polygon on the basemap sheet that you observe that has an activity with no relation at all to industrial uses (i.e. florist, child centre), the "Functional Unit'" should still be registered on EpiCollet according to the following:
 
 |CASE|Answer in question n *1.2 Description of organisations activity*|
 |-|-|
-|There is a building that has an activity that has no realtion to industrial | __vacant__ |
+|There is a building that has an activity that has no realtion to industrial | __fill in the observed activity__ |
 
-### 3.3
-How to define what is industrial from what is observed on site?
-Look for machines, if something is being produced or repaired.  Anything is industrial should have a FULL survey.
+Questions 'Nickname', 'Map sheet number', 'FUC', '1.1 Name of organisation', '6.0 Additional note...', '7.2 Location', '7.3 External photo' should still be answered, and 'SIC' in cases that apply.
 
-
-
+### 3.3 Small polygons with FUC adyacent to big polygons with FUC
 
 ---
 
 # PART 4. Frequently Asked Questions (FAQ)
 
-> In case the Functional Unit I see on the basemap sheet was demolished, should I complete the survey form?
+> 1. In case the Functional Unit I see on the basemap sheet was demolished, should I complete the survey form?
 
 __Yes, register the FUC (question 1.2), complete question '2.1 Name of organisation' with *Nind* (for not industrial), then describe the case with more details in question '5.4 General Notes:'.__
+
+> 2. How to define what is industrial from what is observed on site?
+
+__Look for machines, if something is being produced or repaired.  Anything that is industrial should have a FULL survey.__
