@@ -56,7 +56,7 @@ The "Functional Unit" profile is the set of tabular information collected and th
 <img src="https://npalomin.github.io/sind/timg/exter.png" width="700">
 
 ## Conducting the survey
-The survey questions are classified according to the method used to obtain the answer in: __Observed__ (from direct observation), __Desktop__ (post field work) and __Verified__ (survey answer). The collection of spatial data predominantly uses both methods: "Observed" (i.e. what you see on site) and "Desktop" (updating spatial data from your field notes). For the spatial data "Desktop" tasks you will be able to access the survey polygons in vector data digital format ("Functional Unit" and "Exterior") and you are expected to edit them using a Geographic Informaton System(GIS) software package QGIS. 
+The survey questions are classified according to the method used to obtain the answer in: __Observed__ (from direct observation), __Desktop__ (post field work) and __Verified__ (surveyee answer). The collection of spatial data predominantly uses both methods: "Observed" (i.e. what you see on site) and "Desktop" (updating spatial data from your field notes). For the spatial data "Desktop" tasks you will be able to access the survey polygons in vector data digital format ("Functional Unit" and "Exterior") and you are expected to edit them using a Geographic Informaton System(GIS) software package QGIS. 
 
 ### Survey organisation
 
