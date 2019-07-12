@@ -241,12 +241,15 @@ Questions 'Nickname', 'Map sheet number', 'FUC', '1.1 Name of organisation', '6.
 ### 3.3 Small polygons with FUC adyacent to big polygons with FUC that are the same activity
 In case there are polygons with unique FUC grouped together that appear to belong to the same FUC, is necessary to to do only one survey and annotate on the hard copy map which polygons share the same FUC. Then it is necessary to edit this in QGIS according to the following process.
 
-- Select the 'BUILDINGS' layer
-
 | |
 |-|
 |Select the 'BUILDINGS' layer|
-|Select the 'BUILDINGS' layer|
+|Select the ploygon to edit|
+|Turn on editing mode|
+|Open Attribute table|
+|Search for the cell to edit under the FUC column|
+|Modify the FUC|
+|Close, the table and turn off editing mode|
 
 ---
 
