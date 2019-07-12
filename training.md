@@ -215,7 +215,7 @@ ii) Inside your "SIA_mapping" folder create two new folders: "BUILDINGS_*your ni
 
 After the first day of field work some special cases appeared that need further clarification and the definition of new rules and mapping processes in QGIS.
 
-### 3.1 Vacant, derelict, etc.
+### 3.1 Building marked as industrial but is vacant, derelict, etc.
 In the case there is a __Building__ polygon on the basemap sheet that you observe is no longer an industrial activity or it has ceased activities, the "Functional Unit'" should still be registered on EpiCollet according to the following:
 
 :warning: *Field 1.1 and 1.2 are __free text__ fields and will admit any type of text entry. In order to be able to analyse this variable is essential that the exact answer provided here is registered.*
@@ -269,7 +269,7 @@ Similar to case 3.2 but applied to the parcel. In this situation is necessary to
 
 > 1. In case the Functional Unit I see on the basemap sheet was demolished, should I complete the survey form?
 
-__Yes, register the FUC (question 1.2), complete question '2.1 Name of organisation' with *Nind* (for not industrial), then describe the case with more details in question '5.4 General Notes:'.__
+__Yes, see point 3.1 for details__
 
 > 2. How to define what is industrial from what is observed on site?
 
