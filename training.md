@@ -243,6 +243,7 @@ In case there are polygons with unique FUC grouped together that appear to belon
 
 - Select the 'BUILDINGS' layer
 
+| |
 |-|
 |Select the 'BUILDINGS' layer|
 |Select the 'BUILDINGS' layer|
