@@ -242,7 +242,9 @@ Questions 'Nickname', 'Map sheet number', 'FUC', '1.1 Name of organisation', '6.
 In case there are polygons with unique FUC grouped together that appear to belong to the same FUC, is necessary to to do only one survey and annotate on the hard copy map which polygons share the same FUC. Then it is necessary to edit this in QGIS according to the following process.
 
 - Select the 'BUILDINGS' layer
-- 
+
+|Select the 'BUILDINGS' layer|
+|Select the 'BUILDINGS' layer|
 
 ---
 
