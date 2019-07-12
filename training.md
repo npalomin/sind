@@ -254,7 +254,7 @@ In case there are polygons with unique FUC grouped together that appear to belon
 <img src="https://npalomin.github.io/sind/timg/fuc_ed.png" width="700">
 
 ### 3.4 Parcel marked as industrial but is not industrial
-Similar to case 3.2 but applied to the parcel. In this situation is necessary to edti the 'PARCEL' layer in QGIS following the same steps indicated in point 3.3 but changing the fields that apply according to the following:
+Similar to case 3.2 but applied to the parcel. In this situation is necessary to edit the 'PARCEL' layer in QGIS following the same steps indicated in point 3.3 but changing the fields that apply according to the following:
 
 :warning: *__Free text__ is admited while editing the cell in QGIS so it is essential that the exact answer provided here is registered.*
 
