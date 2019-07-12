@@ -211,14 +211,14 @@ ii) Inside your "SIA_mapping" folder create two new folders: "BUILDINGS_*your ni
 
 ---
 
-# PART 3.  Special cases :heavy_exclamation_mark:
+# PART 3.  Special cases
 
 After the first day of field work some special cases appeared that need further clarification and the definition of new rules and mapping processes in QGIS.
 
 ### 3.1 Vacant, derelict, etc.
 In the case there is a __Building__ polygon on the basemap sheet that you observe is no longer an industrial activity or it has ceased activities, the "Functional Unit'" should still be registered on EpiCollet according to the following:
 
-:warning: *Field 1.1 and 1.2 are __free text__ fields and will admit any type of text entry. In order to be able to analyse this variable is essential that the exact same answer provided here is registered.*
+:warning: *Field 1.1 and 1.2 are __free text__ fields and will admit any type of text entry. In order to be able to analyse this variable is essential that the exact answer provided here is registered.*
 
 |CASE|Answer in question *1.2 Description of organisations activity*|
 |-|-|
@@ -229,7 +229,7 @@ In the case there is a __Building__ polygon on the basemap sheet that you observ
 
 Questions 'Nickname', 'Map sheet number', 'FUC', '1.1 Name of organisation', '6.0 Additional notes...', '7.2 Location', '7.3 External photo' should still be answered. 
 
-### 3.2 Marked as industrial but is not industrial 
+### 3.2 Building marked as industrial but is not industrial 
 In the case there is a __Building__ polygon on the basemap sheet that you observe that has an activity with no relation at all to industrial uses (i.e. florist, child centre), the "Functional Unit'" should still be registered on EpiCollet according to the following:
 
 |CASE|Answer in question n *1.2 Description of organisations activity*|
@@ -252,6 +252,16 @@ In case there are polygons with unique FUC grouped together that appear to belon
 |Close, the table and turn off editing mode|
 
 <img src="https://npalomin.github.io/sind/timg/fuc_ed.png" width="700">
+
+### 3.4 Parcel marked as industrial but is not industrial
+Similar to case 3.2 but applied to the parcel. In this situation is necessary to edti the 'PARCEL' layer in QGIS following the same steps indicated in point 3.3 but changing the fields that apply according to the following:
+
+:warning: *__Free text__ is admited while editing the cell in QGIS so it is essential that the exact answer provided here is registered.*
+
+|CASE|Field to register under the 'landUse' column|
+|-|-|
+|The parcel (or resultant parcels after spliting it) is __not industrial__ | __non industrial__ |
+|The parcel is a __development__ | __development__ |
 
 ---
 
