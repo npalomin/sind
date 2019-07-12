@@ -218,12 +218,12 @@ After the first day of field work some special cases appeared that need further 
 ### 3.1 Vacant, derelict, etc.
 In the case there is a __Building__ polygon on the basemap sheet that you observe is no longer an industrial activity or it has ceased activities, the "Functional Unit'" should still be registered on EpiCollet according to the following:
 
-:information_source: *Field 1.1 and 1.2 are __free text__ fields and will admit any type of text entry. In order to be able to analyse this variable is essential that the exact same answer provided here is registered.*
+:warning: *Field 1.1 and 1.2 are __free text__ fields and will admit any type of text entry. In order to be able to analyse this variable is essential that the exact same answer provided here is registered.*
 
 |CASE|Answer in question *1.2 Description of organisations activity*|
 |-|-|
-|There is a building that looks industrial but it is __vacant__ | __vacant__ |
-|There is a building that looks industrial but it is __derelict__ | __derelict__ |
+|There is a building that looks industrial but is __vacant__ | __vacant__ |
+|There is a building that looks industrial but is __derelict__ | __derelict__ |
 |There is a building that looks __residential__ | __residential__ |
 |There is a building that was __demolished__ | __demolished__ | 
 
