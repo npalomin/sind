@@ -234,7 +234,7 @@ In the case there is a __Building__ polygon on the basemap sheet that you observ
 
 |CASE|Answer in question n *1.2 Description of organisations activity*|
 |-|-|
-|There is a building that has an activity that has no realtion to industrial | __fill in the observed activity__ |
+|There is a building that has an activity that has no realtion to industrial | __fill in the observed activity (e.g. florist)__ |
 
 Questions 'Nickname', 'Map sheet number', 'FUC', '1.1 Name of organisation', '6.0 Additional notes...', '7.2 Location', '7.3 External photo' should still be answered, and 'SIC' in cases that apply.
 
