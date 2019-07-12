@@ -220,25 +220,29 @@ In the case there is a __Building__ polygon on the basemap sheet that you observ
 
 *Field 1.1 and 1.2 are __free text__ fields and will admit any type of text entry. In order to be able to analyse this field is essential that the exact same answer provided here is registered.*
 
-|CASE|Answer in question n *1.2 Description of organisations activity*|
+|CASE|Answer in question *1.2 Description of organisations activity*|
 |-|-|
 |There is a building that looks industrial but it is __vacant__ | __vacant__ |
 |There is a building that looks industrial but it is __derelict__ | __derelict__ |
 |There is a building that looks __residential__ | __residential__ |
 |There is a building that was __demolished__ | __demolished__ | 
 
-Questions 'Nickname', 'Map sheet number', 'FUC', '1.1 Name of organisation', '6.0 Additional note...', '7.2 Location', '7.3 External photo' should still be answered. 
+Questions 'Nickname', 'Map sheet number', 'FUC', '1.1 Name of organisation', '6.0 Additional notes...', '7.2 Location', '7.3 External photo' should still be answered. 
 
-### 3.2 Not industrial
+### 3.2 Marked as industrial but is not industrial 
 In the case there is a __Building__ polygon on the basemap sheet that you observe that has an activity with no relation at all to industrial uses (i.e. florist, child centre), the "Functional Unit'" should still be registered on EpiCollet according to the following:
 
 |CASE|Answer in question n *1.2 Description of organisations activity*|
 |-|-|
 |There is a building that has an activity that has no realtion to industrial | __fill in the observed activity__ |
 
-Questions 'Nickname', 'Map sheet number', 'FUC', '1.1 Name of organisation', '6.0 Additional note...', '7.2 Location', '7.3 External photo' should still be answered, and 'SIC' in cases that apply.
+Questions 'Nickname', 'Map sheet number', 'FUC', '1.1 Name of organisation', '6.0 Additional notes...', '7.2 Location', '7.3 External photo' should still be answered, and 'SIC' in cases that apply.
 
-### 3.3 Small polygons with FUC adyacent to big polygons with FUC
+### 3.3 Small polygons with FUC adyacent to big polygons with FUC that are the same activity
+In case there are polygons with unique FUC grouped together that appear to belong to the same FUC, is necessary to to do only one survey and annotate on the hard copy map which polygons share the same FUC. Then it is necessary to edit this in QGIS according to the following process.
+
+- Select the 'BUILDINGS' layer
+- 
 
 ---
 
