@@ -273,4 +273,4 @@ __Yes, register the FUC (question 1.2), complete question '2.1 Name of organisat
 
 > 2. How to define what is industrial from what is observed on site?
 
-__Look for machines, if something is being produced or repaired.  Anything that is industrial should have a FULL survey.__
+__Look for machines, if something is being produced or repaired.  Anything that is industrial should have a FULL survey. If in doubt it is recommended to conduct the survey__
