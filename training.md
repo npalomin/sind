@@ -21,7 +21,7 @@ output: pdf_document
 
 [__PART 3.__ Special cases](https://github.com/npalomin/sind/blob/master/training.md#part-3--special-cases)
 
-[__PART 4.__ Frequently asked questions](https://github.com/npalomin/sind/blob/master/training.md#part-3-frequently-asked-questions-faq)
+[__PART 4.__ Frequently asked questions](https://github.com/npalomin/sind/blob/master/training.md#part-4-frequently-asked-questions-faq)
 
 ---
 
