@@ -211,7 +211,7 @@ ii) Inside your "SIA_mapping" folder create two new folders: "BUILDINGS_*your ni
 
 ---
 
-# PART 3.  Special cases
+# PART 3.  Special cases :heavy_exclamation_mark:
 
 After the first day of field work some special cases appeared that need further clarification and the definition of new rules and mapping processes in QGIS.
 
@@ -244,12 +244,14 @@ In case there are polygons with unique FUC grouped together that appear to belon
 | |
 |-|
 |Select the 'BUILDINGS' layer|
-|Select the ploygon to edit|
+|Select the polygon to edit|
 |Turn on editing mode|
 |Open Attribute table|
 |Search for the cell to edit under the FUC column|
 |Modify the FUC|
 |Close, the table and turn off editing mode|
+
+<img src="https://npalomin.github.io/sind/timg/fuc_ed.png" width="700">
 
 ---
 
