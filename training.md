@@ -28,7 +28,7 @@ output: pdf_document
 # PART 1. The paper map, the spatial "functional unit" and QGIS
 
 ## Context
-This training covers the steps to conduct a field survey of industrial "Functional Units" in Southwark.
+This document covers the steps to conduct a field survey of industrial "Functional Units" in Southwark.
 The focus is on __collecting information about the physical characteristics__ of the "Building" and "Parcel" where industrial activities take place.
 
 ## Key definitions
