@@ -83,7 +83,7 @@ Also, the digital files for updating the spatial data are part of the survey mat
 |CONTEXT.gpkg| File containing urban context data of the study area|
 |*3* .qml files| Files for styling the map in QGIS|
 
-__NOTE on spatial data license (.gpkg files):__
+:warning: __NOTE on spatial data license (.gpkg files):__
 © Crown copyright Digimap Ordnance Survey. You are permitted to use this data solely to enable you to respond to, or interact with, the organisation that provided you with the data. You are not permitted to copy, sub-licence, distribute or sell any of this data to third parties in any form.
 
 ### Survey workflow
@@ -104,6 +104,13 @@ To identify the industrial units included on the survey different datasets of di
 In those cases, like the example below, it will be necessary to draw the polygon describing the extent of the premises an create a new FUC with the following rule: basemap sheet number + a unique __5__ digit number from 1 to n (including preceding zeros). So, for example if you observe that there is a functional unit in the area covered by the example below, the new FUC will be '115**00001**'.
 
 <img src="https://npalomin.github.io/sind/timg/arches.png" width="900">
+
+## Hierarchical organisation of spatial units of study
+The relations between the pre-existing and new spatial units of study follows a hierarchical structure. This logic is applied to the creation of unique identifiers of the units created or modified.
+
+<img src="https://npalomin.github.io/sind/timg/hier.png" width="750">
+
+As a general rule no polygon should be deleted if it doesn't have _legacy_.
 
 ---
 
