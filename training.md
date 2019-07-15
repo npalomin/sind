@@ -226,6 +226,7 @@ In the case there is a __Building__ polygon on the basemap sheet that you observ
 |There is a building that looks industrial but is __derelict__ | __derelict__ |
 |There is a building that looks __residential__ | __residential__ |
 |There is a building that was __demolished__ | __demolished__ | 
+|There is a building that is under __development__ | __development__ |
 
 Questions 'Nickname', 'Map sheet number', 'FUC', '1.1 Name of organisation', '6.0 Additional notes...', '7.2 Location', '7.3 External photo' should still be answered. 
 
