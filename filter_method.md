@@ -69,7 +69,7 @@ For the __Buildings__ and __Parcels__ layers a generalization according to 'Land
 - All polygons with 'Land Use' = _Other_ were excluded from the analysis
 - Polygons in the __Buildings__ layer with 'Land Use' = _Utilities_ and 'Area' < 200 sqm were excluded from the analysis
 
-
+/Volumes/ucfnnap/SINDA/GIS_analysis/BUILDINGS_final_FUC.shp (n = 1822)
 
 
 
