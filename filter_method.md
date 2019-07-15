@@ -25,7 +25,7 @@ __The premises where a uniform industrial activity takes place, disregarding the
 ### Data sources
 
 There exist a variety of available open and proprietary data sources relevant for the SIA study. 
-In order to come up with a systematic methodology of data selection two criteria were defined: precision and accuracy.
+In order to come up with a systematic methodology of data selection two criterias were defined: precision and accuracy.
 
 To identify where do industrial activities take place three key data set sets were analysed:
 
@@ -35,7 +35,7 @@ To identify where do industrial activities take place three key data set sets we
 |GLA_Ind_Land_Baseline_2015_Designations|Baseline|Proprietary GLA (Alex Marsh)|Baseline|
 |OS MasterMap Topography Layer - Buildings (Digimap) |Buildings|[https://www.ordnancesurvey.co.uk/business-and-government/products/topography-layer.html](here)|
 
-These datasets have spatial resolution at parcel/building level (1:1000 approximately). However, the cadastral __parcels__ have a more detailed subdivision which was considered more appropiate for the survey of industrial __Functional Units__. Therefore, to get a better representation of the subject of study it is necessary to integrate these datasets.
+These datasets have a spatial resolution at the parcel/building level (1:1000 approximately). The cadastral __Parcels__ have a more detailed demarcation of land divisions than the topographic representation in OS Mastermap ('General Surface' layer). Therefore, it was considered more appropiate to survey the associated exterior spaces of industrial __Functional Units__. To get a better representation of the subject of study it is necessary to integrate the selected datasets.
 
 ### Data integration
 
@@ -47,7 +47,7 @@ Not all the cadastral __Parcels__ overlay with the industrial polygons so the fo
 
 ### Data generalization
 
-As a result of the previous operation we get 1922 features from the __Parcels__ layer. However, a visual inspection of some features shows some innacuracies specially in the polygons classified as NAL. These innacuracies correspond to: uncertain industrial activity according to street level observation (Google Street View) and parcel boundaries shape with too much detail that describe a building rather than a parcel or 'site' boundary (e.g.: docks).
+As a result of the previous operation we get 1922 features from the __Parcels__ layer. However, a visual inspection of some features shows some innacuracies specially in the __Baseline__ polygons classified as NAL. These innacuracies correspond to: uncertain industrial activity verified by street level observation (Google Street View) and parcel boundaries shape with too much detail that describe a building rather than a parcel or 'site' boundary (e.g.: docks).
 
 Similarly, the analysis of the __Buildings__ layer has polygons that are too small or have 'elongated' shapes where it is unlikely that an industrial activity might take place.
 
