@@ -230,7 +230,7 @@ In the case there is a __Building__ polygon on the basemap sheet that you observ
 
 Questions 'Nickname', 'Map sheet number', 'FUC', '1.1 Name of organisation', '6.0 Additional notes...', '7.2 Location', '7.3 External photo' should still be answered. 
 
-:information_source: In the cases described here, you shouldn't be doing any modificactions to the polyons on the digital file.
+:information_source: In the cases described here, you shouldn't be doing any modifications to the polyons on the digital file.
 
 ### 3.2 Building marked as industrial but is not industrial 
 In the case there is a __Building__ polygon on the basemap sheet that you observe that has an activity with no relation at all to industrial uses (i.e. florist, child centre), the "Functional Unit'" should still be registered on EpiCollet according to the following:
