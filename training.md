@@ -251,7 +251,7 @@ Questions 'Nickname', 'Map sheet number', 'FUC', '1.1 Name of organisation', '6.
 :information_source: In the cases described here, you shouldn't be doing any modifications to the polyons on the digital file.
 
 ### 3.3 Small polygons with FUC adyacent to big polygons with FUC that are the same activity
-In case there are polygons with unique FUC grouped together that appear to belong to the same FUC, is necessary to to do only one survey and annotate on the hard copy map which polygons share the same FUC. Then it is necessary to edit this in QGIS according to the following process.
+In case there are polygons with unique FUC grouped together that appear to belong to the same FUC, is necessary to to do only one survey and annotate on the hard copy map which polygons share the same FUC. Then it is necessary to edit this by renaming the smaller polygons in QGIS according to the following process.
 
 | |
 |-|
