@@ -1,3 +1,14 @@
+Date: Jul-2019
+Title: |
+  Spatial data preprocessing
+authors: Nicolas Palominos
+output: pdf_document
+---
+
+<img src="https://npalomin.github.io/sind/timg/logos.png" width="300">
+
+---
+
 ## Spatial data preprocessing
 
 ### Spatial unit of study
