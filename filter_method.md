@@ -56,7 +56,7 @@ Similarly, the analysis of the __Buildings__ layer has polygons that are too sma
 - Delete parcels with area <= 10 sqm & delete duplicates (154 features)
 /Volumes/ucfnnap/SINDA/GIS_analysis/PARCELS_land_registry_ind_land.shp (n = 1768)
 
-Next step the polygons of the __Buildings__ layer (OS MasterMap) that overlay with the parcels layers are selected n = 2958 buildings.
+Next step the polygons of the __Buildings__ layer (OS MasterMap) that overlay with the __Parcels__ layers are selected n = 2958 buildings.
 
 ##### Buildings
 - Delete polygons <= 15 sqm (526 features)
@@ -66,18 +66,10 @@ Next step the polygons of the __Buildings__ layer (OS MasterMap) that overlay wi
 
 #### Semantic generalization
 For the __Buildings__ and __Parcels__ layers a generalization according to 'Land Use' attribute was applied. 
+- All polygons with 'Land Use' = _Other_ were excluded from the analysis
+- Polygons in the __Buildings__ layer with 'Land Use' = _Utilities_ and 'Area' < 200 sqm were excluded from the analysis
 
-~~The innacurate polygons have a similar LU_CODE_20 attribute of '9' and '25'. Therefore those two classes were filtered from the NALs layer (566 and 74 features respectively)~~
 
-
-
-Buildings FUC sequence by Type of Industrial Designated Land
-
-|Type | n|FUC range|
-|-|-|-|
-|SIL|616|1 - 616|
-|LSIS|146|617 - 762|
-|NAL|1366|762 - 2128|
 
 
 
