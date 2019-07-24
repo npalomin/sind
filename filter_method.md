@@ -84,7 +84,7 @@ The area within the Opportunity Area defined by the Southwark council (Old Kent 
 | Outside OA | 1054 |
 |Total | 1822 |
 
-<img src="https://npalomin.github.io/sind/timg/oa_f.png" width="700">
-<img src="https://npalomin.github.io/sind/timg/1down.png" width="300">
+<img src="https://npalomin.github.io/sind/timg/oa_f.png" width="400">
+
 
 
