@@ -3,7 +3,9 @@ Date: Jul-2019
 Title: |
   Spatial data preprocessing
 authors: Nicolas Palominos
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 <img src="https://npalomin.github.io/sind/timg/logos.png" width="300">
@@ -71,5 +73,17 @@ For the __Buildings__ and __Parcels__ layers a generalization according to 'Land
 
 /Volumes/ucfnnap/SINDA/GIS_analysis/BUILDINGS_final_FUC.shp (n = 1822)
 
+
+### Summary of building polygons in the Opportunity Area
+
+The area within the Opportunity Area defined by the Southwark council (Old Kent Road and suroundings) has been surveyed recently (see image below). The data of that survey might be integrated to the SIA, therefore is necessary to identify and quantify them so that the surveys are not duplicated.
+
+| Area | Number of building polygons |
+|-|-|
+| Opportunity Area (OA) | 768 |
+| Outside OA | 1054 |
+|Total | 1822 |
+
+<img src="https://npalomin.github.io/sind/timg/oa_f.png" width="700">
 
 
