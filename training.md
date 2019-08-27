@@ -294,7 +294,7 @@ __Look for machines, if something is being produced or repaired.  Anything that 
 
 # PART 5. Data validation and corrections
 
-Because of the limitations of on-the-ground surveys in some cases, there might be industrial units that were missed or weren't registered with the necessary accuracy, particularly those that weren't identified as functional units in the survey sheets (e.g. Railway arched units). Also, to validate the data collected it is useful to refer to other types of data sources for cross-validation. Given that each surveyor has become an expert of the places they surveyed, the validation (and completion or correction) process considers reviewing each of their own sheets. In order to cross-validate the data that has been collected, we will refer to three additional data sources that will provide us with more detail, might have higher accuracy and up to date information. 
+Because of the limitations of on-the-ground surveys in some cases, there might be industrial units that were missed or weren't registered with the necessary accuracy, particularly those that weren't identified as functional units on the survey sheets (e.g. Railway arches units). Also, to validate the data collected it is useful to refer to other types of data sources for cross-validation. Given that each surveyor has become an expert of the places they surveyed, the validation (and completion or correction) process considers reviewing each of their own sheets. In order to cross-validate the data that has been collected, we will refer to three additional data sources that will provide us with more detail, might have higher accuracy and up-to-date information. 
 
 It worth reminding that the scale of analysis of this survey is 1:1000, therefore drawings (or drawing improvements) should be done at appropiate scales not smaller than 1:200 (see the bottom bar in QGIS to see the scale corresponding with the zoom level). The accuracy of the drawings is dependant on the scale of analysis therefore the scale must be considered to assess the quality of the drawings.
 
@@ -302,7 +302,7 @@ It worth reminding that the scale of analysis of this survey is 1:1000, therefor
 
 ### 5.1 Load web map base layer in QGIS
 
-It is possible to load Google Maps (default and satellite maps, and other opendata sources) into QGIS as a basemap layer. Google Maps often has up-to-date information of commercial uses that can be useful to contrast against what was observed and surveyed on the field. Also, the satelllite map offers a highly detailed description of the built environment allowing to identify buildings, fences, walls and other physical elements that can help improve the acurracy of the information registered. 
+It is possible to load Google Maps (default and satellite maps, and other opendata sources) into QGIS as a basemap layer. Google Maps often has up-to-date information of commercial/retail activities that can be useful to contrast against what was observed and surveyed on the field. Also, the satelllite map offers a highly detailed description of the built environment allowing to identify buildings, fences, walls and other physical elements that can help improve the acurracy of the information registered. 
 
 There are two methods to load Google Maps (and other web map layers into QGIS)
 
@@ -339,6 +339,6 @@ Particularly for the cases of railway arches additional detailed maps have been 
 
 ---
 
-In the cases where polygons need small corrections follow the next steps. Select the layer to edit, turn the editing mode on and use the __Vertex tool__ to edit the vertices of the polygons by clicking and moving. Add new polygons as required following the standard process.
+In the cases when polygons need small corrections follow the next steps. Select the layer to edit, turn the editing mode on and use the __Vertex tool__ to edit the vertices of the polygons by clicking and moving. Add new polygons as required following the standard process.
 
 <img src="https://npalomin.github.io/sind/timg/vertex.png" width="600">
