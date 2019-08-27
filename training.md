@@ -296,7 +296,7 @@ Because of the limitations of on the ground surveys in some cases, there might b
 
 However, it worth reminding that the scale of analysis of this survey is 1:1000 therefore drawing (or drawing improvements) should be done at appropiate scales (see the bottom bar in QGIS to see the scale corresponding with the zoom level)
 
-<img src="https://npalomin.github.io/sind/timg/scal.png" width="700">
+<img src="https://npalomin.github.io/sind/timg/scal.png" width="500">
 
 ### 5.1 Load web map base layer in QGIS
 
