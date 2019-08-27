@@ -23,6 +23,8 @@ output: pdf_document
 
 [__PART 3.__ Frequently asked questions](https://github.com/npalomin/sind/blob/master/training.md#part-3-frequently-asked-questions-faq)
 
+[__PART 4.__ Data validation](https://github.com/npalomin/sind/blob/master/training.md#part-4-data-validation)
+
 ---
 
 # PART 1. The paper map, the spatial "functional unit" and QGIS
@@ -213,3 +215,8 @@ ii) Inside your "SIA_mapping" folder create two new folders: "BUILDINGS_*your ni
 > In case the Functional Unit I see on the basemap sheet was demolished, should I complete the survey form?
 
 __Yes, register the FUC (question 1.2), complete question '2.1 Name of organisation' with *Nind* (for not industrial), then describe the case with more details in question '5.4 General Notes:'.__
+
+# PART 4. Data validation
+
+Because of the limitations of the ground surveys in some cases, there might be industrial units that were missed or weren't registered with the necessary accuracy, particularly those that weren't identified as functional units in the survey sheets (e.g. Railway arched units). Also, to validate the data collected it is useful to refer to other types of data sources for cross-validation. Given that each surveyor has become an expert of the places they surveyed, the validation (and completion) process considers reviewing each their own sheets. In order to cross-validate the data that has been collected, we will refer to three additional data sources that will provide us with more detail, might have higher accuracy and up to date information. 
+

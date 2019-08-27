@@ -23,6 +23,8 @@ output: pdf_document
 
 [__PART 4.__ Frequently asked questions](https://github.com/npalomin/sind/blob/master/training.md#part-4-frequently-asked-questions-faq)
 
+[__PART 4.__ Data validation](https://github.com/npalomin/sind/blob/master/training.md#part-5-data-validation)
+
 ---
 
 # PART 1. The paper map, the spatial "functional unit" and QGIS
@@ -198,7 +200,7 @@ ii) Inside your "SIA_mapping" folder create two new folders: "BUILDINGS_*your ni
 
 ---
 
-13. Export the features layer with a new name. Select layer on the layer panel [mouse rigth click] / Export... / Save Feature As / File name... / (select the SIA_mapping / BUILDINGS (or PARCELS) folder). Save as: *original layer name* + _ + *your nickname* (e.g. b_training_nicolas or b_sheet_32_nicolas)
+13. Export the features layer with a new name. Select layer on the layer panel [mouse right click] / Export... / Save Feature As / File name... / (select the SIA_mapping / BUILDINGS (or PARCELS) folder). Save as: *original layer name* + _ + *your nickname* (e.g. b_training_nicolas or b_sheet_32_nicolas)
 
 <img src="https://npalomin.github.io/sind/timg/10export.png" width="700">
 
@@ -287,3 +289,48 @@ __Yes, see point 3.1 for details__
 > 2. How to define what is industrial from what is observed on site?
 
 __Look for machines, if something is being produced or repaired.  Anything that is industrial should have a FULL survey. If in doubt it is recommended to conduct the survey__
+
+# PART 5. Data validation
+
+Because of the limitations of on the ground surveys in some cases, there might be industrial units that were missed or weren't registered with the necessary accuracy, particularly those that weren't identified as functional units in the survey sheets (e.g. Railway arched units). Also, to validate the data collected it is useful to refer to other types of data sources for cross-validation. Given that each surveyor has become an expert of the places they surveyed, the validation (and completion) process considers reviewing each of their own sheets. In order to cross-validate the data that has been collected, we will refer to three additional data sources that will provide us with more detail, might have higher accuracy and up to date information.
+
+However, it worth reminding that the scale of analysis of this survey is 1:1000 therefore drawing (or drawing improvements) should be done at appropiate scales (see the bottom bar in QGIS to see the scale corresponding with the zoom level)
+
+<img src="https://npalomin.github.io/sind/timg/scal.png" width="700">
+
+5.1 Load web map base layer in QGIS
+
+It is possible to load Google Maps (default and satellite maps, and other opendata sources) into QGIS as a basemap layer. Google Maps often has up-to-date information of commercial uses that can be useful to contrast against what was observed and surveyed on the field. Also, the satelllite map offers a highly detail description of the built environment allowing to identify buildings, fences, walls and other physical elements that can help improve the acurracy of the information registered. 
+
+There are two methods to load Google Maps (and other web map layers into QGIS)
+
+5.1.1 HCMGIS Plugin
+
+Plugins / Manage and Install Plugins... (in All), search for __HCMGIS__ and click on 'Install Plugin'
+
+<img src="https://npalomin.github.io/sind/timg/plug.png" width="700">
+
+Then go to HCMGIS / BaseMap / Google Maps to load the 'Default' style of Google Maps into QGIS. The 'Google Maps' will appear in the layer panel. Drag to the bottom of the layers list if neccesary. It will be possible to see a basemap raster image of Google Maps, with the standard 'places' information displayed. Click/Unclick the drawings layer checkboxes to see what's underneath. 
+
+<img src="https://npalomin.github.io/sind/timg/gmap.png" width="700">
+
+Unlike the online version it is not possible to get extra information when clicking on a place. Visit the Google Maps page to get additional data such as website, address, etc. 
+
+<img src="https://npalomin.github.io/sind/timg/gmextra.png" width="700">
+
+
+5.1.2 Python script
+
+Copy and paste the following [script](https://raw.githubusercontent.com/klakar/QGIS_resources/master/collections/Geosupportsystem/python/qgis_basemaps.py) into the bottom window of the Python Console. To open the 'Python Console' go to Plugins / Python Console  . Hit enter and then you can close the Python Panel to return to the full window map view. To load the basemap layers open the 'Browser' panel View / Panels / Browser . Search for __XYZ Tiles__, click on the arrow, select and drag the desired layer (e.g. OpenStreetMap Standard). Click/Unclick the drawings layer checkboxes to see what's underneath.
+
+<img src="https://npalomin.github.io/sind/timg/osm.png" width="700">
+
+5.2 Expert judgement data
+
+The ['Southwark Industrial Audit Atlas'](https://drive.google.com/open?id=1PYmRULtcCaI2j-I8nsfzs9x2jWclanxa) (all survey sheets) have been hand annotated highlighting places where there are industrial activities that have not been surveyed and other notes that can complement the field survey. The annotated altas sheets can be found [here](https://drive.google.com/open?id=1NpLTIFDm-01-b23cn8cxboj_hhbwYasF). 
+
+5.3 Fire insurance maps and plans (Goad Maps)
+
+Particularly for the cases of railway arches extra detailed maps have been collected and organized for each sheet on this [shared folder]((https://drive.google.com/open?id=1NpLTIFDm-01-b23cn8cxboj_hhbwYasF). This maps provide higher-resolution description that can help outline a more precise shape of the units underneath the railway arches.
+
+<img src="https://npalomin.github.io/sind/timg/goad.png" width="700">
