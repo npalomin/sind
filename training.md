@@ -23,7 +23,7 @@ output: pdf_document
 
 [__PART 4.__ Frequently asked questions](https://github.com/npalomin/sind/blob/master/training.md#part-4-frequently-asked-questions-faq)
 
-[__PART 5.__ Data validation](https://github.com/npalomin/sind/blob/master/training.md#part-5-data-validation)
+[__PART 5.__ Data validation](https://github.com/npalomin/sind/blob/master/training.md#part-5-data-validation-and-corrections)
 
 ---
 
@@ -335,6 +335,6 @@ Particularly for the cases of railway arches additional detailed maps have been 
 
 <img src="https://npalomin.github.io/sind/timg/goad.png" width="700">
 
-In the cases where polygons need small corrections follow the next steps. Turn the editing on and use the __Vertex tool__ to edit the vertices of the polygons by clicking and moving.
+In the cases where polygons need small corrections follow the next steps. Select the layer to edit, turn the editing mode on and use the __Vertex tool__ to edit the vertices of the polygons by clicking and moving. Add new polygons as required following the standard process.
 
 <img src="https://npalomin.github.io/sind/timg/vertex.png" width="600">
