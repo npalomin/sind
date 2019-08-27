@@ -292,15 +292,15 @@ __Look for machines, if something is being produced or repaired.  Anything that 
 
 # PART 5. Data validation
 
-Because of the limitations of on the ground surveys in some cases, there might be industrial units that were missed or weren't registered with the necessary accuracy, particularly those that weren't identified as functional units in the survey sheets (e.g. Railway arched units). Also, to validate the data collected it is useful to refer to other types of data sources for cross-validation. Given that each surveyor has become an expert of the places they surveyed, the validation (and completion) process considers reviewing each of their own sheets. In order to cross-validate the data that has been collected, we will refer to three additional data sources that will provide us with more detail, might have higher accuracy and up to date information.
+Because of the limitations of on-the-ground surveys in some cases, there might be industrial units that were missed or weren't registered with the necessary accuracy, particularly those that weren't identified as functional units in the survey sheets (e.g. Railway arched units). Also, to validate the data collected it is useful to refer to other types of data sources for cross-validation. Given that each surveyor has become an expert of the places they surveyed, the validation (and completion or correction) process considers reviewing each of their own sheets. In order to cross-validate the data that has been collected, we will refer to three additional data sources that will provide us with more detail, might have higher accuracy and up to date information. 
 
-However, it worth reminding that the scale of analysis of this survey is 1:1000 therefore drawing (or drawing improvements) should be done at appropiate scales (see the bottom bar in QGIS to see the scale corresponding with the zoom level)
+It worth reminding that the scale of analysis of this survey is 1:1000, therefore drawings (or drawing improvements) should be done at appropiate scales not smaller than 1:200 (see the bottom bar in QGIS to see the scale corresponding with the zoom level). The accuracy of the drawings is dependant on the scale of analysis therefore the scale must be considered to assess the quality of the drawings.
 
 <img src="https://npalomin.github.io/sind/timg/scal.png" width="500">
 
 ### 5.1 Load web map base layer in QGIS
 
-It is possible to load Google Maps (default and satellite maps, and other opendata sources) into QGIS as a basemap layer. Google Maps often has up-to-date information of commercial uses that can be useful to contrast against what was observed and surveyed on the field. Also, the satelllite map offers a highly detail description of the built environment allowing to identify buildings, fences, walls and other physical elements that can help improve the acurracy of the information registered. 
+It is possible to load Google Maps (default and satellite maps, and other opendata sources) into QGIS as a basemap layer. Google Maps often has up-to-date information of commercial uses that can be useful to contrast against what was observed and surveyed on the field. Also, the satelllite map offers a highly detailed description of the built environment allowing to identify buildings, fences, walls and other physical elements that can help improve the acurracy of the information registered. 
 
 There are two methods to load Google Maps (and other web map layers into QGIS)
 
@@ -314,14 +314,14 @@ Then go to HCMGIS / BaseMap / Google Maps to load the 'Default' style of Google 
 
 <img src="https://npalomin.github.io/sind/timg/gmap.png" width="700">
 
-Unlike the online version it is not possible to get extra information when clicking on a place. Visit the Google Maps page to get additional data such as website, address, etc. 
+Unlike the online version it is not possible to get extra information when clicking on a place. Visit the Google Maps page to get additional data such as website, address, etc. by clicking over the places icons.
 
 <img src="https://npalomin.github.io/sind/timg/gmextra.png" width="700">
 
 
 #### 5.1.2 Python script
 
-Copy and paste the following [script](https://raw.githubusercontent.com/klakar/QGIS_resources/master/collections/Geosupportsystem/python/qgis_basemaps.py) into the bottom window of the Python Console. To open the 'Python Console' go to Plugins / Python Console  . Hit enter and then you can close the Python Panel to return to the full window map view. To load the basemap layers open the 'Browser' panel View / Panels / Browser . Search for __XYZ Tiles__, click on the arrow, select and drag the desired layer (e.g. OpenStreetMap Standard). Click/Unclick the drawings layer checkboxes to see what's underneath.
+Copy and paste the following [script](https://raw.githubusercontent.com/klakar/QGIS_resources/master/collections/Geosupportsystem/python/qgis_basemaps.py) into the bottom window of the 'Python Console'. To open the 'Python Console' go to Plugins / Python Console  . Hit enter and then you can close the 'Python Console' to return to the full map view. To load the basemap layers open the 'Browser' panel View / Panels / Browser . Search for __XYZ Tiles__, click on the arrow, select and drag the desired layer (e.g. OpenStreetMap Standard). Click/Unclick the drawings layer checkboxes to see what's underneath.
 
 <img src="https://npalomin.github.io/sind/timg/osm.png" width="700">
 
@@ -331,6 +331,6 @@ The ['Southwark Industrial Audit Atlas'](https://drive.google.com/open?id=1PYmRU
 
 ### 5.3 Fire insurance maps and plans (Goad Maps)
 
-Particularly for the cases of railway arches extra detailed maps have been collected and organized for each sheet on this [shared folder](https://drive.google.com/open?id=1NpLTIFDm-01-b23cn8cxboj_hhbwYasF). This maps provide higher-resolution description that can help outline a more precise shape of the units underneath the railway arches.
+Particularly for the cases of railway arches additional detailed maps have been collected and organized for each sheet on this [shared folder](https://drive.google.com/open?id=1NpLTIFDm-01-b23cn8cxboj_hhbwYasF). These maps provide a higher-resolution description that can help outline a more precise shape of the units underneath the railway arches.
 
 <img src="https://npalomin.github.io/sind/timg/goad.png" width="700">
