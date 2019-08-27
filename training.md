@@ -290,7 +290,7 @@ __Yes, see point 3.1 for details__
 
 __Look for machines, if something is being produced or repaired.  Anything that is industrial should have a FULL survey. If in doubt it is recommended to conduct the survey__
 
-# PART 5. Data validation
+# PART 5. Data validation and corrections
 
 Because of the limitations of on-the-ground surveys in some cases, there might be industrial units that were missed or weren't registered with the necessary accuracy, particularly those that weren't identified as functional units in the survey sheets (e.g. Railway arched units). Also, to validate the data collected it is useful to refer to other types of data sources for cross-validation. Given that each surveyor has become an expert of the places they surveyed, the validation (and completion or correction) process considers reviewing each of their own sheets. In order to cross-validate the data that has been collected, we will refer to three additional data sources that will provide us with more detail, might have higher accuracy and up to date information. 
 
@@ -334,3 +334,7 @@ The ['Southwark Industrial Audit Atlas'](https://drive.google.com/open?id=1PYmRU
 Particularly for the cases of railway arches additional detailed maps have been collected and organized for each sheet on this [shared folder](https://drive.google.com/open?id=1NpLTIFDm-01-b23cn8cxboj_hhbwYasF). These maps provide a higher-resolution description that can help outline a more precise shape of the units underneath the railway arches.
 
 <img src="https://npalomin.github.io/sind/timg/goad.png" width="700">
+
+In the cases where polygons need small corrections follow the next steps. Turn the editing on and use the __Vertex tool__ to edit the vertices of the polygons by clicking and moving.
+
+<img src="https://npalomin.github.io/sind/timg/vertex.png" width="600">
