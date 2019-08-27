@@ -23,7 +23,7 @@ output: pdf_document
 
 [__PART 4.__ Frequently asked questions](https://github.com/npalomin/sind/blob/master/training.md#part-4-frequently-asked-questions-faq)
 
-[__PART 5.__ Data validation](https://github.com/npalomin/sind/blob/master/training.md#part-5-data-validation-and-corrections)
+[__PART 5.__ Data validation and corrections](https://github.com/npalomin/sind/blob/master/training.md#part-5-data-validation-and-corrections)
 
 ---
 
