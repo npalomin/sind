@@ -23,7 +23,7 @@ output: pdf_document
 
 [__PART 4.__ Frequently asked questions](https://github.com/npalomin/sind/blob/master/training.md#part-4-frequently-asked-questions-faq)
 
-[__PART 4.__ Data validation](https://github.com/npalomin/sind/blob/master/training.md#part-5-data-validation)
+[__PART 5.__ Data validation](https://github.com/npalomin/sind/blob/master/training.md#part-5-data-validation)
 
 ---
 
@@ -298,13 +298,13 @@ However, it worth reminding that the scale of analysis of this survey is 1:1000 
 
 <img src="https://npalomin.github.io/sind/timg/scal.png" width="700">
 
-5.1 Load web map base layer in QGIS
+### 5.1 Load web map base layer in QGIS
 
 It is possible to load Google Maps (default and satellite maps, and other opendata sources) into QGIS as a basemap layer. Google Maps often has up-to-date information of commercial uses that can be useful to contrast against what was observed and surveyed on the field. Also, the satelllite map offers a highly detail description of the built environment allowing to identify buildings, fences, walls and other physical elements that can help improve the acurracy of the information registered. 
 
 There are two methods to load Google Maps (and other web map layers into QGIS)
 
-5.1.1 HCMGIS Plugin
+#### 5.1.1 HCMGIS Plugin
 
 Plugins / Manage and Install Plugins... (in All), search for __HCMGIS__ and click on 'Install Plugin'
 
@@ -319,18 +319,18 @@ Unlike the online version it is not possible to get extra information when click
 <img src="https://npalomin.github.io/sind/timg/gmextra.png" width="700">
 
 
-5.1.2 Python script
+#### 5.1.2 Python script
 
 Copy and paste the following [script](https://raw.githubusercontent.com/klakar/QGIS_resources/master/collections/Geosupportsystem/python/qgis_basemaps.py) into the bottom window of the Python Console. To open the 'Python Console' go to Plugins / Python Console  . Hit enter and then you can close the Python Panel to return to the full window map view. To load the basemap layers open the 'Browser' panel View / Panels / Browser . Search for __XYZ Tiles__, click on the arrow, select and drag the desired layer (e.g. OpenStreetMap Standard). Click/Unclick the drawings layer checkboxes to see what's underneath.
 
 <img src="https://npalomin.github.io/sind/timg/osm.png" width="700">
 
-5.2 Expert judgement data
+### 5.2 Expert judgement data
 
 The ['Southwark Industrial Audit Atlas'](https://drive.google.com/open?id=1PYmRULtcCaI2j-I8nsfzs9x2jWclanxa) (all survey sheets) have been hand annotated highlighting places where there are industrial activities that have not been surveyed and other notes that can complement the field survey. The annotated altas sheets can be found [here](https://drive.google.com/open?id=1NpLTIFDm-01-b23cn8cxboj_hhbwYasF). 
 
-5.3 Fire insurance maps and plans (Goad Maps)
+### 5.3 Fire insurance maps and plans (Goad Maps)
 
-Particularly for the cases of railway arches extra detailed maps have been collected and organized for each sheet on this [shared folder]((https://drive.google.com/open?id=1NpLTIFDm-01-b23cn8cxboj_hhbwYasF). This maps provide higher-resolution description that can help outline a more precise shape of the units underneath the railway arches.
+Particularly for the cases of railway arches extra detailed maps have been collected and organized for each sheet on this [shared folder](https://drive.google.com/open?id=1NpLTIFDm-01-b23cn8cxboj_hhbwYasF). This maps provide higher-resolution description that can help outline a more precise shape of the units underneath the railway arches.
 
 <img src="https://npalomin.github.io/sind/timg/goad.png" width="700">
