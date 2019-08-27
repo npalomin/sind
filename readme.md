@@ -54,3 +54,4 @@ https://www.gov.uk/government/publications/southwark-inspire-index-polygon-data
 https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/797566/geospatial-data-catalogue-hm-land-registry.csv/preview  
 https://www.london.gov.uk/sites/default/files/gla_migrate_files_destination/london-industrial-land-baseline-final-report%20Nov%202010.pdf  
 https://www.london.gov.uk/sites/default/files/appendices_-_london_industrial_land_supply_economy_study.pdf  
+http://www.bl.uk/onlinegallery/onlineex/firemaps/england/london/vitox/zoomify150647.html
