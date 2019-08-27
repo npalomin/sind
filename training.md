@@ -316,7 +316,7 @@ Then go to HCMGIS / BaseMap / Google Maps to load the 'Default' style of Google 
 
 <img src="https://npalomin.github.io/sind/timg/gmap.png" width="700">
 
-Unlike the online version it is not possible to get extra information when clicking on a place. Visit the Google Maps page to get additional data such as website, address, etc. by clicking over the places icons.
+Unlike the online version it is not possible to get extra information when clicking on a place. Visit the Google Maps page to get additional data such as website, address, etc. by clicking over the places icons. The information published might help to complete/verify the data registered on the survey forms.
 
 <img src="https://npalomin.github.io/sind/timg/gmextra.png" width="700">
 
