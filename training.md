@@ -329,7 +329,7 @@ Copy and paste the following [script](https://raw.githubusercontent.com/klakar/Q
 
 ### 5.2 Expert judgement data
 
-The ['Southwark Industrial Audit Atlas'](https://drive.google.com/open?id=1PYmRULtcCaI2j-I8nsfzs9x2jWclanxa) (all survey sheets) have been hand annotated highlighting places where there are industrial activities that have not been surveyed and other notes that can complement the field survey. The annotated altas sheets can be found [here](https://drive.google.com/open?id=1NpLTIFDm-01-b23cn8cxboj_hhbwYasF). 
+The ['Southwark Industrial Audit Atlas'](https://drive.google.com/open?id=1PYmRULtcCaI2j-I8nsfzs9x2jWclanxa) (all survey sheets) have been hand annotated highlighting places where there are industrial activities that have not been surveyed and other notes that can complement the field survey. The annotated altas sheets can be found [here] (https://drive.google.com/open?id=1KVXiMyabyHlm9OKqbKMG9OgPOdhjqQCs).
 
 ### 5.3 Fire insurance maps and plans (Goad Maps)
 
