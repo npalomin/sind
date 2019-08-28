@@ -331,7 +331,7 @@ Copy and paste the following [script](https://raw.githubusercontent.com/klakar/Q
 
 The ['Southwark Industrial Audit Atlas'](https://drive.google.com/open?id=1PYmRULtcCaI2j-I8nsfzs9x2jWclanxa) (all survey sheets) have been hand annotated highlighting places where there are industrial activities that have not been surveyed and other notes that can complement the field survey. The annotated altas sheets can be found [here](https://drive.google.com/open?id=1KVXiMyabyHlm9OKqbKMG9OgPOdhjqQCs).
 
-:warning: The areas identified as industrial in the annotated sheets that were observed as not industrial should be drawn and assigned a polygon code with the following rule: __00 + sheet number + correlative number__. Although, these areas are spatial representations of a different nature than the FU they are still valuable for the purposes of the research. A survey form should be filled-in indicating the corresponding polygon ID and any observation in the section '6.0 Additional notes...' when necessary.
+:warning: The areas identified as industrial in the annotated sheets that were observed as not industrial should be drawn and assigned a polygon code with the following rule: __11111 + sheet number + correlative number__ (e.g. 11111 32 1 --without spaces). Although, these areas are spatial representations of a different nature than the FU they are still valuable for the purposes of the research. A survey form should be filled-in indicating the corresponding polygon ID and any observation in the section '6.0 Additional notes...' when necessary.
 
 ### 5.3 Fire insurance maps and plans (Goad Maps) & planning applications
 
