@@ -359,6 +359,6 @@ There are some areas outside the places that intersect with the Industrial Basel
 |Expert judgement| 157 - 165 | Areas that have industrial activities according to desktop research (without FUC) |
 |Surroundings| 166 - 296 | All the remaining area within Southwark's administrative boundary, outside the previously defined grids  (without FUC) |
 
-<img src="https://npalomin.github.io/sind/timg/cfull.png" width="700">
+<img src="https://npalomin.github.io/sind/timg/cfull.png">
 
 Because no specific building has been identified for stages 'Expert judgment' and 'Surroundings' there are no FUC. Thus, these will have to be generated from field observation and the code should be created following the process indicated in [point 4](https://github.com/npalomin/sind/blob/master/training.md#survey-workflow) of the survey workflow.
