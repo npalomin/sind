@@ -351,7 +351,7 @@ In the cases when polygons need small corrections follow the next steps. Select 
 
 # PART 6. Extended survey
 
-There are some areas outside the places that intersect with the Industrial Baseline (156 sheets) that have been identified containing industrial activities. The full extent of Southwark has been grided and organised following the same organisation than the 1st stage of the survey (156 sheets - Baseline). The following table and image summarises this organisation
+There are some areas outside the places that intersect with the Industrial Baseline (156 sheets) that have been identified containing industrial activities. The full extent of Southwark has been grided and organised following the same organisation of the 1st stage of the survey (156 sheets - 'Baseline'). The following table and image summarises this organisation.
 
 |Stage|Sheet number range| Description|
 |-|-|-|
@@ -361,4 +361,4 @@ There are some areas outside the places that intersect with the Industrial Basel
 
 <img src="https://npalomin.github.io/sind/timg/cfull.png">
 
-Because no specific building has been identified for stages 'Expert judgment' and 'Surroundings' there are no FUC. Thus, these will have to be generated from field observation and the code should be created following the process indicated in [point 4](https://github.com/npalomin/sind/blob/master/training.md#survey-workflow) of the survey workflow.
+Because no specific building has been identified for stages 'Expert judgment' and 'Surroundings' there are no FUCs. Thus, these will have to be generated from field observation and the code should be created following the process indicated in [point 4](https://github.com/npalomin/sind/blob/master/training.md#survey-workflow) of the survey workflow. The 'Buildings' and 'Parcels' digital files are in the same folder ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) of the 'Baseline' stage. The polygon features on this files will only serve as guidance (that could potentially be edited) as these don't have FUCs.
