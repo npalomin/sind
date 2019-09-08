@@ -3,7 +3,9 @@ Date: Jul-2019
 Title: |
   Southwark Industrial Audit (SIA) spatial survey methodology
 authors: Nicolas Palominos
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 <img src="https://npalomin.github.io/sind/timg/logos.png" width="300">
@@ -24,6 +26,8 @@ output: pdf_document
 [__PART 4.__ Frequently asked questions](https://github.com/npalomin/sind/blob/master/training.md#part-4-frequently-asked-questions-faq)
 
 [__PART 5.__ Data validation and corrections](https://github.com/npalomin/sind/blob/master/training.md#part-5-data-validation-and-corrections)
+
+[__PART 6.__ Extended survey](https://github.com/npalomin/sind/blob/master/training.md#part-6-extended-survey)
 
 ---
 
@@ -344,3 +348,17 @@ Particularly for the cases of railway arches additional detailed maps have been 
 In the cases when polygons need small corrections follow the next steps. Select the layer to edit, turn the editing mode on and use the __Vertex tool__ to edit the vertices of the polygons by clicking and moving. Add new polygons as required following the standard process.
 
 <img src="https://npalomin.github.io/sind/timg/vertex.png" width="600">
+
+# PART 6. Extended survey
+
+There are some areas outside the places that intersect with the Industrial Baseline (156 sheets) that have been identified containing industrial activities. The full extent of Southwark has been grided and organised following the same organisation than the 1st stage of the survey (156 sheets - Baseline). The following table and image summarises this organisation
+
+|Stage|Sheet number range| Description|
+|-|-|-|
+|Baseline| 1 - 156 | Buildings intersecting with the Industrial Baseline (with FUC) |
+|Expert judgement| 157 - 165 | Areas that have industrial activities according to desktop research (without FUC) |
+|Surroundings| 166 - 296 | All the remaining area within Southwark's administrative boundary, outside the previously defined grids  (without FUC) |
+
+<img src="https://npalomin.github.io/sind/timg/cfull.png" width="700">
+
+Because no specific building has been identified for stages 'Expert judgment' and 'Surroundings' there are no FUC. Thus, these will have to be generated from field observation and the code should be created following the process indicated in [point 4](https://github.com/npalomin/sind/blob/master/training.md#survey-workflow) of the survey workflow.
