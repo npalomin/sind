@@ -1,0 +1,87 @@
+---
+title: "Survey EpiCollect records summary"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+---
+<style>
+* {
+  font-family: "Palatino"
+}
+
+h1{
+    font-size: 190%
+}
+
+h2{
+    font-size: 160%
+}
+
+h3{
+    font-size: 150%
+}
+
+h4{
+    font-size: 130%
+}
+
+h5{
+    font-size: 110%
+}
+
+h6{
+    font-size: 90%
+}
+</style>
+
+Summary table from CSV file downloaded from EpiCollect (22 Sept 2019).
+
+- File in [CSV format](https://drive.google.com/open?id=1UV4VLgjlDDxNT-gWuvE4898NHNT80owZ)
+- File in [Excel format](https://drive.google.com/open?id=1pm2NsL6wpF3sy_4eZBG0hc2oNTDydE3q)
+
+Data is "as is" and has NOT been processed (cleaned, restructured, etc.)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+library(readr)
+library(tidyverse)
+library(openxlsx)
+library(htmlTable)
+```
+
+```{r include=FALSE}
+form_csv <- read_csv("form-1__sia-audit 2.csv")
+```
+
+```{r include=FALSE}
+write.xlsx(form_csv, file = "/Users/nicolaspalominos/Documents/R_GitHub/sind/form_xls.xlsx", colNames = TRUE, borders = "rows")
+```
+
+```{r include=FALSE}
+df_ss <- as.data.frame(form_csv)
+```
+
+```{r eval=FALSE, include=FALSE}
+summary(df_ss)
+unique(df_ss$`1_Surveyor_Nickname`)
+```
+
+```{r include=FALSE}
+ss <- df_ss %>%
+  group_by(`1_Surveyor_Nickname`) %>%
+  summarise(n = n(), type = paste(sort(unique(`2_Map_sheet_number`)),collapse=", "))
+colnames(ss) <- c("Surveyor", "Total FUCs", "Sheet's numbers")
+```
+
+```{r echo=FALSE}
+htmlTable(ss, caption="Summary Table", col.columns = c("none", "#F7F7F7"), css.cell="padding-left:1em; padding-right:1em;", rnames=F, align = "lrl")
+```
+
+
+
