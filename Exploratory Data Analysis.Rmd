@@ -1,0 +1,159 @@
+---
+title: "Exploratory Data Analysis"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+---
+<style>
+* {
+  font-family: "Palatino"
+}
+
+h1{
+    font-size: 190%
+}
+
+h2{
+    font-size: 160%
+}
+
+h3{
+    font-size: 150%
+}
+
+h4{
+    font-size: 130%
+}
+
+h5{
+    font-size: 110%
+}
+
+h6{
+    font-size: 90%
+}
+</style>
+
+Exploratory data analysis
+
+<!-- __References__ -->
+<!-- - [R for Data Science](https://r4ds.had.co.nz/exploratory-data-analysis.html) -->
+<!-- - [Data Wrangling](https://suzan.rbind.io/2018/04/dplyr-tutorial-4/) -->
+<!-- - [Data carpentry - nice diagrams](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html) -->
+<!-- - [Dplyr tutorial](https://beta.rstudioconnect.com/content/3350/dplyr_tutorial.html) -->
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+library(readr)
+library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(openxlsx)
+library(htmlTable)
+library(pander)
+library(forcats)
+library(kableExtra)
+```
+
+```{r include=FALSE}
+form_csv <- read_csv("form-1__sia-audit 2.csv")
+```
+
+# Glimpse
+
+```{r}
+glimpse(form_csv)
+```
+
+# Completeness
+
+Count of NAs per question
+
+```{r}
+colSums(is.na(form_csv))
+```
+
+
+```{r warning=FALSE}
+form_csv %>%
+  group_by(`1_Surveyor_Nickname`) %>%
+  summarise_all(funs(sum(is.na(.)))) %>%
+  htmlTable(caption="NA count by Question and Surveyor", col.columns = c("none", "#F7F7F7"), css.cell="padding-left:1em; padding-right:1em;", rnames=F, align = "lr")
+```
+
+# Classes 'Activity' and 'SIC' codes
+
+__"1.2 Description of organisations activity"__
+
+```{r}
+descr_class <- form_csv %>%
+  group_by(`6_12_Description_of_`) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n)) 
+```
+
+```{r}
+descr_class %>%
+  head(35) %>%
+  htmlTable(caption="1.2 Description of organisations activity (top 35)", col.columns = c("none", "#F7F7F7"), css.cell="padding-left:1em; padding-right:1em;", rnames=F, align = "lr")
+```
+
+Unique values in "1.2 Description of organisations activity"
+```{r}
+form_csv %>% 
+  distinct(`6_12_Description_of_`) %>%
+  nrow()
+```
+
+One of a kind values in "1.2 Description of organisations activity" (top 5)
+```{r}
+descr_class %>%
+  group_by(n) %>%
+  summarise(kind = n()) %>%
+  head(5) %>%
+  rename("Number of species" = n, "Count" = kind) %>%
+  pander()
+```
+
+
+```{r eval=FALSE, include=FALSE}
+write.xlsx(descr_class, file = "/Users/nicolas/Documents/R_Github2/sind/descr_class.xlsx", colNames = TRUE, borders = "rows")
+```
+
+Download full [1.2 Description of organisations activity](https://github.com/npalomin/sind/blob/master/descr_class.xlsx) table
+
+__"7.4 SIC Code"__
+
+```{r}
+SIC_class <- form_csv %>%
+  group_by(`74_74_SIC_Code`) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n)) 
+```
+
+```{r}
+SIC_class %>%
+  head(35) %>%
+  htmlTable(caption="7.4 SIC Code (top 35)", col.columns = c("none", "#F7F7F7"), css.cell="padding-left:1em; padding-right:1em;", rnames=F, align = "lr")
+```
+
+Unique values in "7.4 SIC Code"
+```{r}
+form_csv %>% 
+  distinct(`74_74_SIC_Code`) %>%
+  nrow()
+```
+
+```{r eval=FALSE, include=FALSE}
+write.xlsx(SIC_class, file = "/Users/nicolas/Documents/R_Github2/sind/SIC_class.xlsx", colNames = TRUE, borders = "rows")
+```
+
+Download full [7.4 SIC Code](https://github.com/npalomin/sind/blob/master/SIC_class.xlsx) table
