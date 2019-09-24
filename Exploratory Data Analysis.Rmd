@@ -157,3 +157,18 @@ write.xlsx(SIC_class, file = "/Users/nicolas/Documents/R_Github2/sind/SIC_class.
 ```
 
 Download full [7.4 SIC Code](https://github.com/npalomin/sind/blob/master/SIC_class.xlsx) table
+
+```{r}
+form_csv %>%
+  group_by(`19_31_Floor_levels_t`) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n)) 
+```
+
+
+
+CASE WHEN   "f_19_31_Floor_levels_t" LIKE '%Basement%' THEN 1
+ELSE 0
+END
+
+
