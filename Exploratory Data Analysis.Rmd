@@ -67,6 +67,17 @@ library(kableExtra)
 form_csv <- read_csv("form-1__sia-audit 2.csv")
 ```
 
+```{r include=FALSE}
+finalDB <- read_csv("/Users/nicolaspalominos/Desktop/form-1__sia-audit.csv")
+```
+
+```{r eval=FALSE, include=FALSE}
+write.xlsx(finalDB, file = "/Users/nicolaspalominos/Desktop/finalDB.xlsx", colNames = TRUE, borders = "rows")
+```
+
+
+
+
 # Glimpse
 
 ```{r}
@@ -165,6 +176,33 @@ form_csv %>%
   arrange(desc(n)) 
 ```
 
+
+Q3
+```{r}
+dupFUC <- finalDB %>%
+  group_by(`3_Functional_Unit_Co`) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n)) 
+```
+
+```{r eval=FALSE, include=FALSE}
+write.xlsx(dupFUC, file = "/Users/nicolaspalominos/Desktop/dupFUC.xlsx", colNames = TRUE, borders = "rows")
+```
+
+```{r}
+descr_classDB <- form_csv %>%
+  group_by(`6_12_Description_of_`) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n)) 
+```
+
+Q4
+```{r}
+form_csv %>%
+  group_by(`20_32_How_many_store`) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n)) 
+```
 
 
 CASE WHEN   "f_19_31_Floor_levels_t" LIKE '%Basement%' THEN 1
