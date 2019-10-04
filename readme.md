@@ -4,6 +4,8 @@ Southwark Industrial Audit
 ### Reports, maps, documents, outputs
 |Description|URL|
 |-|-|
+|Exploratory Map (first draft)|https://npalomin.github.io/sind/sum_one.html|
+|Exploratory data analysis (first draft)|https://npalomin.github.io/sind/Exploratory-Data-Analysis.html|
 |Southwark data and final BUILDINGS and PARCELS| https://npalomin.github.io/sind/final_southwarkdata.html|
 |LU_CODE_20 (from GLA) *incorrect land use| https://npalomin.github.io/sind/2015_ind_land.html|
 |Spatial Data Training|http://tiny.cc/sia_cass|
@@ -15,9 +17,15 @@ Southwark Industrial Audit
 |Study of Industrial definition by SIC code|https://npalomin.github.io/sind/SIC_industrial/SIC_industrial.html|
 |Where to go - 17 jun map|https://npalomin.github.io/sind/sal.html |
 
+### Selected literature
 
-
-
+|Title|Keywords|URL|
+|-|-|-|
+|Creative Multiplicities: Urban Morphologies of Creative Clustering|Networks, Mix-use, Categories|https://drive.google.com/open?id=1gc_XjbNQhAOFPtQYU83LTe30EO6cyjfX|
+|Creative Cities, Creative Spaces and Urban Policy| Survey, London, Clusters|https://drive.google.com/open?id=1s85hvulCVEWaC5w9vBh0ugZfCcs5-71o|
+|Reinvigorating New York City’s Manufacturing Zones for the 21st Century| New York, Planning, Categories|https://drive.google.com/open?id=1ZPKbNzoL9SJCZ5JEmxPzv9n6y12mJouM|
+|Making the Marginal Visible: Microenterprise and Urban Space in London|Micro scale, London|https://www.arcc-repository.org/index.php/repository/article/view/119|
+|Pragmatic urbanism: London’s railway arches and small-scale enterprise|Railway arches, London|https://drive.google.com/open?id=1_oRjxf0TdgwQCq0uQQiyhfx3IT-YSnnG|
 
 ### Links
 
