@@ -64,11 +64,11 @@ library(kableExtra)
 ```
 
 ```{r include=FALSE}
-form_csv <- read_csv("form-1__sia-audit 2.csv")
+form_csv <- read_csv("form-1__sia-audit.csv")
 ```
 
 ```{r include=FALSE}
-finalDB <- read_csv("/Users/nicolaspalominos/Desktop/form-1__sia-audit.csv")
+# finalDB <- read_csv("/Users/nicolaspalominos/Desktop/form-1__sia-audit.csv")
 ```
 
 ```{r eval=FALSE, include=FALSE}
@@ -202,6 +202,21 @@ form_csv %>%
   group_by(`20_32_How_many_store`) %>%
   summarise(n = n()) %>%
   arrange(desc(n)) 
+```
+
+```{r}
+options("scipen"=100, "digits"=4)
+```
+
+```{r}
+descr_na <- form_csv %>%
+  group_by(`3_Functional_Unit_Co`) %>%
+  subset(is.na(`6_12_Description_of_`))
+  
+```
+
+```{r}
+write.xlsx(descr_na, file = "descr_na.xlsx", colNames = TRUE, borders = "rows")
 ```
 
 
