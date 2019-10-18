@@ -67,6 +67,16 @@ library(kableExtra)
 form_csv <- read_csv("form-1__sia-audit.csv")
 ```
 
+```{r}
+oct10 <- read.csv("/Users/nicolas/Documents/SIND_local_CASA/epi_data_downloads_temp/form-1__sia-audit.csv")
+```
+
+```{r eval=FALSE, include=FALSE}
+write.xlsx(oct10, file = "/Users/nicolas/Documents/SIND_local_CASA/epi_data_downloads_temp/oct10.xlsx", colNames = TRUE, borders = "rows")
+```
+
+
+
 ```{r include=FALSE}
 # finalDB <- read_csv("/Users/nicolaspalominos/Desktop/form-1__sia-audit.csv")
 ```
