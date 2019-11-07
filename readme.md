@@ -53,6 +53,12 @@ Southwark Industrial Audit
 
 to_tidy_urls  
 
+https://static1.squarespace.com/static/59bbe4992994ca1b4f8b771c/t/59c4231351a5846209810887/1506026387536/Cass+Cities+Audit+2016-2017.pdf
+
+https://static1.squarespace.com/static/59bbe4992994ca1b4f8b771c/t/59c4268f0abd045a6f02dcf0/1506027286841/Cass+Cities+Audit+2015-2016.pdf
+
+---
+
 https://lowline.london/https://lowline.london/
 https://data.london.gov.uk/dataset/town-centre-locations  
 https://data.gov.uk/dataset/ddbb5512-b5fd-46e2-8683-c87ac8da7441/district-town-centres  
