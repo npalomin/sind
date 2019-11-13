@@ -60,6 +60,9 @@ library(htmlTable)
 library(pander)
 library(forcats)
 library(kableExtra)
+#install.packages(c("readxl","writexl")) 
+library(readxl)
+library(writexl)
 ```
 
 ```{r include=FALSE}
@@ -232,5 +235,99 @@ write.xlsx(descr_na, file = "descr_na.xlsx", colNames = TRUE, borders = "rows")
 CASE WHEN   "f_19_31_Floor_levels_t" LIKE '%Basement%' THEN 1
 ELSE 0
 END
+
+```{r}
+missingFUC %>%
+  group_by(`1_Surveyor_Nickname`) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n))
+```
+
+
+Combine two spreadsheets oct10 and oct18
+
+```{r}
+# library(readxl)
+# oct10 <- read_excel("~/Documents/SIA/oct10.xlsx")
+# View(oct10)
+```
+
+```{r}
+names(oct10)
+```
+
+```{r}
+names(oct18)
+```
+
+```{r}
+str(oct18)
+```
+
+```{r}
+oct10_1 <- oct10 %>%
+  select(-c(created_at, created_by))
+```
+
+```{r}
+oct18r <- oct18 %>%
+  `colnames<-`(c(1:73))
+```
+
+```{r}
+oct10_1r <- oct10_1 %>%
+  `colnames<-`(c(1:73))
+```
+
+```{r}
+names(oct10_1r)
+```
+
+```{r}
+str(oct10_1r)
+```
+
+```{r}
+oct10_1r <- oct10_1r %>%
+  mutate_at("23", as.numeric)
+```
+
+
+-----
+
+```{r}
+uno <- union(oct10_1r, oct18r)
+```
+
+```{r}
+uno <- uno %>%
+  drop_na(`7`)
+```
+
+```{r}
+names <- names(oct18)[c(1:64,66:69,71:73)]
+```
+
+```{r}
+uno <- uno %>%
+  select(-65,-70) %>%
+  distinct() %>%
+  `colnames<-`(names)
+```
+
+```{r}
+write_xlsx(uno,"merge.xlsx", col_names = T)
+```
+
+```{r}
+library(readxl)
+D_RS <- read_excel("~/Documents/SIA/Organisation Description_RS.xlsx")
+```
+
+```{r}
+names(D_RS)
+```
+
+
 
 

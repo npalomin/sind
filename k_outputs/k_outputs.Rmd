@@ -1,0 +1,276 @@
+---
+title: "Key outputs preparation"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+---
+<style>
+* {
+  font-family: "Palatino"
+}
+
+h1{
+    font-size: 190%
+}
+
+h2{
+    font-size: 160%
+}
+
+h3{
+    font-size: 150%
+}
+
+h4{
+    font-size: 130%
+}
+
+h5{
+    font-size: 110%
+}
+
+h6{
+    font-size: 90%
+}
+</style>
+
+```{r include=FALSE}
+library(readr)
+library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(htmlTable)
+library(pander)
+library(forcats)
+library(kableExtra)
+library(readxl)
+library(openxlsx)
+library(sp)
+library(sf)
+library(sf)
+library(data.table)
+library(rgdal)
+library(rgeos)
+library(htmlTable)
+library(janitor)
+```
+
+```{r}
+options("scipen"=100, "digits"=4)
+```
+
+# Load key datasets
+
+```{r}
+oct18_M <- read_csv("/Users/nicolas/Documents/R_Git/sind/k_outputs/oct18_M.csv")
+```
+
+```{r}
+m532 <- read_csv("/Users/nicolas/Documents/R_Git/sind/k_outputs/532.csv")
+```
+
+```{r}
+buil <- st_read("/Users/nicolas/Documents/R_Git/sind/k_outputs/buildings2043_b.gpkg")
+```
+
+# Unique FUC values  and number of roads in each dataset
+
+## oct18_M
+```{r}
+names(oct18_M)
+```
+
+```{r}
+oct18_M %>% 
+  distinct(`3_Functional_Unit_Co`) %>%
+  nrow()
+```
+
+```{r}
+oct18_M %>% 
+  nrow()
+```
+
+## m532
+
+```{r}
+names(m532)
+```
+
+```{r}
+m532 %>% 
+  distinct(fuc) %>%
+  nrow()
+```
+
+```{r}
+m532 %>% 
+  nrow()
+```
+
+## Buildngs
+
+```{r}
+names(buil)
+```
+
+```{r}
+buil %>% 
+  distinct(FUC) %>%
+  nrow()
+```
+
+```{r}
+buil %>% 
+  nrow()
+```
+
+# Compare datasets
+
+inner_join()
+return all rows from x where there are matching values in y, and all columns from x and y. If there are multiple matches between x and y, all combination of the matches are returned.
+
+## oct18_M values with matching polygon in Buildings2043 by FUC (N=1847)
+```{r}
+oct18_M %>%
+  inner_join(buil, by = c("3_Functional_Unit_Co" = "FUC_d"))
+```
+
+## oct18_M values without matching polygon in Buildings2043 by FUC (N=163)
+anti_join()
+return all rows from x where there are not matching values in y, keeping just columns from x.
+```{r}
+oct18_M %>%
+  anti_join(buil, by = c("3_Functional_Unit_Co" = "FUC_d"))
+```
+
+## Buildings2043 polygons with matching values in oct18_M by FUC (N=1847)
+```{r}
+buil %>%
+  inner_join(oct18_M, by = c("FUC_d" = "3_Functional_Unit_Co"))
+```
+
+## Buildings2043 polygons without matching values in oct18_M by FUC (N=196)
+```{r}
+buil %>%
+  anti_join(oct18_M, by = c("FUC_d" = "3_Functional_Unit_Co"))
+```
+
+## m532 values with matching values in oct18_M by FUC (N=391)
+```{r}
+m532 %>%
+  inner_join(oct18_M, by = c("fuc" = "3_Functional_Unit_Co"))
+```
+
+## m532 values with matching polygon in Buildings2043 by FUC (N=385)
+```{r}
+m532 %>%
+  inner_join(buil, by = c("fuc" = "FUC_d"))
+```
+
+m435
+```{r}
+m495 <- st_read("/Users/nicolas/Documents/R_Git/sind/k_outputs/m495.gpkg")
+```
+
+```{r}
+names(m495)
+```
+
+## m532 without spatial representation (lat/lon, FUC) (N=37)
+anti_join()
+return all rows from x where there are not matching values in y, keeping just columns from x.
+```{r}
+m37 <-m532 %>%
+  anti_join(m495, by = "query_code")
+m37
+```
+
+```{r}
+write.xlsx(m37, file = "m37.xlsx", colNames = TRUE, borders = "rows")
+```
+
+# Full join
+
+oct18_M with Buildings2043 (N=2206)
+```{r}
+fj_ob <- full_join(oct18_M, buil,by = c("3_Functional_Unit_Co" = "FUC_d"))
+fj_ob
+```
+
+```{r}
+names(fj_ob)
+```
+
+```{r}
+unFUC <- fj_ob %>% 
+  distinct(`3_Functional_Unit_Co`) %>%
+  pull()
+```
+
+```{r}
+fj_ob %>% 
+  distinct(FUC) %>%
+  nrow()
+```
+
+
+```{r}
+options(max.print=2500)
+```
+
+```{r}
+print(unFUC)
+```
+
+```{r}
+length(unique(unFUC))
+```
+
+oct18_M-Buildings2043 (fj_ob) with m532
+```{r}
+fj_obm <- full_join(fj_ob, m532,by = c("3_Functional_Unit_Co" = "fuc"))
+fj_obm
+```
+
+```{r}
+fj_obm %>% 
+  distinct(`3_Functional_Unit_Co`) %>%
+  nrow()
+```
+
+```{r}
+names(fj_obm)
+```
+
+```{r}
+fj_obm <- st_as_sf(fj_obm)
+```
+
+```{r}
+class(fj_obm)
+```
+
+```{r}
+outname <- "oct18_M_FULL.gpkg"
+st_write(fj_obm, dsn = outname, layer = "fj_obm", driver = "GPKG" )
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

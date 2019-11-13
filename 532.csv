@@ -1,0 +1,557 @@
+"","query_code","fuc","fuc_2","lat","long","sheet_no","sheet_no_2","mb_note_no","mb_comment","comment_1","comment_2","comment_3","description_M","description_updated","category"
+"1",1,NA,NA,51.506231,-0.102881,NA,NA,1,"To check what is in this building, which looks like some sort of studios / workshops. Burrell Street","Desktop or on the ground survey",NA,NA,NA,NA,"lat/long new FUC required"
+"2",2,790,NA,51.505319,-0.10222,NA,NA,2,"Is this yard also Grant Macdonald (excluding the corner building)?","Action: Check if yard is in industrial use, either desktop or survey. If it is, draw polygon from parcels layer & associate with FUC 790 or 300002.",NA,NA,NA,NA,"FUCs simple polygon edits needed"
+"3",3,300002,NA,NA,NA,NA,NA,3,"Is this little bit industrial? I thought not.",NA,NA,NA,"Bespoke stage and scenery construction","Bespoke stage and scenery construction","FUCs descriptions checked"
+"4",4,817,NA,NA,NA,NA,NA,4,"This is an office building.",NA,NA,NA,"office building","office building","FUCs descriptions checked"
+"5",5,NA,NA,51.504291,-0.101874,NA,NA,5,"Yard is part of the industrial.","Already shown on map",NA,NA,NA,NA,"lat/long new FUC required"
+"6",6,NA,NA,51.504072,-0.100068,"3",NA,6,"Have the railway arches here been check for industrial use?","Ask surveyor of sheet 3 if they checked, if they didnt, conduct new survey.",NA,NA,NA,NA,"lat/long new FUC required"
+"7",7,NA,NA,51.504389,-0.099256,"3",NA,7,"I think this is a Network Rail depot / van yard, if so it’s industrial.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"8",8,NA,NA,51.503847,-0.10017,"3",NA,8,"Paxman (French Horn producer) are in basement here.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"9",9,854,NA,NA,NA,NA,NA,9,"This doesn’t look industrial, all seems to be office and residential. How come shown as industrial?",NA,NA,NA,"Offices","Offices","FUCs descriptions checked"
+"10",10,778,NA,NA,NA,NA,NA,10,"This didn’t look industrial to me. Are we sure?",NA,NA,NA,"restaurant","restaurant","FUCs descriptions checked"
+"11",11,NA,NA,51.503663,-0.100548,"3","4",11,"JMBP printers, I think.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"12",12,8560001,NA,NA,NA,NA,NA,12,"This doesn’t seem to be industrial, more like office use. Was it checked?",NA,NA,NA,"Co-working office/workshop space","Co-working office/workshop space","FUCs descriptions checked"
+"13",13,400001,NA,NA,NA,NA,NA,13,"Whole yard is industrial: taxi depot / diesel filling.",NA,NA,NA,"Diesel filling station","Diesel filling station","FUCs simple polygon edits needed"
+"14",14,827,NA,NA,NA,NA,NA,14,"All offices.",NA,NA,NA,"Office block","Office block","FUCs descriptions checked"
+"15",15,838,NA,NA,NA,NA,NA,14,"All offices.",NA,NA,NA,"Office block","Office block","FUCs descriptions checked"
+"16",16,841,NA,NA,NA,NA,NA,14,"All offices.",NA,NA,NA,"Office building","Office building","FUCs descriptions checked"
+"17",17,846,NA,NA,NA,NA,NA,14,"All offices",NA,NA,NA,"Office block","Office block","FUCs descriptions checked"
+"18",18,862,NA,51.503005,-0.099458,NA,NA,15,"Yard looks like part of the utilities use. Check if yard is in industrial use, desktop survey. If it is, draw polygon from parcels layer & associate with FUC 862. 
+",NA,NA,NA,NA,NA,"FUCs simple polygon edits needed"
+"19",19,826,NA,NA,NA,NA,NA,16,"Office and residential, not industrial.",NA,NA,NA,"Mixed offices/residential block","Mixed offices/residential block","FUCs descriptions checked"
+"20",20,822,NA,NA,NA,NA,NA,17,"Offices, I think. To check. 
+",NA,"Yes - marketing agency in office building",NA,"Industry training/lobby group","Office building","FUCs descriptions checked"
+"21",21,400011,NA,NA,NA,NA,NA,18,"Check what this is. I didn’t notice industrial here.",NA,"confirmed online",NA,"Making and hire of stage costumes","Making and hire of stage costumes","FUCs descriptions checked"
+"22",22,796,NA,NA,NA,NA,NA,19,"Offices and residential, no industrial.","confirmed with full survey or verbal check",NA,NA,"Office block","Office and residential","FUCs descriptions checked"
+"23",23,818,NA,NA,NA,NA,NA,20,"To check, looks like multi-occupier workshop / studio building.",NA,"Desktop (first) then on site survey (if desktop uneuccessful) to check if this is multiple businesses","Called St Mungos, they occupy whole building at no. 7 King's Bench St.","Charity, training and reintegration homeless","Charity, training and reintegration homeless","FUCs queries"
+"24",24,823,NA,NA,NA,NA,NA,21,"Redeveloped as residential, I think. CHECKED BY AGA RESIDENTIAL ON TOP FLOORS GROUND FLOOR OFFICE AS BY FUC ENTERED IN EPICOLLECT","confirmed with full survey or verbal check",NA,NA,"Insurance agency","Insurance agency","FUCs descriptions checked"
+"25",25,NA,NA,51.501134,-0.100956,NA,NA,22,"Yards in industrial use.","Draw polygons over yards next to buildings from parcels layer & associate with FUCs 833 and 839.",NA,NA,NA,NA,"FUCs simple polygon edits needed"
+"26",26,NA,NA,51.501167,-0.100474,NA,NA,23,"Yard in industrial use.","Already shown on map",NA,NA,NA,NA,"lat/long new FUC required"
+"27",27,833,NA,NA,NA,NA,NA,24,"All offices",NA,NA,NA,"Office block","Office block","FUCs descriptions checked"
+"28",28,839,NA,NA,NA,NA,NA,24,"All offices",NA,NA,NA,"Office block","Office block","FUCs descriptions checked"
+"29",29,NA,NA,51.500989,-0.099388,NA,NA,25,"Vodafone seems to be industrial, of some sort. To check.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"30",30,8290002,NA,NA,NA,NA,NA,26,"Residential, I think.
+","confirmed with full survey or verbal check",NA,NA,"Photography Studio","Photography Studio","FUCs descriptions checked"
+"31",31,NA,NA,51.500807,-0.100618,"5",NA,27,"Check arches. I think more down to Webber is in industrial use. ","Ask surveyor of sheet if they checked, if they didn't, conduct new survey.",NA,NA,NA,NA,"lat/long new FUC required"
+"32",32,NA,NA,51.500441,-0.100518,"5",NA,28,"Maybe southern section of arches is still industrial. To check.","Ask surveyor of sheet if they checked, if they didn't, conduct new survey.",NA,NA,NA,NA,"lat/long new FUC required"
+"33",33,832,NA,NA,NA,NA,NA,29,"I think there is still workshop use here, with residential. See Simon Kidd Bespoke Furniture. CHECKED BY AGA ALL CHANGED INTO SMALL RESIDENTIAL DEVELOPMENT. NOT YET RENTED/USED
+","confirmed with full survey or verbal check",NA,NA,"Residential Development","Residential Development","FUCs descriptions checked"
+"34",34,NA,NA,51.49987,-0.100367,NA,NA,30,"Railway arches and adjoining yards all look to be industrial, including Long Lane Car Centre.  
+","CHECKED BY AGA/ ONLY SOME OF THE ARCHES IN USE","redraw the badly drawn polygons so they extend under the railway arches including FUCs 842 and 844, and the one just to the north of that.","confirmed online",NA,NA,"FUCs simple polygon edits needed"
+"35",35,NA,NA,51.499657,-0.099452,"5",NA,31,"I think these are industrial. To check/","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"36",36,NA,NA,51.499621,-0.099153,"5",NA,32,"I think this is includes an Age UK mini-bus depot. To check.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"37",37,864,NA,NA,NA,NA,NA,33,"I don’t think this is industrial.","confirmed with full survey or verbal check",NA,NA,"storage and delivery area","storage and delivery area","FUCs descriptions checked"
+"38",38,866,NA,NA,NA,NA,NA,34,"Mercato Metropolitano unlikely to include any industrial, but worth checking. Or has it all been vacated now?",NA,NA,NA,"cinema","cinema","FUCs descriptions checked"
+"39",39,7760006,NA,NA,NA,NA,NA,35,"Clarence Centre for Enterprise appears to be all offices, but is worth checking for any industrial.",NA,"confirmed online",NA,"Clerance Centre","Office","FUCs descriptions checked"
+"40",40,761,NA,NA,NA,NA,NA,36,"UK Power Networks building looks industrial (infrastructure / depot perhaps). To check.","NO FUC IN M","Check with surveyor if they know what's going on here. Desktop (first) then on site survey (if desktop unsuccessful) to check info. Create new entry in ""Oct 2018_M"" with appropriate description, and draw associated polygon.",NA,NA,NA,"FUCs queries"
+"41",41,NA,NA,51.498341,-0.099816,"6",NA,36,"UK Power Networks building looks industrial (infrastructure / depot perhaps). To check.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"42",42,NA,NA,51.498364,-0.09932,"6",NA,37,"Railway arches look industrial, with yards. Some may be Ministry of Sound. To check.","Ask surveyor of sheet if they checked, if they didn't, conduct new survey. Ensure railway arch polygons are drawn correctly.",NA,NA,NA,NA,"lat/long new FUC required"
+"43",43,858,NA,NA,NA,NA,NA,38,"Waterloo Cars? What is it. To check.",NA,NA,NA,"Car hire","Car hire","FUCs descriptions checked"
+"44",44,859,NA,NA,NA,NA,NA,39,"I don’t think this is industrial, but to check.",NA,NA,NA,"Pizza delivery","Pizza delivery","FUCs descriptions checked"
+"45",45,7850002,NA,NA,NA,NA,NA,40,"Offices, was a bookshop. No industrial.","confirmed with full survey or verbal check",NA,NA,"Art Gallery","Art Gallery","FUCs descriptions checked"
+"46",46,15700001,NA,NA,NA,NA,NA,41,"Tube depot includes frontage building on London Rd. Site extent, sidings and van yard, are all industrial. To check full extent.",NA,NA,NA,"Train Yard","Train Yard","FUCs simple polygon edits needed"
+"47",47,15700001,NA,51.49741,-0.107243,NA,NA,41,"Tube depot includes frontage building on London Rd. Site extent, sidings and van yard, are all industrial. Action: Add all buildings on site as per Mark's mapping to FUC 15700001",NA,NA,NA,NA,NA,"FUCs simple polygon edits needed"
+"48",48,15700002,NA,NA,NA,NA,NA,42,"I think this is Ruddy Joinery offices / showroom, not workshop, so is not industrial. But to check.",NA,NA,NA,"Ruddy Joinery and Fitout services","Ruddy Joinery and Fitout Services Offices","FUCs descriptions checked"
+"49",49,15700003,NA,NA,NA,NA,NA,43,"Morley College workshops, I think, so reasonable to count as industrial. But only building. Looks like outdoors is garden not operational yard.",NA,NA,NA,"University","Morley College Workshops","FUCs descriptions checked"
+"50",50,NA,NA,51.49277,-0.099113,"8","19",44,"It looks like there is industrial use in these arches. To check.","Ask surveyor of sheet if they checked, if they didn't, conduct new survey. Ensure railway arch polygons are drawn correctly.",NA,NA,NA,NA,"lat/long new FUC required"
+"51",51,NA,NA,51.491958,-0.09923,"8","19",45,"Looks like most or all changed to hospitality use, but to check for industrial.","Ask surveyor of sheet if they checked, if they didn't, conduct new survey. Ensure railway arch polygons are drawn correctly.",NA,NA,NA,NA,"lat/long new FUC required"
+"52",52,NA,NA,51.491485,-0.099376,"8",NA,46,"District heating plant, worth including as industrial.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"53",53,781,NA,NA,NA,NA,NA,47,"Royal British Legion, not industrial.",NA,NA,NA,"Royal British Legion Club","Royal British Legion Club","FUCs descriptions checked"
+"54",54,900001,NA,NA,NA,NA,NA,48,"Are we sure this is now all vacant?
+answer: Warehouse currently habited by Global Guardians' ""smart guardians""","confirmed with full survey or verbal check",NA,NA,"Vacant","Residential","FUCs descriptions checked"
+"55",55,814,NA,NA,NA,NA,NA,49,"These are shops, not industrial.","confirmed with full survey or verbal check",NA,NA,"Pharmacy","Pharmacy","FUCs descriptions checked"
+"56",56,NA,NA,51.478517,-0.103506,"12","11",50,"Worth checking this bakery. Is it serious enough to count as industrial. Do they bake quantities on site?","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"57",57,NA,NA,51.480557,-0.10074,"11",NA,51,"Vacant car repair workshop, I think.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"58",58,NA,NA,51.477331,-0.100704,"12",NA,52,"Taxi Gearbox Service, with rear access. To check.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"59",59,NA,NA,51.4518,-0.100809,NA,NA,53,"Yard is part of the industrial.","already shown on map",NA,NA,NA,NA,"lat/long new FUC required"
+"60",60,973,NA,NA,NA,NA,NA,54,"This is not industrial, sadly all office use.","confirmed with full survey or verbal check",NA,NA,"Provide flexible co-working / office / workshop space","Provide flexible co-working / office / workshop space","FUCs descriptions checked"
+"61",61,NA,NA,51.504169,-0.098198,"15",NA,55,"G Newt Cargo includes arches, extent to be clarified and drawn properly.
+","Nearest FUCs are 300001 and 873, sheet no. 15",NA,NA,NA,NA,"FUCs simple polygon edits needed"
+"62",62,NA,NA,51.504202,-0.097115,"15",NA,56,"These look like sub-stations. Are we counting as industrial? To check.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"63",63,NA,NA,51.504249,-0.09609,"15",NA,57,"Car park, car and van rental, perhaps builders. To check.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"64",64,NA,NA,51.504364,-0.094148,NA,NA,58,"Check that all is vacant.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"65",65,NA,NA,51.504525,-0.093266,"15",NA,59,"Printers in arch access from Redcross Way. Check extent of use.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"66",66,1130,NA,NA,NA,NA,NA,60,"Office use, not industrial.",NA,NA,NA,"Offices / co-working desk spaces","Offices / co-working desk spaces","FUCs descriptions checked"
+"67",67,1124,NA,NA,NA,NA,NA,61,"This is now a restaurant.",NA,NA,NA,"Restaurants","Restaurants","FUCs descriptions checked"
+"68",68,873,NA,NA,NA,NA,NA,62,"Citizen M hotel. Was previously an office block there.",NA,NA,NA,"Hotel","Hotel","FUCs descriptions checked"
+"69",69,NA,NA,51.503732,-0.095317,"15",NA,63,"Flat Iron Yard, this is a small industrial estate. To check.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"70",70,1030,NA,NA,NA,NA,NA,64,"These 3 are office and residential.
+",NA,"confirmed online",NA,"Branding / communications agency","Office and residential","FUCs descriptions checked"
+"71",71,1040,NA,NA,NA,NA,NA,65,"RK Burt, paper merchants, this is industrial.
+Answer: RK Burts located at 1052 & 1042","confirmed with full survey or verbal check",NA,NA,"Cafe","Cafe","FUCs descriptions checked"
+"72",72,1042,NA,NA,NA,NA,NA,66,"Sub station, perhaps. Are we counting as industrial?","confirmed with full survey or verbal check",NA,NA,"Wholesale paper importer","Wholesale paper importer","FUCs descriptions checked"
+"73",73,1082,NA,NA,NA,NA,NA,67,"This corner building is not industrial.",NA,NA,NA,"Flats/studios/gallery","Flats/studios/gallery","FUCs descriptions checked"
+"74",74,1071,NA,NA,NA,NA,NA,68,"Travis Perkins, industrial, includes north and south yards.",NA,NA,NA,"Builder's merchant","Builder's merchant","FUCs simple polygon edits needed"
+"75",75,961,NA,NA,NA,NA,NA,69,"I think these are now all office / residential. To check.",NA,"confirmed online",NA,"Design and communication agency","Office","FUCs descriptions checked"
+"76",76,951,NA,NA,NA,NA,NA,70,"Perhaps the Goodlife Centre has a workshop/ To check.","confirmed with full survey or verbal check",NA,NA,"Practical learning courses/workshops","Practical learning courses with workshops","FUCs descriptions checked"
+"77",77,NA,NA,51.503491,-0.093582,"15",NA,71,"Prototyping workshop (precision engineering) of Colebrook Bosson Saunders.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"78",78,1105,NA,NA,NA,NA,NA,72,"I don’t think this is industrial. To check.",NA,NA,NA,"Burial ground, garden of remembrance","Burial ground, garden of remembrance","FUCs descriptions checked"
+"79",79,1115,NA,NA,NA,NA,NA,73,"Tube sub station or vent.",NA,NA,NA,"unknown function - possible substation?","Substation/vent","FUCs descriptions checked"
+"80",80,NA,NA,51.502336,-0.098251,"16",NA,74,"It looks like this yard is in use as an ambulance depot. To check.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"81",81,NA,NA,51.502042,-0.098517,"16",NA,75,"To check on fire station. Is it now all closed. Is a fire station industrial in our definition?","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"82",82,904,NA,NA,NA,NA,NA,76,"Mint St Adventure Playground building. Not industrial.",NA,NA,NA,"Adventure playground","Adventure playground","FUCs descriptions checked"
+"83",83,910,NA,NA,NA,NA,NA,77,"The Tea Warehouse is not proper industrial, but it does include Lee Paton (bespoke garments). To check for other such.",NA,NA,NA,"Couturier","Couturier - bespoke garments","FUCs descriptions checked"
+"84",84,914,NA,NA,NA,NA,NA,77,"The Tea Warehouse is not proper industrial, but it does include Lee Paton (bespoke garments). To check for other such",NA,NA,NA,"Offices","Offices","FUCs descriptions checked"
+"85",85,903,NA,NA,NA,NA,NA,78,"Check for any / extent of industrial. Is this a book warehouse?","confirmed with full survey or verbal check",NA,NA,"Vacant","Vacant","FUCs descriptions checked"
+"86",86,NA,NA,51.501093,-0.09494,"16",NA,79,"Vacant industrial perhaps. To check.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"87",87,NA,NA,51.500936,-0.094712,"16","17",80,"Lant Street Wine (wholesale warehouse perhaps). To check.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"88",88,NA,NA,51.499178,-0.096314,NA,NA,81,"Is this medical centre, not industrial? To check","not shown on our maps as industrial - or anything else so no need to check.",NA,NA,NA,NA,"lat/long new FUC required"
+"89",89,NA,NA,51.499088,-0.095937,"17",NA,82,"Hotel Elephant I think. To check whether there is some workshop / industrial / studio.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"90",90,906,NA,NA,NA,NA,NA,83,"To check what this is.","confirmed with full survey or verbal check",NA,NA,"Car rental agency","Car rental agency","FUCs descriptions checked"
+"91",91,1800001,NA,51.497479,-0.09776,NA,NA,84,"Autocar electrical centre goes deeper.",NA,"confirmed by full survey or verbal check",NA,"Car repair","car repair","FUCs simple polygon edits needed"
+"92",92,NA,NA,51.497217,-0.098646,NA,NA,85,"Rail arches were vacant. To check. Planning application drawings show them as to become retail, but that’s not part of the permission.
+","ALL VACANT / SOON TO BE UNDER CONSTRUCTION CHECKED BY AGA","Action: draw FUC polygons 870, 871 and 876 properly. Also associated yards.",NA,NA,NA,"FUCs simple polygon edits needed"
+"93",93,NA,NA,51.496546,-0.098451,NA,NA,86,"To check what’s become of arch use. It looks like it was a recycling centre. Answer: ALL VACANT / SOON TO BE UNDER CONSTRUCTION CHECKED BY AGA","trusting aga",NA,NA,NA,NA,"lat/long new FUC required"
+"94",94,NA,NA,51.496533,-0.099101,NA,NA,87,"Check whether some of the Salvation. Army buildings and yard are industrial (depot, printing works?) CHECKED BY AGA ONLY SALVATION ARMY USES (CHECKED THROUGH INTERVIEW)  - fine, but where is polygon?
+","no fuc shown on our mapping","polygon and FUC appear to be missing from our map main. Check and draw polygon / create FUC as needed",NA,NA,NA,"FUCs queries"
+"95",95,NA,NA,51.49596,-0.098355,"18","19",88,"These arches look like they are in industrial use. To check use and extent.","Refer to Mark's map for locations to re-survey. Suggest one person does all surveys on railway arches. Ask surveyor of sheet if they checked, if they didn't, conduct new survey. Ensure railway arch polygons are drawn correctly. Railway arches comments: 27, 28, 37, 88, 89, 90, 91",NA,NA,NA,NA,"lat/long new FUC required"
+"96",96,NA,NA,51.494813,-0.098522,"NONE",NA,89,"TR Autos in arches. Check extent and for other industrial occupiers.","Refer to Mark's map for locations to re-survey. Suggest one person does all surveys on railway arches. Ask surveyor of sheet if they checked, if they didn't, conduct new survey. Ensure railway arch polygons are drawn correctly. Railway arches comments: 27, 28, 37, 88, 89, 90, 91",NA,NA,NA,NA,"lat/long new FUC required"
+"97",97,NA,NA,51.493473,-0.09893,"19","NONE",90,"Some of these arches look like they could be industrial. To check.","Refer to Mark's map for locations to re-survey. Suggest one person does all surveys on railway arches. Ask surveyor of sheet if they checked, if they didn't, conduct new survey. Ensure railway arch polygons are drawn correctly. Railway arches comments: 27, 28, 37, 88, 89, 90, 91",NA,NA,NA,NA,"lat/long new FUC required"
+"98",98,NA,NA,51.49134,-0.099147,"19","20",91,"Aren’t more / all of these arches industrial, off Robert Dashwood Way? To check.","Refer to Mark's map for locations to re-survey. Suggest one person does all surveys on railway arches. Ask surveyor of sheet if they checked, if they didn't, conduct new survey. Ensure railway arch polygons are drawn correctly. Railway arches comments: 27, 28, 37, 88, 89, 90, 91",NA,NA,NA,NA,"lat/long new FUC required"
+"99",99,1129,NA,NA,NA,NA,NA,92,"Stage Services London Ltd.",NA,NA,NA,"Acoustics Consultancy","Acoustics Consultancy - Stage Services London Ltd.","FUCs descriptions checked"
+"100",100,NA,NA,51.490031,-0.09866,"20",NA,93,"Check whether any of the offices below have become industrial.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"101",101,1012,NA,NA,NA,NA,NA,94,"To check. Isn’t this part of Gisela Graham?","confirmed with full survey or verbal check",NA,NA,"Residential","Residential","FUCs descriptions checked"
+"102",102,1015,NA,NA,NA,NA,NA,95,"Check on Gisela Graham use? Office and warehouse?","confirmed with full survey or verbal check",NA,NA,"Decoration manufacturers","Decoration manufacturers - office and warehouse","FUCs descriptions checked"
+"103",103,1034,NA,NA,NA,NA,NA,96,"This looks like recent residential with yoga at ground floor.",NA,NA,NA,"Yoga studio & resi above","Yoga studio & resi above","FUCs descriptions checked"
+"104",104,1045,NA,NA,NA,NA,NA,97,"I think this has been gobbled by the new housing development.","confirmed with full survey or verbal check",NA,NA,"Parking admin","Parking admin offices","FUCs descriptions checked"
+"105",105,1045,NA,NA,NA,NA,NA,98,"Worth checking if this is still industrial.","confirmed with full survey or verbal check",NA,NA,"Parking admin","Parking admin offices","FUCs descriptions checked"
+"106",106,1026,NA,NA,NA,NA,NA,99,"Worth checking for any residual industrial here.","confirmed with full survey or verbal check",NA,NA,"Residential","Residential","FUCs descriptions checked"
+"107",107,NA,NA,51.490248,-0.093281,NA,NA,100,"To check","Already picked up as something and surveyed. not rechecking what's already been done.",NA,NA,NA,NA,"lat/long new FUC required"
+"108",108,1140,NA,NA,NA,NA,NA,101,"Strange live-work units. To check.",NA,NA,NA,"Studio/office","Studio/office","FUCs descriptions checked"
+"109",109,2000001,NA,NA,NA,NA,NA,102,"What is this? I didn’t spot it as industrial.","confirmed with full survey or verbal check",NA,NA,"Car servicing","Car servicing","FUCs descriptions checked"
+"110",110,918,NA,NA,NA,NA,NA,103,"I think this has long been offices, not industrial, but worth checking.","confirmed with full survey or verbal check",NA,NA,"Hotel","Hotel","FUCs descriptions checked"
+"111",111,2000010,NA,51.489266,-0.098567,NA,NA,104,"Royal Mail depot includes yard. Action: draw polygon from paercels layer & associate with FUC 2000010
+",NA,NA,NA,NA,NA,"FUCs simple polygon edits needed"
+"112",112,NA,NA,51.489417,-0.09863,"20",NA,105,"Reed (offices) in approx 80s industrial building and yard. Maybe worth noting somehow as industrial accommodation.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"113",113,NA,NA,51.489578,-0.098472,"20",NA,106,"Are there more industrial uses here, as well as Husky studious (recording / practice, I think).","Ask surveyor of sheet 20 if they've checked this alreadt, if not - new survey.",NA,NA,NA,NA,"lat/long new FUC required"
+"114",114,11111201,NA,NA,NA,NA,NA,107,"Have we recorded all industrial use here? Are they still industrial? And how are they accessed? Answer: I recorded as many of these as I could access but many seemed vacant/unsigned/non-industrial or seemingly permanently closed","confirmed with full survey or verbal check",NA,NA,"Railway arches, formerly occupied by industrial businesses","Railway arches, formerly occupied by industrial businesses","FUCs descriptions checked"
+"115",115,NA,NA,51.4886,-0.096886,"20","21",108,"These look like studios. To Check for industrial activity.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"116",116,979,NA,NA,NA,NA,NA,109,"Frontage building is surgery, I think, not industrial. To check.",NA,NA,NA,"Surgery","Surgery","FUCs descriptions checked"
+"117",117,954,NA,NA,NA,NA,NA,110,"Small buildings (outbuildings) to check. Are they part of Andy Knight site. Answer: Resi owned by Big Metal's owner - inhabited by his staff","confirmed with full survey or verbal check",NA,NA,"Residential","Residential","FUCs descriptions checked"
+"118",118,996,NA,NA,NA,NA,NA,111,"Need to capture yard",NA,NA,NA,"Gym","Gym","FUCs simple polygon edits needed"
+"119",119,996,NA,NA,NA,NA,NA,111,"Need to capture yard as drawn on Mark's map. Check parcels layer and draw on appropriate polygon.","Gym",NA,NA,NA,NA,"FUCs simple polygon edits needed"
+"120",120,996,NA,NA,NA,NA,NA,111,"Arch spaces missing?",NA,"Check whether railway arches have been surveyed, if not, conduct survey (desktop or on site), create FUCs and polygons",NA,"Gym","Gym","FUCs queries"
+"121",121,2100004,NA,NA,NA,NA,NA,112,"Why are some arch spaces missing? Need to capture yard",NA,NA,NA,"Vehicle repair","Vehicle repair","FUCs simple polygon edits needed"
+"122",122,2100005,NA,NA,NA,NA,NA,112,"Why are some arch spaces missing? Need to capture yard",NA,NA,NA,"Storage shop (bikes)","Storage shop (bikes)","FUCs simple polygon edits needed"
+"123",123,11111212,NA,NA,NA,NA,NA,113,"Why are some arch spaces missing? Need to capture yard.
+Answer: Former industrial use noted (hence 11111- prefix)",NA,"Check with surveyor if they know what's going on here. Desktop (first) then on site survey (if desktop unsuccessful) to check info. Create new entry in ""Oct 2018_M"" with appropriate description, and draw associated polygon.",NA,"Industrial (unknown)","Industrial (unknown)","FUCs queries"
+"124",124,1013,NA,NA,NA,NA,NA,114,"To include yards.",NA,NA,NA,"Ice cream van fleet operation","Ice cream van fleet operation","FUCs simple polygon edits needed"
+"125",125,2200001,NA,NA,NA,NA,NA,114,"To include yards.",NA,NA,NA,"Microbrewery (licensed)","Microbrewery (licensed)","FUCs simple polygon edits needed"
+"126",126,2200002,NA,NA,NA,NA,NA,114,"To include yards.",NA,NA,NA,"General car repair","General car repair","FUCs simple polygon edits needed"
+"127",127,1035,NA,NA,NA,NA,NA,115,"Check yard extents.",NA,NA,NA,"Car service, repair, conversion","Car service, repair, conversion","FUCs simple polygon edits needed"
+"128",128,2200010,NA,NA,NA,NA,NA,115,"Check yard extents.",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"129",129,2200006,NA,NA,NA,NA,NA,116,"Why reduced yard extent? Include yard.",NA,NA,NA,"Storage for restaurant","Storage for restaurant","FUCs simple polygon edits needed"
+"130",130,1023,NA,NA,NA,NA,NA,117,"Include yard. Is there really residential in a railway arch?",NA,"confirmed by full survey or verbal check",NA,"residential","residential","FUCs simple polygon edits needed"
+"131",131,NA,NA,51.483537,-0.095717,"22","23",118,"Isn’t more of the arches industrial?","Ask surveyor of sheet 22/23 if they've checked this already, if not - new survey.",NA,NA,NA,NA,"lat/long new FUC required"
+"132",132,NA,NA,51.48541,-0.093326,"22","38",119,"Sub station.","We've excluded utilities but maybe worth surveying anyway?",NA,NA,NA,NA,"lat/long new FUC required"
+"133",133,NA,NA,51.482726,-0.095665,"23",NA,120,"Aren’t these arches and yard industrial?","Ask surveyor of sheet 23 if they've checked this already, if not - new survey.",NA,NA,NA,NA,"lat/long new FUC required"
+"134",134,1057,NA,NA,NA,NA,NA,121,"This is residential, built before 2012. Answer: Building looks resi, but business is registered here and full survey has been carried out","confirmed with full survey or verbal check","confirmed online",NA,"Artists/Furniture manufacturers","Artists/Furniture manufacturers","FUCs descriptions checked"
+"135",135,2300001,NA,NA,NA,NA,NA,122,"Include yard.",NA,NA,NA,"Car repair","Car repair","FUCs simple polygon edits needed"
+"136",136,2300002,NA,NA,NA,NA,NA,122,"Include yard.",NA,NA,NA,"Florists for events","Florists for events","FUCs simple polygon edits needed"
+"137",137,2300003,NA,NA,NA,NA,NA,122,"Include yard.",NA,NA,NA,"Event florists for weddings/parties","Event florists for weddings/parties","FUCs simple polygon edits needed"
+"138",138,2300004,NA,NA,NA,NA,NA,122,"Include yard.",NA,NA,NA,"Wood workshop- Furniture","Wood workshop- Furniture","FUCs simple polygon edits needed"
+"139",139,2300006,NA,NA,NA,NA,NA,122,"Include yard.",NA,NA,NA,"Graphic printing, photography, furniture","Graphic printing, photography, furniture","FUCs simple polygon edits needed"
+"140",140,2300007,NA,NA,NA,NA,NA,122,"Include yard.",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"141",141,2300008,NA,NA,NA,NA,NA,122,"Include yard.",NA,NA,NA,"Bespoke Carpentry, furniture restoration","Bespoke Carpentry, furniture restoration","FUCs simple polygon edits needed"
+"142",142,2300009,NA,NA,NA,NA,NA,122,"Include yard.",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"143",143,2300004,NA,NA,NA,NA,NA,123,"Small building now residential. Building to west to check. Studio or residential? Answer: Don't understand comment - spaces round here are resi or industrial arches",NA,NA,NA,"Wood workshop- Furniture","Wood workshop- Furniture","FUCs descriptions checked"
+"144",144,1069,NA,NA,NA,NA,NA,124,"All this is residential, pre 2008, including northern part. Answer:  FUC MISSING","NO FUC IN M","Create new entry in ""Oct 2018_M"" with appropriate description, and draw associated polygon.",NA,"Residential","Residential","FUCs queries"
+"145",145,NA,NA,51.481639,-0.094975,NA,NA,124,"All this is residential, pre 2008, including northern part. FUC MISSING","NO FUC IN M? to check","FUC absent from polygon, check with the catalog and check whether it's resi in the description.",NA,NA,NA,"FUCs queries"
+"146",146,1092,NA,NA,NA,NA,NA,125,"Conversion happened before 2008, but to check for any industrial use. There is a thin chance",NA,"confirmed online",NA,"Settlement of disputes","Office","FUCs descriptions checked"
+"147",147,1091,NA,NA,NA,NA,NA,125,"Conversion happened before 2008, but to check for any industrial use. There is a thin chance.",NA,"Clarify description 'paintings'",NA,"Paintings","Paintings","FUCs queries"
+"148",148,NA,NA,51.48093,-0.095168,"23","24",126,"Isn’t industrial arch use all the way to Bethwin Road? Include large yard.","Ask surveyor of sheet if industrial extends to Bethwin Rd",NA,NA,NA,NA,"lat/long new FUC required"
+"149",149,NA,NA,51.481072,-0.094069,"23",NA,127,"Crystal Dry Cleaners and Laundry.","new on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"150",150,1087,NA,NA,NA,NA,NA,128,"Church in 2008 and still is. Answer: Beauty salon frontage, but poster for church - could be to rear. 
+",NA,"Edit by splitting polygon and creating new FUC from parent FUC in M for each.",NA,"Beauty Salon","Beauty Salon/church","FUCs queries"
+"151",151,1061,NA,NA,NA,NA,NA,129,"Iceland in 2008 and still is.",NA,NA,NA,"Frozen food sales","Frozen food sales","FUCs descriptions checked"
+"152",152,10640003,NA,NA,NA,NA,NA,130,"To clarify what’s going on with these arches, and how accessed.",NA,"Check with surveyor. If not conclusive, desktop (first) then on site survey (if desktop unsuccessful) to check info",NA,"vacant","vacant","FUCs queries"
+"153",153,10640009,NA,NA,NA,NA,NA,130,"To clarify what’s going on with these arches, and how accessed.",NA,"Check with surveyor. If not conclusive, desktop (first) then on site survey (if desktop unsuccessful) to check info",NA,"vacant","vacant","FUCs queries"
+"154",154,1076,NA,NA,NA,NA,NA,131,"What use is this?",NA,NA,NA,"Hotel + restaurant","Hotel + restaurant","FUCs descriptions checked"
+"155",155,1081,NA,NA,NA,NA,NA,132,"Site cleared 2014 and residential development started 2015. No industrial remains.",NA,NA,NA,"development","development","FUCs descriptions checked"
+"156",156,1081,NA,NA,NA,NA,NA,133,"Check on status of arches. Is there access? Answer: presumably not as under development",NA,NA,NA,"development","development","FUCs descriptions checked"
+"157",157,2400001,NA,NA,NA,NA,NA,134,"Check yard extent and include.",NA,NA,NA,"Car repair and Maintenance","Car repair and Maintenance","FUCs simple polygon edits needed"
+"158",158,2400002,NA,NA,NA,NA,NA,134,"Check yard extent and include.",NA,NA,NA,"Car repair","Car repair","FUCs simple polygon edits needed"
+"159",159,2400003,NA,NA,NA,NA,NA,134,"Check yard extent and include.",NA,NA,NA,"Car repairs","Car repairs","FUCs simple polygon edits needed"
+"160",160,2400004,NA,NA,NA,NA,NA,134,"Check yard extent and include.",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"161",161,NA,NA,51.47749,-0.095535,"25",NA,135,"Check for more industrial in arches, and check and show yards.","Ask if checked - desktop Google streetview check & possible new onsite survey",NA,NA,NA,NA,"lat/long new FUC required"
+"162",162,1113,NA,NA,NA,NA,NA,136,"Nags Head pub, was never industrial.",NA,NA,NA,"Pub","Pub","FUCs descriptions checked"
+"163",163,1107,NA,NA,NA,NA,NA,137,"Was bingo, now a church. Not industrial.",NA,NA,NA,"Religious activities","Religious activities","FUCs descriptions checked"
+"164",164,NA,NA,51.476946,-0.095602,"25",NA,138,"Check on industrial use in arches, and yards.","Ask if checked - desktop Google streetview check & possible new onsite survey",NA,NA,NA,NA,"lat/long new FUC required"
+"165",165,1088,NA,51.475809,-0.096069,NA,NA,139,"Looks like the arches may be part of the bus garage. To check & redraw polygons as required.
+",NA,NA,NA,NA,NA,"FUCs simple polygon edits needed"
+"166",166,1080,NA,NA,NA,NA,NA,140,"This corner building redeveloped as housing 2014.",NA,"confirmed online",NA,"Supermarket","Supermarket","FUCs descriptions checked"
+"167",167,NA,NA,51.475429,-0.094142,"26","42",141,"Bus garage entry yard.","Already shown on maps",NA,NA,NA,NA,"lat/long new FUC required"
+"168",168,2600004,NA,NA,NA,NA,NA,142,"Rail arches converted to retail, I think. They got planning permission for that. To check.","confirmed with full survey or verbal check",NA,NA,"vacant","vacant","FUCs descriptions checked"
+"169",169,2600005,NA,NA,NA,NA,NA,142,"Rail arches converted to retail, I think. They got planning permission for that. To check.","confirmed with full survey or verbal check",NA,NA,"vacant","vacant","FUCs descriptions checked"
+"170",170,2600006,NA,NA,NA,NA,NA,142,"Rail arches converted to retail, I think. They got planning permission for that. To check.","confirmed with full survey or verbal check",NA,NA,"vacant","vacant","FUCs descriptions checked"
+"171",171,2600007,NA,NA,NA,NA,NA,142,"Rail arches converted to retail, I think. They got planning permission for that. To check.","confirmed with full survey or verbal check",NA,NA,"vacant","vacant","FUCs descriptions checked"
+"172",172,2600008,NA,NA,NA,NA,NA,142,"Rail arches converted to retail, I think. They got planning permission for that. To check.","confirmed with full survey or verbal check",NA,NA,"vacant","vacant","FUCs descriptions checked"
+"173",173,NA,NA,51.47396,-0.097902,NA,NA,143,"Arches in industrial use, not just frontages. To check and redraw extent of railway arches using fire maps, google searches etc.","These are the relevant FUCs: 913, 920, 925, 938, 950, 966, 982, 984, 989, 992, 994, 997, 2600002, 2600001",NA,NA,NA,NA,"FUCs simple polygon edits needed"
+"174",174,1060,NA,NA,NA,NA,NA,144,"Royal Mail depot includes yard.",NA,NA,"confirmed online","Bus services, garage and training","Bus services, garage and training","FUCs simple polygon edits needed"
+"175",175,1143,NA,NA,NA,NA,NA,145,"There is no industrial here, as far as I can see. To check.",NA,NA,NA,"Sale of Vinyl","Sale of Vinyl","FUCs descriptions checked"
+"176",176,1136,NA,51.473158,-0.094045,NA,NA,146,"Dark kitchen use extends here.","Add polygon at corner of site to FUC 1136 - refer to Mark's map as needed",NA,NA,NA,NA,"FUCs simple polygon edits needed"
+"177",177,NA,NA,51.473545,-0.096455,"26","27",147,"This is now housing.","To survey site google and/or in real life & check if housing, if so, draw new polygon (may need to consult planning app)",NA,NA,NA,NA,"lat/long new FUC required"
+"178",178,1046,NA,NA,NA,NA,NA,148,"Include yard.",NA,NA,NA,"Car repair","Car repair","FUCs simple polygon edits needed"
+"179",179,15900001,NA,NA,NA,NA,NA,149,"Include yard.",NA,NA,NA,"Plant / tool hire","Plant / tool hire","FUCs simple polygon edits needed"
+"180",180,30000010,NA,NA,NA,NA,NA,150,"Include yard.",NA,NA,NA,"Storage","Storage","FUCs simple polygon edits needed"
+"181",181,NA,NA,51.449132,-0.098039,"30",NA,151,"Check for any other small industrial uses.","Check on google / on site",NA,NA,NA,NA,"lat/long new FUC required"
+"182",182,998,NA,NA,NA,NA,NA,152,"Include yard.",NA,NA,NA,"Vehicle Repairs and Servicing","Vehicle Repairs and Servicing","FUCs simple polygon edits needed"
+"183",183,1167,NA,NA,NA,NA,NA,153,"Not industrial. Answer: Can't work out what this is either, possibly derelict?",NA,"confirmed online",NA,"unidentified","Non-industrial","FUCs descriptions checked"
+"184",184,1173,NA,NA,NA,NA,NA,153,"Not industrial.",NA,NA,NA,"Specialist off-licence for wine and champagne","Specialist off-licence for wine and champagne","FUCs descriptions checked"
+"185",185,1183,NA,NA,NA,NA,NA,154,"Pub / restaurant. Not industrial.",NA,"confirmed online",NA,"Bin store for Borough Market","Bin store for Borough Market","FUCs descriptions checked"
+"186",186,1189,NA,NA,NA,NA,NA,154,"Pub / restaurant. Not industrial.",NA,NA,NA,"Pub","Pub","FUCs descriptions checked"
+"187",187,12220004,NA,NA,NA,NA,NA,155,"To check extent of wholesale market, yard and buildings.",NA,NA,NA,"Fruit and vegetable wholesale","Fruit and vegetable wholesale","FUCs simple polygon edits needed"
+"188",188,1168,NA,NA,NA,NA,NA,156,"Stopped being industrial pre-2009.
+",NA,NA,NA,"Fashion brand retailer","Fashion brand retailer","FUCs descriptions checked"
+"189",189,1209,NA,NA,NA,NA,NA,157,"I don’t think there is any industrial use here, not I assume was there in 2015, but worth checking.",NA,NA,NA,"offices","offices","FUCs descriptions checked"
+"190",190,NA,NA,51.503822,-0.090745,"32",NA,158,"Check here and in the area for hospital related industrial uses.","To survey site google and/or in real life & check if hospital-related industrial uses, if so, draw new FUC polygons & parcel",NA,NA,NA,NA,"lat/long new FUC required"
+"191",191,1206,NA,NA,NA,NA,NA,159,"Frontage building looks like education use.",NA,NA,NA,"Art school","Art school","FUCs descriptions checked"
+"192",192,11860002,NA,NA,NA,NA,NA,160,"All to check. Hard to believe that it’s industrial.",NA,NA,NA,"Event supplier","Event supplier","FUCs descriptions checked"
+"193",193,12080002,NA,NA,NA,NA,NA,160,"All to check. Hard to believe that it’s industrial. Answer: COMMENT FOR WHOLE POLYGON",NA,NA,NA,"Recruitment for education sector","Recruitment for education sector","FUCs descriptions checked"
+"194",194,12080005,NA,NA,NA,NA,NA,160,"All to check. Hard to believe that it’s industrial. Answer: COMMENT FOR WHOLE POLYGON",NA,NA,NA,"Internet gaming software","Internet gaming software","FUCs descriptions checked"
+"195",195,NA,NA,51.500752,-0.089124,"33",NA,161,"Dry cleaners.","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"196",196,NA,NA,51.488759,-0.091034,"36",NA,162,"Southwark barrow store, I think. To check.","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"197",197,NA,NA,51.488477,-0.091167,"36","37",163,"More barrow store here, I think. To check.","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"198",198,1179,NA,NA,NA,NA,NA,164,"I think this is now office use. To check.","confirmed with full survey or verbal check",NA,NA,"Wholesale furniture & interior design","Wholesale furniture & interior design - offices and showroom","FUCs descriptions checked"
+"199",199,1182,NA,NA,NA,NA,NA,165,"Ex Flints / Harker’s Studio. Vacant industrial, I suppose, though permitted as residential.
+",NA,NA,NA,"Vacant","Vacant - Ex Flints / Harker’s Studio. Vacant industrial, though permitted as residential.","FUCs descriptions checked"
+"200",200,619,NA,NA,NA,NA,NA,166,"Yard extents into Burgess Park. Answer: YES PARCEL NEEDS TO BE EXTENDED AGA","Extend parcel polygon as appropriate",NA,NA,"Car inspection services","Car inspection services","FUCs simple polygon edits needed"
+"201",201,3900001,NA,NA,NA,NA,NA,167,"Check yard extent. Answer: YES. PARCEL NEEDS TO BE EXTENDED AGA",NA,NA,NA,"Healthcare transport services","Healthcare transport services","FUCs simple polygon edits needed"
+"202",202,1247,NA,NA,NA,NA,NA,168,"Include yards.",NA,NA,NA,"Hand carwash and valeting service, service and repairs","Hand carwash and valeting service, service and repairs","FUCs simple polygon edits needed"
+"203",203,627,NA,NA,NA,NA,NA,169,"Presumably now nearing completion, new self store (industrial) with skin of offices (not industrial).
+Answer: Could probably be classed as development but doesn't look like much work has been started (as of Google street view March 2019)",NA,"confirmed online",NA,"demolished","demolished","FUCs descriptions checked"
+"204",204,638,NA,NA,NA,NA,NA,169,"Presumably now nearing completion, new self store (industrial) with skin of offices (not industrial).
+Answer: Could probably be classed as development but doesn't look like much work has been started (as of Google street view March 2019)",NA,"confirmed online",NA,"demolished","demolished","FUCs descriptions checked"
+"205",205,1229,NA,NA,NA,NA,NA,170,"Include yards.",NA,NA,NA,"Surgical products Laundry","Surgical products Laundry","FUCs simple polygon edits needed"
+"206",206,1231,NA,NA,NA,NA,NA,171,"Include yard.",NA,NA,NA,"Storage","Storage","FUCs simple polygon edits needed"
+"207",207,1230,NA,NA,NA,NA,NA,172,"Camberwell Business Centre. I assume this is all office use, but worth checking for industrial occupiers.","confirmed with full survey or verbal check",NA,NA,"Rent workspaces","Offices - Camberwell Business Centre","FUCs descriptions checked"
+"208",208,NA,NA,51.474286,-0.091033,"42",NA,173,"Artichoke Court includes some industrial occupiers. To check.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"209",209,NA,NA,51.473943,-0.091455,"42",NA,174,"Dry cleaners. To check.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"210",210,NA,NA,51.473858,-0.090906,"42",NA,175,"Bakery. To check.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"211",211,NA,NA,51.473565,-0.088587,"42",NA,176,"Seabass Cycles. Workshop here, or where? To check.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"212",212,1256,NA,NA,NA,NA,NA,177,"This is not industrial and has not been.",NA,NA,NA,"Coffee shop","Coffee shop","FUCs descriptions checked"
+"213",213,1160,NA,NA,NA,NA,NA,178,"Greggs, not industrial (they are only a heat-up place, not a bakery).
+Answer: Greggs is beside it","confirmed with full survey or verbal check","confirmed online",NA,"Sale of mobile phone and laptop repair","Sale of mobile phone and laptop repair","FUCs descriptions checked"
+"214",214,NA,NA,51.473548,-0.090374,"42",NA,179,"Bakery to check.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"215",215,1199,NA,NA,NA,NA,NA,180,"Cowling & Wilcox art shop, not industrial.",NA,NA,NA,"Art supplies and stationery store","Art supplies and stationery store","FUCs descriptions checked"
+"216",216,NA,NA,51.50295,-0.08205,"45",NA,181,"Check this area of arches for industrial. Some does remain.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"217",217,1276,NA,NA,NA,NA,NA,182,"Studios? To check. ART GALLERY MARKED AS IN EPICOLLECT AGA",NA,NA,NA,"Art Gallery","Art Gallery","FUCs descriptions checked"
+"218",218,NA,NA,51.502212,-0.084492,"45",NA,182,"Studios? To check. Answer: OFFICES ALL MARKED ON EPICOLLECT AGA","NO ACTION NEEDED",NA,NA,NA,NA,"lat/long new FUC required"
+"219",219,1292,NA,NA,NA,NA,NA,183,"Pub! Not industrial. MARKED AS PUB ON EPICOLLECT. AGA",NA,NA,NA,"pub","pub","FUCs descriptions checked"
+"220",220,1312,NA,NA,NA,NA,NA,184,"Residential. NOT RESIDENTIAL ON THE GROUND FLOOR USED AS PRINTING SHOP. AGA","confirmed with full survey or verbal check",NA,NA,"Print shop","Print shop","FUCs descriptions checked"
+"221",221,13150009,NA,NA,NA,NA,NA,185,"Residential. Answer: Answer: NOT RESIDENTIAL. PART OF WOOLYARD, LOTS OF OFFICES, ARCHITECTURAL OFFICES ETC. AS PER EPICOLLECT. APPLIED TO WHOLE RANGE OF 1315...... FUCS","confirmed with full survey or verbal check",NA,NA,"unidentified","Unidentified","FUCs descriptions checked"
+"222",222,1323,NA,NA,NA,NA,NA,186,"To check I WAS NOT SURE. MIGHT BE VACANT. AGA","confirmed with full survey or verbal check",NA,NA,"Property Developer","Office","FUCs descriptions checked"
+"223",223,1333,NA,NA,NA,NA,NA,187,"Retail and office (frontage building). Answer: AS PER EPICOLLECT. I THINK A GALLERY?. AGA","NO FUC IN M","Create new entry in ""Oct 2018_M"" with appropriate description from EpiCollect, and draw associated polygon if needed",NA,NA,NA,"FUCs queries"
+"224",224,13470001,NA,NA,NA,NA,NA,188,"Residential. Answer: NOT RESIDENTIAL. OFFICES. AS MARKED ON EPICOLLECT FOR WHOLE RANGE OF FUC 1347...... AGA",NA,NA,NA,"Marketing Agency","Office","FUCs descriptions checked"
+"225",225,1349,NA,NA,NA,NA,NA,189,"Fashion & Textile Museum. MARKED AS MUSEUM ON EPICOLLECT. AGA",NA,NA,NA,"museum","museum","FUCs descriptions checked"
+"226",226,1340,NA,NA,NA,NA,NA,190,"Tanneries. I think it’s all offices, but to check. OFFICES. AS PER FUCS ENTERED. AGA",NA,NA,NA,"Design and build project managment company","Design and build project managment company","FUCs descriptions checked"
+"227",227,1345,NA,NA,NA,NA,NA,190,"Tanneries. I think it’s all offices, but to check. OFFICES. AS PER FUCS ENTERED. AGA",NA,NA,NA,"Software Company","Software Company","FUCs descriptions checked"
+"228",228,1358,NA,NA,NA,NA,NA,190,"Tanneries. I think it’s all offices, but to check. DEMOLISHED. AGA",NA,NA,NA,"demolished","demolished","FUCs descriptions checked"
+"229",229,1360,NA,NA,NA,NA,NA,190,"Tanneries. I think it’s all offices, but to check. DEMOLISHED. AGA",NA,NA,NA,"demolished","demolished","FUCs descriptions checked"
+"230",230,1337,NA,NA,NA,NA,NA,190,"Tanneries. I think it’s all offices, but to check. Answer: OFFICES. AS PER FUCS ENTERED. AGA",NA,NA,NA,"unidentifiable","unidentifiable","FUCs descriptions checked"
+"231",231,1341,NA,NA,NA,NA,NA,190,"Tanneries. I think it’s all offices, but to check. Answer: OFFICES. AS PER FUCS ENTERED. AGA",NA,NA,NA,"unidentifiable","unidentifiable","FUCs descriptions checked"
+"232",232,1350,NA,NA,NA,NA,NA,190,"Tanneries. I think it’s all offices, but to check. Answer: OFFICES. AS PER FUCS ENTERED. AGA",NA,NA,NA,"vacant","vacant","FUCs descriptions checked"
+"233",233,1351,NA,NA,NA,NA,NA,190,"Tanneries. I think it’s all offices, but to check. Answer: OFFICES. AS PER FUCS ENTERED. AGA",NA,NA,NA,"demolished / vacant","demolished / vacant","FUCs descriptions checked"
+"234",234,1352,NA,NA,NA,NA,NA,190,"Tanneries. I think it’s all offices, but to check. Answer: OFFICES. AS PER FUCS ENTERED. AGA",NA,NA,NA,"vacant","vacant","FUCs descriptions checked"
+"235",235,1339,NA,NA,NA,NA,NA,190,"Tanneries. I think it’s all offices, but to check. Answer: OFFICES. AS PER FUCS ENTERED. AGA","NO FUC IN M","Create new entry in ""Oct 2018_M"" with appropriate description, and draw associated polygon",NA,NA,NA,"FUCs queries"
+"236",236,1344,NA,NA,NA,NA,NA,190,"Tanneries. I think it’s all offices, but to check. Answer: OFFICES. AS PER FUCS ENTERED. AGA","NO FUC IN M","Create new entry in ""Oct 2018_M"" with appropriate description, and draw associated polygon",NA,NA,NA,"FUCs queries"
+"237",237,1357,NA,NA,NA,NA,NA,191,"Yes, these two are industrial. YES. AS PER FUC. AGA",NA,NA,NA,"Event venue for rent","Event venue for rent","FUCs descriptions checked"
+"238",238,1359,NA,NA,NA,NA,NA,191,"Yes, these two are industrial. Answer: RECORDING STUDIO",NA,"There is a discrepancy here between comment that this is 'recording studio' and the description which says 'office stationary supply'. Which is it? Please check in 2018_M that the description is correct. Change if it isn't. I can't find 191 in Oct18_M... may be that record needs to be recreated from EpiCollect. JC",NA,"Office stationary supply","Office stationary supply","FUCs queries"
+"239",239,NA,NA,51.500563,-0.082118,"46",NA,192,"Ex RW Autos. Looks like vacant industrial.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"240",240,NA,NA,51.500086,-0.084669,"46",NA,193,"Leather Market, Workspace Group. Assume it’s all offices, but worth checking.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"241",241,1336,NA,NA,NA,NA,NA,194,"This is now residential. RESIDENTIAL ON TOP FLOORS, GROUND FLOOR AS PER FUC ENTERED (MARKETING AGENCY OR SOMETHING DIGITAL IF I REMEMBER WELL). AGA 
+",NA,NA,NA,"Marketing Agency","Marketing Agency","FUCs descriptions checked"
+"242",242,12780007,NA,NA,NA,NA,NA,195,"Decima Studio etc, to check. Answer: PART RESIDENTIAL, PATRT OFFICES, PARTS CLOSED. THE WHOLE AREA AS PER FUC ENTERED. POSSIBLY SOME OF THE SPACES MIGHT BE USED DURING DIFFERENT TIMES OF THE WEEK AND REMAIN CLOSED ON OTHER DAYS. 
+",NA,NA,NA,"residential","residential","FUCs descriptions checked"
+"243",243,1318,NA,NA,NA,NA,NA,196,"Not industrial.
+RESIDENTIAL ON TOP FLOORS. GROUND FLOOR AS PER FUC ENTERED. AGA",NA,NA,NA,"Charity for homeless","Charity for homeless","FUCs descriptions checked"
+"244",244,NA,NA,51.496555,-0.082285,"47",NA,197,"HSS.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"245",245,NA,NA,51.496545,-0.082317,"47",NA,198,"Machines bike shop and workshop.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"246",246,NA,NA,51.496329,-0.08275,"47",NA,199,"Dry cleaners.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"247",247,NA,NA,51.496375,-0.08287,"47",NA,200,"Perhaps industrial.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"248",248,NA,NA,51.495505,-0.084051,"48",NA,201,"Watson Bros Gunmakers. Location to check.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"249",249,1297,NA,NA,NA,NA,NA,202,"Park depot extent to check.",NA,NA,NA,"Community art group and workshop","Community art group and workshop","FUCs simple polygon edits needed"
+"250",250,1330,NA,NA,NA,NA,NA,203,"No industrial here.",NA,NA,NA,"Graphic Design","Graphic Design","FUCs descriptions checked"
+"251",251,1275,NA,NA,NA,NA,NA,204,"Church, not industrial.",NA,NA,NA,"Pentecostal church","Pentecostal church","FUCs descriptions checked"
+"252",252,NA,NA,51.468996,-0.081855,"55","69",205,"This look like some sort of depot (perhaps healthcare) To check.","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"253",253,1338,NA,NA,NA,NA,NA,206,"This is now housing r part of hotel, I think. To check.",NA,NA,NA,"Hotel","Hotel","FUCs descriptions checked"
+"254",254,1306,NA,NA,NA,NA,NA,207,"Are we sure this is vacant. Very sad if so.",NA,NA,NA,"Vacant","Vacant","FUCs descriptions checked"
+"255",255,1273,NA,NA,NA,NA,NA,208,"Include yard.",NA,NA,NA,"Delivery Office","Delivery Office","FUCs simple polygon edits needed"
+"256",256,NA,NA,51.501547,-0.079348,"60",NA,209,"Arches in industrial use. To check.","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"257",257,NA,NA,51.501084,-0.078307,"60",NA,210,"Arch in use. To check if industrial","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"258",258,NA,NA,51.500601,-0.07804,"61",NA,211,"Yard in industrial use","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"259",259,6000001,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Car Wash","Car Wash","FUCs simple polygon edits needed"
+"260",260,6000002,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Unidentifiable","Unidentifiable (likely industrial)","FUCs simple polygon edits needed"
+"261",261,6000003,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Scrap metal point","Scrap metal point","FUCs simple polygon edits needed"
+"262",262,6000004,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Unidentifiable","Unidentifiable (likely industrial)","FUCs simple polygon edits needed"
+"263",263,6000005,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Unidentifiable","Unidentifiable (likely industrial)","FUCs simple polygon edits needed"
+"264",264,6100001,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Dry Cleaners","Dry Cleaners","FUCs simple polygon edits needed"
+"265",265,6100002,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Vacant","Vacant (Industrial)","FUCs simple polygon edits needed"
+"266",266,6100003,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Car Mechanic","Car Mechanic","FUCs simple polygon edits needed"
+"267",267,6100004,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Car Mechanic","Car Mechanic","FUCs simple polygon edits needed"
+"268",268,6100005,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Unidentifiable","Unidentifiable (likely industrial)","FUCs simple polygon edits needed"
+"269",269,6100006,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Derelict","Derelict (formerly industrial)","FUCs simple polygon edits needed"
+"270",270,6100007,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Unidentifiable","Unidentifiable (likely industrial)","FUCs simple polygon edits needed"
+"271",271,6100008,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Vacant","Vacant (Industrial)","FUCs simple polygon edits needed"
+"272",272,6100009,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Unidentifiable","Unidentifiable (likely industrial)","FUCs simple polygon edits needed"
+"273",273,6100010,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Unidentifiable","Unidentifiable (likely industrial)","FUCs simple polygon edits needed"
+"274",274,6100011,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Car Mechanic","Car Mechanic","FUCs simple polygon edits needed"
+"275",275,6100012,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Unidentifiable","Unidentifiable (likely industrial)","FUCs simple polygon edits needed"
+"276",276,6100013,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Unidentifiable","Unidentifiable (likely industrial)","FUCs simple polygon edits needed"
+"277",277,6100014,NA,NA,NA,NA,NA,212,"This whole run of rail arches is in industrial use. To check.",NA,NA,NA,"Unidentifiable","Unidentifiable (likely industrial)","FUCs simple polygon edits needed"
+"278",278,7900001,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"279",279,7900002,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"280",280,7900003,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"Restaurant / unit used as a storage and head office","Restaurant / unit used as a storage and head office","FUCs simple polygon edits needed"
+"281",281,7900004,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"Alcohol supplier / Event managment","Alcohol supplier / Event managment","FUCs simple polygon edits needed"
+"282",282,7900005,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"283",283,7900006,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"Alcohol wholesale","Alcohol wholesale","FUCs simple polygon edits needed"
+"284",284,7900007,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"Brewery","Brewery","FUCs simple polygon edits needed"
+"285",285,7900008,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"286",286,7900009,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"Charity","Charity","FUCs simple polygon edits needed"
+"287",287,7900010,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"288",288,7900011,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"Tools and equipment rental","Tools and equipment rental","FUCs simple polygon edits needed"
+"289",289,7900012,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"Tap room, shop, brewery","Tap room, shop, brewery","FUCs simple polygon edits needed"
+"290",290,7900013,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"Craft beer wholesale, tap room","Craft beer wholesale, tap room","FUCs simple polygon edits needed"
+"291",291,7900014,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"Bar, brewery","Bar, brewery","FUCs simple polygon edits needed"
+"292",292,7900015,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"Retail","Retail","FUCs simple polygon edits needed"
+"293",293,7900016,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"294",294,7900017,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"295",295,7900018,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"Storage units","Storage units","FUCs simple polygon edits needed"
+"296",296,7900019,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vegetable delivery service","vegetable delivery service","FUCs simple polygon edits needed"
+"297",297,7900020,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"298",298,7900021,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"299",299,7900022,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"300",300,7900023,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"unidentifiable","unidentifiable","FUCs simple polygon edits needed"
+"301",301,7900024,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"adhesives supplier","adhesives supplier","FUCs simple polygon edits needed"
+"302",302,7900025,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"Collection and delivery service for Arbo sealants products","Collection and delivery service for Arbo sealants products","FUCs simple polygon edits needed"
+"303",303,7900026,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"Consultancy","Consultancy","FUCs simple polygon edits needed"
+"304",304,7900027,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"305",305,7900028,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"306",306,7900029,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"307",307,7900030,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"308",308,7900031,NA,NA,NA,NA,NA,213,"To check arch extents",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"309",309,1509,NA,NA,NA,NA,NA,214,"Residential",NA,NA,NA,"Provider of cross-laminated timber","Provider of cross-laminated timber","FUCs descriptions checked"
+"310",310,1508,NA,NA,NA,NA,NA,215,"Not industrial.",NA,NA,NA,"Finance","Finance","FUCs descriptions checked"
+"311",311,1502,NA,NA,NA,NA,NA,216,"Office and residential.",NA,NA,NA,"Gym","Gym","FUCs descriptions checked"
+"312",312,1503,NA,NA,NA,NA,NA,216,"Office and residential.",NA,NA,NA,"Vacant","Vacant","FUCs descriptions checked"
+"313",313,1505,NA,NA,NA,NA,NA,216,"Office and residential.",NA,NA,NA,"Software Company","Software Company","FUCs descriptions checked"
+"314",314,1506,NA,NA,NA,NA,NA,216,"Office and residential.",NA,NA,NA,"Demolished","Demolished","FUCs descriptions checked"
+"315",315,1508,NA,NA,NA,NA,NA,216,"Office and residential. Answer: Confirmed in Mark's comment number 215",NA,NA,NA,"Finance","Finance","FUCs descriptions checked"
+"316",316,79000018,NA,NA,NA,NA,NA,217,"Include yard","Confirmed in Mark's number 213",NA,NA,"Storage units","Storage units","FUCs simple polygon edits needed"
+"317",317,1447,NA,NA,NA,NA,NA,219,"Tower Workshops are full occupancy industrial, studio and office. Needs full review.",NA,"Re-survey on site if We Made That cant help (email sent by Jane 9th Nov)",NA,"Residential","Residential","FUCs queries"
+"318",318,1456,NA,NA,NA,NA,NA,219,"Tower Workshops are full occupancy industrial, studio and office. Needs full review.",NA,"Re-survey on site if We Made That cant help (email sent by Jane 9th Nov)",NA,"Demolished","Demolished","FUCs queries"
+"319",319,1462,NA,NA,NA,NA,NA,219,"Tower Workshops are full occupancy industrial, studio and office. Needs full review.",NA,"Re-survey on site if We Made That cant help (email sent by Jane 9th Nov)",NA,"Demolished","Demolished","FUCs queries"
+"320",320,1464,NA,NA,NA,NA,NA,219,"Tower Workshops are full occupancy industrial, studio and office. Needs full review.",NA,"Re-survey on site if We Made That cant help (email sent by Jane 9th Nov)",NA,"Vacant","Vacant","FUCs queries"
+"321",321,1522,NA,NA,NA,NA,NA,220,"This is not industrial.",NA,NA,NA,"Tibetan Buddhist centre","Tibetan Buddhist centre","FUCs descriptions checked"
+"322",322,1510,NA,NA,NA,NA,NA,221,"Not industrial in 2012 or since",NA,NA,NA,"vacant","vacant","FUCs descriptions checked"
+"323",323,1492,NA,NA,NA,NA,NA,222,"Check for occupiers",NA,NA,NA,"Multi sensory experience design studio","Multi sensory experience design studio","FUCs descriptions checked"
+"324",324,1496,NA,NA,NA,NA,NA,222,"Check for occupiers",NA,NA,NA,"vacant","vacant","FUCs descriptions checked"
+"325",325,14980001,NA,NA,NA,NA,NA,222,"Check for occupiers",NA,NA,NA,"Commercial dry cleaning","Commercial dry cleaning","FUCs descriptions checked"
+"326",326,14980002,NA,NA,NA,NA,NA,222,"Check for occupiers",NA,NA,NA,"Custom made furniture","Custom made furniture","FUCs descriptions checked"
+"327",327,NA,NA,51.474128,-0.07752,"67",NA,223,"Vacant industrial (ex Kennedy sausage factory).","ON site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"328",328,7100002,NA,NA,NA,NA,NA,224,"Isn’t this Melbourne Tyres? Answer: NO 7100001 IS MELBOURNE TYRES. NEIL COULD NOT GAIN ACCESS TO THIS UNIT.","confirmed with full survey or verbal check",NA,NA,"Vacant","Inaccessible, possible fashion business","FUCs descriptions checked"
+"329",329,1409,NA,NA,NA,NA,NA,225,"Include yards. Answer: YES THIS ALL JEWSONS YARD SPACE",NA,NA,NA,"Builders Merchant","Builders Merchant","FUCs simple polygon edits needed"
+"330",330,7300001,NA,NA,NA,NA,NA,226,"Seems to be industrial. To check.",NA,NA,NA,"unidentifiable","Unidentifiable (industrial)","FUCs descriptions checked"
+"331",331,1524,NA,NA,NA,NA,NA,227,"Fitness club, not industrial. Answer: YES THIS IS A GYM",NA,NA,NA,"Fitness Gym","Fitness Gym","FUCs descriptions checked"
+"332",332,1521,NA,NA,NA,NA,NA,228,"Cinema, not industrial. Answer: YES THIS IS PICTUREHOUSE CINEMA",NA,NA,NA,"Cinema","Cinema","FUCs descriptions checked"
+"333",333,15101,NA,NA,NA,NA,NA,229,"Yes, industrial. To check.","confirmed with full survey or verbal check",NA,NA,"Residential","Residential","FUCs descriptions checked"
+"334",334,7800001,NA,NA,NA,NA,NA,232,"Industrial use in arches and yard",NA,NA,NA,"vacant","Vacant (Industrial)","FUCs descriptions checked"
+"335",335,7800002,NA,NA,NA,NA,NA,232,"Industrial use in arches and yard",NA,NA,NA,"vacant","Vacant (Industrial)","FUCs descriptions checked"
+"336",336,7800003,NA,NA,NA,NA,NA,232,"Industrial use in arches and yard",NA,NA,NA,"vacant","Vacant (Industrial)","FUCs descriptions checked"
+"337",337,7800004,NA,NA,NA,NA,NA,232,"Industrial use in arches and yard",NA,NA,NA,"vacant","Vacant (Industrial)","FUCs descriptions checked"
+"338",338,7800006,NA,NA,NA,NA,NA,232,"Industrial use in arches and yard",NA,NA,NA,"vacant","Vacant (Industrial)","FUCs descriptions checked"
+"339",339,7800008,NA,NA,NA,NA,NA,232,"Industrial use in arches and yard",NA,NA,NA,"vacant","Vacant (Industrial)","FUCs descriptions checked"
+"340",340,7800009,NA,NA,NA,NA,NA,232,"Industrial use in arches and yard",NA,NA,NA,"vacant","Vacant (Industrial)","FUCs descriptions checked"
+"341",341,7800012,NA,NA,NA,NA,NA,232,"Industrial use in arches and yard","NO FUC IN M","Desktop (first) then on site survey (if desktop unSuccessful) to check info. Create new entry in ""Oct 2018_M"" with appropriate description, and draw associated polygon.",NA,NA,NA,"FUCs queries"
+"342",342,7800013,NA,NA,NA,NA,NA,232,"Industrial use in arches and yard","NO FUC IN M","Desktop (first) then on site survey (if desktop unSuccessful) to check info. Create new entry in ""Oct 2018_M"" with appropriate description, and draw associated polygon.",NA,NA,NA,"FUCs queries"
+"343",343,1572,NA,NA,NA,NA,NA,233,"Long ago converted to office and residential",NA,NA,NA,"Design Studio","Design Studio","FUCs descriptions checked"
+"344",344,79000018,NA,NA,NA,NA,NA,234,"Industrial here includes yards. Check building extents",NA,NA,NA,"Storage units","Storage units","FUCs simple polygon edits needed"
+"345",345,NA,NA,51.49646,-0.069367,"79",NA,235,"Industrial use in arches and yards.","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"346",346,NA,NA,51.496037,-0.0684,"79",NA,236,"Industrial use in arches and yard. To check","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"347",347,9400002,NA,NA,NA,NA,NA,237,"Arch drawing looks inaccurate Includes bigg chunk of the road, for example)",NA,NA,NA,"Food packing and distribution","Food packing and distribution","FUCs simple polygon edits needed"
+"348",348,9400003,NA,NA,NA,NA,NA,237,"Arch drawing looks inaccurate Includes bigg chunk of the road, for example)",NA,NA,NA,"Wine distributor","Wine distributor","FUCs simple polygon edits needed"
+"349",349,9400004,NA,NA,NA,NA,NA,237,"Arch drawing looks inaccurate Includes bigg chunk of the road, for example)",NA,NA,NA,"Wines","Wine distributor","FUCs simple polygon edits needed"
+"350",350,9400005,NA,NA,NA,NA,NA,237,"Arch drawing looks inaccurate Includes bigg chunk of the road, for example)",NA,NA,NA,"Source and Roast Coffee","Source and Roast Coffee","FUCs simple polygon edits needed"
+"351",351,9400006,NA,NA,NA,NA,NA,238,"Arch drawing looks inaccurate Includes bigg chunk of the road, for example)",NA,NA,NA,"Ice cream makers","Ice cream makers","FUCs simple polygon edits needed"
+"352",352,1611,NA,NA,NA,NA,NA,239,"Include yard. Answer:  FUC IS POST OFFICE DELVERY OFFICE",NA,NA,NA,"Delivery Office","Delivery Office","FUCs simple polygon edits needed"
+"353",353,1562,NA,NA,NA,NA,NA,240,"Industrial yards and arches. Answer: MAP NEEDS UPDATED TO SHOW RAILWAY ARCH SPACE",NA,NA,NA,"Artists studios","Artists studios","FUCs simple polygon edits needed"
+"354",354,1566,NA,NA,NA,NA,NA,240,"Industrial yards and arches. Answer: MAP NEEDS UPDATED TO SHOW RAILWAY ARCH SPACE",NA,NA,NA,"Vehicle testing station","Vehicle testing station","FUCs simple polygon edits needed"
+"355",355,1577,NA,NA,NA,NA,NA,240,"Industrial yards and arches. Answer: MAP NEEDS UPDATED TO SHOW RAILWAY ARCH SPACE",NA,NA,NA,"Brewery & Bar","Brewery & Bar","FUCs simple polygon edits needed"
+"356",356,840000,NA,NA,NA,NA,NA,241,"Industrial yards and arches. Answer: MAP DOESN'T INCLUDE ALL ARCHES AND BUSINESSES","NO FUC IN M","Check whether railway arches have been surveyed, if not, conduct survey (desktop or on site), create FUCs and polygons",NA,NA,NA,"FUCs queries"
+"357",357,1666,NA,NA,NA,NA,NA,242,"Not industrial.",NA,NA,NA,"Beauty salon","Beauty salon","FUCs descriptions checked"
+"358",358,1578,NA,NA,NA,NA,NA,243,"Include access yard.",NA,NA,NA,"Vehicle repair","Vehicle repair","FUCs simple polygon edits needed"
+"359",359,1589,NA,NA,NA,NA,NA,244,"To check. Is this still Anthony Gormley studio? Answer: JESS SURVEYED AS INPUT AS ALL RESI NOW, RS comment: Looks residential from google maps but no way to confirm if it is still Anthony Gormley's Studio.",NA,NA,NA,"Residential","Residential","FUCs descriptions checked"
+"360",360,1667,NA,NA,NA,NA,NA,245,"Part of school, not industrial. Answer: IT IS Thomas Carlton Centre AS STATED IN EPICOLLECT ENTRY",NA,NA,NA,"Adult learning centre","Adult learning centre","FUCs descriptions checked"
+"361",361,NA,NA,51.465817,-0.072774,"85",NA,246,"Quick Print. Answer: NOT SURVEYED","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"362",362,8700005,NA,NA,NA,NA,NA,247,"What are these 3? Answer: INPUT IN EPICOLLECT AS J&B Impress (DRYCLEANERS)",NA,NA,NA,"Dry cleaners","Dry cleaners","FUCs descriptions checked"
+"363",363,8700006,NA,NA,NA,NA,NA,247,"What are these 3? Answer: INPUT IN EPICOLLECT AS Brown & Co Picture Framing",NA,NA,NA,"Picture Framing","Picture Framing","FUCs descriptions checked"
+"364",364,8700007,NA,NA,NA,NA,NA,247,"What are these 3? Answer: INPUT IN EPICOLLECT AS Balfes Bikes & Workshop",NA,NA,NA,"Bike Sales, Servicing & Repairs","Bike Sales, Servicing & Repairs","FUCs descriptions checked"
+"365",365,8700004,NA,NA,NA,NA,NA,248,"Evans Cycle (shop, not industrial, don’t think they have workshop) To check. Answer: THEY HAVE WORKSHOP TO REPAIR AND SERVICE BIKE. THINK IT SHOULD BE INCLUDED",NA,NA,NA,"Bicycle Repairs, Servicing & Sales","Bicycle Repairs, Servicing & Sales including workshop to rear","FUCs descriptions checked"
+"366",366,NA,NA,51.460991,-0.072744,"87",NA,249,"Check extent of industrial, include yard. Answer: THE BUILDING FACING ROAD IS SOUTHWARK YOUTH OFFENDING SERVICE","already checked",NA,NA,NA,NA,"lat/long new FUC required"
+"367",367,8900007,NA,NA,NA,NA,NA,250,"Runcent Joinery, but perhaps they have now gone. Answer: YES RUNCENT JOINERY USED TO BE HERE BUT NO LONGER THERE. NOT ON MAP BUT FUC IN EPICOLLECT",NA,"Create new entry in ""Oct 2018_M"" with appropriate description, and draw associated polygon if needed.",NA,"Demolished","Demolished","FUCs queries"
+"368",368,1552,NA,NA,NA,NA,NA,251,"Sub station. Answer: YES THIS IS A SUB STATION",NA,NA,NA,"Non industrial","Non industrial","FUCs descriptions checked"
+"369",369,9000001,NA,NA,NA,NA,NA,252,"Builders yard, I think. Answer: YES STANDAGE BUILDING & REFURB FUC INPUT IN EPICOLLECT",NA,NA,NA,"Builders","Builders yard","FUCs descriptions checked"
+"370",370,9100001,NA,NA,NA,NA,NA,253,"CS Marston & Partners, builders. To check.  Answer: CORRECT IT IS CS MARSTON. FUC NO. NOT ON MAP BUT INPUT INTO EPICOLLECT (Confirmed above in Mark's numbers 252)",NA,"Ensure polygon is drawn and appropriately associated with FUC",NA,"Builders","Builders","FUCs queries"
+"371",371,9400002,NA,NA,NA,NA,NA,254,"Make sure to include full large industrial yard.",NA,NA,NA,"Food packing and distribution","Food packing and distribution","FUCs simple polygon edits needed"
+"372",372,9400003,NA,NA,NA,NA,NA,254,"Make sure to include full large industrial yard.",NA,NA,NA,"unidentiable","unidentiable","FUCs simple polygon edits needed"
+"373",373,9400004,NA,NA,NA,NA,NA,254,"Make sure to include full large industrial yard.",NA,NA,NA,"Wine distributor","Wine distributor","FUCs simple polygon edits needed"
+"374",374,9400005,NA,NA,NA,NA,NA,254,"Make sure to include full large industrial yard.",NA,NA,NA,"Source and Roast Coffee","Source and Roast Coffee","FUCs simple polygon edits needed"
+"375",375,9400006,NA,NA,NA,NA,NA,254,"Make sure to include full large industrial yard.",NA,NA,NA,"Ice cream makers","Ice cream makers","FUCs simple polygon edits needed"
+"376",376,131,NA,NA,NA,NA,NA,255,"Pub, not industrial. Answer: NOT INDUSTRY pub as per epicollect",NA,NA,NA,"Pub","Pub","FUCs descriptions checked"
+"377",377,107,NA,51.495167,-0.065815,NA,NA,256,"Sugarhouse Studios, multi-occupier workshops / studios, includes several industrial businesses. Answer: Sugarhouse studios not here but see 257; from map this site appears to be yard for 107 - please ensure yard for 107 is added from parcels layer",NA,NA,NA,NA,NA,"FUCs simple polygon edits needed"
+"378",378,NA,NA,51.496137,-0.063132,"94",NA,257,"Yard is also industrial Answer: Sugarhouse studio; shared yard/workspace missed from orginal research; some companies here picked up in 'missed businesses list'","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"379",379,9500001,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"Butchers- Wholesale of meat","Butchers- Wholesale of meat","FUCs simple polygon edits needed"
+"380",380,9500002,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"Wholesale and retail of cheese, charcuterie and wine. Catering","Wholesale and retail of cheese, charcuterie and wine. Catering","FUCs simple polygon edits needed"
+"381",381,9500003,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"382",382,9500004,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"Import Greek food","Import Greek food","FUCs simple polygon edits needed"
+"383",383,9500005,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"Wild and forest fruits, Mainly mushrooms","Wild and forest fruits, Mainly mushrooms","FUCs simple polygon edits needed"
+"384",384,9500006,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"385",385,9500007,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"386",386,9500009,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"Waste management","Waste management","FUCs simple polygon edits needed"
+"387",387,9500010,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"unidentifiable","unidentifiable","FUCs simple polygon edits needed"
+"388",388,9500011,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"unidentifiable","unidentifiable","FUCs simple polygon edits needed"
+"389",389,9500012,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"derelict","derelict","FUCs simple polygon edits needed"
+"390",390,9500013,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"derelict","derelict","FUCs simple polygon edits needed"
+"391",391,9500014,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"derelict","derelict","FUCs simple polygon edits needed"
+"392",392,9500015,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"derelict","derelict","FUCs simple polygon edits needed"
+"393",393,9500016,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"Financial Mail Print","Financial Mail Print","FUCs simple polygon edits needed"
+"394",394,9500017,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"unidentifiable","unidentifiable","FUCs simple polygon edits needed"
+"395",395,9500018,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"Screen Printers/Book Makers/Printer","Screen Printers/Book Makers/Printer","FUCs simple polygon edits needed"
+"396",396,9500019,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"unidentifiable","unidentifiable","FUCs simple polygon edits needed"
+"397",397,9500020,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"unidentifiable","unidentifiable","FUCs simple polygon edits needed"
+"398",398,9500021,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"Textile manufacturer","Textile manufacturer","FUCs simple polygon edits needed"
+"399",399,9500022,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"unidentifiable","unidentifiable","FUCs simple polygon edits needed"
+"400",400,9500023,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"unidentifiable","unidentifiable","FUCs simple polygon edits needed"
+"401",401,9500024,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"unidentifiable","unidentifiable","FUCs simple polygon edits needed"
+"402",402,9500025,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"403",403,9500026,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"404",404,9500027,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"405",405,9500028,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"Theatrical Metal Worker/Fabricator","Theatrical Metal Worker/Fabricator","FUCs simple polygon edits needed"
+"406",406,9500029,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"407",407,9500030,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"408",408,9500031,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"409",409,9500032,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"410",410,9500033,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"411",411,9500034,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"412",412,9500035,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"413",413,9500036,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think",NA,NA,NA,"vacant","vacant","FUCs simple polygon edits needed"
+"414",414,9500008,NA,NA,NA,NA,NA,258,"Check extent of arch industrial and adjoining yards etc. More extensive than drawn, I think","NO FUC IN M","Identify if more surveys required or just redrawing of poorly drawn polygons. Do whatever needs to be done.",NA,NA,NA,"FUCs queries"
+"415",415,1812,NA,NA,NA,NA,NA,259,"Yards are also industrial, part off Steel Solutions I think",NA,NA,NA,"Steel Fabrication","Steel Fabrication","FUCs simple polygon edits needed"
+"416",416,1816,NA,NA,NA,NA,NA,259,"Yards are also industrial, part off Steel Solutions I think",NA,NA,NA,"Car repair","Car repair","FUCs simple polygon edits needed"
+"417",417,1798,NA,NA,NA,NA,NA,260,"I think industrial departed from here in 2015","confirmed with full survey or verbal check",NA,NA,"Motor cycle sale, servicing","Motor cycle sale, servicing","FUCs descriptions checked"
+"418",418,1800,NA,NA,NA,NA,NA,260,"I think industrial departed from here in 2015",NA,NA,NA,"Pub","Pub","FUCs descriptions checked"
+"419",419,1804,NA,NA,NA,NA,NA,260,"I think industrial departed from here in 2015",NA,NA,NA,"unidentifiable","unidentifiable","FUCs descriptions checked"
+"420",420,1805,NA,NA,NA,NA,NA,261,"These frontage building all retail, and pub",NA,NA,NA,"Architecture","Architecture","FUCs descriptions checked"
+"421",421,1807,NA,NA,NA,NA,NA,261,"These frontage building all retail, and pub",NA,NA,NA,"Restaurant","Restaurant","FUCs descriptions checked"
+"422",422,1811,NA,NA,NA,NA,NA,261,"These frontage building all retail, and pub",NA,NA,NA,"Grocery store","Grocery store","FUCs descriptions checked"
+"423",423,1815,NA,NA,NA,NA,NA,261,"These frontage building all retail, and pub",NA,NA,NA,"Bank","Bank","FUCs descriptions checked"
+"424",424,NA,NA,51.492324,-0.064517,"96",NA,262,"Dunns Bakery (wholesale, same business as The Bakehouse) To check location Answer: NO evidence of bakery here from maps; other high street shops","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"425",425,NA,NA,51.491939,-0.061982,"95",NA,263,"Don’t know what this is. To check","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"426",426,NA,NA,51.491918,-0.061756,"115",NA,264,"J Walton Auto Repairs.","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"427",427,1758,NA,NA,NA,NA,NA,265,"Small builders yard.","confirmed with full survey or verbal check",NA,NA,"residential","residential","FUCs descriptions checked"
+"428",428,1763,NA,NA,NA,NA,NA,266,"Are we sure this is straight residential. To check.",NA,"Check with surveyor. If not conclusive, desktop (first) then on site survey (if desktop unsuccessful) to check info",NA,"Residential","Unsure - was unable to access","FUCs queries"
+"429",429,10100002,NA,NA,NA,NA,NA,267,"I thought this was Jozef’s Cycle Repairs. Has that gone?
+Answer: Business name noted but described as vacant",NA,NA,NA,"Vacant","Vacant","FUCs descriptions checked"
+"430",430,23900001,NA,NA,NA,NA,NA,268,"Made sure to include yard.",NA,NA,NA,"Timber Merchant","Timber Merchant","FUCs simple polygon edits needed"
+"431",431,1030001,NA,NA,NA,NA,NA,269,"Peckham Levels. Yers, there are a small number of ultra-light industrial uses, but it would be very odd to show the whole building as industrial. Better to figure out where those businesses are on the floor plan and map.","Have other relevant businesses from PL been captured?",NA,"confirmed online","Interior design","Interior design","FUCs simple polygon edits needed"
+"432",432,NA,NA,51.470609,-0.06369,"103",NA,271,"Peckham Pallets and Cases. Yard, and to check whether they are in any railway arch space, or perhaps there it’s all embankment","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"433",433,1826,NA,NA,NA,NA,NA,272,"Vacant industrial includes the yard.",NA,NA,NA,"Vacant","Vacant industrial","FUCs simple polygon edits needed"
+"434",434,NA,NA,51.470252,-0.066919,"103","104",273,"To check for arches and their industrial use across this area.","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"435",435,NA,NA,51.469838,-0.066417,"104",NA,274,"Is this now all the industrial businesses in Copeland / Busey. Looks convincing, but worth checking.","check with surveyor of sheet 104 and if they have thoroughly checked, then no action required - otherwise new survey",NA,NA,NA,NA,"lat/long new FUC required"
+"436",436,NA,NA,51.470001,-0.065033,"104",NA,275,"Hand car wash use","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"437",437,NA,NA,51.470109,-0.064782,"104",NA,276,"Mani Caterers.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"438",438,NA,NA,51.47016,-0.064113,"103","104",277,"A haulage business, I think.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"439",439,1810,NA,NA,NA,NA,NA,278,"Industrial use extends into railway arches, more extensive than mapped.",NA,NA,NA,"Metal fabrication","Metal fabrication","FUCs simple polygon edits needed"
+"440",440,1840,NA,NA,NA,NA,NA,278,"Industrial use extends into railway arches, more extensive than mapped.",NA,NA,NA,"Vacant","Vacant","FUCs simple polygon edits needed"
+"441",441,1844,NA,NA,NA,NA,NA,278,"Industrial use extends into railway arches, more extensive than mapped.",NA,NA,NA,"Vacant","Vacant","FUCs simple polygon edits needed"
+"442",442,1846,NA,NA,NA,NA,NA,278,"Industrial use extends into railway arches, more extensive than mapped.",NA,NA,NA,"Vacant","Vacant","FUCs simple polygon edits needed"
+"443",443,1849,NA,NA,NA,NA,NA,278,"Industrial use extends into railway arches, more extensive than mapped.",NA,NA,NA,"Vacant","Vacant","FUCs simple polygon edits needed"
+"444",444,1794,NA,NA,NA,NA,NA,279,"Is the main building really all residential? To check.",NA,"confirmed online",NA,"Residential","Residential","FUCs descriptions checked"
+"445",445,1774,NA,NA,NA,NA,NA,280,"This one building is a church, not industrial.",NA,NA,NA,"Community outreach","Community outreach / Church","FUCs descriptions checked"
+"446",446,1769,NA,51.465977,-0.065205,NA,NA,281,"Include the yard access adjacent to 1769",NA,NA,NA,NA,NA,"FUCs simple polygon edits needed"
+"447",447,NA,NA,51.467009,-0.067965,"105",NA,282,"Check whether this is industrial, or is it a church? Answer: G MAPS SAYS IT IS Property Facilities Group Plc","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"448",448,NA,NA,51.466814,-0.065145,"105",NA,283,"Glass in London Ltd","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"449",449,NA,NA,51.467427,-0.065947,"105",NA,284,"This is vacant industrial.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"450",450,10500001,NA,NA,NA,NA,NA,285,"Arien Contractors. To check. Answer:  INPUT IN EPICOLLECT AS ARIEN CONTRACTOR BUT NOTED AS Peckham Rye Baptist Tabernacle ON G MAPS",NA,NA,NA,"Building and maintenance company","Building and maintenance company","FUCs descriptions checked"
+"451",451,10500001,NA,NA,NA,NA,NA,286,"To check. Perhaps all church use, but could be builder also. Answer: Confirmed above in Mark's number 285",NA,NA,NA,"Building and maintenance company","Building and maintenance company","FUCs descriptions checked"
+"452",452,17270001,NA,NA,NA,NA,NA,287,"Looks like offices. RTo check. Answer: NEIL SAYS LOOKED VACANT ON VISIT",NA,"confirmed online",NA,"derelict","vacant","FUCs descriptions checked"
+"453",453,10600001,NA,NA,NA,NA,NA,288,"To check. Answer:  THIS IS EASY PRINT AS INPUT IN EPICOLLECT. OWNER DIDNT HAVE TIME TO SPEAK TO DO FULL SURVEY",NA,NA,NA,"Printing and graphic design","Printing and graphic design","FUCs descriptions checked"
+"454",454,NA,NA,51.458959,-0.067253,NA,NA,289,"Make sure to include yards","yards already included",NA,NA,NA,NA,"lat/long new FUC required"
+"455",455,NA,NA,51.457565,-0.066374,NA,NA,289,"Make sure to include yards","yards already included",NA,NA,NA,NA,"lat/long new FUC required"
+"456",456,NA,NA,51.471136,-0.060685,"122",NA,293,"Two yards, Sure Build Timber, I think.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"457",457,NA,NA,51.469104,-0.060595,NA,NA,294,"FUC not shown on large map, check catalog for FUC then redraw polygons to show going underneath railwy arch. It looks like they extend through railway arches.",NA,NA,NA,NA,NA,"FUCs simple polygon edits needed"
+"458",458,NA,NA,51.468616,-0.059378,"123",NA,295,"Industrial yard. Looks vacant.","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"459",459,NA,NA,51.469872,-0.057168,"123",NA,296,"Stanbury Motors, to check.","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"460",460,1888,NA,NA,NA,NA,NA,297,"Include yard.",NA,NA,NA,"Vehicle repairs","Vehicle repairs","FUCs simple polygon edits needed"
+"461",461,NA,NA,51.46599,-0.056952,"124",NA,298,"Ayres Bakery. Answer: NOT SURVEYED","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"462",462,1925,NA,NA,NA,NA,NA,299,"Nursery, not industrial. Answer: YES THIS IS A NURSERY",NA,NA,NA,"Day Nursery and Pre School","Day Nursery and Pre School","FUCs descriptions checked"
+"463",463,1873,NA,NA,NA,NA,NA,300,"Cafe, I think. Answer: YES IT IS A CAFE CHECKED BY NEIL AND INPUT IN EPICOLLECT",NA,NA,NA,"Cafe","Cafe","FUCs descriptions checked"
+"464",464,1865,NA,NA,NA,NA,NA,301,"Nursery, I think. Answer: YES IT IS A NURSERY CHECKED BY NEIL AND INPUT IN EPICOLLECT",NA,NA,NA,"Pre school","Pre school","FUCs descriptions checked"
+"465",465,NA,NA,51.466947,-0.068567,"128",NA,302,"Sands Films (costume producer). This is industrial. Extent to check Answer: spoke on phone today; film studio with stage/costume making; occupies whole block","Desktop survey",NA,NA,NA,NA,"lat/long new FUC required"
+"466",466,2009,NA,NA,NA,NA,NA,303,"Tube station vent","confirmed with full survey or verbal check",NA,NA,"residential","residential","FUCs descriptions checked"
+"467",467,1963,NA,NA,NA,NA,NA,304,"Tube vent, not industrial","confirmed with full survey or verbal check",NA,NA,"religious organisation","religious organisation","FUCs descriptions checked"
+"468",468,1949,NA,NA,NA,NA,NA,305,"Presumably all occupied.",NA,NA,NA,"funeral directors","funeral directors - Undertakers depot and embalming","FUCs descriptions checked"
+"469",469,1955,NA,NA,NA,NA,NA,305,"Presumably all occupied. Undertakers depot and embalming",NA,NA,NA,"vacant","funeral directors - Undertakers depot and embalming","FUCs descriptions checked"
+"470",470,1958,NA,NA,NA,NA,NA,305,"Presumably all occupied. Undertakers depot and embalming",NA,NA,NA,"vacant","funeral directors - Undertakers depot and embalming","FUCs descriptions checked"
+"471",471,1962,NA,NA,NA,NA,NA,306,"Include yards in the industrial.",NA,NA,NA,"Vacant",NA,"FUCs simple polygon edits needed"
+"472",472,1966,NA,NA,NA,NA,NA,306,"Include yards in the industrial.",NA,NA,NA,"Maintenance Refurb and Roofing","Maintenance Refurb and Roofing","FUCs simple polygon edits needed"
+"473",473,13700009,NA,NA,NA,NA,NA,306,"Include yards in the industrial.",NA,NA,NA,"Vacant","Vacant","FUCs simple polygon edits needed"
+"474",474,13800004,NA,NA,NA,NA,NA,307,"Albermarle Graphics. To check.",NA,NA,NA,"Signs and Large format digital printing","Signs and Large format digital printing","FUCs descriptions checked"
+"475",475,13800005,NA,NA,NA,NA,NA,308,"Include yards.",NA,NA,NA,"Car services","Car services","FUCs simple polygon edits needed"
+"476",476,1990,NA,NA,NA,NA,NA,309,"Include yards.",NA,NA,NA,"Multinational telecommunications","Multinational telecommunications","FUCs simple polygon edits needed"
+"477",477,NA,NA,51.469616,-0.052442,"140",NA,310,"Small dept. To check.","on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"478",478,NA,NA,51.469479,-0.052137,"140",NA,311,"GH Metals.","DESKTOP OR on site survey",NA,NA,NA,NA,"lat/long new FUC required"
+"479",479,2029,NA,NA,NA,NA,NA,312,"Northern shop not industrial. Answer: INPUT IN EPICOLLECT AS HATS group ltd.","confirmed with full survey or verbal check",NA,NA,"Transport","Transport","FUCs descriptions checked"
+"480",480,2029,NA,NA,NA,NA,NA,313,"Include yard. Transport depot.",NA,NA,NA,NA,NA,"FUCs simple polygon edits needed"
+"481",481,111111451,NA,NA,NA,NA,NA,315,"I think this is now King's housing development.",NA,NA,NA,"Formerly Mulberry Business Park, now site owned by Kings College","Vacant site to be developed","FUCs descriptions checked"
+"482",482,2086,NA,NA,NA,NA,NA,316,"Ex print works is no longer industrial",NA,NA,NA,"Event space","Event space","FUCs descriptions checked"
+"483",483,14500001,NA,NA,NA,NA,NA,317,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"484",484,2055,NA,NA,NA,NA,NA,318,"What is this. Don’t think it’s industrial. Answer:  NOT INDUSTRY pub and used car sales, (as per epicollect)",NA,NA,NA,"Public house","Public house","FUCs descriptions checked"
+"485",485,2056,NA,NA,NA,NA,NA,318,"What is this. Don’t think it’s industrial.",NA,NA,NA,"Second hand cars","Second hand cars","FUCs descriptions checked"
+"486",486,14800001,NA,NA,NA,NA,NA,319,"To check. I think this is retail Answer: INDUSTRY car wash (as per epicollect)",NA,NA,NA,"Car wash","Car wash","FUCs descriptions checked"
+"487",487,14800002,NA,NA,NA,NA,NA,319,"To check. I think this is retail Answer: NOT INDUSTRY barber / food stall (as per epicollect)",NA,NA,NA,"Hairdressing","Hairdressing","FUCs descriptions checked"
+"488",488,14800003,NA,NA,NA,NA,NA,319,"To check. I think this is retail",NA,NA,NA,"Takeaway food stall","Takeaway food stall","FUCs descriptions checked"
+"489",489,14700001,NA,NA,NA,NA,NA,320,"What is this? Answer: INDUSTRY motocycle sales and repair, (as per epicollect)",NA,NA,NA,"Motorcycle sales/repairs","Motorcycle sales/repairs","FUCs descriptions checked"
+"490",490,2077,NA,NA,NA,NA,NA,321,"Include yard",NA,NA,NA,"residential","residential","FUCs descriptions checked"
+"491",491,2084,NA,NA,NA,NA,NA,321,"Include yard",NA,NA,NA,"residential","residential","FUCs descriptions checked"
+"492",492,2069,NA,NA,NA,NA,NA,321,"Include yard Answer: INDUSTRY 4 different FUC on site, needs yard drawn",NA,NA,NA,"MOT Centre & garage","MOT Centre & garage","FUCs simple polygon edits needed"
+"493",493,2083,NA,NA,NA,NA,NA,321,"Include yard",NA,NA,NA,"Car service/repair","Car service/repair","FUCs simple polygon edits needed"
+"494",494,2065,NA,NA,NA,NA,NA,322,"Include whole yard Answer: INDUSTRY dispersed units on same site, needs yard drawn",NA,NA,NA,"Plant hire","Plant hire","FUCs simple polygon edits needed"
+"495",495,2062,NA,NA,NA,NA,NA,323,"This is a nursery, not industrial.",NA,NA,NA,"Unidentifiable","Nursery","FUCs descriptions checked"
+"496",496,111111531,NA,NA,NA,NA,NA,324,"I think all this was demolished between 2014 and 2016, except northern plot seems was never developed. No longer any industrial here",NA,NA,NA,"residential","residential","FUCs descriptions checked"
+"497",497,111111532,NA,NA,NA,NA,NA,324,"I think all this was demolished between 2014 and 2016, except northern plot seems was never developed. No longer any industrial here",NA,NA,NA,"Former industrial yard, currently empty","Vacant/demolished","FUCs descriptions checked"
+"498",498,111111533,NA,NA,NA,NA,NA,324,"I think all this was demolished between 2014 and 2016, except northern plot seems was never developed. No longer any industrial here",NA,NA,NA,"residential","residential","FUCs descriptions checked"
+"499",499,111111534,NA,NA,NA,NA,NA,324,"I think all this was demolished between 2014 and 2016, except northern plot seems was never developed. No longer any industrial here",NA,NA,NA,"residential","residential","FUCs descriptions checked"
+"500",500,111111541,NA,NA,NA,NA,NA,324,"I think all this was demolished between 2014 and 2016, except northern plot seems was never developed. No longer any industrial here",NA,NA,NA,"residential","residential","FUCs descriptions checked"
+"501",501,2098,NA,NA,NA,NA,NA,325,"Yard and building still industrial, I think. The only industrial remaining, I think.",NA,NA,NA,"Industrial storage","Industrial/storage","FUCs descriptions checked"
+"502",502,1374,NA,NA,NA,NA,NA,326,"I think this is now residential. To check.","confirmed with full survey or verbal check",NA,NA,"Tool shop and manufacturer","Tool shop and manufacturer","FUCs descriptions checked"
+"503",503,14500002,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"504",504,14500003,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Upholstery/interior design","Upholstery/interior design","FUCs descriptions checked"
+"505",505,14500004,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Illustrator/graphic design","Illustrator/graphic design","FUCs descriptions checked"
+"506",506,14500005,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"507",507,14500006,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"508",508,14500007,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"509",509,14500008,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Director/editor","Director/editor","FUCs descriptions checked"
+"510",510,14500009,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"511",511,14500010,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"512",512,14500011,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"513",513,14500012,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"514",514,14500013,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Songwriter/music composer","Songwriter/music composer","FUCs descriptions checked"
+"515",515,14500014,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Photographer","Photographer","FUCs descriptions checked"
+"516",516,14500015,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"517",517,14500016,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Illustrator","Illustrator","FUCs descriptions checked"
+"518",518,14500017,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"519",519,14500018,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"520",520,14500019,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"521",521,14500020,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"522",522,14500021,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"523",523,14500022,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Artist","Artist","FUCs descriptions checked"
+"524",524,14500023,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Art studio","Art studio","FUCs descriptions checked"
+"525",525,14500024,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Art studio","Art studio","FUCs descriptions checked"
+"526",526,14500025,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Art studio","Art studio","FUCs descriptions checked"
+"527",527,14500026,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Art studio","Art studio","FUCs descriptions checked"
+"528",528,14500027,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Art studio","Art studio","FUCs descriptions checked"
+"529",529,14500028,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Art studio","Art studio","FUCs descriptions checked"
+"530",530,14500029,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Art studio","Art studio","FUCs descriptions checked"
+"531",531,14500030,NA,NA,NA,NA,NA,NA,"What is this",NA,NA,NA,"Art studio","Art studio","FUCs descriptions checked"
+"532",532,9100002,NA,NA,NA,NA,NA,NA,"Answer: Boro Construction.  FUC no. not on map but input into epicollect",NA,"Ensure polygon is drawn and appropriately associated with FUC",NA,"Boro Construction","Boro Construction","FUCs queries"
