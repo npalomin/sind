@@ -8,13 +8,15 @@ output:
     df_print: paged
 ---
 
-|||
-|-|-|
-|Cass Cities| <img src="https://npalomin.github.io/sind/timg/logos.png" width="300">|
+
 
 ---
 
-### __Southwark Industrial Audit (SIA)__
+### __Southwark Industrial Audit (SIA)__ - Cass Cities
+
+<img src="https://npalomin.github.io/sind/timg/logos.png" width="300">
+
+
 # __Spatial survey methodology__ 
 
 ---
