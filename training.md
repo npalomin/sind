@@ -8,17 +8,15 @@ output:
     df_print: paged
 ---
 
-
-
----
-
 ### __Southwark Industrial Audit (SIA)__ - Cass Cities
 
 <img src="https://npalomin.github.io/sind/timg/logos.png" width="300">
 
+---
 
 # __Spatial survey methodology__ 
 
+> Nicolas Palominos _n.palominos.16@ucl.ac.uk_
 ---
 
 [__PART 1.__ The paper map, the spatial "functional unit" and QGIS](https://github.com/npalomin/sind/blob/master/training.md#part-1-the-paper-map-the-spatial-functional-unit-and-qgis)
