@@ -8,7 +8,9 @@ output:
     df_print: paged
 ---
 
-<img src="https://npalomin.github.io/sind/timg/logos.png" width="300">
+|||
+|-|-|
+|Cass Cities| <img src="https://npalomin.github.io/sind/timg/logos.png" width="300">|
 
 ---
 
