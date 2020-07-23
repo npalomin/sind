@@ -16,7 +16,7 @@ output:
 
 # __Spatial survey methodology__ 
 
-> Nicolas Palominos _n.palominos.16@ucl.ac.uk_
+<sub><sup><sub>Nicolas Palominos _n.palominos.16@ucl.ac.uk_</sub></sup></sub>
 ---
 
 [__PART 1.__ The paper map, the spatial "functional unit" and QGIS](https://github.com/npalomin/sind/blob/master/training.md#part-1-the-paper-map-the-spatial-functional-unit-and-qgis)
