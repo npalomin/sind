@@ -364,3 +364,14 @@ There are some areas outside the places that intersect with the Industrial Basel
 <img src="https://npalomin.github.io/sind/timg/cfull.png">
 
 Because no specific building has been identified for stages 'Expert judgment' and 'Surroundings' there are no FUCs. Thus, these will have to be generated from field observation and the code should be created following the process indicated in [point 4](https://github.com/npalomin/sind/blob/master/training.md#survey-workflow) of the survey workflow. The 'Buildings' and 'Parcels' digital files are in the same folder ["Survey and Mapping Materials"](https://drive.google.com/open?id=1TRAo5habuwfWUAd2T_7rRev4tprVTmEL) of the 'Baseline' stage. The polygon features on this files will only serve as guidance (that could potentially be edited) as these don't have FUCs.
+
+----
+
+## Appendix
+
+[EpiCollect](https://five.epicollect.net/)
+
+<img src="https://npalomin.github.io/sind/timg/epiMob.jpg" width="300">
+<img src="https://npalomin.github.io/sind/timg/epi5.png" width="600">
+
+
