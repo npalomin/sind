@@ -51,6 +51,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r include=FALSE}
+library(sf)
 library(readr)
 library(tidyverse)
 library(dplyr)
@@ -328,6 +329,27 @@ D_RS <- read_excel("~/Documents/SIA/Organisation Description_RS.xlsx")
 names(D_RS)
 ```
 
+### Final Summary
+
+```{r}
+ds154 <- st_read("/Users/nicolas/Documents/SINDA_local/Final_data_from_gd/Cleaned_154_full.gpkg")
+```
+
+```{r}
+install.packages("skimr")
+library(skimr)
+```
 
 
+```{r}
+sumta <- skim(ds154) %>%
+  as.tibble() %>%
+  select(2,3,11,12) %>%
+  rename(variable = skim_variable)
+sumta
+```
+
+```{r}
+write_xlsx(sumta,"sumta.xlsx", col_names = T)
+```
 
