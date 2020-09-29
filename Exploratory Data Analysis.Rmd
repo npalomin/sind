@@ -78,8 +78,6 @@ oct10 <- read.csv("/Users/nicolas/Documents/SIND_local_CASA/epi_data_downloads_t
 write.xlsx(oct10, file = "/Users/nicolas/Documents/SIND_local_CASA/epi_data_downloads_temp/oct10.xlsx", colNames = TRUE, borders = "rows")
 ```
 
-
-
 ```{r include=FALSE}
 # finalDB <- read_csv("/Users/nicolaspalominos/Desktop/form-1__sia-audit.csv")
 ```
@@ -329,14 +327,14 @@ D_RS <- read_excel("~/Documents/SIA/Organisation Description_RS.xlsx")
 names(D_RS)
 ```
 
-### Final Summary
+## Final Summary
 
 ```{r}
 ds154 <- st_read("/Users/nicolas/Documents/SINDA_local/Final_data_from_gd/Cleaned_154_full.gpkg")
 ```
 
 ```{r}
-install.packages("skimr")
+#install.packages("skimr")
 library(skimr)
 ```
 
@@ -351,5 +349,290 @@ sumta
 
 ```{r}
 write_xlsx(sumta,"sumta.xlsx", col_names = T)
+```
+
+```{r}
+oct18N <- st_read("/Users/nicolas/Documents/SINDA_local/Final_data_from_gd/oct18_N.gpkg")
+```
+
+```{r}
+# Common column names
+cols <- intersect(colnames(ds154), colnames(oct18N))
+cols
+```
+
+```{r}
+# replace names programatically
+# Use purrr::set_names() with annonymous function of stringr operations
+df1 <- ds154 %>%
+  set_names(~ str_to_lower(.) %>% 
+              str_replace_all("x_", ""))
+```
+
+```{r}
+df2 <- oct18N %>%
+  set_names(~ str_to_lower(.) %>% 
+              str_replace_all("x", ""))
+```
+
+```{r}
+# Common column names
+cols <- intersect(colnames(df1), colnames(df2))
+cols
+```
+
+```{r}
+# convert 'created at' to factor
+df2 <- df2 %>%
+  mutate_at(vars(created_at),list(factor))
+```
+
+```{r}
+# bind with data table
+library(data.table)
+```
+
+```{r}
+# make named list
+l <- list(df1 = df1 , df2 = df2)
+dff <- rbindlist( l, use.names = TRUE, fill = TRUE, idcol = "origin" )
+```
+
+```{r}
+dffsf <- dff %>%
+  st_as_sf()
+```
+
+```{r}
+colnames(dffsf)
+```
+
+```{r}
+# compare columns 'fuc' with 'fuc_s'
+dins <- dffsf %>%
+  select(83,84,86,114) %>%
+  mutate(TEST = as.character(fuc == fuc_s))
+# keep 'fuc_s'
+```
+
+```{r}
+# summary
+dffsf %>%
+  select(-83) %>%
+  skim() %>%
+  as.tibble()
+# 2043 factor.n.unique fuc_s
+```
+
+```{r}
+dffsf <- dffsf %>%
+  add_count(fuc_s)
+```
+
+```{r}
+dffsf %>%
+  filter(n == 2) %>%
+  select(fuc_s, n, mb_comment, action_spatial, action_spreadsheet)
+```
+
+```{r}
+dffsf <- dffsf %>%
+  rename(id = fid)
+```
+
+```{r}
+#st_write(dffsf,"/Users/nicolas/Documents/SINDA_local/Final_data_from_gd/oct2020.gpkg")
+```
+
+```{r}
+oct2020 <- st_read("/Users/nicolas/Documents/SINDA_local/Final_data_from_gd/oct2020.gpkg")
+```
+
+```{r}
+colnames(oct2020)
+```
+
+```{r}
+# summary
+oct2020 %>%
+  select(-83) %>%
+  skim() %>%
+  as.tibble() %>%
+  arrange(desc(complete_rate))
+```
+
+```{r}
+df3 <- oct2020 %>%
+  mutate(desc_org = X6_12_description_of_) %>%
+  select(-83) %>%
+  mutate(`desc_org` = recode(`desc_org`,
+                                                    "Vacant" = "vacant",
+                                                    "Residential" = "residential",
+                                                    "unidentified" = "unidentifiable",
+                                                    "Unidentifiable" = "unidentifiable",
+                                                    "Demolished" = "demolished",
+                                                    "demolished / vacant" = "demolished",
+                                                    "Derelict" = "derelict",
+                                                    "Development" = "development",
+                                                    "Under development" = "development",
+                                                    "vehicle repair" = "Vehicle repair",
+                                                    "Vehicle Repairs" = "Vehicle repair",
+                                                    "Vehicle Repair and Service" = "Vehicle repair",
+                                                    "Vehicle services and repairs" = "Vehicle repair",
+                                                    "Vehicle Repairs & Servicing" = "Vehicle repair",
+                                                    "Vehicle Repairs and Servicing" = "Vehicle repair",
+                                                    "Vehicle repairs" = "Vehicle repair",
+                                                    "Car servicing" = "Vehicle repair",
+                                                    "Car repair" = "Vehicle repair",
+                                                    "Car repairs" = "Vehicle repair",
+                                                    "Car mechanic" = "Vehicle repair",
+                                                    "Car Mechanic" = "Vehicle repair",
+                                                    "Vehicle services" = "Vehicle repair",
+                                                    "Car repair and Maintenance" = "Vehicle repair",
+                                                    "Car service, repair" = "Vehicle repair",
+                                                    "Car service, repair, conversion" = "Vehicle repair",
+                                                    "Car service, repair; tyre sales and fitting" = "Vehicle repair",
+                                                    "Car mechanics, MOT check" = "Vehicle repair",
+                                                    "Car service, repairs" = "Vehicle repair",
+                                                    "Car services" = "Vehicle repair",
+                                                    "Automobile Engineer" = "Vehicle repair",
+                                                    "artist" = "Artist studio",
+                                                    "Artists" = "Artist studio",
+                                                    "Artist" = "Artist studio",
+                                                    "Artistic creation" = "Artist studio",
+                                                    "Artists studios" = "Artist studio",
+                                                    "Artist / painter" = "Artist studio",
+                                                    "Artist Studio" = "Artist studio",
+                                                    "Artisit, Ceramist" = "Artist studio",
+                                                    "Artist / landscape painter" = "Artist studio",
+                                                    "Artist and Ceramist" = "Artist studio",
+                                                    "Artist and furniture maker" = "Artist studio",
+                                                    "Artist studio in live/work unit" = "Artist studio",
+                                                    "Artist studio, printmaking" = "Artist studio",
+                                                    "Artist studio/workshop" = "Artist studio",
+                                                    "Artist Studios" = "Artist studio",
+                                                    "Artist, Illustrator" = "Artist studio",
+                                                    "Artists/Furniture manufacturers" = "Artist studio",
+                                                    "restaurant" = "Restaurant",
+                                                    "Restaurants" = "Restaurant",
+                                                    "Architecture" = "Architecture practice",
+                                                    "Architecture design" = "Architecture practice",
+                                                    "Architectural practice" = "Architecture practice",
+                                                    "Architectural Practice" = "Architecture practice",
+                                                    "Interior and Architecture design" = "Architecture practice",
+                                                    "Architect" = "Architecture practice",
+                                                    "Architectrual Consultants" = "Architecture practice",
+                                                    "Architects" = "Architecture practice",
+                                                    "Architecture & Interior Design" = "Architecture practice",
+                                                    "Architecture and interior designers" = "Architecture practice",
+                                                    "Architecture office" = "Architecture practice",
+                                                    "Architecure Practice" = "Architecture practice",
+                                                    "Non Industrial" = "Non industrial",
+                                                    "Photographer" = "Photography studio",
+                                                    "Photography" = "Photography studio",
+                                                    "Photography Studio" = "Photography studio",
+                                                    "Advertising photography" = "Photography studio",
+                                                    "Ceramics" = "Ceramist",
+                                                    "Ceramic sculpture" = "Ceramist",
+                                                    "Ceramics, fine art" = "Ceramist",
+                                                    "Ceramics, pottery" = "Ceramist",
+                                                    "Ceramics: sculpture, tableware" = "Ceramist",
+                                                    "Ceramics Design and manufacture" = "Ceramist",
+                                                    "Ceramics and sculpture" = "Ceramist",
+                                                    "Ceramic artist" = "Ceramist",
+                                                    "Ceramic studio" = "Ceramist",
+                                                    "Fine art ceramics" = "Fine art",
+                                                    "Fine art, painting" = "Fine art",
+                                                    "Fine art, sculpture" = "Fine art",
+                                                    "Graphic Design" = "Graphic design",
+                                                    "Graphic designers" = "Graphic design",
+                                                    "offices" = "Offices",
+                                                    "Office block" = "Offices",
+                                                    "Adult education" = "Adult learning centre", 
+                                                    "Adult education centre" = "Adult learning centre",
+                                                    "Adult education Learning" = "Adult learning centre",
+                                                    "Adult Learning Centre" = "Adult learning centre",
+                                                    "Bicycle Repairs, Servicing & Sales" = "Bicycle service",
+                                                    "Bicycle service, repair; parts sales" = "Bicycle service",
+                                                    "Bike repair" = "Bicycle service",
+                                                    "Bike Repairs and Servicing" = "Bicycle service",
+                                                    "Bike Sales, Servicing & Repairs" = "Bicycle service",
+                                                    "Car Wash" = "Car wash",
+                                                    "Car wash / valeting" = "Car wash",
+                                                    "Car wash, valeting" = "Car wash",
+                                                    "Car washing" = "Car wash",
+                                                    "Carwash" = "Car wash"
+                                                    ))
+```
+
+```{r}
+df3 %>%
+  skim() %>%
+  as.tibble() %>%
+  arrange(desc(complete_rate))
+```
+
+```{r}
+#library(stringr)
+df4 <- df3 %>%
+  mutate(class = word(desc_org, 1)) %>%
+  mutate_at(vars(class), list(toupper)) %>%
+  mutate_at(vars(class), list(factor)) %>%
+  add_count(class, name = "n_class") %>%
+  mutate(class1 = case_when(is.na(class) ~ "no_info",
+                            class == "VACANT" ~ "vacant",
+                            class == "RESIDENTIAL" ~ "residential",
+                            class == "ARTIST" ~ "artist",
+                            class == "UNIDENTIFIABLE" ~ "unidentifiable",
+                            class == "DEMOLISHED" ~ "demolished",
+                            class == "VEHICLE" ~ "vehicle",
+                            class == "ARCHITECTURE" ~ "architecture",
+                            class == "DERELICT" ~ "derelict",
+                            class == "STORAGE" ~ "storage",
+                            TRUE ~ "other"))
+```
+
+```{r}
+df4 %>%
+  skim() %>%
+  as.tibble() %>%
+  arrange(desc(complete_rate))
+```
+
+```{r}
+df4%>%
+  group_by(class) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n))
+```
+
+```{r}
+st_write(df4,"/Users/nicolas/Documents/SINDA_local/Final_data_from_gd/oct2020_v0.gpkg", append=FALSE)
+```
+
+```{r}
+df4 %>% filter(fuc_s == 303)
+```
+
+```{r}
+df5 <- df4 %>%
+  as.data.frame()
+```
+
+```{r}
+write_xlsx(df5,"/Users/nicolas/Documents/SINDA_local/Final_data_from_gd/oct2020_v0.xlsx", col_names = T)
+```
+
+```{r}
+form_csv <- read_csv("/Users/nicolas/Downloads/form-1__sia-audit.csv")
+```
+
+```{r}
+colnames(form_csv)
+```
+
+```{r}
+df4 %>%
+  select(class, class1)
 ```
 
