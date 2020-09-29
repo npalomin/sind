@@ -16,6 +16,7 @@ Southwark Industrial Audit
 |Study area layers|[here](https://docs.google.com/presentation/d/14-j5rHuWuZWiHPHQZ-ugH3pdClwpxdMFFUdfvMfjxu4/edit?usp=sharing)|
 |Study of Industrial definition by SIC code|https://npalomin.github.io/sind/SIC_industrial/SIC_industrial.html|
 |Where to go - 17 jun map|https://npalomin.github.io/sind/sal.html |
+|October 2020 | https://npalomin.github.io/sind/oct2020.html |
 
 ### Selected literature
 
