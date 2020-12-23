@@ -1,0 +1,145 @@
+---
+title: "Data report: OKR"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+    self_contained: no
+---
+
+```{=html}
+<style>
+* {font-family: "Trebuchet MS"}h1{font-size: 190%}h2{font-size: 160%}h3{font-size: 150%}h4{font-size: 130%}h5{font-size: 110%}h6{font-size: 90%}
+.r code {
+    white-space: pre;
+}
+</style>
+```
+
+
+# Preliminaries
+
+Email received from [Colin.Wilson\@southwark.gov.uk](mailto:Colin.Wilson@southwark.gov.uk)
+
+*Database containing the OKR business information from We Made That in November 2019.*
+
+*The spreadsheet business database contains all the information which was cross checked and forms the basis of the figures in the report.*
+
+*The data is also available in GIS polygon format but not all the fields are there, however the two can be easily cross referenced by using the key information reference points. We think the issue might have been perhaps with multi occupier buildings not being able to have more than one row of data on each polygon. Ideally we would have the GIS with all of the information in one place, rather than a master spreadsheet and a separate GIS file. WMT were unable to match the data up for us in GIS unfortunately.*
+
+*You should be able to reference from the business name but in case there are duplicate names, the address and X,Y co-ordinates are also there. You will notice the X and Y coordinates are missing the first two digits (53 and 17)  in the GIS table but I wonder if that is to do with co-ordinate set up in GIS.*
+
+# Load data
+
+## Excel file
+
+From file **REDACTED_164_OKR Survey_WMT 2019 business base_191104.xlsx** in **WMT OKR Business Survey 2019.zip** as bbase
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(readxl)
+library(tidyverse)
+library(sf)
+library(tmap)
+library(mapview)
+bbase <- read_excel("~/Documents/SINDA_local/data_from_southwark/WMT OKR Business Survey 2019/REDACTED_164_OKR Survey_WMT 2019 business base_191104.xlsx", 
+    col_types = c("text", "numeric", "text", 
+        "text", "text", "text", "text", "numeric", 
+        "text", "text", "text", "text", "text", 
+        "text", "text", "text", "text", "text", 
+        "text", "text", "text", "text", "text", 
+        "text", "text", "numeric", "numeric", 
+        "numeric", "numeric", "text", "text", 
+        "text", "text", "text", "text", "text", 
+        "text", "numeric", "text", "numeric", 
+        "text", "text", "text", "numeric", 
+        "numeric", "numeric", "numeric"))
+```
+
+### Check variables in bbase (47 variables)
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+str(bbase)
+```
+
+### Factor levels per variable describing type
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(purrr)
+library(knitr)
+bbase %>%
+  select(c(`Site allocation`, `Sub-area`, `SIC CODE`, Sector, `Building use category`, `Building type`)) %>%
+  mutate_all(as.factor) %>% 
+  purrr::map(levels) 
+```
+
+### Test completeness: missing values per variable
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+bbase %>%
+  summarise_all(funs(sum(is.na(.)))) %>%
+  t()
+```
+
+### Plot (860 obs.)
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Georreference by Xcoord and Ycoord (943 obs.)
+tmap_mode("view")
+bbase_sf <- bbase %>%
+  st_as_sf(., coords = c("Xcoord", "Ycoord"), na.fail = F, crs = 27700) %>%
+  filter(Join != 234)
+qtm(bbase_sf)
+```
+
+```{r echo=FALSE, fig.height=7, fig.width=9, message=FALSE, warning=FALSE}
+tmap_mode("plot")
+tm_shape(bbase_sf) +
+  tm_dots(col = "Sector",
+          #palette = g_col,
+             size = 0.07,
+             alpha = 0.9,
+             border.lwd = 0.3) +
+  tm_layout(legend.outside=TRUE, legend.outside.position = "right")
+```
+
+## Geopackage file
+
+From file **164_OKR YARDSPACE BASE 191104.gpkg** in **WMT OKR Business Survey 2019.zip** as yard
+
+```{r echo=FALSE, fig.height=7, fig.width=9, message=FALSE, warning=FALSE}
+yard <- st_read("/Users/nicolas/Documents/SINDA_local/data_from_southwark/WMT OKR Business Survey 2019/164_OKR YARDSPACE BASE 191104.gpkg")
+```
+
+### Check variables in bbase (6 variables)
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+str(yard)
+```
+
+### Factor levels per variable describing type
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+yard %>% 
+  select(SUB_AREA, SITE_ALLOC, TYPE) %>%
+  st_drop_geometry() %>%
+  mutate_all(as.factor) %>% 
+  purrr::map(levels)
+```
+
+### Test completeness: missing values per variable
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+yard %>%
+  st_drop_geometry() %>%
+  summarise_all(funs(sum(is.na(.)))) %>%
+  t()
+```
+
+### Plot business base and yards (608 obs.)
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+tmap_mode("view")
+qtm(yard, basemaps="Esri.WorldTopoMap", fill = "SUB_AREA") + qtm(bbase_sf)
+```
