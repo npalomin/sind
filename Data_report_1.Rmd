@@ -68,10 +68,14 @@ str(bbase)
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(purrr)
 library(knitr)
+library(janitor)
 bbase %>%
   select(c(`Site allocation`, `Sub-area`, `SIC CODE`, Sector, `Building use category`, `Building type`)) %>%
+  clean_names() %>%
   mutate_all(as.factor) %>% 
-  purrr::map(levels) 
+  purrr::map(levels) %>%
+  unlist(recursive = F) %>%
+  
 ```
 
 ### Test completeness: missing values per variable

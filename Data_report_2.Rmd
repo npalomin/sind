@@ -1,0 +1,200 @@
+---
+title: "Data report: OKR"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+    self_contained: no
+---
+
+```{=html}
+<style>
+* {font-family: "Trebuchet MS"}h1{font-size: 190%}h2{font-size: 160%}h3{font-size: 150%}h4{font-size: 130%}h5{font-size: 110%}h6{font-size: 90%}
+.r code {
+    white-space: pre;
+}
+</style>
+```
+
+```{r echo=FALSE}
+library(readxl)
+library(tidyverse)
+library(sf)
+library(tmap)
+library(mapview)
+library(janitor)
+library(readr)
+library(writexl)
+```
+
+```{r}
+oct18_N_u <- read_csv("~/Documents/SINDA_local/Final_data_from_gd/oct18_N_u.csv")
+```
+
+```{r}
+oct18_N <- oct18_N_u %>%
+  select(83, 92, 93, 96, 97, 98, 105:110, 112)
+```
+
+```{r}
+colnames(oct18_N)
+```
+
+```{r}
+oct18_N %>%
+  select(1) %>%
+  filter(duplicated(.))
+```
+```{r}
+oct18_N <- oct18_N %>%
+  mutate(FUC = as.character(FUC),
+         FUC = ifelse(is.na(FUC), paste0('oct18-', 1:length(FUC[is.na(FUC)])), FUC))
+```
+
+```{r}
+oct2020_v0 <- st_read("/Users/nicolas/Documents/SINDA_local/Final_data_from_gd/oct2020_v0.gpkg")
+```
+
+```{r}
+colnames(oct2020_v0)
+```
+
+```{r}
+oct2020_v0 %>%
+  select(83) %>%
+  filter(duplicated(.))
+```
+
+```{r}
+to_join_2020 <- oct2020_v0 %>%
+  select(83, 10, 11, 117, 118, 119)
+to_join_2020
+```
+
+```{r}
+to_join_2020 <- to_join_2020 %>% 
+  mutate(fuc_s = as.character(fuc_s),
+         fuc_s = ifelse(is.na(fuc_s), paste0('oct20-', 1:length(fuc_s[is.na(fuc_s)])), fuc_s))
+```
+
+```{r}
+join_summ <- to_join_2020 %>%
+  full_join(., oct18_N, by = c("fuc_s" = "FUC"), keep = T)
+```
+
+```{r}
+mapview(join_summ)
+```
+
+```{r}
+join_summ <- join_summ %>%
+  mutate(newFUC = fuc_s,
+         newFUC = as.character(newFUC),
+         newFUC = ifelse(is.na(newFUC), paste0('oct18-', 1:length(newFUC[is.na(newFUC)])), newFUC))
+```
+
+```{r message=FALSE, warning=FALSE}
+bbase <- read_excel("~/Documents/SINDA_local/data_from_southwark/WMT OKR Business Survey 2019/REDACTED_164_OKR Survey_WMT 2019 business base_191104.xlsx", 
+    col_types = c("text", "numeric", "text", 
+        "text", "text", "text", "text", "numeric", 
+        "text", "text", "text", "text", "text", 
+        "text", "text", "text", "text", "text", 
+        "text", "text", "text", "text", "text", 
+        "text", "text", "numeric", "numeric", 
+        "numeric", "numeric", "text", "text", 
+        "text", "text", "text", "text", "text", 
+        "text", "numeric", "text", "numeric", 
+        "text", "text", "text", "numeric", 
+        "numeric", "numeric", "numeric"))
+```
+
+```{r}
+bbase_sf <- bbase %>%
+  select(1:37) %>%
+  st_as_sf(., coords = c("Xcoord", "Ycoord"), na.fail = F, crs = 27700) %>%
+  filter(Join != 234) %>%
+  mutate(newFUC = paste0('OKR-', 1:nrow(.)))
+qtm(bbase_sf)
+```
+
+```{r}
+bbase_sf1 <- bbase_sf %>%
+  select(c(`Site allocation`, `Sub-area`, `SIC CODE`, Sector, `Building use category`, `Building type`)) %>%
+  clean_names() %>%
+  rename(geom = geometry)
+```
+
+```{r}
+colnames(join_summ)
+```
+
+```{r}
+colnames(bbase_sf1)
+```
+
+```{r}
+join_summ %>%
+  st_drop_geometry() %>%
+  select(action_spatial) %>%
+  as.factor() %>%
+  levels()
+```
+
+```{r}
+join_summ %>%
+  group_by(action_spatial) %>%
+  summarise(n = n())
+```
+
+```{r}
+join_summ %>%
+  group_by(action_spreadsheet) %>%
+  summarise(n = n())
+```
+
+```{r}
+j1 <- join_summ %>%
+  filter(action_spreadsheet != "Record needs deleting" | is.na(action_spreadsheet)) # keep NAs
+```
+
+```{r}
+j2 <- j1 %>%
+  filter(action_spatial != "FUC polygon needs deleting" | is.na(action_spatial)) # keep NAs
+```
+
+```{r}
+bind <- bind_rows(j2, bbase_sf1) %>%
+  mutate(U_ID = row_number(),
+         source = case_when(is.na(newFUC) ~ "WMT",
+                            TRUE ~ "CASS")) %>%
+  select(28,29, 1:27)
+```
+
+```{r}
+st_write(bind, "bind.gpkg", append=FALSE)
+```
+
+```{r}
+write_xlsx(bind, path = "bind.xlsx", col_names = TRUE)
+```
+
+
+```{r}
+oct18gpkg <- st_read("/Users/nicolas/Documents/SINDA_local/Final_data_from_gd/oct18_N.gpkg")
+```
+
+```{r}
+colnames(oct18gpkg)
+```
+
+```{r}
+oct18gpkg %>%
+  select(7, 80, 81, 84)
+```
+
+```{r}
+
+```
+
