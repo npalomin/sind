@@ -127,6 +127,15 @@ bbase_sf1 <- bbase_sf %>%
 ```
 
 ```{r}
+bbase_sf %>%
+  group_by(Sector) %>%
+  summarise(n = n()) %>%
+  select(Sector) %>%
+  st_drop_geometry()
+```
+
+
+```{r}
 colnames(join_summ)
 ```
 
