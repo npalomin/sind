@@ -43,6 +43,11 @@ colnames(oct18_N)
 ```
 
 ```{r}
+colnames(oct18_N_u)
+```
+
+
+```{r}
 oct18_N %>%
   select(1) %>%
   filter(duplicated(.))
@@ -137,6 +142,14 @@ bbase_sf %>%
 
 ```{r}
 colnames(join_summ)
+```
+
+```{r}
+colnames(bbase_sf)
+```
+
+```{r}
+glimpse(bbase_sf)
 ```
 
 ```{r}

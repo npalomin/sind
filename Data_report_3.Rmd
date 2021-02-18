@@ -1,0 +1,446 @@
+---
+title: "Data report: OKR"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+    self_contained: no
+---
+
+```{=html}
+<style>
+* {font-family: "Trebuchet MS"}h1{font-size: 190%}h2{font-size: 160%}h3{font-size: 150%}h4{font-size: 130%}h5{font-size: 110%}h6{font-size: 90%}
+.r code {
+    white-space: pre;
+}
+</style>
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(readxl)
+library(tidyverse)
+library(sf)
+library(tmap)
+library(mapview)
+library(janitor)
+library(readr)
+library(writexl)
+library(data.table)
+```
+
+# Summary
+
+This is a step by step log to combine survey results for the Southwark audit study
+
+## Data sources
+
++-------------------------------------------------------+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Name                                                  | Description                              | URL (path)                                                                                                                           |
++=======================================================+==========================================+======================================================================================================================================+
+| feb_2021 oct18_N                                      | edited spreadsheet from CASS survey      | <https://docs.google.com/spreadsheets/d/1WfDi7ojsyP_6uL2ts62kyQAxiwj4Xe9F/edit#gid=881012>                                           |
++-------------------------------------------------------+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| oct18_N                                               | CASS survey results geopackages          | <https://drive.google.com/file/d/1VV5nxWja2sA5jbKpHIgdVsE2Ie393QYH/view?usp=sharing>                                                 |
++-------------------------------------------------------+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| 200601 New Polygons final upload                      | New polygons (5 folders)                 | <https://drive.google.com/drive/folders/1dVyhXth5rYxvod10N16tDeF_Qvo5I8fz?usp=sharing>                                               |
++-------------------------------------------------------+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| REDACTED_164_OKR Survey_WMT 2019 business base_191104 | OKR survey (spreadsheet with point data) | \~/Documents/SINDA_local/data_from_southwark/WMT OKR Business Survey 2019/REDACTED_164_OKR Survey_WMT 2019 business base_191104.xlsx |
++-------------------------------------------------------+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+# Load data
+
+## feb_2021 oct18_N
+
+```{r message=FALSE, warning=FALSE}
+feb2021 <- read_xlsx("feb_2021 oct18_N.xlsx")
+```
+
+## 200601 New Polygons final upload
+
+```{r message=FALSE, warning=FALSE}
+oct18 <- st_read("/Users/nicolas/Documents/R_GitHub/sind/oct18_N.gpkg")
+```
+
+## 200601 New Polygons final upload
+
+```{r message=FALSE, include=FALSE}
+zip <- "/Users/nicolas/Documents/R_GitHub/sind/200601 New Polygons final upload-20210218T100648Z-001.zip"
+dir <- unzip(zip, junkpaths = TRUE, exdir = tempdir())
+dir1 <- subset(dir, grepl(pattern = "\\_b.gpkg$", dir)) # select files end with .gpkg ending "_b"
+dir2 <- subset(dir, grepl(pattern = "\\_B.gpkg$", dir)) # select files end with .gpkg ending "_B"
+#dir21 <- subset(dir, grepl(pattern = "\\.gpkg$", dir)) # select files end with .gpkg
+dir3 <- c(dir1, dir2)
+gpkg <- lapply(dir3, st_read, fid_column_name = "fid")
+```
+
+```{r}
+dir3
+```
+
+```{r}
+#grep("90220001", dir3)
+```
+
+```{r}
+#sapply(gpkg, function(y) "90220001" %in% y)
+```
+
+```{r}
+# remove lists with nrow > 0
+gpkg1 <- gpkg[sapply(gpkg, nrow) > 0]
+```
+
+```{r}
+#unlist(gpkg1, recursive = F)
+```
+
+```{r message=FALSE, warning=FALSE}
+# create a new variable with CRS
+gpkg2 <- lapply(gpkg1, function(x) within(x, crs <- unlist(st_crs(x), recursive = F)))
+```
+
+```{r}
+# select BNG 
+gpkg21 <- rbindlist(gpkg2, use.names=FALSE) %>%
+  filter(crs == "OSGB 1936 / British National Grid") %>%
+  st_sf() %>%
+  select(fid)
+```
+
+```{r}
+# select WGS 84
+gpkg22 <- rbindlist(gpkg2, use.names=FALSE) %>%
+  filter(crs == "WGS 84") %>%
+  st_sf() %>% 
+  st_set_crs(value = 4326) %>%  # assign original projection
+  st_transform(27700) %>% # transform to join all
+  select(fid)
+```
+
+```{r}
+# select != BNG | != 4326
+gpkg23 <- rbindlist(gpkg2, use.names=FALSE) %>%
+  filter(crs != "OSGB 1936 / British National Grid") %>%
+  filter(crs != "WGS 84") %>%
+  st_sf() %>%
+  select(fid)
+```
+
+```{r}
+pol <- gpkg21 %>%
+  rbind(gpkg22)
+pol <- pol %>%
+  rbind(gpkg23)
+```
+
+## REDACTED_164_OKR Survey_WMT 2019 business base_191104
+
+```{r message=FALSE, warning=FALSE}
+okr <- read_excel("~/Documents/SINDA_local/data_from_southwark/WMT OKR Business Survey 2019/REDACTED_164_OKR Survey_WMT 2019 business base_191104.xlsx", 
+    col_types = c("text", "numeric", "text", 
+        "text", "text", "text", "text", "numeric", 
+        "text", "text", "text", "text", "text", 
+        "text", "text", "text", "text", "text", 
+        "text", "text", "text", "text", "text", 
+        "text", "text", "numeric", "numeric", 
+        "numeric", "numeric", "text", "text", 
+        "text", "text", "text", "text", "text", 
+        "text", "numeric", "text", "numeric", 
+        "text", "text", "text", "numeric", 
+        "numeric", "numeric", "numeric"))
+```
+
+# Explore data
+
+## feb2021
+
+```{r}
+glimpse(feb2021)
+```
+
+```{r}
+options(scipen = 999)
+```
+
+## oct18
+
+```{r}
+glimpse(oct18)
+```
+
+## pol
+
+```{r}
+glimpse(pol)
+```
+
+```{r}
+tmap_mode("view")
+qtm(pol, fill = "tomato")
+```
+
+## okr
+
+```{r}
+glimpse(okr)
+```
+
+# Edit data
+
+## feb2021
+
+Identify what sD_RS_field_1 is - delete if not required for anything\
+Count NA in sD_RS_field_1
+
+```{r}
+feb2021 %>%
+  filter(is.na(sD_RS_field_1)) %>%
+  nrow()
+```
+
+2447 out of 2548 are NA
+
+```{r}
+feb2021 %>%
+  distinct(sD_RS_field_1)
+```
+
+Combine Comments 1, 2 and 3 into one column with comments separated by semicolons
+
+```{r}
+feb2021e <- feb2021 %>%
+  mutate(comments = paste(comment_1, comment_2, comment_3, sep = "; "))
+```
+
+Note that under 'action spatial' is a category 'FUC polygon needs deleting' - delete these polygons and then delete these records Data frame with "FUC polygon needs deleting"
+
+```{r}
+df_pnd <- feb2021e %>%
+  filter(action_spatial == "FUC polygon needs deleting") %>%
+  select("3_Functional_Unit_Co")
+df_pnd
+```
+
+Remove values with "FUC polygon needs deleting"
+
+```{r}
+feb2021e <- feb2021e %>%
+  filter(is.na(action_spatial) | action_spatial != "FUC polygon needs deleting")
+```
+
+Remove values with "FUC polygon needs deleting" from oct18
+
+```{r}
+oct18 <- oct18 %>%
+  filter(!X3_Functional_Unit_Co %in% df_pnd$`3_Functional_Unit_Co`)
+```
+
+I assume we can delete those which do not have an FUC\
+Remove values where 3_Functional_Unit_Co == 0
+
+```{r}
+feb2021e %>%
+  filter(is.na(`3_Functional_Unit_Co`)) %>%
+  nrow()
+```
+
+```{r}
+feb2021e <- feb2021e %>%
+  filter(!is.na(`3_Functional_Unit_Co`))
+```
+
+Select unique `3_Functional_Unit_Co`
+
+```{r}
+feb2021e1 <- feb2021e %>%
+  distinct(`3_Functional_Unit_Co`, .keep_all = TRUE)
+```
+
+feb2021e1 has 2486 obs with `3_Functional_Unit_Co` unique values
+
+## oct18
+
+Join oct18 with 200601 New Polygons final upload (pol)\
+pol is more accurate than oct18 therefore if FUC are repeated pol features are kept
+
+1.  Create vector with pol fid (or FUC)
+
+```{r}
+pol_fid <- pol %>%
+  pull(fid)
+```
+
+2.  Reduce oct variable to fid and geometry and filter %in% pol_fid (pol features are kept)
+
+```{r}
+# reduce oct variable to fid and geometry
+pol18 <- oct18 %>%
+  select(X3_Functional_Unit_Co) %>%
+  rename(fid = X3_Functional_Unit_Co,
+         geometry = geom) %>%
+  st_set_crs(value = 27700) %>%
+  filter(!fid %in% pol_fid)
+head(pol18)
+```
+
+```{r}
+pol18
+```
+
+Simple feature collection with 2429 features and 1 field (with 452 geometries empty)
+
+```{r}
+pol181 <- pol18[!st_is_empty(pol18),,drop=FALSE]
+```
+
+Remove duplicated fid and geometry
+
+```{r}
+pol181 <- pol181 %>% 
+  unique.data.frame()
+```
+
+3.  Join
+
+```{r}
+pol %>%
+  filter(fid == 90220001) 
+```
+
+
+```{r}
+# Remove duplicated fid and geometry in pol
+pol1 <- pol %>% 
+  unique.data.frame()
+```
+
+```{r}
+pol_all <- rbind(pol181, pol1)
+```
+
+```{r}
+qtm(pol_all, fill = "tomato")
+```
+
+## Merge all
+
+Merge pol_all (oct18 and New Polygons) with feb2021 table by FUC
+
+| object   | n    |
+|----------|------|
+| pol_all  | 2273 |
+| feb2021e | 2486 |
+
+```{r}
+mall <- pol_all %>%
+  mutate(fid = as.numeric(fid)) %>%
+  left_join(feb2021e1, by = c(fid = "3_Functional_Unit_Co"), keep = TRUE) %>%
+  st_make_valid() %>%
+  st_collection_extract() # convert from type GEOMETRY to type MULTIPOLYGON
+```
+
+```{r}
+qtm(mall, fill = "tomato")
+```
+
+```{r}
+vfid <- pol_all %>%
+  pull(fid)
+```
+
+View rows in feb2021 without match (60 rows with query code and no match)
+
+```{r}
+feb2021e1 %>%
+  filter(!`3_Functional_Unit_Co` %in% vfid) %>%
+  filter(!is.na(query_code)) %>%
+  select(1,4,81:88)
+```
+Check in "200601 New Polygons final upload" folder
+
+Query 320 : the file exist but is empty
+```{r}
+ch1 <- st_read("/Users/nicolas/Documents/R_GitHub/sind/200601 New Polygons final upload/Neil/Neil Tower Workshops/320_146400035_b.gpkg")
+```
+
+Query 320 : the file exist but is empty
+```{r}
+ch2 <- st_read("/Users/nicolas/Documents/R_GitHub/sind/200601 New Polygons final upload/Neil/Neil Tower Workshops/320_146400040_b.gpkg")
+```
+
+Query 96 : the file exist but FUC = 1780002 not 901780002 .No match
+```{r}
+ch3 <- st_read("/Users/nicolas/Documents/R_GitHub/sind/200601 New Polygons final upload/Max/96_901780002_b.gpkg", fid_column_name = "fid")
+```
+
+```{r}
+ch3
+```
+
+Query 132 : the file exist but it is incorrectly named thus not read (missing the _b or _B)
+```{r}
+ch4 <- st_read("/Users/nicolas/Documents/R_GitHub/sind/200601 New Polygons final upload/Rashi/132_90220001.gpkg", fid_column_name = "fid")
+```
+
+# Export CASS survey results
+
+```{r}
+mall <- mall %>%
+  select(-fid)
+```
+
+```{r}
+#st_write(mall, "CASS_feb2021.gpkg")
+```
+
+```{r}
+mallcsv <- mall %>%
+  st_drop_geometry()
+```
+
+```{r}
+#write_csv(mallcsv, "CASS_feb2021.csv")
+```
+
+# Combine CASS and OKR data sets
+
+Prepare OKR  
+```{r}
+okr_sf <- okr %>%
+  #select(1:37) %>%
+  st_as_sf(., coords = c("Xcoord", "Ycoord"), na.fail = F, crs = 27700) %>%
+  filter(Join != 234) %>% # filter point in Australia Join	234.0
+  mutate(newFUC = paste0('OKR-', 1:nrow(.)))
+```
+
+```{r}
+qtm(okr_sf, fill = "tomato")
+```
+
+```{r}
+okr_sf <- okr_sf %>% 
+  unique.data.frame()
+```
+
+```{r warning=FALSE}
+bind <- bind_rows(mall, okr_sf) %>%
+  mutate(U_ID = row_number(),
+         source = case_when(is.na(newFUC) ~ "WMT",
+                            TRUE ~ "CASS"))
+```
+
+# Export results
+
+```{r}
+#st_write(bind, "result_feb2021.gpkg", append=FALSE)
+```
+
+```{r}
+#st_write(bind, "result_feb2021.geojson", append=FALSE)
+```
+
+```{r}
+#write_xlsx(bind, path = "result_feb2021.xlsx", col_names = TRUE)
+```
+
+
