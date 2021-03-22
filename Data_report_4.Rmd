@@ -1,0 +1,48 @@
+---
+title: "Data report: OKR"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+    self_contained: no
+---
+
+```{=html}
+<style>
+* {font-family: "Trebuchet MS"}h1{font-size: 190%}h2{font-size: 160%}h3{font-size: 150%}h4{font-size: 130%}h5{font-size: 110%}h6{font-size: 90%}
+.r code {
+    white-space: pre;
+}
+</style>
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(readxl)
+library(tidyverse)
+library(sf)
+library(tmap)
+library(mapview)
+library(janitor)
+library(readr)
+library(writexl)
+library(data.table)
+```
+
+```{r}
+feb21 <- st_read("result_feb2021.gpkg")
+```
+
+```{r}
+glimpse(feb21)
+```
+
+```{r}
+feb21 %>%
+  st_is_empty()
+```
+
+```{r}
+feb21[st_is_empty(feb21),,drop=FALSE]
+```
+
