@@ -39,10 +39,427 @@ glimpse(feb21)
 
 ```{r}
 feb21 %>%
-  st_is_empty()
+  filter(!st_is_empty(.)) -> sR
+```
+
+```{r message=FALSE, include=FALSE}
+zip <- "/Users/nicolas/Documents/R_GitHub/sind/Missing Polygons-20210406T082625Z-001.zip"
+dir <- unzip(zip, junkpaths = TRUE, exdir = tempdir())
+dir1 <- subset(dir, grepl(pattern = "\\_b.gpkg$", dir)) # select files end with .gpkg ending "_b"
+dir2 <- subset(dir, grepl(pattern = "\\_B.gpkg$", dir)) # select files end with .gpkg ending "_B"
+#dir21 <- subset(dir, grepl(pattern = "\\.gpkg$", dir)) # select files end with .gpkg
+dir3 <- c(dir1, dir2)
+gpkg <- lapply(dir3, st_read, fid_column_name = "fid")
 ```
 
 ```{r}
-feb21[st_is_empty(feb21),,drop=FALSE]
+# remove lists with nrow > 0
+gpkg1 <- gpkg[sapply(gpkg, nrow) > 0]
 ```
+
+```{r message=FALSE, warning=FALSE}
+# create a new variable with CRS
+gpkg2 <- lapply(gpkg1, function(x) within(x, crs <- unlist(st_crs(x), recursive = F)))
+```
+
+```{r}
+# select BNG 
+gpkg21 <- rbindlist(gpkg2, use.names=FALSE) %>%
+  filter(crs == "OSGB 1936 / British National Grid") %>%
+  st_sf() %>%
+  st_transform(27700) %>%
+  select(fid)
+```
+
+```{r}
+# select WGS 84
+gpkg22 <- rbindlist(gpkg2, use.names=FALSE) %>%
+  filter(crs == "WGS 84") %>%
+  st_sf() %>% 
+  st_set_crs(value = 4326) %>%  # assign original projection
+  st_transform(27700) %>% # transform to join all
+  select(fid)
+```
+
+```{r}
+# select != BNG | != 4326
+gpkg23 <- rbindlist(gpkg2, use.names=FALSE) %>%
+  filter(crs != "OSGB 1936 / British National Grid") %>%
+  filter(crs != "WGS 84") %>%
+  st_sf() %>%
+  st_transform(27700) %>%
+  select(fid)
+```
+
+```{r}
+pol <- gpkg21 %>%
+  rbind(gpkg22)
+pol <- pol %>%
+  rbind(gpkg23)
+```
+
+```{r}
+# pol %>%
+#   st_make_valid() %>%
+#   filter(!st_is_empty(.)) -> polM
+```
+
+Read final CSV
+
+```{r}
+options(scipen = 999)
+```
+
+```{r}
+library(readr)
+result <- read_csv("result_feb2021 - 20210406.csv")
+```
+
+```{r}
+result %>%
+  rename(FUC = `3_Functional_Unit_Co`) -> result
+```
+
+```{r}
+sR %>%
+  select(X3_Functional_Unit_Co) %>%
+  rename(FUC = X3_Functional_Unit_Co) -> sR1
+```
+
+```{r}
+names(pol)
+```
+
+
+```{r}
+pol %>% 
+  rename(FUC = fid) %>%
+  mutate(FUC = as.numeric(FUC))-> pol1
+```
+
+```{r}
+bind_rows(sR1, pol1) -> aC
+```
+
+```{r}
+aC %>%
+  st_is_valid() -> valid
+```
+
+```{r}
+options(max.print=999999)
+```
+
+```{r}
+(valid == FALSE) == TRUE
+```
+
+```{r}
+aC %>%
+  slice(3092) %>%
+  st_is_valid()
+```
+
+```{r}
+#install.packages("concaveman")
+library(concaveman)
+```
+
+```{r}
+aC
+```
+
+
+```{r}
+aC %>%
+  slice(3092) %>%
+  st_cast("MULTIPOINT") %>%
+  distinct() %>%
+  st_make_valid() %>%
+  concaveman() %>%
+  st_cast("MULTIPOLYGON") %>%
+  mutate(FUC = as.numeric(3092)) %>%
+  rename(geom = polygons) -> p3092
+```
+
+```{r}
+aC %>%
+  slice(-3092) %>%
+  group_by(FUC) %>%
+  count() %>% 
+  #filter(n > 1) %>%
+  arrange(desc(n))
+```
+
+```{r}
+result %>%
+  group_by(FUC) %>%
+  count() %>%
+  arrange(desc(n))
+```
+
+```{r}
+sR1 %>%
+  group_by(FUC) %>%
+  count() %>%
+  arrange(desc(n))
+```
+
+```{r}
+pol1 %>%
+  st_is_valid()
+```
+
+```{r}
+pol1 %>%
+  slice(-51) %>%
+  group_by(FUC) %>%
+  count() %>%
+  arrange(desc(n))
+```
+
+Create final sf dataset
+
+```{r}
+aC %>%
+  slice(-3092) -> aC1
+```
+
+```{r}
+aC1 %>%
+  filter(!st_is_empty(.)) %>%
+  rowid_to_column("ID") -> aC2
+```
+
+```{r}
+tmap_mode("view")
+```
+
+```{r}
+aC2 %>%
+  filter(is.na(FUC)) %>%
+  tm_shape() +
+  tm_polygons()
+```
+
+```{r}
+aC2[c(1:10), ] %>%
+  left_join(., result[c(1:10), ], by = "FUC")
+```
+
+```{r}
+st_write(aC2, "aC2.gpkg", append=FALSE)
+```
+
+```{r}
+aC2
+```
+
+
+Create PLYGON sf
+
+```{r}
+aC2 %>%
+  st_collection_extract("POLYGON")
+```
+
+```{r}
+aC2 %>%
+  st_collection_extract("POINT") %>%
+  group_by(FUC) %>%
+  count()
+```
+
+```{r}
+names(result)
+```
+
+```{r}
+result %>%
+  filter(source == "WMT") %>%
+  #select(U_ID) %>%
+  arrange(U_ID) %>%
+  pull(U_ID) -> uid
+```
+
+```{r}
+uid
+```
+
+```{r}
+aC2 %>%
+  st_collection_extract("POINT") %>%
+  pull(ID) -> id
+```
+
+```{r}
+setdiff(uid, id)
+```
+
+Join by FUC first and then by U_ID
+
+```{r}
+aC2 %>%
+  st_collection_extract("POLYGON") %>%
+  group_by(FUC) %>%
+  count() %>%
+  arrange(desc(n)) %>%
+  filter(n > 1) %>%
+  tm_shape() +
+  tm_polygons("n",
+              style = "cat")
+```
+
+```{r}
+ # filter repeated values
+result %>%
+  group_by(U_ID) %>%
+  filter(n() > 1) 
+# %>%
+#   select(FUC, U_ID) %>%
+#   group_by(FUC) %>%
+#   count()
+```
+
+```{r}
+result %>%
+  group_by(source) %>%
+  count()
+```
+
+Summary of FUC by source = Cities
+
+```{r}
+result %>%
+  filter(source == "Cities") %>%
+  group_by(FUC) %>%
+  count() 
+# %>%
+#   arrange(desc(n)) %>%
+#   group_by(n) %>%
+#   count()
+```
+
+Summary of U_ID by source = Cities (n(FUC) > 1 or NA)
+
+```{r}
+result %>%
+  filter(source == "Cities") %>%
+  group_by(FUC) %>%
+  filter(n() > 1) %>%
+  group_by(U_ID) %>%
+  count() %>%
+  arrange(desc(n))
+```
+
+Join result source = Cities (filter n(FUC) > 1 or NA) with aC2 POLYGONS
+
+```{r}
+aC2 %>%
+  st_collection_extract("POLYGON") %>%
+  #st_drop_geometry() %>%
+  filter(!is.na(FUC)) %>%
+  add_count(FUC) %>%
+  filter(n == 1) -> aC2pol
+  #arrange(desc(n))
+```
+
+```{r}
+aC2pol %>%
+  group_by(FUC) %>%
+  count() %>%
+  arrange(desc(n))
+```
+
+```{r}
+result %>%
+  filter(source == "Cities") %>%
+  as.data.frame() -> rC
+```
+
+```{r}
+aC2pol %>%
+  left_join(rC, by = "FUC") -> aC2pol1 # Cities POLYGONS with unique FUC (no NAs)
+```
+
+```{r}
+# not joined
+rC %>%
+  filter(!FUC %in% aC2pol1$FUC) -> rC1 # Cities records not joined
+
+# %>%
+#   select(U_ID)
+  
+```
+
+```{r}
+aC2 %>%
+  st_collection_extract("POLYGON") %>%
+  add_count(FUC) %>%
+  filter(is.na(FUC) | n > 1 ) -> aCpolid
+```
+
+```{r}
+glimpse(rC1)
+```
+
+```{r}
+aCpolid %>%
+  left_join(rC1, by = c("ID" = "U_ID"), keep = TRUE) %>%
+  rename(FUC = FUC.x) %>% 
+  select(-FUC.y) -> aC2pol2
+```
+
+```{r}
+library(janitor)
+compare_df_cols(aC2pol1, aC2pol2)
+```
+
+```{r}
+rbind(aC2pol1, aC2pol2) -> sPOL
+```
+
+Create POINT sf
+
+```{r}
+aC2 %>%
+  st_collection_extract("POINT") -> aC2poi
+```
+
+```{r}
+aC2poi
+```
+
+
+```{r}
+result %>%
+  filter(source == "WMT") -> rW
+# %>%
+#   select(U_ID) %>%
+#   group_by(U_ID) %>%
+#   count()
+#   arrange(desc(n)) 
+```
+
+```{r}
+aC2poi %>%
+  left_join(rW, by = c("ID" = "U_ID"), keep = TRUE) %>%
+  rename(FUC = FUC.x) %>% 
+  select(-FUC.y) %>%
+  mutate(n = as.integer(9000)) -> sPOI
+```
+
+```{r}
+compare_df_cols(sPOL, sPOI)
+```
+
+```{r}
+st_write(sPOI, "survey_POINTS_WMT.gpkg")
+```
+
+```{r}
+st_write(sPOL, "survey_POLYGONS_Cities.gpkg")
+```
+
+
 
