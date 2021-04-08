@@ -14,7 +14,7 @@
 <title>Data report: OKR</title>
 
 <script src="Data_report_5_files/header-attrs-2.7/header-attrs.js"></script>
-<script src="Data_report_5_files/jquery-1.11.3/jquery.min.js"></script>
+<script src="Data_report_5_files/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="Data_report_5_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="Data_report_5_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -32,6 +32,27 @@
 <script src="Data_report_5_files/navigation-1.1/tabsets.js"></script>
 <link href="Data_report_5_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="Data_report_5_files/highlightjs-9.12.0/highlight.js"></script>
+<script src="Data_report_5_files/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="Data_report_5_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="Data_report_5_files/leaflet-1.3.1/leaflet.js"></script>
+<link href="Data_report_5_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="Data_report_5_files/proj4-2.6.2/proj4.min.js"></script>
+<script src="Data_report_5_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="Data_report_5_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="Data_report_5_files/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="Data_report_5_files/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="Data_report_5_files/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
+<script src="Data_report_5_files/FlatGeoBuf-3.3.3/fgb.js"></script>
+<script src="Data_report_5_files/FlatGeoBuf-3.3.3/flatgeobuf-geojson.min.js"></script>
+<script src="Data_report_5_files/chromajs-2.1.0/chroma.min.js"></script>
+<link id="pi04-1-attachment" rel="attachment" href="Data_report_5_files/pi04-0.0.1/pi04_layer.fgb"/>
+<link href="Data_report_5_files/HomeButton-0.0.1/home-button.css" rel="stylesheet" />
+<script src="Data_report_5_files/HomeButton-0.0.1/home-button.js"></script>
+<script src="Data_report_5_files/HomeButton-0.0.1/easy-button-src.min.js"></script>
+<script src="Data_report_5_files/clipboard-0.0.1/setClipboardText.js"></script>
+<link href="Data_report_5_files/mapviewCSS-0.0.1/mapview-popup.css" rel="stylesheet" />
+<link href="Data_report_5_files/mapviewCSS-0.0.1/mapview.css" rel="stylesheet" />
+<link id="p01-1-attachment" rel="attachment" href="Data_report_5_files/p01-0.0.1/p01_layer.fgb"/>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -170,10 +191,23 @@ pre code {
 <div id="TOC">
 <ul>
 <li><a href="#load-data"><span class="toc-section-number">1</span> Load data</a></li>
-<li><a href="#process-data"><span class="toc-section-number">2</span> Process data</a></li>
-<li><a href="#summarise-data"><span class="toc-section-number">3</span> Summarise data</a>
+<li><a href="#process-attributes-data"><span class="toc-section-number">2</span> Process attributes data</a></li>
+<li><a href="#summarise-attributes-data"><span class="toc-section-number">3</span> Summarise attributes data</a>
 <ul>
 <li><a href="#filter-by-premises"><span class="toc-section-number">3.1</span> Filter by ‘premises’</a></li>
+<li><a href="#summary-by-fuc"><span class="toc-section-number">3.2</span> Summary by FUC</a></li>
+</ul></li>
+<li><a href="#summarise-spatial-data"><span class="toc-section-number">4</span> Summarise spatial data</a>
+<ul>
+<li><a href="#cities-polygons"><span class="toc-section-number">4.1</span> Cities (polygons)</a></li>
+<li><a href="#by-fuc"><span class="toc-section-number">4.2</span> By FUC</a></li>
+<li><a href="#wmt-points"><span class="toc-section-number">4.3</span> WMT (points)</a></li>
+</ul></li>
+<li><a href="#join-spatial-data-with-dataframe"><span class="toc-section-number">5</span> Join spatial data with dataframe</a>
+<ul>
+<li><a href="#cities"><span class="toc-section-number">5.1</span> Cities</a></li>
+<li><a href="#wmt"><span class="toc-section-number">5.2</span> WMT</a></li>
+<li><a href="#find-missing-points"><span class="toc-section-number">5.3</span> Find missing POINTS</a></li>
 </ul></li>
 </ul>
 </div>
@@ -187,22 +221,22 @@ pre code {
 </style>
 <div id="load-data" class="section level1" number="1">
 <h1 number="1"><span class="header-section-number">1</span> Load data</h1>
-<pre class="r"><code># Polygons from Data_report_4.Rmd
-p00 &lt;- st_read(&quot;/Users/nicolas/Documents/R_GitHub/sind/survey_POLYGONS_Cities.gpkg&quot;)
+<pre class="r"><code># Polygons from Data_report_6.Rmd
+p00 &lt;- st_read(&quot;/Users/nicolas/Documents/R_GitHub/sind/fP.gpkg&quot;)
 
-# points from WMT ( &quot;result_feb2021.gpkg&quot;) - Data_report_3.Rmd
+# points from WMT (Data_report_3.Rmd)
 pi00 &lt;- st_read(&quot;/Users/nicolas/Documents/R_GitHub/sind/result_feb2021_point.geojson&quot;)
 
 # final result spreadsheet downloaded from GD
 result &lt;- read_csv(&quot;result_feb2021 - 20210406.csv&quot;)</code></pre>
 </div>
-<div id="process-data" class="section level1" number="2">
-<h1 number="2"><span class="header-section-number">2</span> Process data</h1>
+<div id="process-attributes-data" class="section level1" number="2">
+<h1 number="2"><span class="header-section-number">2</span> Process attributes data</h1>
 <pre class="r"><code>result %&gt;%
   rename(FUC = `3_Functional_Unit_Co`) -&gt; result</code></pre>
 </div>
-<div id="summarise-data" class="section level1" number="3">
-<h1 number="3"><span class="header-section-number">3</span> Summarise data</h1>
+<div id="summarise-attributes-data" class="section level1" number="3">
+<h1 number="3"><span class="header-section-number">3</span> Summarise attributes data</h1>
 <p>Size of data frame</p>
 <pre class="r"><code>dim(result)</code></pre>
 <p>[1] 3184 142</p>
@@ -402,12 +436,19 @@ NA
 </tr>
 </tbody>
 </table>
-<p>Summary FUC</p>
+<p>Keep Industrial premises</p>
 <pre class="r"><code>result %&gt;%
+  filter(premises %in% c(&quot;Industrial in mixed use premises&quot;, &quot;Industrial in predominantly industrial premises&quot;)) -&gt; result1</code></pre>
+</div>
+<div id="summary-by-fuc" class="section level2" number="3.2">
+<h2 number="3.2"><span class="header-section-number">3.2</span> Summary by FUC</h2>
+<p>Summary by source (FUC and U_ID)</p>
+<pre class="r"><code>result1 %&gt;%
   group_by(source) %&gt;%
   summarise(Total = n(),
-            FUCs = sum(!is.na(FUC)),
-            NA_FUCs = sum(is.na(FUC))) %&gt;%
+            FUCs = n_distinct(FUC),
+            NA_FUCs = sum(is.na(FUC)),
+            U_IDs = n_distinct(U_ID)) %&gt;%
   adorn_totals()</code></pre>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -424,6 +465,9 @@ FUCs
 <th style="text-align:right;">
 NA_FUCs
 </th>
+<th style="text-align:left;">
+U_IDs
+</th>
 </tr>
 </thead>
 <tbody>
@@ -432,13 +476,16 @@ NA_FUCs
 Cities
 </td>
 <td style="text-align:right;">
-2324
+1353
 </td>
 <td style="text-align:left;">
-2227
+1348
 </td>
 <td style="text-align:right;">
-97
+0
+</td>
+<td style="text-align:left;">
+1303
 </td>
 </tr>
 <tr>
@@ -446,13 +493,16 @@ Cities
 WMT
 </td>
 <td style="text-align:right;">
-860
+407
 </td>
 <td style="text-align:left;">
-0
+1
 </td>
 <td style="text-align:right;">
-860
+407
+</td>
+<td style="text-align:left;">
+407
 </td>
 </tr>
 <tr>
@@ -460,13 +510,477 @@ WMT
 Total
 </td>
 <td style="text-align:right;">
-3184
+1760
 </td>
 <td style="text-align:left;">
-2227
+1349
 </td>
 <td style="text-align:right;">
-957
+407
+</td>
+<td style="text-align:left;">
+1710
+</td>
+</tr>
+</tbody>
+</table>
+<p>WMT has 407 industrial variables with unique id (U_ID) Cities has 1348 industrial records with unique FUC (FUC) - (5 records might be lost)</p>
+</div>
+</div>
+<div id="summarise-spatial-data" class="section level1" number="4">
+<h1 number="4"><span class="header-section-number">4</span> Summarise spatial data</h1>
+<div id="cities-polygons" class="section level2" number="4.1">
+<h2 number="4.1"><span class="header-section-number">4.1</span> Cities (polygons)</h2>
+</div>
+<div id="by-fuc" class="section level2" number="4.2">
+<h2 number="4.2"><span class="header-section-number">4.2</span> By FUC</h2>
+<pre class="r"><code>p00 %&gt;%
+  st_drop_geometry() %&gt;%
+  summarise(Total = n(),
+            FUCs = n_distinct(FUC),
+            NA_FUCs = sum(is.na(FUC))) %&gt;%
+  adorn_totals()</code></pre>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Total
+</th>
+<th style="text-align:right;">
+FUCs
+</th>
+<th style="text-align:left;">
+NA_FUCs
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2318
+</td>
+<td style="text-align:right;">
+2318
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+2318
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="wmt-points" class="section level2" number="4.3">
+<h2 number="4.3"><span class="header-section-number">4.3</span> WMT (points)</h2>
+<pre class="r"><code>pi00 %&gt;%
+  st_drop_geometry() %&gt;%
+  summarise(Total = n(),
+            U_IDs = n_distinct(U_ID),
+            NA_U_ID = sum(is.na(U_ID))) %&gt;%
+  adorn_totals()</code></pre>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Total
+</th>
+<th style="text-align:right;">
+U_IDs
+</th>
+<th style="text-align:left;">
+NA_U_ID
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+768
+</td>
+<td style="text-align:right;">
+768
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+768
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>pi00 %&gt;%
+  select(U_ID) -&gt; pi01</code></pre>
+</div>
+</div>
+<div id="join-spatial-data-with-dataframe" class="section level1" number="5">
+<h1 number="5"><span class="header-section-number">5</span> Join spatial data with dataframe</h1>
+<div id="cities" class="section level2" number="5.1">
+<h2 number="5.1"><span class="header-section-number">5.1</span> Cities</h2>
+<pre class="r"><code>citiesdf &lt;- result1 %&gt;%
+  filter(source == &quot;Cities&quot;) # 1353 obs.</code></pre>
+<pre class="r"><code>p00 %&gt;%
+  mutate(FUC = as.numeric(FUC)) %&gt;%
+  inner_join(citiesdf, by = (&quot;FUC&quot;)) -&gt; p01 # Join data. Retain only rows in both sets.</code></pre>
+</div>
+<div id="wmt" class="section level2" number="5.2">
+<h2 number="5.2"><span class="header-section-number">5.2</span> WMT</h2>
+<pre class="r"><code>wmtdf &lt;- result1 %&gt;%
+  filter(source == &quot;WMT&quot;) # 407 obs.</code></pre>
+<pre class="r"><code>pi01 %&gt;%
+  st_set_crs(4326) %&gt;%
+  st_transform(27700) -&gt; pi01</code></pre>
+<pre class="r"><code># join by U_ID
+pi01 %&gt;%
+  inner_join(wmtdf, by = (&quot;U_ID&quot;)) -&gt; pi02</code></pre>
+<pre class="r"><code>sort(pi01$U_ID)</code></pre>
+<p>[1] 2274 2275 2276 2277 2278 2279 2280 2281 2282 2283 2284 2285 2286 2287 2289 [16] 2290 2291 2293 2294 2295 2296 2297 2298 2299 2300 2301 2302 2303 2304 2305 [31] 2306 2307 2309 2310 2311 2312 2313 2314 2315 2318 2319 2320 2321 2322 2323 [46] 2324 2325 2326 2327 2328 2329 2330 2331 2332 2333 2334 2335 2336 2337 2338 [61] 2339 2340 2341 2342 2343 2344 2345 2346 2347 2348 2349 2350 2351 2352 2353 [76] 2354 2355 2356 2357 2358 2359 2360 2361 2362 2363 2364 2365 2366 2367 2368 [91] 2369 2370 2371 2372 2373 2374 2375 2377 2378 2379 2380 2381 2382 2383 2384 [106] 2385 2386 2387 2388 2390 2391 2392 2393 2394 2395 2396 2397 2398 2400 2401 [121] 2403 2404 2405 2406 2407 2409 2410 2411 2412 2413 2414 2415 2416 2419 2422 [136] 2423 2424 2425 2427 2428 2429 2430 2431 2433 2434 2435 2436 2437 2438 2439 [151] 2440 2441 2442 2443 2444 2445 2447 2448 2449 2450 2451 2452 2453 2454 2455 [166] 2456 2457 2458 2459 2460 2461 2462 2463 2464 2465 2466 2467 2468 2469 2470 [181] 2471 2472 2473 2474 2476 2477 2478 2479 2480 2482 2483 2484 2485 2486 2487 [196] 2488 2489 2490 2491 2492 2493 2494 2495 2496 2497 2498 2499 2500 2501 2502 [211] 2503 2506 2507 2509 2510 2511 2512 2513 2514 2515 2516 2517 2518 2519 2520 [226] 2521 2522 2523 2524 2525 2526 2527 2529 2530 2533 2534 2535 2536 2537 2538 [241] 2539 2540 2541 2542 2543 2544 2545 2546 2547 2548 2551 2553 2554 2555 2556 [256] 2557 2558 2559 2560 2561 2563 2564 2565 2567 2568 2569 2570 2571 2573 2574 [271] 2575 2576 2577 2578 2579 2582 2583 2585 2586 2588 2589 2590 2591 2592 2593 [286] 2594 2595 2596 2597 2598 2599 2600 2601 2602 2603 2604 2605 2606 2607 2608 [301] 2609 2610 2611 2612 2613 2614 2615 2616 2617 2618 2619 2620 2621 2622 2623 [316] 2624 2625 2626 2627 2628 2629 2630 2631 2632 2633 2634 2635 2636 2637 2638 [331] 2639 2640 2641 2642 2643 2644 2645 2646 2647 2649 2650 2651 2652 2653 2654 [346] 2655 2656 2657 2658 2659 2660 2661 2662 2663 2664 2665 2666 2667 2668 2669 [361] 2670 2671 2672 2673 2674 2675 2677 2678 2679 2681 2682 2683 2684 2685 2688 [376] 2689 2690 2691 2692 2693 2694 2695 2696 2697 2698 2699 2700 2701 2702 2703 [391] 2704 2705 2706 2707 2708 2709 2710 2712 2713 2714 2715 2719 2720 2721 2722 [406] 2723 2724 2725 2726 2727 2728 2729 2730 2731 2732 2733 2734 2735 2736 2737 [421] 2738 2739 2740 2741 2742 2743 2744 2745 2746 2747 2748 2749 2750 2751 2752 [436] 2753 2754 2755 2756 2757 2758 2759 2760 2761 2762 2763 2764 2765 2766 2767 [451] 2769 2772 2773 2774 2775 2776 2777 2778 2779 2780 2781 2782 2783 2784 2785 [466] 2786 2787 2788 2789 2791 2792 2793 2794 2795 2796 2797 2798 2799 2800 2801 [481] 2802 2803 2804 2805 2806 2807 2809 2810 2811 2812 2813 2814 2815 2816 2817 [496] 2818 2819 2824 2825 2828 2829 2830 2831 2832 2839 2840 2841 2842 2843 2846 [511] 2847 2848 2849 2850 2851 2852 2853 2854 2855 2856 2857 2858 2859 2860 2861 [526] 2862 2863 2864 2865 2867 2869 2870 2871 2872 2873 2874 2875 2876 2877 2878 [541] 2879 2881 2882 2883 2884 2885 2886 2887 2888 2889 2890 2891 2892 2893 2894 [556] 2895 2896 2897 2898 2899 2900 2901 2902 2903 2905 2906 2907 2908 2909 2910 [571] 2911 2915 2916 2917 2918 2919 2920 2921 2922 2923 2924 2925 2926 2927 2928 [586] 2929 2930 2932 2933 2934 2936 2937 2939 2940 2941 2942 2943 2944 2945 2946 [601] 2947 2948 2949 2952 2953 2954 2955 2956 2957 2958 2959 2960 2961 2962 2963 [616] 2964 2965 2966 2967 2968 2969 2970 2971 2972 2973 2974 2975 2976 2977 2978 [631] 2979 2980 2981 2982 2983 2984 2985 2986 2987 2988 2989 2990 2991 2992 2993 [646] 2994 2995 2996 2997 2998 2999 3000 3001 3002 3003 3004 3005 3006 3007 3008 [661] 3009 3010 3011 3012 3013 3014 3015 3016 3017 3018 3019 3020 3021 3022 3023 [676] 3024 3025 3026 3027 3028 3029 3030 3031 3032 3033 3034 3036 3037 3038 3039 [691] 3040 3041 3042 3043 3044 3045 3046 3047 3048 3049 3050 3051 3052 3053 3054 [706] 3060 3061 3062 3063 3064 3067 3068 3073 3076 3077 3078 3079 3080 3081 3082 [721] 3083 3084 3085 3086 3087 3088 3089 3090 3091 3092 3093 3094 3095 3096 3097 [736] 3099 3100 3101 3102 3103 3104 3105 3106 3107 3108 3110 3111 3112 3113 3114 [751] 3115 3116 3118 3119 3120 3121 3122 3123 3124 3125 3126 3127 3128 3129 3130 [766] 3131 3132 3133</p>
+<pre class="r"><code>sort(wmtdf$U_ID)</code></pre>
+<p>[1] 2274 2278 2280 2282 2283 2287 2288 2292 2300 2304 2305 2306 2308 2314 2315 [16] 2316 2317 2319 2321 2322 2325 2328 2332 2335 2339 2340 2341 2342 2343 2345 [31] 2346 2347 2348 2349 2354 2359 2360 2361 2364 2365 2370 2371 2376 2377 2378 [46] 2388 2391 2392 2407 2409 2413 2414 2415 2416 2417 2418 2419 2420 2421 2425 [61] 2426 2427 2432 2433 2441 2446 2449 2450 2451 2454 2457 2459 2460 2463 2464 [76] 2467 2468 2470 2475 2479 2481 2483 2486 2488 2489 2490 2494 2495 2501 2502 [91] 2503 2504 2505 2506 2507 2508 2511 2512 2513 2516 2520 2524 2526 2527 2530 [106] 2531 2532 2536 2540 2541 2542 2543 2544 2548 2549 2550 2551 2552 2553 2555 [121] 2560 2564 2565 2566 2567 2574 2575 2576 2577 2579 2580 2581 2584 2585 2586 [136] 2587 2588 2597 2598 2603 2608 2609 2612 2614 2615 2616 2619 2620 2624 2636 [151] 2637 2638 2639 2642 2647 2648 2649 2650 2651 2652 2659 2660 2663 2670 2674 [166] 2675 2677 2682 2683 2684 2685 2686 2687 2688 2697 2698 2704 2706 2713 2716 [181] 2717 2720 2721 2722 2724 2726 2727 2730 2731 2735 2745 2747 2749 2755 2756 [196] 2757 2758 2762 2763 2766 2767 2768 2770 2771 2772 2773 2776 2781 2782 2784 [211] 2785 2788 2790 2791 2792 2793 2794 2795 2796 2797 2798 2799 2802 2803 2804 [226] 2808 2809 2812 2813 2817 2818 2819 2820 2821 2822 2823 2824 2825 2826 2827 [241] 2831 2832 2833 2834 2835 2836 2837 2838 2843 2844 2849 2857 2859 2862 2863 [256] 2864 2866 2868 2873 2877 2881 2882 2885 2889 2897 2898 2905 2906 2909 2912 [271] 2913 2914 2915 2917 2919 2920 2921 2922 2923 2925 2928 2929 2930 2931 2932 [286] 2933 2935 2936 2937 2938 2939 2940 2941 2942 2943 2944 2945 2946 2947 2950 [301] 2951 2952 2953 2954 2955 2956 2957 2958 2959 2960 2961 2962 2963 2964 2965 [316] 2974 2975 2976 2977 2978 2979 2980 2981 2982 2984 2987 2988 3003 3005 3006 [331] 3007 3008 3009 3010 3011 3012 3013 3014 3015 3016 3017 3018 3019 3020 3021 [346] 3022 3023 3024 3025 3026 3027 3028 3029 3030 3031 3032 3033 3034 3035 3037 [361] 3038 3039 3043 3050 3051 3055 3061 3062 3063 3064 3065 3069 3072 3074 3077 [376] 3078 3079 3080 3081 3082 3083 3084 3085 3086 3087 3088 3089 3090 3091 3092 [391] 3093 3094 3096 3097 3098 3102 3110 3111 3113 3117 3118 3119 3123 3124 3125 [406] 3130 3132</p>
+<pre class="r"><code>sort(setdiff(wmtdf$U_ID, pi01$U_ID))</code></pre>
+<p>[1] 2288 2292 2308 2316 2317 2376 2417 2418 2420 2421 2426 2432 2446 2475 2481 [16] 2504 2505 2508 2531 2532 2549 2550 2552 2566 2580 2581 2584 2587 2648 2686 [31] 2687 2716 2717 2768 2770 2771 2790 2808 2820 2821 2822 2823 2826 2827 2833 [46] 2834 2835 2836 2837 2838 2844 2866 2868 2912 2913 2914 2931 2935 2938 2950 [61] 2951 3035 3055 3065 3069 3072 3074 3098 3117</p>
+</div>
+<div id="find-missing-points" class="section level2" number="5.3">
+<h2 number="5.3"><span class="header-section-number">5.3</span> Find missing POINTS</h2>
+<pre class="r"><code>rP &lt;- st_read(&quot;/Users/nicolas/Documents/R_GitHub/sind/result_feb2021.gpkg&quot;)</code></pre>
+<p>Reading layer <code>result_feb2021' from data source</code>/Users/nicolas/Documents/R_GitHub/sind/result_feb2021.gpkg’ using driver `GPKG’ Simple feature collection with 3133 features and 136 fields (with 92 geometries empty) geometry type: GEOMETRY dimension: XY bbox: xmin: 531305.5 ymin: 171277 xmax: 536627 ymax: 180434.8 projected CRS: OSGB 1936 / British National Grid</p>
+<pre class="r"><code>rP %&gt;%
+  filter(U_ID %in% setdiff(wmtdf$U_ID, pi01$U_ID)) %&gt;%
+  select(Join) %&gt;%
+  st_drop_geometry() %&gt;%
+  distinct() %&gt;%
+  arrange(desc(Join)) -&gt; miP</code></pre>
+<pre class="r"><code># &#39;Join&#39; already taken
+pi02 %&gt;%
+  select(Join) %&gt;%
+  st_drop_geometry() %&gt;%
+  filter(Join %in% miP$Join) -&gt; at
+sort(at$Join)</code></pre>
+<p>[1] 0 0 0 0 0 0 0 0 0 0 0 0 123 141 141 183 698 716</p>
+<pre class="r"><code>miP %&gt;%
+  filter(!Join %in% at$Join) -&gt; miP</code></pre>
+<pre class="r"><code>write_csv(miP, &quot;miP.csv&quot;)</code></pre>
+<p>Load missing points from Dr6</p>
+<pre class="r"><code>miPsf &lt;- st_read(&quot;/Users/nicolas/Documents/R_GitHub/sind/miP.gpkg&quot;)</code></pre>
+<p>Reading layer <code>miP' from data source</code>/Users/nicolas/Documents/R_GitHub/sind/miP.gpkg’ using driver `GPKG’ Simple feature collection with 65 features and 1 field (with 60 geometries empty) geometry type: POINT dimension: XY bbox: xmin: 533621.3 ymin: 177345.1 xmax: 535202.8 ymax: 179068.6 projected CRS: OSGB 1936 / British National Grid</p>
+<pre class="r"><code>miPsf  %&gt;% 
+  filter(!st_is_empty(.)) -&gt; miPsf </code></pre>
+<pre class="r"><code>miPsf</code></pre>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Join
+</th>
+<th style="text-align:right;">
+geom
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+231
+</td>
+<td style="text-align:right;">
+POINT (533625.3 179068.6)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+232
+</td>
+<td style="text-align:right;">
+POINT (533621.3 178998.9)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+232
+</td>
+<td style="text-align:right;">
+POINT (533648.3 178971.4)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+232
+</td>
+<td style="text-align:right;">
+POINT (533702 178963.3)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+535
+</td>
+<td style="text-align:right;">
+POINT (535202.8 177345.1)
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># join by Join
+miPsf %&gt;%
+  inner_join(wmtdf, by = (&quot;Join&quot;)) -&gt; pi03</code></pre>
+<pre class="r"><code>pi02 %&gt;%
+  select(-geometry.y) %&gt;%
+  rename(geom = geometry.x) -&gt; pi02</code></pre>
+<pre class="r"><code>names(pi03)</code></pre>
+<p>[1] “Join”<br />
+[2] “query_code”<br />
+[3] “1_Surveyor_Nickname”<br />
+[4] “2_Map_sheet_number”<br />
+[5] “FUC”<br />
+[6] “5_11_Name_of_organis”<br />
+[7] “6_12_Description_of_”<br />
+[8] “7_13_When_was_the_or”<br />
+[9] “8_14_Do_you_regard_t”<br />
+[10] “9_15_If_no_what_type”<br />
+[11] “10_16_If_other_pleas”<br />
+[12] “12_21_Total_number_o”<br />
+[13] “13_22_Observed_or_Ve”<br />
+[14] “14_23_How_many_FTEs_”<br />
+[15] “15_24_Observed_or_Ve”<br />
+[16] “16_25_Is_the_organis”<br />
+[17] “17_26_How_many_peopl”<br />
+[18] “19_31_Floor_levels_t”<br />
+[19] “20_32_How_many_store”<br />
+[20] “21_33_Unit_size_Inse”<br />
+[21] “22_34_Square_metres_”<br />
+[22] “23_35_Observed_or_Ve”<br />
+[23] “24_36_Predominant_he”<br />
+[24] “25_37_Premises_type_”<br />
+[25] “26_38_If_other_pleas”<br />
+[26] “27_39_Type_of_associ”<br />
+[27] “28_310_Car_parking_S”<br />
+[28] “29_311_Goods_access_”<br />
+[29] “30_312_Are_these_pre”<br />
+[30] “31_313_If_premises_a”<br />
+[31] “32_314_When_did_the_”<br />
+[32] “33_315_Is_the_premis”<br />
+[33] “34_316_If_rentedleas”<br />
+[34] “35_317_Will_the_leas”<br />
+[35] “37_41_Is_the_localit”<br />
+[36] “38_42_If_so_why_sele”<br />
+[37] “39_43_If_locality_is”<br />
+[38] “40_44_What_is_your_v”<br />
+[39] “41_45_What_are_the_t”<br />
+[40] “42_46_Where_are_the_”<br />
+[41] “43_47_Where_are_the_”<br />
+[42] “44_48_Is_the_organis”<br />
+[43] “45_49_Does_the_organ”<br />
+[44] “46_410_If_yes_where_”<br />
+[45] “47_411_If_yes_when”<br />
+[46] “48_412_If_yes_why”<br />
+[47] “49_413_Are_the_organ”<br />
+[48] “50_414_If_yes_please”<br />
+[49] “51_415_Are_you_aware”<br />
+[50] “52_416_If_yes_how_ha”<br />
+[51] “53_417_If_other_plea”<br />
+[52] “54_418_What_is_your_”<br />
+[53] “56_51_Contact_willin”<br />
+[54] “57_52_Name_of_contac”<br />
+[55] “58_53_Contact_teleph”<br />
+[56] “59_54_Contact_email_”<br />
+[57] “60_55_Organisation_t”<br />
+[58] “61_56_Organisation_w”<br />
+[59] “62_57_Organisation_e”<br />
+[60] “63_58_Street_name_eg”<br />
+[61] “64_59_Street_number_”<br />
+[62] “65_510_Postcode_Incl”<br />
+[63] “66_511_Unit_number_i”<br />
+[64] “68_61_Additional_not”<br />
+[65] “69_62_Internal_photo”<br />
+[66] “71_71_Would_the_acti”<br />
+[67] “lat_72_72_Location”<br />
+[68] “long_72_72_Location”<br />
+[69] “accuracy_72_72_Location”<br />
+[70] “73_73_External_photo”<br />
+[71] “74_74_SIC_Code”<br />
+[72] “76_76_Notes_on_any_o”<br />
+[73] “sD_RS_field_1”<br />
+[74] “sD_RS_6_12_Description_of_”<br />
+[75] “pX”<br />
+[76] “pY”<br />
+[77] “mb_comment”<br />
+[78] “response_comments”<br />
+[79] “name”<br />
+[80] “query_resolved”<br />
+[81] “action_spatial”<br />
+[82] “action_spreadsheet”<br />
+[83] “parcels_actions”<br />
+[84] “action_other”<br />
+[85] “resolution_details”<br />
+[86] “Source…1”<br />
+[87] “Business count”<br />
+[88] “Business within MOB”<br />
+[89] “Multiple buildings”<br />
+[90] “Multi-occupier building”<br />
+[91] “Source…6”<br />
+[92] “codex”<br />
+[93] “AAP”<br />
+[94] “Site allocation”<br />
+[95] “Sub-area”<br />
+[96] “Business name”<br />
+[97] “Street no”<br />
+[98] “Unit”<br />
+[99] “Floor”<br />
+[100] “Street”<br />
+[101] “2015-2019”<br />
+[102] “Notes_on_C”<br />
+[103] “Business activity”<br />
+[104] “SIC CODE”<br />
+[105] “Sector”<br />
+[106] “Building use category”<br />
+[107] “Building type”<br />
+[108] “Actual number of employee”<br />
+[109] “Estimated number of employee”<br />
+[110] “TOTAL NUMBER OF EMPLOYEE”<br />
+[111] “employees for density”<br />
+[112] “GF multiplier”<br />
+[113] “UF multiplier”<br />
+[114] “B multiplier”<br />
+[115] “Long_surve”<br />
+[116] “GF Floorspace area”<br />
+[117] “UF Floorspace”<br />
+[118] “Total floorspace”<br />
+[119] “Total floorspace post VOA+15% analysis”<br />
+[120] “density”<br />
+[121] “2.07 What % of employees of employees live locally? ” [122] “…38”<br />
+[123] “…39”<br />
+[124] “…40”<br />
+[125] “…41”<br />
+[126] “…42”<br />
+[127] “…43”<br />
+[128] “…44”<br />
+[129] “…45”<br />
+[130] “newFUC”<br />
+[131] “geometry”<br />
+[132] “U_ID”<br />
+[133] “source”<br />
+[134] “cetegory-plus”<br />
+[135] “WMT_sector”<br />
+[136] “manufacturing_making”<br />
+[137] “repair”<br />
+[138] “creative industrial”<br />
+[139] “building construction / repair”<br />
+[140] “wholesale / distribution”<br />
+[141] “branch_status”<br />
+[142] “premises”<br />
+[143] “geom”</p>
+<pre class="r"><code>pi03 %&gt;%
+  select(1:130, 132:143) -&gt; pi03</code></pre>
+<pre class="r"><code>rbind(pi02, pi03) -&gt; pi04</code></pre>
+<pre class="r"><code>mapview(pi04) + mapview(p01)</code></pre>
+<div id="htmlwidget-2a8a14fb97460282235e" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2a8a14fb97460282235e">{"x":{"options":{"minZoom":1,"maxZoom":52,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"preferCanvas":false,"bounceAtZoomLimits":false,"maxBounds":[[[-90,-370]],[[90,370]]]},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron","CartoDB.Positron","CartoDB.Positron",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["CartoDB.DarkMatter","CartoDB.DarkMatter","CartoDB.DarkMatter",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenStreetMap","OpenStreetMap","OpenStreetMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["Esri.WorldImagery","Esri.WorldImagery","Esri.WorldImagery",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenTopoMap","OpenTopoMap","OpenTopoMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"createMapPane","args":["point",440]},{"method":"addFlatGeoBuf","args":["pi04","pi04",null,true,"mvFeatureId",{"radius":6,"stroke":true,"color":"#333333","weight":1,"opacity":0.9,"fill":true,"fillColor":"#6666FF","fillOpacity":0.6},{"className":"","pane":"point"},"mapview-popup",{"radius":{"to":[3,15],"from":[3,15]},"weight":{"to":[1,10],"from":[1,10]},"opacity":{"to":[0,1],"from":[0,1]},"fillOpacity":{"to":[0,1],"from":[0,1]}}]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]},{"method":"addHomeButton","args":[-0.0912398167454692,51.4775385155973,-0.0505267663392281,51.4968488389265,"pi04","Zoom to pi04","<strong> pi04 <\/strong>","bottomright"]},{"method":"addLegend","args":[{"colors":["#6666FF"],"labels":["pi04"],"na_color":null,"na_label":"NA","opacity":1,"position":"topright","type":"factor","title":"","extra":null,"layerId":null,"className":"info legend","group":"pi04"}]},{"method":"addFlatGeoBuf","args":["p01","p01",null,true,"mvFeatureId",{"radius":6,"stroke":true,"color":"#333333","weight":0.5,"opacity":0.9,"fill":true,"fillColor":"#6666FF","fillOpacity":0.6},{"className":""},"mapview-popup",{"radius":{"to":[3,15],"from":[3,15]},"weight":{"to":[1,10],"from":[1,10]},"opacity":{"to":[0,1],"from":[0,1]},"fillOpacity":{"to":[0,1],"from":[0,1]}}]},{"method":"addHomeButton","args":[-0.109806860098585,51.4249098267391,-0.0329267702918946,51.506934244772,"p01","Zoom to p01","<strong> p01 <\/strong>","bottomright"]},{"method":"addLayersControl","args":[["CartoDB.Positron","CartoDB.DarkMatter","OpenStreetMap","Esri.WorldImagery","OpenTopoMap"],["pi04","p01"],{"collapsed":true,"autoZIndex":true,"position":"topleft"}]},{"method":"addLegend","args":[{"colors":["#6666FF"],"labels":["p01"],"na_color":null,"na_label":"NA","opacity":1,"position":"topright","type":"factor","title":"","extra":null,"layerId":null,"className":"info legend","group":"p01"}]},{"method":"addHomeButton","args":[-0.109806860098585,51.4249098267391,-0.0329267702918946,51.506934244772,null,"Zoom to full extent","<strong>Zoom full<\/strong>","bottomleft"]}],"fitBounds":[51.4249098267391,-0.109806860098585,51.506934244772,-0.0329267702918946,[]]},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x, data) {\n      // get the leaflet map\n      var map = this; //HTMLWidgets.find('#' + el.id);\n      // we need a new div element because we have to handle\n      // the mouseover output separately\n      // debugger;\n      function addElement () {\n      // generate new div Element\n      var newDiv = $(document.createElement('div'));\n      // append at end of leaflet htmlwidget container\n      $(el).append(newDiv);\n      //provide ID and style\n      newDiv.addClass('lnlt');\n      newDiv.css({\n      'position': 'relative',\n      'bottomleft':  '0px',\n      'background-color': 'rgba(255, 255, 255, 0.7)',\n      'box-shadow': '0 0 2px #bbb',\n      'background-clip': 'padding-box',\n      'margin': '0',\n      'padding-left': '5px',\n      'color': '#333',\n      'font': '9px/1.5 \"Helvetica Neue\", Arial, Helvetica, sans-serif',\n      'z-index': '700',\n      });\n      return newDiv;\n      }\n\n\n      // check for already existing lnlt class to not duplicate\n      var lnlt = $(el).find('.lnlt');\n\n      if(!lnlt.length) {\n      lnlt = addElement();\n\n      // grab the special div we generated in the beginning\n      // and put the mousmove output there\n\n      map.on('mousemove', function (e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                           ' lon: ' + (e.latlng.lng).toFixed(5) +\n                           ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                           ' | zoom: ' + map.getZoom() +\n                           ' | x: ' + L.CRS.EPSG3857.project(e.latlng).x.toFixed(0) +\n                           ' | y: ' + L.CRS.EPSG3857.project(e.latlng).y.toFixed(0) +\n                           ' | epsg: 3857 ' +\n                           ' | proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs ');\n      } else {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      }\n      });\n\n      // remove the lnlt div when mouse leaves map\n      map.on('mouseout', function (e) {\n      var strip = document.querySelector('.lnlt');\n      if( strip !==null) strip.remove();\n      });\n\n      };\n\n      //$(el).keypress(67, function(e) {\n      map.on('preclick', function(e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      var txt = document.querySelector('.lnlt').textContent;\n      console.log(txt);\n      //txt.innerText.focus();\n      //txt.select();\n      setClipboardText('\"' + txt + '\"');\n      }\n      });\n\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null},{"code":"function(el, x, data) {\n  return (function(el,x,data){\n           var map = this;\n\n           map.on('keypress', function(e) {\n               console.log(e.originalEvent.code);\n               var key = e.originalEvent.code;\n               if (key === 'KeyE') {\n                   var bb = this.getBounds();\n                   var txt = JSON.stringify(bb);\n                   console.log(txt);\n\n                   setClipboardText('\\'' + txt + '\\'');\n               }\n           })\n        }).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+<pre class="r"><code># st_write(p01, &quot;f_cities_pol.gpkg&quot;) # 1352 features
+# st_write(pi04, &quot;f_wmt_poi.gpkg&quot;) # 346 features</code></pre>
+<pre class="r"><code>p01 %&gt;%
+  st_drop_geometry() %&gt;%
+  summarise(Total = n(),
+            FUCs = n_distinct(FUC),
+            NA_FUCs = sum(is.na(FUC))) %&gt;%
+  adorn_totals()</code></pre>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Total
+</th>
+<th style="text-align:right;">
+FUCs
+</th>
+<th style="text-align:left;">
+NA_FUCs
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1352
+</td>
+<td style="text-align:right;">
+1347
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+1347
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>pi04 %&gt;%
+  st_drop_geometry() %&gt;%
+  summarise(Total = n(),
+            U_IDs = n_distinct(U_ID),
+            NA_U_IDs = sum(is.na(U_ID))) %&gt;%
+  adorn_totals()</code></pre>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Total
+</th>
+<th style="text-align:right;">
+U_IDs
+</th>
+<th style="text-align:left;">
+NA_U_IDs
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+346
+</td>
+<td style="text-align:right;">
+342
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+342
+</td>
+<td style="text-align:left;">
+0
 </td>
 </tr>
 </tbody>

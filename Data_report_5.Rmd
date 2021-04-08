@@ -263,5 +263,21 @@ mapview(pi04) + mapview(p01)
 # st_write(pi04, "f_wmt_poi.gpkg") # 346 features
 ```
 
+```{r}
+p01 %>%
+  st_drop_geometry() %>%
+  summarise(Total = n(),
+            FUCs = n_distinct(FUC),
+            NA_FUCs = sum(is.na(FUC))) %>%
+  adorn_totals()
+```
 
+```{r}
+pi04 %>%
+  st_drop_geometry() %>%
+  summarise(Total = n(),
+            U_IDs = n_distinct(U_ID),
+            NA_U_IDs = sum(is.na(U_ID))) %>%
+  adorn_totals()
+```
 
