@@ -2,7 +2,7 @@
 title: "Data report: OKR"
 output:
   html_document:
-    df_print: kable
+    df_print: paged
     toc: yes
     toc_depth: '3'
     number_sections: yes
@@ -39,7 +39,7 @@ library(concaveman)
 knitr::opts_chunk$set(message=FALSE, 
                       warning=FALSE,
                       results = 'asis')
-options(scipen = 99999)
+options(scipen = 999)
 ```
 
 # Reload and compile all Polygon data
@@ -118,7 +118,7 @@ npol <- npol %>%
 
 ## Missing Polygons 
 
-```{r }
+```{r include=FALSE}
 zip <- "/Users/nicolas/Documents/R_GitHub/sind/Missing Polygons-20210406T082625Z-001.zip"
 dir <- unzip(zip, junkpaths = TRUE, exdir = tempdir())
 dir1 <- subset(dir, grepl(pattern = "\\_b.gpkg$", dir)) # select files end with .gpkg ending "_b"
@@ -190,6 +190,18 @@ oct18 %>%
   adorn_totals()
 ```
 
+Valid/empty geometries?
+
+```{r}
+st_is_empty(oct18) -> l1
+
+length(l1[l1 == TRUE])
+```
+
+```{r}
+
+```
+
 Some FUCs are duplicated?
 
 ```{r}
@@ -204,12 +216,7 @@ oct18 %>%
   adorn_totals()
 ```
 
-Valid/empty geometries?
 
-```{r}
-st_is_empty(oct18) %>%
-  length()
-```
 
 ## npol
 
@@ -228,8 +235,9 @@ npol %>%
 Valid/empty geometries?
 
 ```{r}
-st_is_empty(npol) %>%
-  length()
+st_is_empty(npol) -> l2
+
+length(l2[l2 == TRUE])
 ```
 
 Some FUCs are duplicated?
@@ -262,9 +270,11 @@ mpol %>%
 Valid/empty geometries?
 
 ```{r}
-st_is_empty(mpol) %>%
-  length()
+#st_is_empty(mpol) -> l3
+
+#length(l3[l3 == TRUE])
 ```
+Error in CPL_geos_is_empty(st_geometry(x)) : Evaluation error: IllegalArgumentException: Points of LinearRing do not form a closed linestring.
 
 Some FUCs are duplicated?
 
@@ -278,3 +288,234 @@ mpol %>%
   filter(n > 1) %>%
   adorn_totals()
 ```
+
+Identify invalid feature
+
+```{r}
+mpol %>%
+  st_is_valid() -> valid
+```
+
+```{r}
+(valid == FALSE) == TRUE
+```
+
+
+```{r}
+mpol %>%
+  slice(51) %>%
+  st_is_valid()
+```
+
+```{r}
+mpol %>%
+  slice(51)
+```
+
+Create valid geometry
+```{r}
+mpol %>%
+  slice(51) %>%
+  st_cast("MULTIPOINT") %>%
+  distinct() %>%
+  st_make_valid() %>%
+  concaveman() %>%
+  st_cast("POLYGON") %>%
+  mutate(fid = as.character(14640001)) %>%
+  rename(geom = polygons) %>%
+  st_zm() -> p51
+```
+
+Replace valid geometry / Remove empty geometry
+```{r}
+mpol %>%
+  filter(!row_number() %in% c(1, 51)) -> s51
+```
+
+```{r}
+s51 %>%
+  rbind(p51) -> mpol1
+```
+
+# Join all polygons
+
+```{r}
+oct18 %>%
+  st_set_crs(27700) %>%
+  rename(fid = X3_Functional_Unit_Co) %>%
+  select(fid) -> oct181
+```
+
+```{r}
+npol %>%
+  rename(geom = geometry) -> npol
+```
+
+```{r}
+oct181 %>%
+  slice(10:20)
+```
+
+```{r}
+oct181 %>% 
+  filter(!st_is_empty(.)) -> oct181
+```
+
+```{r}
+rbind(oct181, npol, mpol1) -> allP
+```
+
+Summary of joined polygons
+
+```{r}
+allP %>%
+  st_drop_geometry() %>%
+  rename(FUC = fid) %>%
+  summarise(Total = n(),
+            FUCs = n_distinct(FUC),
+            NA_FUCs = sum(is.na(FUC))) %>%
+  adorn_totals()
+```
+
+Some FUCs are duplicated?
+
+```{r}
+allP %>%
+  st_drop_geometry() %>%
+  rename(FUC = fid) %>%
+  group_by(FUC) %>%
+  count() %>%
+  arrange(desc(n)) %>%
+  filter(n > 1) %>%
+  adorn_totals()
+```
+
+```{r}
+tmap_mode("view")
+```
+
+```{r}
+allP %>%
+  rename(FUC = fid) %>%
+  group_by(FUC) %>%
+  count() %>%
+  arrange(desc(n)) %>%
+  filter(n > 1) %>%
+  tm_shape() +
+  tm_polygons()
+```
+
+```{r}
+allP %>%
+  st_drop_geometry() %>%
+  rename(FUC = fid) %>%
+  group_by(FUC) %>%
+  count() %>%
+  arrange(desc(n)) %>%
+  filter(n > 1) -> dup
+```
+
+```{r}
+dup
+```
+
+```{r}
+# filter duplicated and calculate area - keep largest area
+allP %>%
+  rename(FUC = fid) %>% 
+  filter(FUC %in% dup$FUC) %>%
+  mutate(area = st_area(.)) %>%
+  arrange(FUC) %>%
+  group_by(FUC) %>%
+  slice(which.max(area)) %>%
+  select(FUC) -> Ldup
+Ldup
+```
+
+```{r}
+# remove duplicated
+allP %>%
+  rename(FUC = fid) %>% 
+  filter(!FUC %in% dup$FUC) -> Ndup
+```
+
+```{r}
+rbind(Ldup, Ndup) %>%
+  st_cast("MULTIPOLYGON") %>%
+  ungroup() -> fP
+```
+
+Final summary fP
+
+```{r}
+fP %>%
+  st_drop_geometry() %>%
+  summarise(Total = n(),
+            FUCs = n_distinct(FUC),
+            NA_FUCs = sum(is.na(FUC))) %>%
+  adorn_totals()
+```
+
+```{r}
+#st_write(fP, "fP.gpkg")
+```
+
+# Create POINTS from WMT
+
+REDACTED_164_OKR Survey_WMT 2019 business base_191104 | OKR survey (spreadsheet with point data)
+
+```{r message=FALSE, warning=FALSE}
+okr <- read_excel("~/Documents/SINDA_local/data_from_southwark/WMT OKR Business Survey 2019/REDACTED_164_OKR Survey_WMT 2019 business base_191104.xlsx", 
+    col_types = c("text", "numeric", "text", 
+        "text", "text", "text", "text", "numeric", 
+        "text", "text", "text", "text", "text", 
+        "text", "text", "text", "text", "text", 
+        "text", "text", "text", "text", "text", 
+        "text", "text", "numeric", "numeric", 
+        "numeric", "numeric", "text", "text", 
+        "text", "text", "text", "text", "text", 
+        "text", "numeric", "text", "numeric", 
+        "text", "text", "text", "numeric", 
+        "numeric", "numeric", "numeric"))
+```
+
+```{r}
+okr_sf <- okr %>%
+  #select(1:37) %>%
+  st_as_sf(., coords = c("Xcoord", "Ycoord"), na.fail = F, crs = 27700) %>%
+  filter(Join != 234) %>% # filter point in Australia Join	234.0
+  mutate(newFUC = paste0('OKR-', 1:nrow(.)))
+```
+
+```{r}
+qtm(okr_sf, fill = "tomato")
+```
+
+Select only missing point ( by Join from Dr5)
+
+```{r}
+library(readr)
+miP <- read_csv("miP.csv")
+```
+
+
+```{r}
+okr_sf %>%
+  filter(Join %in% miP$Join) %>%
+  select(Join) -> miPsf
+```
+
+```{r}
+mapview(miPsf)
+```
+
+
+```{r}
+st_write(miPsf, "miP.gpkg", append=FALSE)
+```
+
+```{r}
+glimpse(okr)
+```
+
+
