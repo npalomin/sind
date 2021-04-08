@@ -130,7 +130,6 @@ sR %>%
 names(pol)
 ```
 
-
 ```{r}
 pol %>% 
   rename(FUC = fid) %>%

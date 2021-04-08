@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Data report: OKR</title>
+
+<script src="Data_report_5_files/header-attrs-2.7/header-attrs.js"></script>
+<script src="Data_report_5_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Data_report_5_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Data_report_5_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Data_report_5_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Data_report_5_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="Data_report_5_files/navigation-1.1/tabsets.js"></script>
+<link href="Data_report_5_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="Data_report_5_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Data report: OKR</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#load-data"><span class="toc-section-number">1</span> Load data</a></li>
+<li><a href="#process-data"><span class="toc-section-number">2</span> Process data</a></li>
+<li><a href="#summarise-data"><span class="toc-section-number">3</span> Summarise data</a>
+<ul>
+<li><a href="#filter-by-premises"><span class="toc-section-number">3.1</span> Filter by ‘premises’</a></li>
+</ul></li>
+</ul>
+</div>
+
+<!-- https://bookdown.org/yihui/rmarkdown/html-document.html#data-frame-printing -->
+<style>
+* {font-family: "Trebuchet MS"}h1{font-size: 190%}h2{font-size: 160%}h3{font-size: 150%}h4{font-size: 130%}h5{font-size: 110%}h6{font-size: 90%}
+.r code {
+    white-space: pre;
+}
+</style>
+<div id="load-data" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> Load data</h1>
+<pre class="r"><code># Polygons from Data_report_4.Rmd
+p00 &lt;- st_read(&quot;/Users/nicolas/Documents/R_GitHub/sind/survey_POLYGONS_Cities.gpkg&quot;)
+
+# points from WMT ( &quot;result_feb2021.gpkg&quot;) - Data_report_3.Rmd
+pi00 &lt;- st_read(&quot;/Users/nicolas/Documents/R_GitHub/sind/result_feb2021_point.geojson&quot;)
+
+# final result spreadsheet downloaded from GD
+result &lt;- read_csv(&quot;result_feb2021 - 20210406.csv&quot;)</code></pre>
+</div>
+<div id="process-data" class="section level1" number="2">
+<h1 number="2"><span class="header-section-number">2</span> Process data</h1>
+<pre class="r"><code>result %&gt;%
+  rename(FUC = `3_Functional_Unit_Co`) -&gt; result</code></pre>
+</div>
+<div id="summarise-data" class="section level1" number="3">
+<h1 number="3"><span class="header-section-number">3</span> Summarise data</h1>
+<p>Size of data frame</p>
+<pre class="r"><code>dim(result)</code></pre>
+<p>[1] 3184 142</p>
+<p>result_feb2021.csv has 3184 obs. and 142 variables</p>
+<p>List of variables</p>
+<pre class="r"><code>names(result)</code></pre>
+<p>[1] “query_code”<br />
+[2] “1_Surveyor_Nickname”<br />
+[3] “2_Map_sheet_number”<br />
+[4] “FUC”<br />
+[5] “5_11_Name_of_organis”<br />
+[6] “6_12_Description_of_”<br />
+[7] “7_13_When_was_the_or”<br />
+[8] “8_14_Do_you_regard_t”<br />
+[9] “9_15_If_no_what_type”<br />
+[10] “10_16_If_other_pleas”<br />
+[11] “12_21_Total_number_o”<br />
+[12] “13_22_Observed_or_Ve”<br />
+[13] “14_23_How_many_FTEs_”<br />
+[14] “15_24_Observed_or_Ve”<br />
+[15] “16_25_Is_the_organis”<br />
+[16] “17_26_How_many_peopl”<br />
+[17] “19_31_Floor_levels_t”<br />
+[18] “20_32_How_many_store”<br />
+[19] “21_33_Unit_size_Inse”<br />
+[20] “22_34_Square_metres_”<br />
+[21] “23_35_Observed_or_Ve”<br />
+[22] “24_36_Predominant_he”<br />
+[23] “25_37_Premises_type_”<br />
+[24] “26_38_If_other_pleas”<br />
+[25] “27_39_Type_of_associ”<br />
+[26] “28_310_Car_parking_S”<br />
+[27] “29_311_Goods_access_”<br />
+[28] “30_312_Are_these_pre”<br />
+[29] “31_313_If_premises_a”<br />
+[30] “32_314_When_did_the_”<br />
+[31] “33_315_Is_the_premis”<br />
+[32] “34_316_If_rentedleas”<br />
+[33] “35_317_Will_the_leas”<br />
+[34] “37_41_Is_the_localit”<br />
+[35] “38_42_If_so_why_sele”<br />
+[36] “39_43_If_locality_is”<br />
+[37] “40_44_What_is_your_v”<br />
+[38] “41_45_What_are_the_t”<br />
+[39] “42_46_Where_are_the_”<br />
+[40] “43_47_Where_are_the_”<br />
+[41] “44_48_Is_the_organis”<br />
+[42] “45_49_Does_the_organ”<br />
+[43] “46_410_If_yes_where_”<br />
+[44] “47_411_If_yes_when”<br />
+[45] “48_412_If_yes_why”<br />
+[46] “49_413_Are_the_organ”<br />
+[47] “50_414_If_yes_please”<br />
+[48] “51_415_Are_you_aware”<br />
+[49] “52_416_If_yes_how_ha”<br />
+[50] “53_417_If_other_plea”<br />
+[51] “54_418_What_is_your_”<br />
+[52] “56_51_Contact_willin”<br />
+[53] “57_52_Name_of_contac”<br />
+[54] “58_53_Contact_teleph”<br />
+[55] “59_54_Contact_email_”<br />
+[56] “60_55_Organisation_t”<br />
+[57] “61_56_Organisation_w”<br />
+[58] “62_57_Organisation_e”<br />
+[59] “63_58_Street_name_eg”<br />
+[60] “64_59_Street_number_”<br />
+[61] “65_510_Postcode_Incl”<br />
+[62] “66_511_Unit_number_i”<br />
+[63] “68_61_Additional_not”<br />
+[64] “69_62_Internal_photo”<br />
+[65] “71_71_Would_the_acti”<br />
+[66] “lat_72_72_Location”<br />
+[67] “long_72_72_Location”<br />
+[68] “accuracy_72_72_Location”<br />
+[69] “73_73_External_photo”<br />
+[70] “74_74_SIC_Code”<br />
+[71] “76_76_Notes_on_any_o”<br />
+[72] “sD_RS_field_1”<br />
+[73] “sD_RS_6_12_Description_of_”<br />
+[74] “pX”<br />
+[75] “pY”<br />
+[76] “mb_comment”<br />
+[77] “response_comments”<br />
+[78] “name”<br />
+[79] “query_resolved”<br />
+[80] “action_spatial”<br />
+[81] “action_spreadsheet”<br />
+[82] “parcels_actions”<br />
+[83] “action_other”<br />
+[84] “resolution_details”<br />
+[85] “Source…1”<br />
+[86] “Business count”<br />
+[87] “Business within MOB”<br />
+[88] “Multiple buildings”<br />
+[89] “Multi-occupier building”<br />
+[90] “Source…6”<br />
+[91] “codex”<br />
+[92] “Join”<br />
+[93] “AAP”<br />
+[94] “Site allocation”<br />
+[95] “Sub-area”<br />
+[96] “Business name”<br />
+[97] “Street no”<br />
+[98] “Unit”<br />
+[99] “Floor”<br />
+[100] “Street”<br />
+[101] “2015-2019”<br />
+[102] “Notes_on_C”<br />
+[103] “Business activity”<br />
+[104] “SIC CODE”<br />
+[105] “Sector”<br />
+[106] “Building use category”<br />
+[107] “Building type”<br />
+[108] “Actual number of employee”<br />
+[109] “Estimated number of employee”<br />
+[110] “TOTAL NUMBER OF EMPLOYEE”<br />
+[111] “employees for density”<br />
+[112] “GF multiplier”<br />
+[113] “UF multiplier”<br />
+[114] “B multiplier”<br />
+[115] “Long_surve”<br />
+[116] “GF Floorspace area”<br />
+[117] “UF Floorspace”<br />
+[118] “Total floorspace”<br />
+[119] “Total floorspace post VOA+15% analysis”<br />
+[120] “density”<br />
+[121] “2.07 What % of employees of employees live locally? ” [122] “…38”<br />
+[123] “…39”<br />
+[124] “…40”<br />
+[125] “…41”<br />
+[126] “…42”<br />
+[127] “…43”<br />
+[128] “…44”<br />
+[129] “…45”<br />
+[130] “newFUC”<br />
+[131] “geometry”<br />
+[132] “U_ID”<br />
+[133] “source”<br />
+[134] “cetegory-plus”<br />
+[135] “WMT_sector”<br />
+[136] “manufacturing_making”<br />
+[137] “repair”<br />
+[138] “creative industrial”<br />
+[139] “building construction / repair”<br />
+[140] “wholesale / distribution”<br />
+[141] “branch_status”<br />
+[142] “premises”</p>
+<div id="filter-by-premises" class="section level2" number="3.1">
+<h2 number="3.1"><span class="header-section-number">3.1</span> Filter by ‘premises’</h2>
+<p>Summary of ‘premises’</p>
+<pre class="r"><code>result %&gt;%
+  group_by(premises) %&gt;%
+  count()</code></pre>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+premises
+</th>
+<th style="text-align:right;">
+n
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Industrial in mixed use premises
+</td>
+<td style="text-align:right;">
+350
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Industrial in predominantly industrial premises
+</td>
+<td style="text-align:right;">
+1410
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not industrial
+</td>
+<td style="text-align:right;">
+1422
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+</tbody>
+</table>
+<p>Summary FUC</p>
+<pre class="r"><code>result %&gt;%
+  group_by(source) %&gt;%
+  summarise(Total = n(),
+            FUCs = sum(!is.na(FUC)),
+            NA_FUCs = sum(is.na(FUC))) %&gt;%
+  adorn_totals()</code></pre>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+source
+</th>
+<th style="text-align:right;">
+Total
+</th>
+<th style="text-align:left;">
+FUCs
+</th>
+<th style="text-align:right;">
+NA_FUCs
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Cities
+</td>
+<td style="text-align:right;">
+2324
+</td>
+<td style="text-align:left;">
+2227
+</td>
+<td style="text-align:right;">
+97
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WMT
+</td>
+<td style="text-align:right;">
+860
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:right;">
+860
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+3184
+</td>
+<td style="text-align:left;">
+2227
+</td>
+<td style="text-align:right;">
+957
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

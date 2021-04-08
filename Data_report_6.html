@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Data report: OKR</title>
+
+<script src="Data_report_6_files/header-attrs-2.7/header-attrs.js"></script>
+<script src="Data_report_6_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Data_report_6_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Data_report_6_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Data_report_6_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Data_report_6_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="Data_report_6_files/navigation-1.1/tabsets.js"></script>
+<link href="Data_report_6_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="Data_report_6_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Data report: OKR</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#reload-and-compile-all-polygon-data"><span class="toc-section-number">1</span> Reload and compile all Polygon data</a>
+<ul>
+<li><a href="#oct18_n"><span class="toc-section-number">1.1</span> oct18_N</a></li>
+<li><a href="#new-polygons-final-upload"><span class="toc-section-number">1.2</span> 200601 New Polygons final upload</a></li>
+<li><a href="#missing-polygons"><span class="toc-section-number">1.3</span> Missing Polygons</a></li>
+</ul></li>
+</ul>
+</div>
+
+<!-- https://bookdown.org/yihui/rmarkdown/html-document.html#data-frame-printing -->
+<style>
+* {font-family: "Trebuchet MS"}h1{font-size: 190%}h2{font-size: 160%}h3{font-size: 150%}h4{font-size: 130%}h5{font-size: 110%}h6{font-size: 90%}
+.r code {
+    white-space: pre;
+}
+</style>
+<div id="reload-and-compile-all-polygon-data" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> Reload and compile all Polygon data</h1>
+<table>
+<colgroup>
+<col width="21%" />
+<col width="22%" />
+<col width="55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+<th>URL (path)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>oct18_N</td>
+<td>Cities survey results geopackages</td>
+<td><a href="https://drive.google.com/file/d/1VV5nxWja2sA5jbKpHIgdVsE2Ie393QYH/view?usp=sharing" class="uri">https://drive.google.com/file/d/1VV5nxWja2sA5jbKpHIgdVsE2Ie393QYH/view?usp=sharing</a></td>
+</tr>
+<tr class="even">
+<td>200601 New Polygons final upload</td>
+<td>New polygons (5 folders)</td>
+<td><a href="https://drive.google.com/drive/folders/1dVyhXth5rYxvod10N16tDeF_Qvo5I8fz?usp=sharing" class="uri">https://drive.google.com/drive/folders/1dVyhXth5rYxvod10N16tDeF_Qvo5I8fz?usp=sharing</a></td>
+</tr>
+<tr class="odd">
+<td>Missing Polygons</td>
+<td>Feb2021 - Missing Polygons</td>
+<td><a href="https://drive.google.com/drive/u/0/folders/1z6yo7E6avS_3HPTNXO7M6f-q-ePDNhBy" class="uri">https://drive.google.com/drive/u/0/folders/1z6yo7E6avS_3HPTNXO7M6f-q-ePDNhBy</a></td>
+</tr>
+</tbody>
+</table>
+<div id="oct18_n" class="section level2" number="1.1">
+<h2 number="1.1"><span class="header-section-number">1.1</span> oct18_N</h2>
+<pre class="r"><code>oct18 &lt;- st_read(&quot;/Users/nicolas/Documents/R_GitHub/sind/oct18_N.gpkg&quot;)</code></pre>
+<p>Reading layer <code>masterGJ' from data source</code>/Users/nicolas/Documents/R_GitHub/sind/oct18_N.gpkg’ using driver `GPKG’ Simple feature collection with 2515 features and 100 fields (with 458 geometries empty) geometry type: MULTIPOLYGON dimension: XY bbox: xmin: 531305.5 ymin: 171277 xmax: 536322.5 ymax: 180434.8 projected CRS: unnamed</p>
+</div>
+<div id="new-polygons-final-upload" class="section level2" number="1.2">
+<h2 number="1.2"><span class="header-section-number">1.2</span> 200601 New Polygons final upload</h2>
+<pre class="r"><code># remove lists with nrow &gt; 0
+gpkg1 &lt;- gpkg[sapply(gpkg, nrow) &gt; 0]</code></pre>
+<pre class="r"><code># create a new variable with CRS
+gpkg2 &lt;- lapply(gpkg1, function(x) within(x, crs &lt;- unlist(st_crs(x), recursive = F)))</code></pre>
+<pre class="r"><code># select BNG 
+gpkg21 &lt;- rbindlist(gpkg2, use.names=FALSE) %&gt;%
+  filter(crs == &quot;OSGB 1936 / British National Grid&quot;) %&gt;%
+  st_sf() %&gt;%
+  select(fid)</code></pre>
+<pre class="r"><code># select WGS 84
+gpkg22 &lt;- rbindlist(gpkg2, use.names=FALSE) %&gt;%
+  filter(crs == &quot;WGS 84&quot;) %&gt;%
+  st_sf() %&gt;% 
+  st_set_crs(value = 4326) %&gt;%  # assign original projection
+  st_transform(27700) %&gt;% # transform to join all
+  select(fid)</code></pre>
+<pre class="r"><code># select != BNG | != 4326
+gpkg23 &lt;- rbindlist(gpkg2, use.names=FALSE) %&gt;%
+  filter(crs != &quot;OSGB 1936 / British National Grid&quot;) %&gt;%
+  filter(crs != &quot;WGS 84&quot;) %&gt;%
+  st_sf() %&gt;%
+  select(fid)</code></pre>
+<pre class="r"><code>npol &lt;- gpkg21 %&gt;%
+  rbind(gpkg22)
+npol &lt;- npol %&gt;%
+  rbind(gpkg23)</code></pre>
+</div>
+<div id="missing-polygons" class="section level2" number="1.3">
+<h2 number="1.3"><span class="header-section-number">1.3</span> Missing Polygons</h2>
+<pre class="r"><code># remove lists with nrow &gt; 0
+gpkg1 &lt;- gpkg[sapply(gpkg, nrow) &gt; 0]</code></pre>
+<pre class="r"><code># create a new variable with CRS
+gpkg2 &lt;- lapply(gpkg1, function(x) within(x, crs &lt;- unlist(st_crs(x), recursive = F)))</code></pre>
+<pre class="r"><code># select BNG 
+gpkg21 &lt;- rbindlist(gpkg2, use.names=FALSE) %&gt;%
+  filter(crs == &quot;OSGB 1936 / British National Grid&quot;) %&gt;%
+  st_sf() %&gt;%
+  st_transform(27700) %&gt;%
+  select(fid)</code></pre>
+<pre class="r"><code># select WGS 84
+gpkg22 &lt;- rbindlist(gpkg2, use.names=FALSE) %&gt;%
+  filter(crs == &quot;WGS 84&quot;) %&gt;%
+  st_sf() %&gt;% 
+  st_set_crs(value = 4326) %&gt;%  # assign original projection
+  st_transform(27700) %&gt;% # transform to join all
+  select(fid)</code></pre>
+<pre class="r"><code># select != BNG | != 4326
+gpkg23 &lt;- rbindlist(gpkg2, use.names=FALSE) %&gt;%
+  filter(crs != &quot;OSGB 1936 / British National Grid&quot;) %&gt;%
+  filter(crs != &quot;WGS 84&quot;) %&gt;%
+  st_sf() %&gt;%
+  st_transform(27700) %&gt;%
+  select(fid)</code></pre>
+<pre class="r"><code>mpol &lt;- gpkg21 %&gt;%
+  rbind(gpkg22)
+mpol &lt;- mpol %&gt;%
+  rbind(gpkg23)</code></pre>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

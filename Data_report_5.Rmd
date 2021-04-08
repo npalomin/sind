@@ -1,0 +1,143 @@
+---
+title: "Data report: OKR"
+output:
+  html_document:
+    df_print: !expr print.me <- function(x, ...) { knitr::asis_output(kableExtra::kbl(x, digits=2, align= 'lr') %>% kable_styling(full_width = F))}
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+    self_contained: no
+---
+
+<!-- https://bookdown.org/yihui/rmarkdown/html-document.html#data-frame-printing -->
+
+```{=html}
+<style>
+* {font-family: "Trebuchet MS"}h1{font-size: 190%}h2{font-size: 160%}h3{font-size: 150%}h4{font-size: 130%}h5{font-size: 110%}h6{font-size: 90%}
+.r code {
+    white-space: pre;
+}
+</style>
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(readxl)
+library(tidyverse)
+library(sf)
+library(tmap)
+library(mapview)
+library(janitor)
+library(readr)
+library(writexl)
+library(data.table)
+library(readr)
+library(knitr)
+library(kableExtra)
+```
+
+# Load data
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message=FALSE, 
+                      warning=FALSE,
+                      results = 'asis')
+```
+
+```{r message=FALSE, warning=FALSE, echo = T, results = 'hide'}
+# Polygons from Data_report_4.Rmd
+p00 <- st_read("/Users/nicolas/Documents/R_GitHub/sind/survey_POLYGONS_Cities.gpkg")
+
+# points from WMT ( "result_feb2021.gpkg") - Data_report_3.Rmd
+pi00 <- st_read("/Users/nicolas/Documents/R_GitHub/sind/result_feb2021_point.geojson")
+
+# final result spreadsheet downloaded from GD
+result <- read_csv("result_feb2021 - 20210406.csv")
+```
+
+# Process attributes data
+
+```{r}
+result %>%
+  rename(FUC = `3_Functional_Unit_Co`) -> result
+```
+
+# Summarise attributes data
+
+Size of data frame  
+```{r}
+dim(result)
+```
+
+result_feb2021.csv has 3184 obs. and 142 variables
+
+List of variables  
+```{r}
+names(result)
+```
+
+## Filter by 'premises'
+
+Summary of 'premises'
+```{r}
+result %>%
+  group_by(premises) %>%
+  count()
+```
+
+Keep Industrial premises
+
+```{r}
+result %>%
+  filter(premises %in% c("Industrial in mixed use premises", "Industrial in predominantly industrial premises")) -> result1
+```
+
+## Summary by FUC
+
+Summary by source (FUC and U_ID)
+```{r}
+result1 %>%
+  group_by(source) %>%
+  summarise(Total = n(),
+            FUCs = n_distinct(FUC),
+            NA_FUCs = sum(is.na(FUC)),
+            U_IDs = n_distinct(U_ID)) %>%
+  adorn_totals()
+```
+
+WMT has 407 industrial variables with unique id (U_ID)
+Cities has 1348 industrial records with unique FUC (FUC) - (5 records might be lost)
+
+# Summarise spatial data
+
+## Cities (polygons)
+
+## By FUC
+```{r}
+p00 %>%
+  st_drop_geometry() %>%
+  summarise(Total = n(),
+            FUCs = n_distinct(FUC))
+```
+
+Some FUCs are duplicated
+
+```{r}
+p00 %>%
+  st_drop_geometry() %>%
+  group_by(FUC) %>%
+  count() %>%
+  arrange(desc(n)) %>%
+  filter(n > 1) %>%
+  adorn_totals()
+```
+
+```{r}
+p00 %>%
+  st_drop_geometry() %>%
+  group_by(FUC) %>%
+  count() %>%
+  arrange(desc(n)) %>%
+  filter(n > 1) %>%
+  group_by()
+```
+
+

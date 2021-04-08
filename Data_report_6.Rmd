@@ -1,0 +1,280 @@
+---
+title: "Data report: OKR"
+output:
+  html_document:
+    df_print: kable
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+    self_contained: no
+---
+
+<!-- https://bookdown.org/yihui/rmarkdown/html-document.html#data-frame-printing -->
+
+```{=html}
+<style>
+* {font-family: "Trebuchet MS"}h1{font-size: 190%}h2{font-size: 160%}h3{font-size: 150%}h4{font-size: 130%}h5{font-size: 110%}h6{font-size: 90%}
+.r code {
+    white-space: pre;
+}
+</style>
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(readxl)
+library(tidyverse)
+library(sf)
+library(tmap)
+library(mapview)
+library(janitor)
+library(readr)
+library(writexl)
+library(data.table)
+library(readr)
+library(knitr)
+library(kableExtra)
+library(concaveman)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message=FALSE, 
+                      warning=FALSE,
+                      results = 'asis')
+options(scipen = 99999)
+```
+
+# Reload and compile all Polygon data
+
++----------------------------------+-----------------------------------+----------------------------------------------------------------------------------------+
+| Name                             | Description                       | URL (path)                                                                             |
++==================================+===================================+========================================================================================+
+| oct18_N                          | Cities survey results geopackages | <https://drive.google.com/file/d/1VV5nxWja2sA5jbKpHIgdVsE2Ie393QYH/view?usp=sharing>   |
++----------------------------------+-----------------------------------+----------------------------------------------------------------------------------------+
+| 200601 New Polygons final upload | New polygons (5 folders)          | <https://drive.google.com/drive/folders/1dVyhXth5rYxvod10N16tDeF_Qvo5I8fz?usp=sharing> |
++----------------------------------+-----------------------------------+----------------------------------------------------------------------------------------+
+| Missing Polygons                 | Feb2021 - Missing Polygons        | <https://drive.google.com/drive/u/0/folders/1z6yo7E6avS_3HPTNXO7M6f-q-ePDNhBy>         |
++----------------------------------+-----------------------------------+----------------------------------------------------------------------------------------+
+
+## oct18_N
+
+```{r message=FALSE, warning=FALSE}
+oct18 <- st_read("/Users/nicolas/Documents/R_GitHub/sind/oct18_N.gpkg")
+```
+
+## 200601 New Polygons final upload
+
+```{r include=FALSE}
+zip <- "/Users/nicolas/Documents/R_GitHub/sind/200601 New Polygons final upload-20210218T100648Z-001.zip"
+dir <- unzip(zip, junkpaths = TRUE, exdir = tempdir())
+dir1 <- subset(dir, grepl(pattern = "\\_b.gpkg$", dir)) # select files end with .gpkg ending "_b"
+dir2 <- subset(dir, grepl(pattern = "\\_B.gpkg$", dir)) # select files end with .gpkg ending "_B"
+#dir21 <- subset(dir, grepl(pattern = "\\.gpkg$", dir)) # select files end with .gpkg
+dir3 <- c(dir1, dir2)
+gpkg <- lapply(dir3, st_read, fid_column_name = "fid")
+```
+
+```{r include=FALSE}
+# remove lists with nrow > 0
+gpkg1 <- gpkg[sapply(gpkg, nrow) > 0]
+```
+
+```{r include=FALSE}
+# create a new variable with CRS
+gpkg2 <- lapply(gpkg1, function(x) within(x, crs <- unlist(st_crs(x), recursive = F)))
+```
+
+```{r include=FALSE}
+# select BNG 
+gpkg21 <- rbindlist(gpkg2, use.names=FALSE) %>%
+  filter(crs == "OSGB 1936 / British National Grid") %>%
+  st_sf() %>%
+  select(fid)
+```
+
+```{r include=FALSE}
+# select WGS 84
+gpkg22 <- rbindlist(gpkg2, use.names=FALSE) %>%
+  filter(crs == "WGS 84") %>%
+  st_sf() %>% 
+  st_set_crs(value = 4326) %>%  # assign original projection
+  st_transform(27700) %>% # transform to join all
+  select(fid)
+```
+
+```{r include=FALSE}
+# select != BNG | != 4326
+gpkg23 <- rbindlist(gpkg2, use.names=FALSE) %>%
+  filter(crs != "OSGB 1936 / British National Grid") %>%
+  filter(crs != "WGS 84") %>%
+  st_sf() %>%
+  select(fid)
+```
+
+```{r include=FALSE}
+npol <- gpkg21 %>%
+  rbind(gpkg22)
+npol <- npol %>%
+  rbind(gpkg23)
+```
+
+## Missing Polygons 
+
+```{r }
+zip <- "/Users/nicolas/Documents/R_GitHub/sind/Missing Polygons-20210406T082625Z-001.zip"
+dir <- unzip(zip, junkpaths = TRUE, exdir = tempdir())
+dir1 <- subset(dir, grepl(pattern = "\\_b.gpkg$", dir)) # select files end with .gpkg ending "_b"
+dir2 <- subset(dir, grepl(pattern = "\\_B.gpkg$", dir)) # select files end with .gpkg ending "_B"
+#dir21 <- subset(dir, grepl(pattern = "\\.gpkg$", dir)) # select files end with .gpkg
+dir3 <- c(dir1, dir2)
+gpkg <- lapply(dir3, st_read, fid_column_name = "fid")
+```
+
+```{r include=FALSE}
+# remove lists with nrow > 0
+gpkg1 <- gpkg[sapply(gpkg, nrow) > 0]
+```
+
+```{r include=FALSE}
+# create a new variable with CRS
+gpkg2 <- lapply(gpkg1, function(x) within(x, crs <- unlist(st_crs(x), recursive = F)))
+```
+
+```{r include=FALSE}
+# select BNG 
+gpkg21 <- rbindlist(gpkg2, use.names=FALSE) %>%
+  filter(crs == "OSGB 1936 / British National Grid") %>%
+  st_sf() %>%
+  st_transform(27700) %>%
+  select(fid)
+```
+
+```{r include=FALSE}
+# select WGS 84
+gpkg22 <- rbindlist(gpkg2, use.names=FALSE) %>%
+  filter(crs == "WGS 84") %>%
+  st_sf() %>% 
+  st_set_crs(value = 4326) %>%  # assign original projection
+  st_transform(27700) %>% # transform to join all
+  select(fid)
+```
+
+```{r include=FALSE}
+# select != BNG | != 4326
+gpkg23 <- rbindlist(gpkg2, use.names=FALSE) %>%
+  filter(crs != "OSGB 1936 / British National Grid") %>%
+  filter(crs != "WGS 84") %>%
+  st_sf() %>%
+  st_transform(27700) %>%
+  select(fid)
+```
+
+```{r include=FALSE}
+mpol <- gpkg21 %>%
+  rbind(gpkg22)
+mpol <- mpol %>%
+  rbind(gpkg23)
+```
+
+# Summary of spatial data
+
+## oct18
+
+FUCs
+```{r}
+oct18 %>%
+  st_drop_geometry() %>%
+  select(X3_Functional_Unit_Co) %>%
+  rename(FUC = X3_Functional_Unit_Co) %>%
+  summarise(Total = n(),
+            FUCs = n_distinct(FUC),
+            NA_FUCs = sum(is.na(FUC))) %>%
+  adorn_totals()
+```
+
+Some FUCs are duplicated?
+
+```{r}
+oct18 %>%
+  select(X3_Functional_Unit_Co) %>%
+  rename(FUC = X3_Functional_Unit_Co) %>%
+  st_drop_geometry() %>%
+  group_by(FUC) %>%
+  count() %>%
+  arrange(desc(n)) %>%
+  filter(n > 1) %>%
+  adorn_totals()
+```
+
+Valid/empty geometries?
+
+```{r}
+st_is_empty(oct18) %>%
+  length()
+```
+
+## npol
+
+FUCs
+
+```{r}
+npol %>%
+  st_drop_geometry() %>%
+  rename(FUC = fid) %>%
+  summarise(Total = n(),
+            FUCs = n_distinct(FUC),
+            NA_FUCs = sum(is.na(FUC))) %>%
+  adorn_totals()
+```
+
+Valid/empty geometries?
+
+```{r}
+st_is_empty(npol) %>%
+  length()
+```
+
+Some FUCs are duplicated?
+
+```{r}
+npol %>%
+  st_drop_geometry() %>%
+  rename(FUC = fid) %>%
+  group_by(FUC) %>%
+  count() %>%
+  arrange(desc(n)) %>%
+  filter(n > 1) %>%
+  adorn_totals()
+```
+
+## mpol
+
+FUCs
+
+```{r}
+mpol %>%
+  st_drop_geometry() %>%
+  rename(FUC = fid) %>%
+  summarise(Total = n(),
+            FUCs = n_distinct(FUC),
+            NA_FUCs = sum(is.na(FUC))) %>%
+  adorn_totals()
+```
+
+Valid/empty geometries?
+
+```{r}
+st_is_empty(mpol) %>%
+  length()
+```
+
+Some FUCs are duplicated?
+
+```{r}
+mpol %>%
+  st_drop_geometry() %>%
+  rename(FUC = fid) %>%
+  group_by(FUC) %>%
+  count() %>%
+  arrange(desc(n)) %>%
+  filter(n > 1) %>%
+  adorn_totals()
+```

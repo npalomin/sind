@@ -307,7 +307,6 @@ pol %>%
   filter(fid == 90220001) 
 ```
 
-
 ```{r}
 # Remove duplicated fid and geometry in pol
 pol1 <- pol %>% 
@@ -356,19 +355,23 @@ feb2021e1 %>%
   filter(!is.na(query_code)) %>%
   select(1,4,81:88)
 ```
+
 Check in "200601 New Polygons final upload" folder
 
 Query 320 : the file exist but is empty
+
 ```{r}
 ch1 <- st_read("/Users/nicolas/Documents/R_GitHub/sind/200601 New Polygons final upload/Neil/Neil Tower Workshops/320_146400035_b.gpkg")
 ```
 
 Query 320 : the file exist but is empty
+
 ```{r}
 ch2 <- st_read("/Users/nicolas/Documents/R_GitHub/sind/200601 New Polygons final upload/Neil/Neil Tower Workshops/320_146400040_b.gpkg")
 ```
 
 Query 96 : the file exist but FUC = 1780002 not 901780002 .No match
+
 ```{r}
 ch3 <- st_read("/Users/nicolas/Documents/R_GitHub/sind/200601 New Polygons final upload/Max/96_901780002_b.gpkg", fid_column_name = "fid")
 ```
@@ -377,7 +380,8 @@ ch3 <- st_read("/Users/nicolas/Documents/R_GitHub/sind/200601 New Polygons final
 ch3
 ```
 
-Query 132 : the file exist but it is incorrectly named thus not read (missing the _b or _B)
+Query 132 : the file exist but it is incorrectly named thus not read (missing the \_b or \_B)
+
 ```{r}
 ch4 <- st_read("/Users/nicolas/Documents/R_GitHub/sind/200601 New Polygons final upload/Rashi/132_90220001.gpkg", fid_column_name = "fid")
 ```
@@ -404,7 +408,8 @@ mallcsv <- mall %>%
 
 # Combine CASS and OKR data sets
 
-Prepare OKR  
+Prepare OKR
+
 ```{r}
 okr_sf <- okr %>%
   #select(1:37) %>%
@@ -442,5 +447,3 @@ bind <- bind_rows(mall, okr_sf) %>%
 ```{r}
 #write_xlsx(bind, path = "result_feb2021.xlsx", col_names = TRUE)
 ```
-
-
