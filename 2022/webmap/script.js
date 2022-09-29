@@ -3,37 +3,18 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoid2FzaGluZ3RvbnBvc3QiLCJhIjoibWJkTGx1SSJ9.6cMd
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         zoom: 15,
-        center: [-71.97722138410576, -13.517379300798098]
+        center: [-0.1036178, 51.5123581]
     });
 
     map.on('load', function() {
-        // add source and layer for museums
-        map.addSource('museums', {
-            type: 'vector',
-            url: 'mapbox://mapbox.2opop9hr'
-        });
-        map.addLayer({
-            'id': 'Layer 1',
-            'type': 'circle',
-            'source': 'museums',
-            'layout': {
-                // make layer invisible by default
-                'visibility': 'none'
-            },
-            'paint': {
-                'circle-radius': 8,
-                'circle-color': 'rgba(55,148,179,1)'
-            },
-            'source-layer': 'museum-cusco'
-        });
-
+        
         // add source and layer for contours
         map.addSource('contours', {
             type: 'geojson',
             data: 'https://raw.githubusercontent.com/npalomin/public/master/trt1.geojson'
         });
         map.addLayer({
-            'id': 'Layer 2',
+            'id': 'Layer A',
             'type': 'line',
             'source': 'contours',
             'layout': {
@@ -48,10 +29,9 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoid2FzaGluZ3RvbnBvc3QiLCJhIjoibWJkTGx1SSJ9.6cMd
             }
         });
         map.addLayer({
-            'id': 'Layer 3',
+            'id': 'Layer B',
             'type': 'line',
             'source': 'contours',
-            'source-layer': 'contour',
             'layout': {
                 // make layer invisible by default
                 'visibility': 'none',
@@ -67,11 +47,10 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoid2FzaGluZ3RvbnBvc3QiLCJhIjoibWJkTGx1SSJ9.6cMd
         
     });
     
-    
 
     // enumerate ids of the layers
-    var toggleableLayerIds = ['Layer 1', 'Layer 2', 'Layer 3'];
-
+    var toggleableLayerIds = ['Layer 1', 'Layer A', 'Layer B'];
+    
     // set up the corresponding toggle button for each layer
     for (var i = 0; i < toggleableLayerIds.length; i++) {
         var id = toggleableLayerIds[i];
@@ -80,7 +59,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoid2FzaGluZ3RvbnBvc3QiLCJhIjoibWJkTGx1SSJ9.6cMd
         link.href = '#';
         link.className = '';
         link.textContent = id;
-
+        
         link.onclick = function(e) {
             var clickedLayer = this.textContent;
             e.preventDefault();
@@ -99,6 +78,5 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoid2FzaGluZ3RvbnBvc3QiLCJhIjoibWJkTGx1SSJ9.6cMd
 
         var layers = document.getElementById('menu');
         layers.appendChild(link);
-        
-        
+
     }
