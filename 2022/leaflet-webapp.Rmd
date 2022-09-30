@@ -23,6 +23,10 @@ library(leaflet.extras)
 library(htmlwidgets)
 library(RColorBrewer)
 library(here)
+#install.packages("skimr")
+#install.packages("pillar")
+#install.packages("dplyr")
+library(pillar)
 library(skimr)
 library(janitor)
 library(unikn)
@@ -35,9 +39,14 @@ geom <- st_read(here("2022/data/geoms.gpkg"))
 
 ```{r}
 geom %>%
-  st_drop_geometry() %>%
-  count(Sector)
+  filter(!is.na(Sector)) %>%
+  filter(!is.na(Manufacturing.making)) -> geom1
 ```
+
+```{r}
+skim(geom1)
+```
+
 
 # Interactive map
 ```{r}
@@ -47,29 +56,15 @@ url_map <- "https://api.mapbox.com/styles/v1/npalomin/ckkfbcl5622tv17rzxz1lpt33/
 colorRampPalette(brewer.pal(8, "Set1"))(10) -> pal10
 seecol(pal10)
 
-paletteS <- colorFactor(palette = "magma", levels = unique(geom$Sector))
+paletteS <- colorFactor(palette = pal10, levels = unique(geom1$Sector))
 
-paletteS(unique(geom$Sector))
+paletteM <- colorFactor(palette = rev(colorRampPalette(brewer.pal(9, "Set1"))(2)),
+                        levels = unique(geom1$Manufacturing.making), na.color = "transparent")
 
-seecol(c("#E41A1C" ,"#746389", "#4C8F80", "#5D916D","#8F6E80", "#D0655C" ,"#F99F18" ,"#F3CA27", "#D1A237" ,"#BF6254", "#F781BF"))
+
+
+seecol(paletteM(unique(geom1$Manufacturing.making)))
 ```
-
-```{r}
-tmap_options(check.and.fix = TRUE)
-tmap_mode("view")
-
-
-
-geom %>%
-  st_transform(4326) %>%
-  tm_shape() +
-  tm_polygons(col = "Sector")
-```
-
-```{r}
-unique(geom$Sector)
-```
-
 
 ref: https://rstudio.github.io/leaflet/colors.html
 ref: file:///Users/nicolas/Documents/R_GitHub/BGS/2bu_2ye.html
@@ -77,43 +72,61 @@ ref: https://github.com/npalomin/BGS/blob/main/Data_preparation.Rmd
 ref: file:///Users/nicolas/Documents/R_GitHub/urbandp/shiny_test/Exploratory.html
 
 ```{r}
-geom %>%
+sf_use_s2(FALSE)
+
+geom1 %>%
   st_transform(4326) %>%
-  # slice(100:200) %>%
-  filter(!is.na(Name.of.organis)) %>%
   leaflet() %>%
   addTiles(urlTemplate = url_map, group = "Map") %>%
   addProviderTiles(providers$CartoDB.Positron, group = "Light") %>%
+  # sector
   addPolygons(color = ~paletteS(Sector),
+              fillColor = ~paletteS(Sector),
               stroke = TRUE,
               weight = 1,
               opacity = 1,
               fillOpacity = 0.8,
               label = paste(
-                "Name: ", geom$Name.of.organis, "<br/>",
-                "Sector: ", geom$Sector, "<br/>",
-                "Category: ", geom$Category.plus,
+                "Name: ", geom1$Name.of.organis, "<br/>",
+                "Sector: ", geom1$Sector, "<br/>",
+                "Category: ", geom1$Category.plus, "<br/>",
+                "Premises type: ", geom1$Premises, "<br/>",
+                "Address: ", paste0(geom1$Street.name.eg, " ", geom1$Street.number), "<br/>",
+                "<img src='", geom$External.photo, "' width=\"300\">",
                 sep="") %>% lapply(htmltools::HTML),
               group = "Sector",
               highlightOptions = highlightOptions(fillOpacity = 0.75, weight = 1, opacity = 1, color = "yellow", bringToFront = TRUE, sendToBack = TRUE)) %>%
-  addLegend(colors = pal11, labels = unique(geom$Sector), group = "Sector") %>%
+  addLegend(colors = pal10, labels = unique(geom1$Sector), group = "Sector", title = "Sector", opacity = 1) %>%
+  addPolygons(color = ~paletteM(Manufacturing.making),
+              fillColor = ~paletteM(Manufacturing.making),
+              stroke = TRUE,
+              weight = 1,
+              opacity = 1,
+              fillOpacity = 0.8,
+              group = "Making",
+              label = paste(
+                "Name: ", geom1$Name.of.organis, "<br/>",
+                "Sector: ", geom1$Sector, "<br/>",
+                "Category: ", geom1$Category.plus, "<br/>",
+                "Manufacturing/Making: ", geom1$Manufacturing.making,
+                sep="") %>% lapply(htmltools::HTML),
+              highlightOptions = highlightOptions(fillOpacity = 0.75, weight = 1, opacity = 1, color = "yellow", bringToFront = TRUE, sendToBack = TRUE)) %>%
+  addLegend(colors = rev(colorRampPalette(brewer.pal(9, "Set1"))(2)),
+            labels = unique(geom1$Manufacturing.making), group = "Making", opacity = 1,
+            title = "Manufacturing/Making") %>%
   # layers controls
   addLayersControl(
     baseGroups = c("Map","Light"),
-    overlayGroups = c("Sector"),
+    overlayGroups = c("Sector", "Making"),
     options = layersControlOptions(collapsed = FALSE),
-    position = "topleft")
+    position = "topleft") %>%
+  hideGroup(c("Making"))
 ```
 
 ```{r}
-geom$Sector
-```
-
-
-```{r}
-geom %>%
+geom1 %>%
   st_drop_geometry() %>%
-  count(Wmt.sector) %>%
-  arrange(desc(n))
+  count(Manufacturing.making)
 ```
+
 

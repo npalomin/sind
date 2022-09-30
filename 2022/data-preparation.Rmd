@@ -151,6 +151,7 @@ geom %>%
   count(Category.plus) %>%
   print.AsIs()
 ```
+
 ```{r}
 geom %>%
   st_drop_geometry() %>%
