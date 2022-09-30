@@ -1,0 +1,119 @@
+---
+title: "leaflet-webapp"
+output: 
+  html_document:
+    code_folding: hide
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(sf)
+library(readr)
+library(mapview)
+library(tidyverse)
+library(ggthemes)
+library(webshot)
+library(leaflet)
+library(leafgl)
+library(leaflet.extras)
+library(htmlwidgets)
+library(RColorBrewer)
+library(here)
+library(skimr)
+library(janitor)
+library(unikn)
+library(tmap)
+```
+
+```{r}
+geom <- st_read(here("2022/data/geoms.gpkg"))
+```
+
+```{r}
+geom %>%
+  st_drop_geometry() %>%
+  count(Sector)
+```
+
+# Interactive map
+```{r}
+url_map <- "https://api.mapbox.com/styles/v1/npalomin/ckkfbcl5622tv17rzxz1lpt33/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibnBhbG9taW4iLCJhIjoiY2owMDF5YXQxMDA2eDMybmwwd2tqYTU3bSJ9.Icvrku6Q57o8L0gncJI89g"
+
+# sector
+colorRampPalette(brewer.pal(8, "Set1"))(10) -> pal10
+seecol(pal10)
+
+paletteS <- colorFactor(palette = "magma", levels = unique(geom$Sector))
+
+paletteS(unique(geom$Sector))
+
+seecol(c("#E41A1C" ,"#746389", "#4C8F80", "#5D916D","#8F6E80", "#D0655C" ,"#F99F18" ,"#F3CA27", "#D1A237" ,"#BF6254", "#F781BF"))
+```
+
+```{r}
+tmap_options(check.and.fix = TRUE)
+tmap_mode("view")
+
+
+
+geom %>%
+  st_transform(4326) %>%
+  tm_shape() +
+  tm_polygons(col = "Sector")
+```
+
+```{r}
+unique(geom$Sector)
+```
+
+
+ref: https://rstudio.github.io/leaflet/colors.html
+ref: file:///Users/nicolas/Documents/R_GitHub/BGS/2bu_2ye.html
+ref: https://github.com/npalomin/BGS/blob/main/Data_preparation.Rmd
+ref: file:///Users/nicolas/Documents/R_GitHub/urbandp/shiny_test/Exploratory.html
+
+```{r}
+geom %>%
+  st_transform(4326) %>%
+  # slice(100:200) %>%
+  filter(!is.na(Name.of.organis)) %>%
+  leaflet() %>%
+  addTiles(urlTemplate = url_map, group = "Map") %>%
+  addProviderTiles(providers$CartoDB.Positron, group = "Light") %>%
+  addPolygons(color = ~paletteS(Sector),
+              stroke = TRUE,
+              weight = 1,
+              opacity = 1,
+              fillOpacity = 0.8,
+              label = paste(
+                "Name: ", geom$Name.of.organis, "<br/>",
+                "Sector: ", geom$Sector, "<br/>",
+                "Category: ", geom$Category.plus,
+                sep="") %>% lapply(htmltools::HTML),
+              group = "Sector",
+              highlightOptions = highlightOptions(fillOpacity = 0.75, weight = 1, opacity = 1, color = "yellow", bringToFront = TRUE, sendToBack = TRUE)) %>%
+  addLegend(colors = pal11, labels = unique(geom$Sector), group = "Sector") %>%
+  # layers controls
+  addLayersControl(
+    baseGroups = c("Map","Light"),
+    overlayGroups = c("Sector"),
+    options = layersControlOptions(collapsed = FALSE),
+    position = "topleft")
+```
+
+```{r}
+geom$Sector
+```
+
+
+```{r}
+geom %>%
+  st_drop_geometry() %>%
+  count(Wmt.sector) %>%
+  arrange(desc(n))
+```
+

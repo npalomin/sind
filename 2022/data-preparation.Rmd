@@ -1,0 +1,171 @@
+---
+title: "data-preparation"
+output: 
+  html_document:
+    code_folding: hide
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(sf)
+library(readr)
+library(mapview)
+library(tidyverse)
+library(ggthemes)
+library(webshot)
+library(leaflet)
+library(leafgl)
+library(leaflet.extras)
+library(htmlwidgets)
+library(RColorBrewer)
+library(here)
+library(skimr)
+library(janitor)
+library(datapasta)
+```
+
+# Data
+```{r message=FALSE, warning=FALSE, include=FALSE}
+# geometries with 'U_ID' and 'source' (Cities and WMT)
+sf <- st_read(here("2022/data/result_feb2021.gpkg"))
+df <- read_csv(here("2022/data/result_feb2021 - Sheet1.csv"))
+```
+
+```{r}
+df %>%
+  select(132,5,17,73,25,27,57,59:62,64,69,133,134,135,141,142,136,137,138,139,140) %>%
+  clean_names() %>%
+  rename_with(~gsub("\\d+", "", .)) %>%
+  rename_all(~str_replace_all(.,"x__","")) %>%
+  rename(description_of_1 = "s_d_rs___description_of",
+         category_plus = "cetegory_plus") %>%
+  clean_names(case = "sentence") -> df1
+
+# df %>%
+#   count(`19_31_Floor_levels_t`) %>%
+#   arrange(desc(n))
+
+# edit values text cases.
+df1 %>%
+  mutate_at(c(2), str_to_title) %>%
+  mutate_at(c(4), str_to_title) -> df1
+
+# create new variable 'Level' to account for overlapping records
+df1 %>%
+  mutate(Level = case_when(str_detect(`Floor levels t`, "Ground") ~ "G",
+                                      TRUE ~ "L1"),
+         Level = case_when(is.na(`Floor levels t`) ~ "G",
+                           TRUE ~ Level),
+         Level = case_when(`Floor levels t` %in%  c("Level 2", "Level 3", "Level 4 and above") ~ "L2",
+                           TRUE ~ Level)) -> df1
+
+#write_csv(df1, here("2022/data/dataframe-clean-2022.csv"))
+```
+
+```{r}
+sf %>%
+  select(U_ID) %>%
+  left_join(df1, by = c("U_ID" = "U id")) -> sf1
+
+sf1 %>%
+  filter(st_is_empty(.) == FALSE) -> sf1
+
+# WMT building polygons
+sfw <- st_read(here("f_wmt_poi_Buildings.gpkg"))
+sfw %>%
+  select(U_ID) -> sfw1
+
+#st_write(sf1, here("2022/data/geoms-temp.gpkg"), append=FALSE)
+```
+
+```{r}
+sf1 %>%
+  mutate(geomtype = st_geometry_type(.)) -> sf2
+
+# not wmt and NA
+sf2 %>%
+  filter(Source != "WMT" | is.na(Source)) -> sf2nw
+
+# wmt
+sf2 %>%
+  filter(Source == "WMT") -> sf2w
+
+# polygons
+sf2w %>%
+  filter(U_ID %in% sfw1$U_ID) %>%
+  # sfw1 are polygons
+  st_sf(geom = sfw1[sfw1$U_ID %in% sf2w$U_ID,]$geom) -> sf2wpol
+
+# points
+sf2w %>%
+  filter(!U_ID %in% sf2wpol$U_ID) %>%
+  st_buffer(4) -> sf2wpoi
+
+# bind together (2277,545,223)
+sf2nw %>%
+  bind_rows(sf2wpoi) %>%
+  bind_rows(sf2wpol) %>%
+  st_cast("MULTIPOLYGON") -> geoms
+
+# create simplified category.
+sector <- data.frame(
+  stringsAsFactors = FALSE,
+     Category.plus = c("Vehicle / equipment depot, construction related",
+                       "Vehicle / equipment depot, public transport",
+                       "Vehicle / equipment depot, other inc service / hire","Vehicle / parts sale","Waste / recycling",
+                       "Utilities infrastructure","Distribution / courier facility",
+                       "Wholesale, food / drink",
+                       "Wholesale, building materials / equipment in hire","Wholesale, other",
+                       "Repair, motor vehicles","Repair, other",
+                       "Manufacture of food / drink","Artisan / art production",
+                       "Bespoke fabrication, construction","Bespoke fabrication, other","Printing",
+                       "Laundry","Manufacture, other",
+                       "Fully / predominantly housing","Housing within mixed development",
+                       "Fully / predominantly non-industrial other than housing",
+                       "Vacant industrial","Vacant, other than industrial","Demolished",
+                       "Storage","Unknown"),
+            Sector = c("Transportation and Storage",
+                       "Transportation and Storage","Transportation and Storage",
+                       "Retail Trade","Waste Management","Utilities supply",
+                       "Transportation and Storage","Wholesale","Wholesale",
+                       "Wholesale","Repair of Motor Vehicles","Manufacturing",
+                       "Manufacturing","Manufacturing","Manufacturing",
+                       "Manufacturing","Manufacturing","Other Service Activities",
+                       "Manufacturing","n/a","n/a","n/a","Vacant Industrial",
+                       "n/a","n/a","Transportation and Storage","n/a"))
+
+# append sectors
+geoms %>%
+  left_join(., sector, by = c("Category plus" = "Category.plus")) -> geoms
+
+#st_write(geoms, here("2022/data/geoms.gpkg"), append=FALSE)
+```
+
+```{r}
+geom %>%
+  st_drop_geometry() %>%
+  count(Category.plus) %>%
+  print.AsIs()
+```
+```{r}
+geom %>%
+  st_drop_geometry() %>%
+  count(Category.plus) %>%
+  arrange(desc(n)) %>%
+  print.AsIs()
+```
+
+
+```{r}
+skim(geoms) -> table
+table
+table %>%
+  select(skim_variable, n_missing, complete_rate) %>%
+  arrange(desc(complete_rate))
+```
+
+
