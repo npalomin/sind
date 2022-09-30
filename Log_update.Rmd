@@ -27,6 +27,10 @@ Possible reasons:
 
 That's it. I did some visual inspections to verify that the matching is as correct as it can be.
 
+You can check more details of the process here:
+
+[https://npalomin.github.io/sind/Data_report_5.html](https://npalomin.github.io/sind/Data_report_3.html)
+
 Best,
 
 Nicolas
