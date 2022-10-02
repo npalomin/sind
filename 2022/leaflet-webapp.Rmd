@@ -34,7 +34,11 @@ library(tmap)
 ```
 
 ```{r}
-geom <- st_read(here("2022/data/geoms.gpkg"))
+geom <- st_read(here("2022/data/survey-results.gpkg"))
+#geomg <- st_read(here("2022/data/survey-results.geojson"))
+bound <- st_read(here("2022/data/southwark-boundary.gpkg"))
+
+sf_use_s2(FALSE)
 ```
 
 ```{r}
@@ -54,16 +58,18 @@ url_map <- "https://api.mapbox.com/styles/v1/npalomin/ckkfbcl5622tv17rzxz1lpt33/
 
 # sector
 colorRampPalette(brewer.pal(8, "Set1"))(10) -> pal10
-seecol(pal10)
+seecol(pal10, hex=TRUE)
 
-paletteS <- colorFactor(palette = pal10, levels = unique(geom1$Sector))
+# palette sector
+paletteS <- colorFactor(palette = pal10, levels = sort(unique(geom1$Sector)))
 
-paletteM <- colorFactor(palette = rev(colorRampPalette(brewer.pal(9, "Set1"))(2)),
+# palette manufacturing
+paletteM <- colorFactor(palette = c("grey60", "#E41A1C"),
                         levels = unique(geom1$Manufacturing.making), na.color = "transparent")
 
 
 
-seecol(paletteM(unique(geom1$Manufacturing.making)))
+#seecol(paletteM(unique(geom1$Manufacturing.making)))
 ```
 
 ref: https://rstudio.github.io/leaflet/colors.html
@@ -71,14 +77,85 @@ ref: file:///Users/nicolas/Documents/R_GitHub/BGS/2bu_2ye.html
 ref: https://github.com/npalomin/BGS/blob/main/Data_preparation.Rmd
 ref: file:///Users/nicolas/Documents/R_GitHub/urbandp/shiny_test/Exploratory.html
 
-```{r}
-sf_use_s2(FALSE)
+```{r message=FALSE, warning=FALSE}
+bound %>%
+  st_transform(4326) -> bound4
 
+# create grid
+bound %>%
+  st_transform(3857) %>%
+  # approx to 500m
+  st_make_grid(., 782) %>%
+  st_transform(4326) %>%
+  st_intersection(bound4) -> grid
+
+bound %>%
+  st_transform(3857) %>%
+  # approx to 500m
+  st_make_grid(., 782, what = "corners") %>%
+  st_transform(4326) %>%
+  st_intersection(bound4) %>%
+  st_as_sf() -> grid2
+
+grid2 %>%
+  st_transform(27700) %>%
+  st_cast("MULTIPOINT") %>%
+  st_buffer(., dist = 20) -> corners
+
+grid %>%
+  st_cast("LINESTRING") %>%
+  st_transform(27700) %>%
+  st_intersection(corners) %>%
+  st_transform(4326) -> grid3
+```
+
+```{r}
+grid2 %>%
+  st_transform(27700) %>%
+  st_cast("MULTIPOINT") %>%
+  st_buffer(., dist = 20) %>%
+  plot()
+```
+
+
+```{r}
+leaflet() %>%
+  addTiles(urlTemplate = url_map, group = "Map") %>%
+  addProviderTiles(providers$CartoDB.Positron, group = "Light") %>%
+  # boundary
+  addPolylines(data = bound4,
+              color = "#bfaabf",
+              weight = 2) %>%
+  addPolylines(data = grid,
+              color = "#bfaabf",
+              weight = 0.5) %>%
+  addPolylines(data = grid3,
+              color = "#bfaabf",
+              weight = 1.1) %>%
+  addScaleBar()
+
+mapview(bound4)
+```
+
+
+```{r message=FALSE, warning=FALSE}
 geom1 %>%
   st_transform(4326) %>%
   leaflet() %>%
-  addTiles(urlTemplate = url_map, group = "Map") %>%
-  addProviderTiles(providers$CartoDB.Positron, group = "Light") %>%
+  addTiles(urlTemplate = url_map, group = "Satellite") %>%
+  addProviderTiles(providers$CartoDB.Positron, group = "Street") %>%
+  setView(lng = -0.076, lat = 51.488, zoom = 15) %>%
+  addScaleBar("bottomleft", options = scaleBarOptions(metric = TRUE)) %>%
+  # boundary & grid
+  addPolylines(data = bound4,
+              color = "#bfaabf",
+              weight = 3) %>%
+  addPolylines(data = grid,
+              color = "#bfaabf",
+              weight = 0.5) %>%
+  addPolylines(data = grid3,
+              color = "#bfaabf",
+              weight = 1.1) %>%
   # sector
   addPolygons(color = ~paletteS(Sector),
               fillColor = ~paletteS(Sector),
@@ -92,18 +169,20 @@ geom1 %>%
                 "Category: ", geom1$Category.plus, "<br/>",
                 "Premises type: ", geom1$Premises, "<br/>",
                 "Address: ", paste0(geom1$Street.name.eg, " ", geom1$Street.number), "<br/>",
-                "<img src='", geom$External.photo, "' width=\"300\">",
+                "<img src='https://maps.googleapis.com/maps/api/streetview?size=640x640&location=", geom1$coordy, ",", geom1$coordx, "&heading=", geom1$heading, "&pitch=1&key=AIzaSyC-v_x-RZvp_a545Q-XCRf_NGwEo9X7mBI&width=320' width=\"300\">",
                 sep="") %>% lapply(htmltools::HTML),
               group = "Sector",
               highlightOptions = highlightOptions(fillOpacity = 0.75, weight = 1, opacity = 1, color = "yellow", bringToFront = TRUE, sendToBack = TRUE)) %>%
-  addLegend(colors = pal10, labels = unique(geom1$Sector), group = "Sector", title = "Sector", opacity = 1) %>%
+  addLegend(colors = pal10, labels = sort(unique(geom1$Sector)), group = "Sector", title = "Sector", opacity = 1,
+            position = "bottomright") %>%
+  # manufacturing
   addPolygons(color = ~paletteM(Manufacturing.making),
               fillColor = ~paletteM(Manufacturing.making),
               stroke = TRUE,
               weight = 1,
               opacity = 1,
               fillOpacity = 0.8,
-              group = "Making",
+              group = "Manufacturing",
               label = paste(
                 "Name: ", geom1$Name.of.organis, "<br/>",
                 "Sector: ", geom1$Sector, "<br/>",
@@ -113,15 +192,46 @@ geom1 %>%
               highlightOptions = highlightOptions(fillOpacity = 0.75, weight = 1, opacity = 1, color = "yellow", bringToFront = TRUE, sendToBack = TRUE)) %>%
   addLegend(colors = rev(colorRampPalette(brewer.pal(9, "Set1"))(2)),
             labels = unique(geom1$Manufacturing.making), group = "Making", opacity = 1,
-            title = "Manufacturing/Making") %>%
+            title = "Manufacturing/Making",
+            position = "bottomright") %>%
   # layers controls
   addLayersControl(
-    baseGroups = c("Map","Light"),
-    overlayGroups = c("Sector", "Making"),
-    options = layersControlOptions(collapsed = FALSE),
-    position = "topleft") %>%
-  hideGroup(c("Making"))
+    overlayGroups = c("Sector", "Manufacturing"),
+    baseGroups = c("Street","Satellite"),
+    position = "topright",
+    options = layersControlOptions(collapsed = FALSE)) %>%
+      htmlwidgets::onRender("function() {
+            $('.leaflet-control-layers-overlays').prepend('<label style=\"text-align:center\">Map Layers</label>');}") %>%
+  hideGroup(c("Manufacturing")) %>%
+  addControl("<p>
+<img src=\"https://cities.research.londonmet.ac.uk/wp-content/uploads/aad-cities-logo-london-metropolitan-university.jpg\" style=\"width:180px;\"><br>
+<b>Southwark Industrial Audit</b><br>
+<i class='fas fa-info-circle' style='font-size:20px;color:#2E2E2E'></i>
+
+<a href=\"https://cities.research.londonmet.ac.uk/\" target=\"_blank\">Data & Methodology</a>
+<hr></p>", position = "topleft") -> webmap
 ```
+
+```{r}
+#webmap
+saveWidget(webmap, here("2022/index.html"), selfcontained = FALSE)
+```
+
+```{r}
+
+```
+
+
+
+```{r}
+geom1 %>%
+  st_drop_geometry() %>%
+  count(Sector) %>%
+  arrange(desc(n))
+
+
+```
+
 
 ```{r}
 geom1 %>%

@@ -142,7 +142,82 @@ sector <- data.frame(
 geoms %>%
   left_join(., sector, by = c("Category plus" = "Category.plus")) -> geoms
 
-#st_write(geoms, here("2022/data/geoms.gpkg"), append=FALSE)
+geoms %>%
+  select(-geomtype) -> geoms
+```
+
+```{r message=FALSE, warning=FALSE}
+# calculate heading for gsv
+
+streets <- st_read(here("2022/data/oproad_gbRoadLink.gpkg"))
+geoms %>%
+  st_centroid() -> cent
+
+remotes::install_github("michaeldorman/nngeo")
+library(nngeo)
+library(lwgeom)
+
+st_connect(cent, streets) -> lines
+
+# ref: https://stackoverflow.com/questions/72276233/calculate-the-angle-between-two-sf-points-in-r-to-calculate-the-direction-of-roa
+
+lines %>%
+  st_as_sf() %>%
+  st_transform(4326) -> lines
+
+lines %>%
+  mutate(id = row.names(.)) %>%
+  st_cast("POINT") %>% ## split into constituent points
+  group_by(id) %>% 
+  filter(row_number()==1 | row_number()==n()) %>% ## take start and end points of each osm id
+  mutate(bearing = c(lwgeom::st_geod_azimuth(x))) %>% ## calculate bearing of start and end points
+  mutate(bearing = as.numeric(units::set_units(bearing, "degrees"))) %>% ## convert to degrees
+  distinct(id, .keep_all = TRUE) -> linesb ## just take one point for each id
+
+# correct possible rotation?
+linesb %>%
+  mutate(bearing2 = case_when(bearing > 0 & bearing <= 90 ~ 90 - bearing,
+                              bearing > 90 & bearing <= 180 ~ (180 - bearing) + 270,
+                              bearing < 0 & bearing >= -90 ~ 90 + abs(bearing),
+                              bearing < -90 & bearing >= -180 ~ 90 + abs(bearing))) %>%
+  ungroup() %>%
+  mutate(coordx = st_coordinates(.)[,1],
+         coordy = st_coordinates(.)[,2],
+         heading = bearing - 180) -> linesb1
+
+# append new data
+geoms %>%
+  bind_cols(linesb1[,c("coordx", "coordy", "heading")]) %>%
+  select(-x) -> geoms
+```
+
+```{r message=FALSE, warning=FALSE}
+mapview(linesb1) + mapview(lines)
+```
+
+
+51.4772738,-0.0952892
+
+id=1695
+https://maps.googleapis.com/maps/api/streetview?size=640x640&location=51.47701,-0.09523967&heading=180&pitch=1&key=AIzaSyC-v_x-RZvp_a545Q-XCRf_NGwEo9X7mBI&width=320
+
+id=1345
+51.47158,-0.06857268 9.2021635 (+90)
+https://maps.googleapis.com/maps/api/streetview?size=640x640&location=51.47158,-0.06857268&heading=99&pitch=1&key=AIzaSyC-v_x-RZvp_a545Q-XCRf_NGwEo9X7mBI&width=320
+
+id=551
+51.47625,-0.05574886
+https://maps.googleapis.com/maps/api/streetview?size=640x640&location=51.47625,-0.05574886&heading=-248.2&pitch=1&key=AIzaSyC-v_x-RZvp_a545Q-XCRf_NGwEo9X7mBI&width=320
+
+```{r}
+-68 - 180
+```
+
+
+```{r}
+st_write(geoms, here("2022/data/survey-results.gpkg"), append=FALSE)
+st_write(geoms, here("2022/data/survey-results.geojson"), append=FALSE)
+st_write(geoms, here("2022/data/survey-results.csv"), layer_options = c("GEOMETRY=AS_WKT","CREATE_CSVT=YES"), delete_dsn=TRUE)
 ```
 
 ```{r}
