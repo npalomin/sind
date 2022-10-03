@@ -37,9 +37,34 @@ library(tmap)
 geom <- st_read(here("2022/data/survey-results.gpkg"))
 #geomg <- st_read(here("2022/data/survey-results.geojson"))
 bound <- st_read(here("2022/data/southwark-boundary.gpkg"))
+ipol <- st_read("/Users/nicolas/Documents/R_GitHub/sind/QGIS/data/dataSouthwark/proc-cleaned/industrial-planning-polygons.gpkg")
 
 sf_use_s2(FALSE)
 ```
+
+```{r}
+ipol %>%
+  mutate(Planning_info = case_when(is.na(Name) ~ LSIS,
+                                   TRUE ~ Name)) -> ipol1
+
+ipol1 %>%
+  mutate(Planning_info = case_when(is.na(Planning_info) ~ Address,
+                                   TRUE ~ Planning_info),
+         layer = case_when(layer == "LSIS" ~ "Locally Significant Industrial Site",
+                           layer == "NSPSPIL" ~ "NSP Strategic Protected Industrial Land",
+                           layer == "PILL" ~ "Preferred Industrial Location Local",
+                           layer == "PILS" ~ "Preferred Industrial Location Strategic",
+                           layer == "SPA" ~ "Southwark Planning Application")) -> ipol2
+
+ipol2 %>%
+  #st_drop_geometry() %>%
+  select(Planning_info, layer) %>%
+  rename(Layer = layer) -> ipol3
+ipol3
+
+#st_write(ipol3, here("2022/Data/industrial-planning-polygons.gpkg"))
+```
+
 
 ```{r}
 geom %>%
@@ -58,7 +83,7 @@ url_map <- "https://api.mapbox.com/styles/v1/npalomin/ckkfbcl5622tv17rzxz1lpt33/
 
 # sector
 colorRampPalette(brewer.pal(8, "Set1"))(10) -> pal10
-seecol(pal10, hex=TRUE)
+#seecol(pal10, hex=TRUE)
 
 # palette sector
 paletteS <- colorFactor(palette = pal10, levels = sort(unique(geom1$Sector)))
@@ -67,9 +92,26 @@ paletteS <- colorFactor(palette = pal10, levels = sort(unique(geom1$Sector)))
 paletteM <- colorFactor(palette = c("grey60", "#E41A1C"),
                         levels = unique(geom1$Manufacturing.making), na.color = "transparent")
 
+# palette Repair
+paletteR <- colorFactor(palette = c("grey60", "#658E67"),
+                        levels = unique(geom1$Repair), na.color = "transparent")
+
+# palette Creative industrial
+paletteC <- colorFactor(palette = c("grey60", "#824273"),
+                        levels = unique(geom1$Creative.industrial), na.color = "transparent")
+
+# palette Creative industrial
+paletteB <- colorFactor(palette = c("grey60", "#c6610a"),
+                        levels = unique(geom1$Building.construction.repair), na.color = "transparent")
+
+# palette Creative industrial
+paletteW <- colorFactor(palette = c("grey60", "#ec53a4"),
+                        levels = unique(geom1$Wholesale.distribution), na.color = "transparent")
+
 
 
 #seecol(paletteM(unique(geom1$Manufacturing.making)))
+#seecol(c("#E41A1C","#658E67","#824273","#c6610a","#ec53a4"))
 ```
 
 ref: https://rstudio.github.io/leaflet/colors.html
@@ -119,6 +161,10 @@ grid2 %>%
 
 
 ```{r}
+bound4
+ipol3 %>%
+  st_transform(4326) -> ipol3
+
 leaflet() %>%
   addTiles(urlTemplate = url_map, group = "Map") %>%
   addProviderTiles(providers$CartoDB.Positron, group = "Light") %>%
@@ -132,9 +178,21 @@ leaflet() %>%
   addPolylines(data = grid3,
               color = "#bfaabf",
               weight = 1.1) %>%
+  addPolylines(data = ipol3,
+              color = "#3aa9ab",
+              weight = 3,
+              opacity = 0.2,
+              fill = TRUE,
+              fillColor = "#3aa9ab",
+              fillOpacity = 0.01,
+              #dashArray = "3",
+              label = paste(ipol3$Planning_info, "<br/>", ipol3$Layer, 
+                            sep="") %>% lapply(htmltools::HTML),
+              group = "Industrial Planning",
+              highlightOptions = highlightOptions(fillOpacity = 0.2, weight = 1, opacity = 1, color = "yellow", bringToFront = TRUE, sendToBack = TRUE)) %>%
   addScaleBar()
 
-mapview(bound4)
+#mapview(bound4)
 ```
 
 
@@ -191,18 +249,107 @@ geom1 %>%
                 sep="") %>% lapply(htmltools::HTML),
               highlightOptions = highlightOptions(fillOpacity = 0.75, weight = 1, opacity = 1, color = "yellow", bringToFront = TRUE, sendToBack = TRUE)) %>%
   addLegend(colors = rev(colorRampPalette(brewer.pal(9, "Set1"))(2)),
-            labels = unique(geom1$Manufacturing.making), group = "Making", opacity = 1,
+            labels = unique(geom1$Manufacturing.making), group = "Manufacturing", opacity = 1,
             title = "Manufacturing/Making",
             position = "bottomright") %>%
+  # repair
+  addPolygons(color = ~paletteR(Repair),
+              fillColor = ~paletteR(Repair),
+              stroke = TRUE,
+              weight = 1,
+              opacity = 1,
+              fillOpacity = 0.8,
+              group = "Repair",
+              label = paste(
+                "Name: ", geom1$Name.of.organis, "<br/>",
+                "Sector: ", geom1$Sector, "<br/>",
+                "Category: ", geom1$Category.plus, "<br/>",
+                "Repair: ", geom1$Repair,
+                sep="") %>% lapply(htmltools::HTML),
+              highlightOptions = highlightOptions(fillOpacity = 0.75, weight = 1, opacity = 1, color = "yellow", bringToFront = TRUE, sendToBack = TRUE)) %>%
+  addLegend(colors = c("grey60", "#658E67"),
+            labels = unique(geom1$Repair), group = "Repair", opacity = 1,
+            title = "Repair",
+            position = "bottomright") %>%
+  # creative
+  addPolygons(color = ~paletteC(Creative.industrial),
+              fillColor = ~paletteC(Creative.industrial),
+              stroke = TRUE,
+              weight = 1,
+              opacity = 1,
+              fillOpacity = 0.8,
+              group = "Creative",
+              label = paste(
+                "Name: ", geom1$Name.of.organis, "<br/>",
+                "Sector: ", geom1$Sector, "<br/>",
+                "Category: ", geom1$Category.plus, "<br/>",
+                "Creative: ", geom1$Creative.industrial,
+                sep="") %>% lapply(htmltools::HTML),
+              highlightOptions = highlightOptions(fillOpacity = 0.75, weight = 1, opacity = 1, color = "yellow", bringToFront = TRUE, sendToBack = TRUE)) %>%
+  addLegend(colors = c("grey60", "#824273"),
+            labels = unique(geom1$Creative.industrial), group = "Creative", opacity = 1,
+            title = "Creative",
+            position = "bottomright") %>%
+  # building
+  addPolygons(color = ~paletteB(Building.construction.repair),
+              fillColor = ~paletteB(Building.construction.repair),
+              stroke = TRUE,
+              weight = 1,
+              opacity = 1,
+              fillOpacity = 0.8,
+              group = "Building",
+              label = paste(
+                "Name: ", geom1$Name.of.organis, "<br/>",
+                "Sector: ", geom1$Sector, "<br/>",
+                "Category: ", geom1$Category.plus, "<br/>",
+                "Building/Construction: ", geom1$Building.construction.repair,
+                sep="") %>% lapply(htmltools::HTML),
+              highlightOptions = highlightOptions(fillOpacity = 0.75, weight = 1, opacity = 1, color = "yellow", bringToFront = TRUE, sendToBack = TRUE)) %>%
+  addLegend(colors = c("grey60", "#824273"),
+            labels = unique(geom1$Building.construction.repair), group = "Building", opacity = 1,
+            title = "Building",
+            position = "bottomright") %>%
+  # wholesale
+  addPolygons(color = ~paletteW(Wholesale.distribution),
+              fillColor = ~paletteW(Wholesale.distribution),
+              stroke = TRUE,
+              weight = 1,
+              opacity = 1,
+              fillOpacity = 0.8,
+              group = "Wholesale",
+              label = paste(
+                "Name: ", geom1$Name.of.organis, "<br/>",
+                "Sector: ", geom1$Sector, "<br/>",
+                "Category: ", geom1$Category.plus, "<br/>",
+                "Wholesale/Distribution: ", geom1$Wholesale.distribution,
+                sep="") %>% lapply(htmltools::HTML),
+              highlightOptions = highlightOptions(fillOpacity = 0.75, weight = 1, opacity = 1, color = "yellow", bringToFront = TRUE, sendToBack = TRUE)) %>%
+  addLegend(colors = c("grey60", "#ec53a4", "transparent"),
+            labels = unique(geom1$Wholesale.distribution), group = "Wholesale", opacity = 1,
+            title = "Building",
+            position = "bottomright") %>%
+  # indu polygons
+  addPolylines(data = ipol3,
+              color = "#3aa9ab",
+              weight = 3,
+              opacity = 0.2,
+              fill = TRUE,
+              fillColor = "#3aa9ab",
+              fillOpacity = 0.01,
+              #dashArray = "3",
+              label = paste(ipol3$Planning_info, "<br/>", ipol3$Layer, 
+                            sep="") %>% lapply(htmltools::HTML),
+              group = "Industrial Planning",
+              highlightOptions = highlightOptions(fillOpacity = 0.2, weight = 1, opacity = 1, color = "yellow", bringToFront = TRUE, sendToBack = TRUE)) %>%
   # layers controls
   addLayersControl(
-    overlayGroups = c("Sector", "Manufacturing"),
+    overlayGroups = c("Sector","Manufacturing","Repair","Creative","Building","Wholesale","Industrial Planning"),
     baseGroups = c("Street","Satellite"),
     position = "topright",
     options = layersControlOptions(collapsed = FALSE)) %>%
       htmlwidgets::onRender("function() {
             $('.leaflet-control-layers-overlays').prepend('<label style=\"text-align:center\">Map Layers</label>');}") %>%
-  hideGroup(c("Manufacturing")) %>%
+  hideGroup(c("Manufacturing", "Repair", "Creative","Building","Wholesale","Industrial Planning")) %>%
   addControl("<p>
 <img src=\"https://cities.research.londonmet.ac.uk/wp-content/uploads/aad-cities-logo-london-metropolitan-university.jpg\" style=\"width:180px;\"><br>
 <b>Southwark Industrial Audit</b><br>
@@ -217,9 +364,21 @@ geom1 %>%
 saveWidget(webmap, here("2022/index.html"), selfcontained = FALSE)
 ```
 
-```{r}
+# palette Repair
+paletteR <- colorFactor(palette = c("grey60", "#658E67"),
+                        levels = unique(geom1$Repair), na.color = "transparent")
 
-```
+# palette Creative industrial
+paletteC <- colorFactor(palette = c("grey60", "#824273"),
+                        levels = unique(geom1$Creative.industrial), na.color = "transparent")
+
+# palette Creative industrial
+paletteB <- colorFactor(palette = c("grey60", "#c6610a"),
+                        levels = unique(geom1$Building.construction.repair), na.color = "transparent")
+
+# palette Creative industrial
+paletteW <- colorFactor(palette = c("grey60", "#ec53a4"),
+                        levels = unique(geom1$Wholesale.distribution), na.color = "transparent")
 
 
 
