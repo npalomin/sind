@@ -153,7 +153,7 @@ streets <- st_read(here("2022/data/oproad_gbRoadLink.gpkg"))
 geoms %>%
   st_centroid() -> cent
 
-remotes::install_github("michaeldorman/nngeo")
+#remotes::install_github("michaeldorman/nngeo")
 library(nngeo)
 library(lwgeom)
 
@@ -192,7 +192,7 @@ geoms %>%
 ```
 
 ```{r message=FALSE, warning=FALSE}
-mapview(linesb1) + mapview(lines)
+#mapview(linesb1) + mapview(lines)
 ```
 
 
@@ -209,15 +209,13 @@ id=551
 51.47625,-0.05574886
 https://maps.googleapis.com/maps/api/streetview?size=640x640&location=51.47625,-0.05574886&heading=-248.2&pitch=1&key=AIzaSyC-v_x-RZvp_a545Q-XCRf_NGwEo9X7mBI&width=320
 
-```{r}
--68 - 180
-```
+
 
 
 ```{r}
-st_write(geoms, here("2022/data/survey-results.gpkg"), append=FALSE)
-st_write(geoms, here("2022/data/survey-results.geojson"), append=FALSE)
-st_write(geoms, here("2022/data/survey-results.csv"), layer_options = c("GEOMETRY=AS_WKT","CREATE_CSVT=YES"), delete_dsn=TRUE)
+#st_write(geoms, here("2022/data/survey-results.gpkg"), append=FALSE)
+#st_write(geoms, here("2022/data/survey-results.geojson"), append=FALSE)
+#st_write(geoms, here("2022/data/survey-results.csv"), layer_options = c("GEOMETRY=AS_WKT","CREATE_CSVT=YES"), delete_dsn=TRUE)
 ```
 
 ```{r}
@@ -244,4 +242,7 @@ table %>%
   arrange(desc(complete_rate))
 ```
 
+```{r}
+writexl::write_xlsx(table, here("2022/data/data-completeness-report.xlsx"))
+```
 

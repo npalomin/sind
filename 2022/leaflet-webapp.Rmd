@@ -348,7 +348,7 @@ geom1 %>%
     position = "topright",
     options = layersControlOptions(collapsed = FALSE)) %>%
       htmlwidgets::onRender("function() {
-            $('.leaflet-control-layers-overlays').prepend('<label style=\"text-align:center\">Map Layers</label>');}") %>%
+            $('.leaflet-control-layers-overlays').prepend('<label style=\"text-align:left\">Map Layers</label>');}") %>%
   hideGroup(c("Manufacturing", "Repair", "Creative","Building","Wholesale","Industrial Planning")) %>%
   addControl("<p>
 <img src=\"https://cities.research.londonmet.ac.uk/wp-content/uploads/aad-cities-logo-london-metropolitan-university.jpg\" style=\"width:180px;\"><br>
